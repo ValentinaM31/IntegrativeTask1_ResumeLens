@@ -1,5 +1,7 @@
 import copy
 import unittest
+from pyformlang.fst import FST
+from resumelens.normalization import build_transducers, normalize_skills
 from resumelens.catalog import load_catalog, validate_catalog
 from resumelens.extraction import extract_resume
 
@@ -155,3 +157,81 @@ class SkillTests(unittest.TestCase):
         broken["skills"][1]["aliases"].append("js")
         with self.assertRaisesRegex(ValueError, "conflicting"):
             validate_catalog(broken)
+
+
+class NormalizationTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.catalog = load_catalog()
+        cls.machines = build_transducers(cls.catalog)
+
+    def test_every_alias_and_case_variant(self):
+        for skill in self.catalog["skills"]:
+            for alias in skill["aliases"]:
+                for raw in (alias, alias.upper(), alias.swapcase()):
+                    with self.subTest(alias=raw):
+                        text = "Skills: " + raw
+                        extracted = extract_resume(text)
+                        result = normalize_skills(extracted["extracted_skills"], self.machines)
+                        self.assertEqual(result["normalized_skills"], [skill["canonical"]])
+                        self.assertEqual(extracted["extracted_skills"][0]["raw"], raw)
+                        self.assertEqual(result["normalization_evidence"],
+                                         [{"extracted_index": 0, "canonical": skill["canonical"]}])
+                        self.assertEqual(list(self.machines[skill["category"]].translate(list(raw.casefold()))),
+                                         [[skill["canonical"]]])
+
+    def test_unknown_and_full_consumption(self):
+        for raw in ("Rust", "JSx", "J", "React.js extra", ""):
+            with self.subTest(raw=raw):
+                evidence = {"raw": raw, "start": 0, "end": len(raw)}
+                result = normalize_skills([evidence], self.machines)
+                self.assertEqual(result["normalized_skills"], [])
+                self.assertEqual(result["normalization_evidence"], [])
+                self.assertEqual(result["unknown_skills"], [evidence])
+
+    def test_catalog_conflict_is_rejected_before_building(self):
+        catalog = copy.deepcopy(self.catalog)
+        catalog["skills"][1]["aliases"].append("js")
+        with self.assertRaisesRegex(ValueError, "conflicting"):
+            build_transducers(catalog)
+
+    def test_multiple_canonical_outputs_are_rejected(self):
+        first, second = FST(), FST()
+        for machine, symbol in ((first, "PYTHON"), (second, "JAVA")):
+            machine.add_start_state("q0")
+            machine.add_transition("q0", "x", "q1", [symbol])
+            machine.add_final_state("q1")
+        with self.assertRaisesRegex(ValueError, "Ambiguous"):
+            normalize_skills([{"raw": "x", "start": 0, "end": 1}], {"one": first, "two": second})
+
+    def test_machine_sizes_and_complete_output_symbols(self):
+        expected = {"languages": (78, 77, 11), "frameworks_libraries": (166, 165, 22),
+                    "databases": (67, 66, 7), "tools_qualifications": (207, 206, 16)}
+        for category, machine in self.machines.items():
+            self.assertEqual((len(machine.states), machine.get_number_transitions(), len(machine.final_states)),
+                             expected[category])
+        self.assertIn("JAVASCRIPT", self.machines["languages"].output_symbols)
+        self.assertNotIn("J", self.machines["languages"].output_symbols)
+
+    def test_repeated_mentions_keep_links_and_original_evidence(self):
+        text = "Skills: JS, JavaScript, JS, Git SCM"
+        extracted = extract_resume(text)
+        mentions = extracted["extracted_skills"]
+        before = copy.deepcopy(mentions)
+        result = normalize_skills(mentions, self.machines)
+        self.assertEqual(mentions, before)
+        self.assertEqual(result["normalized_skills"], ["GIT", "JAVASCRIPT"])
+        self.assertEqual(result["normalization_evidence"],
+                         [{"extracted_index": 0, "canonical": "JAVASCRIPT"},
+                          {"extracted_index": 1, "canonical": "JAVASCRIPT"},
+                          {"extracted_index": 2, "canonical": "JAVASCRIPT"},
+                          {"extracted_index": 3, "canonical": "GIT"}])
+        for item in mentions:
+            self.assertEqual(text[item["start"]:item["end"]], item["raw"])
+
+    def test_order_changes_evidence_not_canonical_symbols(self):
+        a = extract_resume("Skills: JS, React.js, NodeJS, Postgres, Git")["extracted_skills"]
+        b = extract_resume("Skills: Git, Postgres, NodeJS, React.js, JS")["extracted_skills"]
+        self.assertEqual(normalize_skills(a, self.machines)["normalized_skills"],
+                         normalize_skills(b, self.machines)["normalized_skills"])
+        self.assertNotEqual(a, b)
