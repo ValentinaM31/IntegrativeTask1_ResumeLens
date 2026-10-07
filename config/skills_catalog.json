@@ -1,0 +1,223 @@
+{
+  "catalog_version": "1.0",
+  "ambiguous_aliases": [
+    "JS",
+    "TS",
+    "React",
+    "Pandas"
+  ],
+  "skills": [
+    {
+      "canonical": "JAVASCRIPT",
+      "category": "languages",
+      "aliases": [
+        "JavaScript",
+        "JS",
+        "ECMAScript"
+      ]
+    },
+    {
+      "canonical": "TYPESCRIPT",
+      "category": "languages",
+      "aliases": [
+        "TypeScript",
+        "Type Script",
+        "TS"
+      ]
+    },
+    {
+      "canonical": "PYTHON",
+      "category": "languages",
+      "aliases": [
+        "Python",
+        "Python3",
+        "Python 3"
+      ]
+    },
+    {
+      "canonical": "JAVA",
+      "category": "languages",
+      "aliases": [
+        "Java",
+        "Java SE"
+      ]
+    },
+    {
+      "canonical": "REACT",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "React",
+        "React.js",
+        "ReactJS"
+      ]
+    },
+    {
+      "canonical": "ANGULAR",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "Angular"
+      ]
+    },
+    {
+      "canonical": "VUE",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "Vue",
+        "Vue.js",
+        "VueJS"
+      ]
+    },
+    {
+      "canonical": "NODE_JS",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "Node.js",
+        "NodeJS"
+      ]
+    },
+    {
+      "canonical": "DJANGO",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "Django"
+      ]
+    },
+    {
+      "canonical": "SPRING_BOOT",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "Spring Boot",
+        "SpringBoot"
+      ]
+    },
+    {
+      "canonical": "SQL",
+      "category": "databases",
+      "aliases": [
+        "SQL",
+        "Structured Query Language"
+      ]
+    },
+    {
+      "canonical": "POSTGRESQL",
+      "category": "databases",
+      "aliases": [
+        "PostgreSQL",
+        "Postgres"
+      ]
+    },
+    {
+      "canonical": "MYSQL",
+      "category": "databases",
+      "aliases": [
+        "MySQL"
+      ]
+    },
+    {
+      "canonical": "MONGODB",
+      "category": "databases",
+      "aliases": [
+        "MongoDB",
+        "Mongo DB"
+      ]
+    },
+    {
+      "canonical": "PANDAS",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "Pandas"
+      ]
+    },
+    {
+      "canonical": "NUMPY",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "NumPy",
+        "Num Py"
+      ]
+    },
+    {
+      "canonical": "SCIKIT_LEARN",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "Scikit-learn",
+        "sklearn",
+        "scikit learn"
+      ]
+    },
+    {
+      "canonical": "TENSORFLOW",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "TensorFlow",
+        "Tensor Flow"
+      ]
+    },
+    {
+      "canonical": "PYTORCH",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "PyTorch",
+        "Py Torch"
+      ]
+    },
+    {
+      "canonical": "REST_API",
+      "category": "tools_qualifications",
+      "aliases": [
+        "REST API",
+        "REST APIs",
+        "RESTful API"
+      ]
+    },
+    {
+      "canonical": "GIT",
+      "category": "tools_qualifications",
+      "aliases": [
+        "Git",
+        "Git SCM"
+      ]
+    },
+    {
+      "canonical": "DOCKER",
+      "category": "tools_qualifications",
+      "aliases": [
+        "Docker",
+        "Docker Desktop"
+      ]
+    },
+    {
+      "canonical": "ML_MODEL",
+      "category": "tools_qualifications",
+      "aliases": [
+        "machine learning models",
+        "predictive models",
+        "modelos predictivos"
+      ]
+    },
+    {
+      "canonical": "APACHE_SPARK",
+      "category": "tools_qualifications",
+      "aliases": [
+        "Apache Spark"
+      ]
+    },
+    {
+      "canonical": "AIRFLOW",
+      "category": "tools_qualifications",
+      "aliases": [
+        "Apache Airflow",
+        "Airflow"
+      ]
+    },
+    {
+      "canonical": "ETL",
+      "category": "tools_qualifications",
+      "aliases": [
+        "ETL",
+        "extract transform load",
+        "extracción transformación carga"
+      ]
+    }
+  ]
+}
