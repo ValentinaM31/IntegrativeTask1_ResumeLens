@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "candidate": {
+    "name": "Taylor Example",
+    "emails": [],
+    "phones": [],
+    "links": [],
+    "education": [],
+    "experience": []
+  },
+  "extracted_skills": [
+    {
+      "raw": "Git",
+      "start": 29,
+      "end": 32
+    },
+    {
+      "raw": "Postgres",
+      "start": 34,
+      "end": 42
+    },
+    {
+      "raw": "Node.js",
+      "start": 44,
+      "end": 51
+    },
+    {
+      "raw": "ReactJS",
+      "start": 53,
+      "end": 60
+    },
+    {
+      "raw": "JavaScript",
+      "start": 62,
+      "end": 72
+    },
+    {
+      "raw": "JS",
+      "start": 74,
+      "end": 76
+    },
+    {
+      "raw": "React.js",
+      "start": 78,
+      "end": 86
+    },
+    {
+      "raw": "Git SCM",
+      "start": 88,
+      "end": 95
+    }
+  ],
+  "excluded_mentions": [],
+  "warnings": [],
+  "normalized_skills": [
+    "GIT",
+    "JAVASCRIPT",
+    "NODE_JS",
+    "POSTGRESQL",
+    "REACT"
+  ],
+  "normalization_evidence": [
+    {
+      "extracted_index": 0,
+      "canonical": "GIT"
+    },
+    {
+      "extracted_index": 1,
+      "canonical": "POSTGRESQL"
+    },
+    {
+      "extracted_index": 2,
+      "canonical": "NODE_JS"
+    },
+    {
+      "extracted_index": 3,
+      "canonical": "REACT"
+    },
+    {
+      "extracted_index": 4,
+      "canonical": "JAVASCRIPT"
+    },
+    {
+      "extracted_index": 5,
+      "canonical": "JAVASCRIPT"
+    },
+    {
+      "extracted_index": 6,
+      "canonical": "REACT"
+    },
+    {
+      "extracted_index": 7,
+      "canonical": "GIT"
+    }
+  ],
+  "unknown_skills": []
+}

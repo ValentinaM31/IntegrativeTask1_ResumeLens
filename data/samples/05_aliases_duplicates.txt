@@ -1,0 +1,2 @@
+Name: Taylor Example
+Skills: Git, Postgres, Node.js, ReactJS, JavaScript, JS, React.js, Git SCM.

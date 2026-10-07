@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "candidate": {
+    "name": "Daniela Example",
+    "emails": [
+      {
+        "raw": "daniela@example.com",
+        "start": 29,
+        "end": 48
+      },
+      {
+        "raw": "daniela.work@example.com",
+        "start": 56,
+        "end": 80
+      }
+    ],
+    "phones": [],
+    "links": [],
+    "education": [
+      {
+        "raw": "Bachelor in Computer Science",
+        "start": 92,
+        "end": 120
+      },
+      {
+        "raw": "Master in Data Science",
+        "start": 132,
+        "end": 154
+      }
+    ],
+    "experience": [
+      {
+        "raw": "2 years of experience developing web services.",
+        "start": 167,
+        "end": 213
+      },
+      {
+        "raw": "1 year of experience processing data.",
+        "start": 226,
+        "end": 263
+      }
+    ]
+  },
+  "extracted_skills": [
+    {
+      "raw": "Python",
+      "start": 272,
+      "end": 278
+    },
+    {
+      "raw": "Django",
+      "start": 280,
+      "end": 286
+    },
+    {
+      "raw": "PostgreSQL",
+      "start": 288,
+      "end": 298
+    },
+    {
+      "raw": "REST API",
+      "start": 300,
+      "end": 308
+    },
+    {
+      "raw": "Git",
+      "start": 310,
+      "end": 313
+    },
+    {
+      "raw": "ETL",
+      "start": 315,
+      "end": 318
+    },
+    {
+      "raw": "Pandas",
+      "start": 320,
+      "end": 326
+    },
+    {
+      "raw": "Py Torch",
+      "start": 328,
+      "end": 336
+    }
+  ],
+  "excluded_mentions": [],
+  "warnings": [],
+  "normalized_skills": [
+    "DJANGO",
+    "ETL",
+    "GIT",
+    "PANDAS",
+    "POSTGRESQL",
+    "PYTHON",
+    "PYTORCH",
+    "REST_API"
+  ],
+  "normalization_evidence": [
+    {
+      "extracted_index": 0,
+      "canonical": "PYTHON"
+    },
+    {
+      "extracted_index": 1,
+      "canonical": "DJANGO"
+    },
+    {
+      "extracted_index": 2,
+      "canonical": "POSTGRESQL"
+    },
+    {
+      "extracted_index": 3,
+      "canonical": "REST_API"
+    },
+    {
+      "extracted_index": 4,
+      "canonical": "GIT"
+    },
+    {
+      "extracted_index": 5,
+      "canonical": "ETL"
+    },
+    {
+      "extracted_index": 6,
+      "canonical": "PANDAS"
+    },
+    {
+      "extracted_index": 7,
+      "canonical": "PYTORCH"
+    }
+  ],
+  "unknown_skills": []
+}

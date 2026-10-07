@@ -1,0 +1,226 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ResumeLens first stage output v1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "candidate",
+    "extracted_skills",
+    "normalized_skills",
+    "normalization_evidence",
+    "excluded_mentions",
+    "unknown_skills",
+    "warnings"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "emails",
+        "phones",
+        "links",
+        "education",
+        "experience"
+      ],
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "emails": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "phones": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "education": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "experience": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        }
+      }
+    },
+    "extracted_skills": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence"
+      }
+    },
+    "normalized_skills": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "AIRFLOW",
+          "ANGULAR",
+          "APACHE_SPARK",
+          "DJANGO",
+          "DOCKER",
+          "ETL",
+          "GIT",
+          "JAVA",
+          "JAVASCRIPT",
+          "ML_MODEL",
+          "MONGODB",
+          "MYSQL",
+          "NODE_JS",
+          "NUMPY",
+          "PANDAS",
+          "POSTGRESQL",
+          "PYTHON",
+          "PYTORCH",
+          "REACT",
+          "REST_API",
+          "SCIKIT_LEARN",
+          "SPRING_BOOT",
+          "SQL",
+          "TENSORFLOW",
+          "TYPESCRIPT",
+          "VUE"
+        ]
+      }
+    },
+    "normalization_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "extracted_index",
+          "canonical"
+        ],
+        "properties": {
+          "extracted_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "canonical": {
+            "enum": [
+              "AIRFLOW",
+              "ANGULAR",
+              "APACHE_SPARK",
+              "DJANGO",
+              "DOCKER",
+              "ETL",
+              "GIT",
+              "JAVA",
+              "JAVASCRIPT",
+              "ML_MODEL",
+              "MONGODB",
+              "MYSQL",
+              "NODE_JS",
+              "NUMPY",
+              "PANDAS",
+              "POSTGRESQL",
+              "PYTHON",
+              "PYTORCH",
+              "REACT",
+              "REST_API",
+              "SCIKIT_LEARN",
+              "SPRING_BOOT",
+              "SQL",
+              "TENSORFLOW",
+              "TYPESCRIPT",
+              "VUE"
+            ]
+          }
+        }
+      }
+    },
+    "excluded_mentions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "raw",
+          "start",
+          "end",
+          "reason"
+        ],
+        "properties": {
+          "raw": {
+            "type": "string",
+            "minLength": 1
+          },
+          "start": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "unknown_skills": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw",
+        "start",
+        "end"
+      ],
+      "properties": {
+        "raw": {
+          "type": "string",
+          "minLength": 1
+        },
+        "start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    }
+  }
+}

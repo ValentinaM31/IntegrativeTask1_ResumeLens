@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0",
+  "candidate": {
+    "name": "Laura Example",
+    "emails": [
+      {
+        "raw": "laura@example.com",
+        "start": 27,
+        "end": 44
+      }
+    ],
+    "phones": [
+      {
+        "raw": "+57 300 000 0003",
+        "start": 52,
+        "end": 68
+      }
+    ],
+    "links": [],
+    "education": [
+      {
+        "raw": "Bachelor in Computer Science",
+        "start": 80,
+        "end": 108
+      }
+    ],
+    "experience": [
+      {
+        "raw": "2 years of experience developing services.",
+        "start": 121,
+        "end": 163
+      }
+    ]
+  },
+  "extracted_skills": [
+    {
+      "raw": "Java SE",
+      "start": 172,
+      "end": 179
+    },
+    {
+      "raw": "SpringBoot",
+      "start": 181,
+      "end": 191
+    },
+    {
+      "raw": "MySQL",
+      "start": 193,
+      "end": 198
+    },
+    {
+      "raw": "RESTful API",
+      "start": 200,
+      "end": 211
+    },
+    {
+      "raw": "Git SCM",
+      "start": 213,
+      "end": 220
+    },
+    {
+      "raw": "Docker Desktop",
+      "start": 222,
+      "end": 236
+    }
+  ],
+  "excluded_mentions": [],
+  "warnings": [],
+  "normalized_skills": [
+    "DOCKER",
+    "GIT",
+    "JAVA",
+    "MYSQL",
+    "REST_API",
+    "SPRING_BOOT"
+  ],
+  "normalization_evidence": [
+    {
+      "extracted_index": 0,
+      "canonical": "JAVA"
+    },
+    {
+      "extracted_index": 1,
+      "canonical": "SPRING_BOOT"
+    },
+    {
+      "extracted_index": 2,
+      "canonical": "MYSQL"
+    },
+    {
+      "extracted_index": 3,
+      "canonical": "REST_API"
+    },
+    {
+      "extracted_index": 4,
+      "canonical": "GIT"
+    },
+    {
+      "extracted_index": 5,
+      "canonical": "DOCKER"
+    }
+  ],
+  "unknown_skills": []
+}

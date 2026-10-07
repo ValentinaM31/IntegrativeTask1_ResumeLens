@@ -1,0 +1,6 @@
+Name: Sam Example
+GitHub: https://github.com/example-user
+Experience: no experience with Python
+Experience: no experience with TensorFlow
+Skills: JavaScript, Git, React.js
+The meeting is on TS and the JS code name is unrelated to skills here.

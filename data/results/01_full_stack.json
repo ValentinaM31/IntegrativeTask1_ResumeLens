@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0",
+  "candidate": {
+    "name": "Alex Sample",
+    "emails": [
+      {
+        "raw": "alex@example.com",
+        "start": 25,
+        "end": 41
+      }
+    ],
+    "phones": [
+      {
+        "raw": "+57 300 000 0001",
+        "start": 49,
+        "end": 65
+      }
+    ],
+    "links": [
+      {
+        "raw": "https://www.linkedin.com/in/alex-example",
+        "start": 76,
+        "end": 116
+      }
+    ],
+    "education": [
+      {
+        "raw": "Bachelor in Computer Science",
+        "start": 128,
+        "end": 156
+      }
+    ],
+    "experience": [
+      {
+        "raw": "3 years of experience developing web applications.",
+        "start": 169,
+        "end": 219
+      }
+    ]
+  },
+  "extracted_skills": [
+    {
+      "raw": "JS",
+      "start": 238,
+      "end": 240
+    },
+    {
+      "raw": "React.js",
+      "start": 242,
+      "end": 250
+    },
+    {
+      "raw": "NodeJS",
+      "start": 252,
+      "end": 258
+    },
+    {
+      "raw": "Postgres",
+      "start": 260,
+      "end": 268
+    },
+    {
+      "raw": "Git",
+      "start": 270,
+      "end": 273
+    }
+  ],
+  "excluded_mentions": [],
+  "warnings": [],
+  "normalized_skills": [
+    "GIT",
+    "JAVASCRIPT",
+    "NODE_JS",
+    "POSTGRESQL",
+    "REACT"
+  ],
+  "normalization_evidence": [
+    {
+      "extracted_index": 0,
+      "canonical": "JAVASCRIPT"
+    },
+    {
+      "extracted_index": 1,
+      "canonical": "REACT"
+    },
+    {
+      "extracted_index": 2,
+      "canonical": "NODE_JS"
+    },
+    {
+      "extracted_index": 3,
+      "canonical": "POSTGRESQL"
+    },
+    {
+      "extracted_index": 4,
+      "canonical": "GIT"
+    }
+  ],
+  "unknown_skills": []
+}

@@ -1,0 +1,13 @@
+# Dependencies of the Windows Python 3.12 environment verified on 2026-10-06.
+# Install the local package separately with pip install --no-deps -e .
+attrs==26.1.0
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+networkx==3.7
+numpy==2.5.3
+pydot==4.0.1
+pyformlang==1.0.11
+pyparsing==3.3.3
+referencing==0.37.0
+rpds-py==2026.9.1
+typing_extensions==4.16.0

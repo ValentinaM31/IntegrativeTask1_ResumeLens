@@ -1,0 +1,6 @@
+Name: Laura Example
+Email: laura@example.com
+Phone: +57 300 000 0003
+Education: Bachelor in Computer Science
+Experience: 2 years of experience developing services.
+Skills: Java SE, SpringBoot, MySQL, RESTful API, Git SCM, Docker Desktop.

@@ -1,0 +1,107 @@
+{
+  "status": "design_expectations_not_execution_results",
+  "cases": [
+    {
+      "file": "data/samples/01_full_stack.txt",
+      "normalized_skills": [
+        "GIT",
+        "JAVASCRIPT",
+        "NODE_JS",
+        "POSTGRESQL",
+        "REACT"
+      ],
+      "accepted_profiles_expected_later": [
+        "FULL_STACK_DEVELOPER"
+      ]
+    },
+    {
+      "file": "data/samples/02_machine_learning.txt",
+      "normalized_skills": [
+        "GIT",
+        "ML_MODEL",
+        "PANDAS",
+        "PYTHON",
+        "SQL",
+        "TENSORFLOW"
+      ],
+      "accepted_profiles_expected_later": [
+        "MACHINE_LEARNING_ENGINEER"
+      ]
+    },
+    {
+      "file": "data/samples/03_backend.txt",
+      "normalized_skills": [
+        "DOCKER",
+        "GIT",
+        "JAVA",
+        "MYSQL",
+        "REST_API",
+        "SPRING_BOOT"
+      ],
+      "accepted_profiles_expected_later": [
+        "BACKEND_DEVELOPER"
+      ]
+    },
+    {
+      "file": "data/samples/04_data_engineer.txt",
+      "normalized_skills": [
+        "AIRFLOW",
+        "ETL",
+        "GIT",
+        "PYTHON",
+        "SQL"
+      ],
+      "accepted_profiles_expected_later": [
+        "DATA_ENGINEER"
+      ]
+    },
+    {
+      "file": "data/samples/05_aliases_duplicates.txt",
+      "normalized_skills": [
+        "GIT",
+        "JAVASCRIPT",
+        "NODE_JS",
+        "POSTGRESQL",
+        "REACT"
+      ],
+      "accepted_profiles_expected_later": [
+        "FULL_STACK_DEVELOPER"
+      ]
+    },
+    {
+      "file": "data/samples/06_incomplete.txt",
+      "normalized_skills": [
+        "GIT",
+        "PYTHON"
+      ],
+      "accepted_profiles_expected_later": []
+    },
+    {
+      "file": "data/samples/07_boundaries_negation.txt",
+      "normalized_skills": [
+        "GIT",
+        "JAVASCRIPT",
+        "REACT"
+      ],
+      "accepted_profiles_expected_later": []
+    },
+    {
+      "file": "data/samples/08_multiple_records.txt",
+      "normalized_skills": [
+        "DJANGO",
+        "ETL",
+        "GIT",
+        "PANDAS",
+        "POSTGRESQL",
+        "PYTHON",
+        "PYTORCH",
+        "REST_API"
+      ],
+      "accepted_profiles_expected_later": [
+        "BACKEND_DEVELOPER",
+        "DATA_ENGINEER",
+        "MACHINE_LEARNING_ENGINEER"
+      ]
+    }
+  ]
+}

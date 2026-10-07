@@ -1,2 +1,5 @@
-from .extraction import extract_resume
-__all__ = ["extract_resume"]
+"""ResumeLens: extraction and normalization independent of classification."""
+
+from .first_stage import process_resume
+
+__all__ = ["process_resume"]
