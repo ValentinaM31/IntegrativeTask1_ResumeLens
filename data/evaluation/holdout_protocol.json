@@ -1,0 +1,4 @@
+{
+  "source_sha256": "9db2f58e3242c83e29c42b912f3632b8b5a8d81d2bc071908f44aafbfc033182",
+  "method": "Synthetic reserved cases written after freezing the rules and passing 35 tests. Rules were not adjusted using their results in that revision. These are neither an external corpus nor an independent human evaluation."
+}

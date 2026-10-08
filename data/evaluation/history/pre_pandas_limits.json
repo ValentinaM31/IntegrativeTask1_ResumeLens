@@ -1,0 +1,7 @@
+{
+  "description": "Synthetic cases outside the supported scope showing double negation and another homonym. Failures are preserved without expanding the rules.",
+  "cases": [
+    {"id":"double_negation","group":"stress","text":"I do not have no experience with Python.","mentions":[{"raw":"Python"}],"symbols":["PYTHON"]},
+    {"id":"animal_homonym","group":"stress","text":"I watched pandas at the zoo.","mentions":[],"symbols":[]}
+  ]
+}

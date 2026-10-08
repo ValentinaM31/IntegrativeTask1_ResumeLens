@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="594mm" height="420mm" viewBox="0 0 1697 1200">
+<rect width="1697" height="1200" fill="#f5f7fa"/>
+<style>text{font-family:Arial,sans-serif} .arrow{fill:none;stroke:#334155;stroke-width:3;marker-end:url(#arr)}</style>
+<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#334155"/></marker></defs>
+<text x="38" y="76" font-size="60" fill="#12345b" font-weight="bold">ResumeLens</text>
+<text x="39" y="119" font-size="30" fill="#1e293b" font-weight="normal">Traceable résumé extraction with regex and finite-state transducers</text>
+<text x="40" y="152" font-size="20" fill="#475569" font-weight="normal">Extraction and normalization study • Partial project poster</text>
+<rect x="40" y="185" width="298" height="80" rx="9" fill="#e2e8f0"/>
+<text x="56" y="219" font-size="23" fill="#12345b" font-weight="bold">Text input</text>
+<text x="56" y="249" font-size="19" fill="#1e293b" font-weight="normal">UTF-8</text>
+<path class="arrow" d="M340,225 L363,225"/>
+<rect x="369" y="185" width="298" height="80" rx="9" fill="#dbeafe"/>
+<text x="385" y="219" font-size="23" fill="#12345b" font-weight="bold">Regex extraction</text>
+<text x="385" y="249" font-size="19" fill="#1e293b" font-weight="normal">Evidence spans</text>
+<path class="arrow" d="M669,225 L692,225"/>
+<rect x="698" y="185" width="298" height="80" rx="9" fill="#dbeafe"/>
+<text x="714" y="219" font-size="23" fill="#12345b" font-weight="bold">FST normalization</text>
+<text x="714" y="249" font-size="19" fill="#1e293b" font-weight="normal">Canonical tokens</text>
+<path class="arrow" d="M998,225 L1021,225"/>
+<rect x="1027" y="185" width="298" height="80" rx="9" fill="#e2e8f0"/>
+<text x="1043" y="219" font-size="23" fill="#12345b" font-weight="bold">Profile automata</text>
+<text x="1043" y="249" font-size="19" fill="#1e293b" font-weight="normal">Recognition model</text>
+<path class="arrow" d="M1327,225 L1350,225"/>
+<rect x="1356" y="185" width="298" height="80" rx="9" fill="#e2e8f0"/>
+<text x="1372" y="219" font-size="23" fill="#12345b" font-weight="bold">DSL and HTML</text>
+<text x="1372" y="249" font-size="19" fill="#1e293b" font-weight="normal">Representation model</text>
+<rect x="40" y="296" width="519" height="734" rx="12" fill="white"/>
+<rect x="599" y="296" width="519" height="734" rx="12" fill="white"/>
+<rect x="1158" y="296" width="519" height="734" rx="12" fill="white"/>
+<text x="58" y="341" font-size="26" fill="#12345b" font-weight="bold">Problem and research question</text>
+<text x="58" y="381" font-size="18" fill="#1e293b" font-weight="normal">Different spellings and résumé layouts obscure</text>
+<text x="58" y="405.84" font-size="18" fill="#1e293b" font-weight="normal">explicit qualifications. Can formal models</text>
+<text x="58" y="430.67999999999995" font-size="18" fill="#1e293b" font-weight="normal">normalize a finite vocabulary while preserving the</text>
+<text x="58" y="455.5199999999999" font-size="18" fill="#1e293b" font-weight="normal">evidence for every output?</text>
+<text x="58" y="501.3599999999999" font-size="26" fill="#12345b" font-weight="bold">Extraction method</text>
+<text x="58" y="541.3599999999999" font-size="18" fill="#1e293b" font-weight="normal">Python re identifies contact, academic and work</text>
+<text x="58" y="566.1999999999999" font-size="18" fill="#1e293b" font-weight="normal">records, and known skills. Section headings</text>
+<text x="58" y="591.04" font-size="18" fill="#1e293b" font-weight="normal">preserve multiline records. Longer aliases take</text>
+<text x="58" y="615.88" font-size="18" fill="#1e293b" font-weight="normal">precedence; literal punctuation and word</text>
+<text x="58" y="640.72" font-size="18" fill="#1e293b" font-weight="normal">boundaries limit partial matches.</text>
+<text x="58" y="681.5600000000001" font-size="18" fill="#1e293b" font-weight="normal">JS/TS require skills context; React requires</text>
+<text x="58" y="706.4000000000001" font-size="18" fill="#1e293b" font-weight="normal">explicit technical context. Eight negative</text>
+<text x="58" y="731.2400000000001" font-size="18" fill="#1e293b" font-weight="normal">patterns and clause boundaries exclude mentions</text>
+<text x="58" y="756.0800000000002" font-size="18" fill="#1e293b" font-weight="normal">while preserving positive contrasts.</text>
+<text x="58" y="801.9200000000002" font-size="26" fill="#12345b" font-weight="bold">Evidence contract</text>
+<text x="58" y="841.9200000000002" font-size="20" fill="#1e293b" font-weight="normal">Input:  Skills: JS</text>
+<text x="58" y="869.9200000000002" font-size="20" fill="#1e293b" font-weight="normal">raw: &quot;JS&quot;   start: 8   end: 10</text>
+<text x="58" y="897.9200000000002" font-size="20" fill="#1e293b" font-weight="normal">text[8:10] == &quot;JS&quot;</text>
+<text x="58" y="925.9200000000002" font-size="20" fill="#1e293b" font-weight="normal">canonical: JAVASCRIPT</text>
+<text x="58" y="959.9200000000002" font-size="18" fill="#1e293b" font-weight="normal">Repeated mentions retain separate evidence;</text>
+<text x="58" y="984.7600000000002" font-size="18" fill="#1e293b" font-weight="normal">canonical tokens are unique. JSON 1.0 preserves</text>
+<text x="58" y="1009.6000000000003" font-size="18" fill="#1e293b" font-weight="normal">candidate data for subsequent processing.</text>
+<text x="617" y="341" font-size="26" fill="#12345b" font-weight="bold">Formal transducer model</text>
+<text x="617" y="381" font-size="18" fill="#1e293b" font-weight="normal">Four pyformlang FSTs cover 26 canonical symbols</text>
+<text x="617" y="405.84" font-size="18" fill="#1e293b" font-weight="normal">and 56 aliases. Each casefolded alias has a</text>
+<text x="617" y="430.67999999999995" font-size="18" fill="#1e293b" font-weight="normal">separate character path. Only the last edge emits</text>
+<text x="617" y="455.5199999999999" font-size="18" fill="#1e293b" font-weight="normal">its canonical token.</text>
+<text x="617" y="496.3599999999999" font-size="26" fill="#12345b" font-weight="bold">M = (Q, Σ, Γ, δ, ω, q0, F)</text>
+<circle cx="675" cy="598.3599999999999" r="40" fill="#dbeafe" stroke="#12345b" stroke-width="2"/>
+<text x="659" y="603.3599999999999" font-size="16" fill="#1e293b" font-weight="normal">q0</text>
+<circle cx="852" cy="598.3599999999999" r="40" fill="#dbeafe" stroke="#12345b" stroke-width="2"/>
+<text x="820" y="603.3599999999999" font-size="16" fill="#1e293b" font-weight="normal">s0_a1_1</text>
+<circle cx="1029" cy="598.3599999999999" r="40" fill="#dbeafe" stroke="#12345b" stroke-width="2"/>
+<circle cx="1029" cy="598.3599999999999" r="35" fill="none" stroke="#12345b" stroke-width="2"/>
+<text x="997" y="603.3599999999999" font-size="16" fill="#1e293b" font-weight="normal">s0_a1_2</text>
+<path class="arrow" d="M718,598.3599999999999 L812,598.3599999999999"/>
+<text x="716" y="544.3599999999999" font-size="17" fill="#1e293b" font-weight="normal">j / ε</text>
+<path class="arrow" d="M895,598.3599999999999 L989,598.3599999999999"/>
+<text x="893" y="544.3599999999999" font-size="17" fill="#1e293b" font-weight="normal">s / JAVASCRIPT</text>
+<text x="617" y="681.3599999999999" font-size="18" fill="#1e293b" font-weight="normal">JS → js → JAVASCRIPT. Acceptance consumes the</text>
+<text x="617" y="706.1999999999999" font-size="18" fill="#1e293b" font-weight="normal">entire input and reaches a final state. Empty</text>
+<text x="617" y="731.04" font-size="18" fill="#1e293b" font-weight="normal">output is not an epsilon input edge. Shared first</text>
+<text x="617" y="755.88" font-size="18" fill="#1e293b" font-weight="normal">characters permit nondeterminism.</text>
+<text x="617" y="800.72" font-size="26" fill="#12345b" font-weight="bold">Our own transformations</text>
+<text x="617" y="840.72" font-size="18" fill="#1e293b" font-weight="normal">Type Script → TYPESCRIPT</text>
+<text x="617" y="870.72" font-size="18" fill="#1e293b" font-weight="normal">Git SCM → GIT</text>
+<text x="617" y="900.72" font-size="18" fill="#1e293b" font-weight="normal">Structured Query Language → SQL</text>
+<text x="617" y="930.72" font-size="18" fill="#1e293b" font-weight="normal">extracción transformación carga → ETL</text>
+<text x="617" y="967.72" font-size="18" fill="#1e293b" font-weight="normal">Complete seven tuples, transition tables and full</text>
+<text x="617" y="992.5600000000001" font-size="18" fill="#1e293b" font-weight="normal">SVG/DOT graphs are exported from the executable</text>
+<text x="617" y="1017.4000000000001" font-size="18" fill="#1e293b" font-weight="normal">machines.</text>
+<text x="1176" y="341" font-size="26" fill="#12345b" font-weight="bold">Results and failure analysis</text>
+<text x="1176" y="381" font-size="18" fill="#1e293b" font-weight="normal">35 automated tests pass: alias and case variants,</text>
+<text x="1176" y="405.84" font-size="18" fill="#1e293b" font-weight="normal">eight sample résumés, records, context, negation,</text>
+<text x="1176" y="430.67999999999995" font-size="18" fill="#1e293b" font-weight="normal">JSON validation and CLI errors. Verified in a</text>
+<text x="1176" y="455.5199999999999" font-size="18" fill="#1e293b" font-weight="normal">fresh Python 3.12 environment.</text>
+<text x="1176" y="496.3599999999999" font-size="18" fill="#1e293b" font-weight="normal">Evaluation: 23 synthetic annotated cases,</text>
+<text x="1176" y="521.1999999999999" font-size="18" fill="#1e293b" font-weight="normal">including six reserved after fixing rules. Exact</text>
+<text x="1176" y="546.04" font-size="18" fill="#1e293b" font-weight="normal">character spans are compared; this is not a real-</text>
+<text x="1176" y="570.88" font-size="18" fill="#1e293b" font-weight="normal">world independent benchmark.</text>
+<text x="1176" y="611.72" font-size="22" fill="#12345b" font-weight="bold">Supported formats: 14 cases</text>
+<text x="1176" y="638.72" font-size="21" fill="#1e293b" font-weight="normal">TP 25   FP 0   FN 0   F1 1.00</text>
+<text x="1176" y="669.72" font-size="22" fill="#12345b" font-weight="bold">Reserved synthetic cases: 6 cases</text>
+<text x="1176" y="696.72" font-size="21" fill="#1e293b" font-weight="normal">TP 14   FP 0   FN 0   F1 1.00</text>
+<text x="1176" y="727.72" font-size="22" fill="#12345b" font-weight="bold">Stress beyond scope: 3 cases</text>
+<text x="1176" y="754.72" font-size="21" fill="#1e293b" font-weight="normal">TP 0   FP 1   FN 2   F1 0.00</text>
+<text x="1176" y="789.72" font-size="26" fill="#12345b" font-weight="bold">Limits and conclusion</text>
+<text x="1176" y="829.72" font-size="18" fill="#1e293b" font-weight="normal">Stress cases expose another homonym (pandas),</text>
+<text x="1176" y="854.5600000000001" font-size="18" fill="#1e293b" font-weight="normal">double negation and unknown technology (Rust). No</text>
+<text x="1176" y="879.4000000000001" font-size="18" fill="#1e293b" font-weight="normal">population accuracy claim or candidate ranking is</text>
+<text x="1176" y="904.2400000000001" font-size="18" fill="#1e293b" font-weight="normal">made.</text>
+<text x="1176" y="945.0800000000002" font-size="18" fill="#1e293b" font-weight="normal">Extraction and normalization preserve explicit</text>
+<text x="1176" y="969.9200000000002" font-size="18" fill="#1e293b" font-weight="normal">evidence. Profile recognition and DSL validation</text>
+<text x="1176" y="994.7600000000002" font-size="18" fill="#1e293b" font-weight="normal">require separate models, tests and results.</text>
+<text x="40" y="1070" font-size="25" fill="#12345b" font-weight="bold">Selected references</text>
+<text x="40" y="1101" font-size="18" fill="#1e293b" font-weight="normal">Yu, Guan &amp; Zhou (2005). Resume Information Extraction with Cascaded Hybrid Model. ACL, 499–506. doi:10.3115/1219840.1219902</text>
+<text x="40" y="1129" font-size="18" fill="#1e293b" font-weight="normal">Mohri (1997). Finite-State Transducers in Language and Speech Processing. Computational Linguistics 23(2), 269–311.</text>
+<text x="40" y="1157" font-size="18" fill="#1e293b" font-weight="normal">Python re documentation • pyformlang FST documentation • Full references and models: docs/ in the project repository</text>
+</svg>

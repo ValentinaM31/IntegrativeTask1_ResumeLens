@@ -1,27 +1,25 @@
 # ResumeLens
 
-Process UTF-8 TXT resumes with Python regular expressions and real pyformlang finite-state transducers, then export validated JSON with original evidence.
+Process UTF-8 TXT resumes using Python `re` and real finite-state transducers. Extract candidate information and normalize skill variants into JSON with verifiable evidence.
 
 ## Installation
 
-Python 3.10 or later. Verified platform: Windows with Python 3.12.
+Python 3.10 or later. Verified platform: Windows with Python 3.12.14.
 
 ```powershell
 py -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -e .
 ```
 
-Dependencies: `pyformlang==1.0.11` and `jsonschema==4.26.0`. For the recorded Python 3.12 environment, install `requirements-lock.txt` and then the package with `pip install --no-deps -e .`.
+Dependencies: `pyformlang==1.0.11` and `jsonschema==4.26.0`. `requirements-lock.txt` records the verified Python 3.12 environment. To reproduce it, install that file and then run `pip install --no-deps -e .`. On Linux/macOS use `.venv/bin/python`; these platforms have not been verified.
 
-## CLI
+## Usage
 
 ```powershell
 .\.venv\Scripts\python.exe -m resumelens data/samples/01_full_stack.txt -o outputs/alex.json
 ```
 
-The CLI accepts UTF-8 with BOM, preserves CRLF and creates destination folders. `--name` supplies a fallback when no explicit name line exists. Existing output requires `--force`; input and output must differ. Invalid files, encoding and empty input return exit code 2.
-
-## API
+`--name` supplies a name if no explicit name line exists. `--force` permits replacing existing output. The CLI creates destination folders, preserves CRLF and accepts a UTF-8 BOM. Invalid input returns exit code 2 and an English error message.
 
 ```python
 from resumelens import process_resume
@@ -33,23 +31,37 @@ candidate = result["candidate"]
 skills = result["normalized_skills"]
 ```
 
-Version 1.0 includes `candidate`, `extracted_skills`, `normalized_skills`, `normalization_evidence`, `excluded_mentions`, `unknown_skills` and `warnings`. Absent names are null; other candidate fields are empty lists. Positive and excluded mentions retain original text and positions. Every evidence item must satisfy `text[start:end] == raw`. Canonical symbols are unique and alphabetical; repeated mentions retain translation links.
-
-Validation checks the JSON schema, evidence positions, normalization indices and actual FST translations. Machines are cached between calls. Schema resources are packaged with the module. The editable schema and example input/output are in `contracts/`.
+Offsets refer to the exact decoded input. Results include positive mentions, exclusions, unique symbols, translation links and warnings. No proficiency scores or hiring decisions are inferred.
 
 ## Verification
 
 ```powershell
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
-.\.venv\Scripts\python.exe tools/check_acceptance.py
 .\.venv\Scripts\python.exe tools/validate_design.py
-.\.venv\Scripts\python.exe tools/generate_examples.py
+.\.venv\Scripts\python.exe tools/check_acceptance.py
+.\.venv\Scripts\python.exe tools/evaluate.py
 ```
 
-Tests cover candidate extraction, all 56 aliases, context and negation, real FSTs, contract validation and CLI behavior. Eight sample outputs are in `data/results/`. Acceptance compares API and CLI in six scenarios using the same decoded input and optional name.
+There are 39 automated tests, eight main English samples and 23 annotated synthetic cases: fifteen original, six historically reserved and two additional limit cases. Spanish input fixtures and regex alternatives retain documented bilingual support. See [test results](docs/test-results.md) and [evaluation](docs/evaluation.md).
+
+## Structure
+
+| Directory | Contents |
+|---|---|
+| src/resumelens | Extraction, FSTs, validation and CLI |
+| config | Catalog of 26 symbols, 56 aliases and profile design patterns |
+| contracts | JSON schema 1.0 and input/output example |
+| tests | Behavior and integration tests |
+| data | Samples, outputs and annotated evaluation |
+| docs | Technical design, formal models, literature and results |
+| tools | Model, example, regex and poster generators |
+
+See [design](docs/design.md), [modules](docs/module-design.md), [integration](docs/handoff.md), [API](docs/api.md), [regex](docs/regex.md), [FSTs](docs/transducers.md) and [contract](docs/data-contract.md). The academic AI-use record is submitted separately from the code.
 
 ## Scope
 
-The component extracts and normalizes candidate information and catalog skills. React, Pandas, JS/TS and eight simple negation patterns use explicit context rules. Unknown vocabulary, double negation, irony and unsupported formats remain limitations. Education/experience preserve line records without inferred institution, employer or duration.
+Candidate extraction supports documented contact, education and experience formats. Education and experience retain line records. Eight explicit negation patterns support lists, clause boundaries and contrast. JS/TS require skills context. Unsuffixed React requires documented technical context. Pandas requires skills context or explicit use for data analysis/processing. Other wording, homonyms, double negation, irony and unknown technologies may produce errors.
 
-`config/profiles_design.json` contains design patterns, not executed classification. Later components prepare profile-specific sequences for automata, then build and validate a DSL before visualization. Alphabetical JSON order is not an automaton input sequence. JSON version 1.0 does not contain profile decisions and forbids additional properties.
+Profile automata, classification, textX DSL, UI and HTML are not implemented. JSON Schema does not replace a textX grammar. Alphabetical skill order is not an automaton input sequence.
+
+When changing the catalog or schema, synchronize packaged resources, regenerate models and run tests. `tools/export_models.py` exports complete models; `tools/build_poster.py` is the existing poster generator.

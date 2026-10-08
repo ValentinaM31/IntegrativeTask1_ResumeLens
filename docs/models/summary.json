@@ -1,0 +1,26 @@
+[
+  {
+    "category": "languages",
+    "states": 78,
+    "transitions": 77,
+    "final_states": 11
+  },
+  {
+    "category": "frameworks_libraries",
+    "states": 166,
+    "transitions": 165,
+    "final_states": 22
+  },
+  {
+    "category": "databases",
+    "states": 67,
+    "transitions": 66,
+    "final_states": 7
+  },
+  {
+    "category": "tools_qualifications",
+    "states": 207,
+    "transitions": 206,
+    "final_states": 16
+  }
+]

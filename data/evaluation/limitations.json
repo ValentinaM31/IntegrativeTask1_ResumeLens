@@ -1,0 +1,27 @@
+{
+  "description": "Double-negation and Pandas-context scenarios. Original annotations are preserved and the corrected context reclassification is documented.",
+  "cases": [
+    {
+      "id": "double_negation",
+      "group": "stress",
+      "text": "I do not have no experience with Python.",
+      "mentions": [
+        {
+          "raw": "Python"
+        }
+      ],
+      "symbols": [
+        "PYTHON"
+      ]
+    },
+    {
+      "id": "animal_homonym",
+      "group": "supported",
+      "text": "I watched pandas at the zoo.",
+      "mentions": [],
+      "symbols": [],
+      "previous_group": "stress",
+      "reclassification_reason": "Pandas requires a skills section or explicit use for data analysis/processing; animal context is excluded."
+    }
+  ]
+}

@@ -1,0 +1,435 @@
+{
+  "method": "Exact raw character spans; micro precision/recall/F1 per group. Synthetic annotated cases, no population accuracy claim.",
+  "datasets": [
+    "cases.json",
+    "holdout.json",
+    "limitations.json"
+  ],
+  "rules_unchanged_since_holdout_creation": true,
+  "summary": {
+    "supported": {
+      "tp": 25,
+      "fp": 0,
+      "fn": 0,
+      "cases": 14,
+      "canonical_exact": 14,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "stress": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 2,
+      "cases": 3,
+      "canonical_exact": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "holdout": {
+      "tp": 14,
+      "fp": 0,
+      "fn": 0,
+      "cases": 6,
+      "canonical_exact": 6,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "cases": [
+    {
+      "id": "inline_aliases",
+      "group": "supported",
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "canonical_exact": true,
+      "actual_symbols": [
+        "GIT",
+        "JAVASCRIPT",
+        "NODE_JS",
+        "POSTGRESQL",
+        "REACT"
+      ],
+      "false_positive_spans": [],
+      "missed_spans": []
+    },
+    {
+      "id": "spanish_variants",
+      "group": "supported",
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "canonical_exact": true,
+      "actual_symbols": [
+        "ETL",
+        "PYTHON",
+        "SQL"
+      ],
+      "false_positive_spans": [],
+      "missed_spans": []
+    },
+    {
+      "id": "repetitions",
+      "group": "supported",
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "canonical_exact": true,
+      "actual_symbols": [
+        "JAVASCRIPT"
+      ],
+      "false_positive_spans": [],
+      "missed_spans": []
+    },
+    {
+      "id": "contact_boundaries",
+      "group": "supported",
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "canonical_exact": true,
+      "actual_symbols": [
+        "JAVASCRIPT"
+      ],
+      "false_positive_spans": [],
+      "missed_spans": []
+    },
+    {
+      "id": "negated_list",
+      "group": "supported",
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null,
+      "canonical_exact": true,
+      "actual_symbols": [],
+      "false_positive_spans": [],
+      "missed_spans": []
+    },
+    {
+      "id": "positive_after_negation",
+      "group": "supported",
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "canonical_exact": true,
+      "actual_symbols": [
+        "GIT",
+        "PYTHON"
+      ],
+      "false_positive_spans": [],
+      "missed_spans": []
+    },
+    {
+      "id": "ambiguous_prose",
+      "group": "supported",
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null,
+      "canonical_exact": true,
+      "actual_symbols": [],
+      "false_positive_spans": [],
+      "missed_spans": []
+    },
+    {
+      "id": "plain_heading",
+      "group": "supported",
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "canonical_exact": true,
+      "actual_symbols": [
+        "JAVASCRIPT",
+        "TYPESCRIPT"
+      ],
+      "false_positive_spans": [],
+      "missed_spans": []
+    },
+    {
+      "id": "ml_aliases",
+      "group": "supported",
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "canonical_exact": true,
+      "actual_symbols": [
+        "NUMPY",
+        "PYTORCH",
+        "SCIKIT_LEARN",
+        "TENSORFLOW"
+      ],
+      "false_positive_spans": [],
+      "missed_spans": []
+    },
+    {
+      "id": "own_transformations",
+      "group": "supported",
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "canonical_exact": true,
+      "actual_symbols": [
+        "APACHE_SPARK",
+        "DOCKER",
+        "GIT",
+        "TYPESCRIPT"
+      ],
+      "false_positive_spans": [],
+      "missed_spans": []
+    },
+    {
+      "id": "no_implicit_sql",
+      "group": "supported",
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "canonical_exact": true,
+      "actual_symbols": [
+        "POSTGRESQL"
+      ],
+      "false_positive_spans": [],
+      "missed_spans": []
+    },
+    {
+      "id": "empty_qualifications",
+      "group": "supported",
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null,
+      "canonical_exact": true,
+      "actual_symbols": [],
+      "false_positive_spans": [],
+      "missed_spans": []
+    },
+    {
+      "id": "natural_homonym",
+      "group": "supported",
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null,
+      "canonical_exact": true,
+      "actual_symbols": [],
+      "false_positive_spans": [],
+      "missed_spans": []
+    },
+    {
+      "id": "negation_beyond_scope",
+      "group": "supported",
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null,
+      "canonical_exact": true,
+      "actual_symbols": [],
+      "false_positive_spans": [],
+      "missed_spans": []
+    },
+    {
+      "id": "unknown_technology",
+      "group": "stress",
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0,
+      "canonical_exact": true,
+      "actual_symbols": [],
+      "false_positive_spans": [],
+      "missed_spans": [
+        [
+          8,
+          12,
+          "Rust"
+        ]
+      ]
+    },
+    {
+      "id": "reserved_spanish_sections",
+      "group": "holdout",
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "canonical_exact": true,
+      "actual_symbols": [
+        "GIT",
+        "JAVA",
+        "REACT",
+        "TYPESCRIPT"
+      ],
+      "false_positive_spans": [],
+      "missed_spans": []
+    },
+    {
+      "id": "reserved_technical_contrast",
+      "group": "holdout",
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "canonical_exact": true,
+      "actual_symbols": [
+        "PYTORCH",
+        "REACT"
+      ],
+      "false_positive_spans": [],
+      "missed_spans": []
+    },
+    {
+      "id": "reserved_variants",
+      "group": "holdout",
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "canonical_exact": true,
+      "actual_symbols": [
+        "NUMPY",
+        "PYTHON",
+        "REACT"
+      ],
+      "false_positive_spans": [],
+      "missed_spans": []
+    },
+    {
+      "id": "reserved_negative_backend",
+      "group": "holdout",
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "canonical_exact": true,
+      "actual_symbols": [
+        "GIT",
+        "TYPESCRIPT"
+      ],
+      "false_positive_spans": [],
+      "missed_spans": []
+    },
+    {
+      "id": "reserved_negative_list",
+      "group": "holdout",
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "canonical_exact": true,
+      "actual_symbols": [
+        "AIRFLOW",
+        "POSTGRESQL"
+      ],
+      "false_positive_spans": [],
+      "missed_spans": []
+    },
+    {
+      "id": "reserved_nontechnical_prose",
+      "group": "holdout",
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null,
+      "canonical_exact": true,
+      "actual_symbols": [],
+      "false_positive_spans": [],
+      "missed_spans": []
+    },
+    {
+      "id": "double_negation",
+      "group": "stress",
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0,
+      "canonical_exact": false,
+      "actual_symbols": [],
+      "false_positive_spans": [],
+      "missed_spans": [
+        [
+          33,
+          39,
+          "Python"
+        ]
+      ]
+    },
+    {
+      "id": "animal_homonym",
+      "group": "stress",
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": null,
+      "f1": 0.0,
+      "canonical_exact": false,
+      "actual_symbols": [
+        "PANDAS"
+      ],
+      "false_positive_spans": [
+        [
+          10,
+          16,
+          "pandas"
+        ]
+      ],
+      "missed_spans": []
+    }
+  ]
+}

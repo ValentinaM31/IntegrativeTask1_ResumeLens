@@ -1,0 +1,234 @@
+{
+  "description": "Synthetic cases with annotations separate from outputs; these are neither an independent corpus nor real resumes. occurrence is zero-based and distinguishes repetitions.",
+  "cases": [
+    {
+      "id": "inline_aliases",
+      "group": "supported",
+      "text": "Skills: JS, React.js, NodeJS, Postgres, Git.",
+      "mentions": [
+        {
+          "raw": "JS"
+        },
+        {
+          "raw": "React.js"
+        },
+        {
+          "raw": "NodeJS"
+        },
+        {
+          "raw": "Postgres"
+        },
+        {
+          "raw": "Git"
+        }
+      ],
+      "symbols": [
+        "GIT",
+        "JAVASCRIPT",
+        "NODE_JS",
+        "POSTGRESQL",
+        "REACT"
+      ]
+    },
+    {
+      "id": "spanish_variants",
+      "group": "supported",
+      "text": "Habilidades: Python3, Structured Query Language, extracción transformación carga.",
+      "mentions": [
+        {
+          "raw": "Python3"
+        },
+        {
+          "raw": "Structured Query Language"
+        },
+        {
+          "raw": "extracción transformación carga"
+        }
+      ],
+      "symbols": [
+        "ETL",
+        "PYTHON",
+        "SQL"
+      ]
+    },
+    {
+      "id": "repetitions",
+      "group": "supported",
+      "text": "Skills: JS, JavaScript, JS",
+      "mentions": [
+        {
+          "raw": "JS",
+          "occurrence": 0
+        },
+        {
+          "raw": "JavaScript"
+        },
+        {
+          "raw": "JS",
+          "occurrence": 1
+        }
+      ],
+      "symbols": [
+        "JAVASCRIPT"
+      ]
+    },
+    {
+      "id": "contact_boundaries",
+      "group": "supported",
+      "text": "GitHub: https://github.com/Python\nPython@example.com\nJavaScript ReactXjs",
+      "mentions": [
+        {
+          "raw": "JavaScript"
+        }
+      ],
+      "symbols": [
+        "JAVASCRIPT"
+      ]
+    },
+    {
+      "id": "negated_list",
+      "group": "supported",
+      "text": "no experience with Python, Java or Git",
+      "mentions": [],
+      "symbols": []
+    },
+    {
+      "id": "positive_after_negation",
+      "group": "supported",
+      "text": "sin experiencia en Python\nSkills: Python, Git",
+      "mentions": [
+        {
+          "raw": "Python",
+          "occurrence": 1
+        },
+        {
+          "raw": "Git"
+        }
+      ],
+      "symbols": [
+        "GIT",
+        "PYTHON"
+      ]
+    },
+    {
+      "id": "ambiguous_prose",
+      "group": "supported",
+      "text": "Skills:\nI discussed JS, but TS is a meeting code",
+      "mentions": [],
+      "symbols": []
+    },
+    {
+      "id": "plain_heading",
+      "group": "supported",
+      "text": "Technical Skills\nJS, TS\nExperience\nJS is a project code",
+      "mentions": [
+        {
+          "raw": "JS",
+          "occurrence": 0
+        },
+        {
+          "raw": "TS"
+        }
+      ],
+      "symbols": [
+        "JAVASCRIPT",
+        "TYPESCRIPT"
+      ]
+    },
+    {
+      "id": "ml_aliases",
+      "group": "supported",
+      "text": "Skills: sklearn, Tensor Flow, Num Py, Py Torch",
+      "mentions": [
+        {
+          "raw": "sklearn"
+        },
+        {
+          "raw": "Tensor Flow"
+        },
+        {
+          "raw": "Num Py"
+        },
+        {
+          "raw": "Py Torch"
+        }
+      ],
+      "symbols": [
+        "NUMPY",
+        "PYTORCH",
+        "SCIKIT_LEARN",
+        "TENSORFLOW"
+      ]
+    },
+    {
+      "id": "own_transformations",
+      "group": "supported",
+      "text": "Skills: Type Script, Git SCM, Docker Desktop, Apache Spark",
+      "mentions": [
+        {
+          "raw": "Type Script"
+        },
+        {
+          "raw": "Git SCM"
+        },
+        {
+          "raw": "Docker Desktop"
+        },
+        {
+          "raw": "Apache Spark"
+        }
+      ],
+      "symbols": [
+        "APACHE_SPARK",
+        "DOCKER",
+        "GIT",
+        "TYPESCRIPT"
+      ]
+    },
+    {
+      "id": "no_implicit_sql",
+      "group": "supported",
+      "text": "Skills: PostgreSQL",
+      "mentions": [
+        {
+          "raw": "PostgreSQL"
+        }
+      ],
+      "symbols": [
+        "POSTGRESQL"
+      ]
+    },
+    {
+      "id": "empty_qualifications",
+      "group": "supported",
+      "text": "Nombre: Ana\nExperiencia: coordinación de equipos",
+      "mentions": [],
+      "symbols": []
+    },
+    {
+      "id": "natural_homonym",
+      "group": "stress",
+      "text": "I react quickly to changes.",
+      "mentions": [],
+      "symbols": []
+    },
+    {
+      "id": "negation_beyond_scope",
+      "group": "stress",
+      "text": "I do not use Python anymore.",
+      "mentions": [],
+      "symbols": []
+    },
+    {
+      "id": "unknown_technology",
+      "group": "stress",
+      "text": "Skills: Rust",
+      "mentions": [
+        {
+          "raw": "Rust"
+        }
+      ],
+      "symbols": []
+    }
+  ]
+}

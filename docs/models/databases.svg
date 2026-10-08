@@ -1,0 +1,288 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4180" height="940" viewBox="0 0 4180 940">
+<rect width="100%" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#475569"/></marker></defs>
+<style>text{font-family:Arial,sans-serif;fill:#111827} .edge{stroke:#475569;fill:none;marker-end:url(#arrow)}</style>
+<text x="24" y="30" font-size="22">FST databases</text>
+<text x="24" y="58" font-size="14">Input / output. ε = empty word. Double circle = final. Each path consumes a complete alias.</text>
+<path class="edge" d="M8,470.0 L44,470.0"/>
+<circle cx="75" cy="470.0" r="30" fill="#dbeafe" stroke="#2563eb"/>
+<text x="75" y="474.0" text-anchor="middle" font-size="13">q0</text>
+<path class="edge" d="M105,470.0 L155,140 L182,140"/>
+<text x="170" y="98" text-anchor="middle" font-size="13">s / ε</text>
+<circle cx="220" cy="140" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="220" y="144" text-anchor="middle" font-size="10">s10_a0_1</text>
+<path class="edge" d="M258,140 L332,140"/>
+<text x="295" y="98" text-anchor="middle" font-size="13">q / ε</text>
+<circle cx="370" cy="140" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="370" y="144" text-anchor="middle" font-size="10">s10_a0_2</text>
+<path class="edge" d="M408,140 L482,140"/>
+<text x="445" y="194" text-anchor="middle" font-size="12">SQL</text>
+<text x="445" y="98" text-anchor="middle" font-size="13">l /</text>
+<circle cx="520" cy="140" r="38" fill="#f8fafc" stroke="#475569"/>
+<circle cx="520" cy="140" r="33" fill="none" stroke="#475569"/>
+<text x="520" y="144" text-anchor="middle" font-size="10">s10_a0_3</text>
+<path class="edge" d="M105,470.0 L155,250 L182,250"/>
+<text x="170" y="208" text-anchor="middle" font-size="13">s / ε</text>
+<circle cx="220" cy="250" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="220" y="254" text-anchor="middle" font-size="10">s10_a1_1</text>
+<path class="edge" d="M258,250 L332,250"/>
+<text x="295" y="208" text-anchor="middle" font-size="13">t / ε</text>
+<circle cx="370" cy="250" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="370" y="254" text-anchor="middle" font-size="10">s10_a1_2</text>
+<path class="edge" d="M408,250 L482,250"/>
+<text x="445" y="208" text-anchor="middle" font-size="13">r / ε</text>
+<circle cx="520" cy="250" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="520" y="254" text-anchor="middle" font-size="10">s10_a1_3</text>
+<path class="edge" d="M558,250 L632,250"/>
+<text x="595" y="208" text-anchor="middle" font-size="13">u / ε</text>
+<circle cx="670" cy="250" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="670" y="254" text-anchor="middle" font-size="10">s10_a1_4</text>
+<path class="edge" d="M708,250 L782,250"/>
+<text x="745" y="208" text-anchor="middle" font-size="13">c / ε</text>
+<circle cx="820" cy="250" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="820" y="254" text-anchor="middle" font-size="10">s10_a1_5</text>
+<path class="edge" d="M858,250 L932,250"/>
+<text x="895" y="208" text-anchor="middle" font-size="13">t / ε</text>
+<circle cx="970" cy="250" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="970" y="254" text-anchor="middle" font-size="10">s10_a1_6</text>
+<path class="edge" d="M1008,250 L1082,250"/>
+<text x="1045" y="208" text-anchor="middle" font-size="13">u / ε</text>
+<circle cx="1120" cy="250" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="1120" y="254" text-anchor="middle" font-size="10">s10_a1_7</text>
+<path class="edge" d="M1158,250 L1232,250"/>
+<text x="1195" y="208" text-anchor="middle" font-size="13">r / ε</text>
+<circle cx="1270" cy="250" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="1270" y="254" text-anchor="middle" font-size="10">s10_a1_8</text>
+<path class="edge" d="M1308,250 L1382,250"/>
+<text x="1345" y="208" text-anchor="middle" font-size="13">e / ε</text>
+<circle cx="1420" cy="250" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="1420" y="254" text-anchor="middle" font-size="10">s10_a1_9</text>
+<path class="edge" d="M1458,250 L1532,250"/>
+<text x="1495" y="208" text-anchor="middle" font-size="13">d / ε</text>
+<circle cx="1570" cy="250" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="1570" y="254" text-anchor="middle" font-size="10">s10_a1_10</text>
+<path class="edge" d="M1608,250 L1682,250"/>
+<text x="1645" y="208" text-anchor="middle" font-size="13">␠ / ε</text>
+<circle cx="1720" cy="250" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="1720" y="254" text-anchor="middle" font-size="10">s10_a1_11</text>
+<path class="edge" d="M1758,250 L1832,250"/>
+<text x="1795" y="208" text-anchor="middle" font-size="13">q / ε</text>
+<circle cx="1870" cy="250" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="1870" y="254" text-anchor="middle" font-size="10">s10_a1_12</text>
+<path class="edge" d="M1908,250 L1982,250"/>
+<text x="1945" y="208" text-anchor="middle" font-size="13">u / ε</text>
+<circle cx="2020" cy="250" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="2020" y="254" text-anchor="middle" font-size="10">s10_a1_13</text>
+<path class="edge" d="M2058,250 L2132,250"/>
+<text x="2095" y="208" text-anchor="middle" font-size="13">e / ε</text>
+<circle cx="2170" cy="250" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="2170" y="254" text-anchor="middle" font-size="10">s10_a1_14</text>
+<path class="edge" d="M2208,250 L2282,250"/>
+<text x="2245" y="208" text-anchor="middle" font-size="13">r / ε</text>
+<circle cx="2320" cy="250" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="2320" y="254" text-anchor="middle" font-size="10">s10_a1_15</text>
+<path class="edge" d="M2358,250 L2432,250"/>
+<text x="2395" y="208" text-anchor="middle" font-size="13">y / ε</text>
+<circle cx="2470" cy="250" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="2470" y="254" text-anchor="middle" font-size="10">s10_a1_16</text>
+<path class="edge" d="M2508,250 L2582,250"/>
+<text x="2545" y="208" text-anchor="middle" font-size="13">␠ / ε</text>
+<circle cx="2620" cy="250" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="2620" y="254" text-anchor="middle" font-size="10">s10_a1_17</text>
+<path class="edge" d="M2658,250 L2732,250"/>
+<text x="2695" y="208" text-anchor="middle" font-size="13">l / ε</text>
+<circle cx="2770" cy="250" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="2770" y="254" text-anchor="middle" font-size="10">s10_a1_18</text>
+<path class="edge" d="M2808,250 L2882,250"/>
+<text x="2845" y="208" text-anchor="middle" font-size="13">a / ε</text>
+<circle cx="2920" cy="250" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="2920" y="254" text-anchor="middle" font-size="10">s10_a1_19</text>
+<path class="edge" d="M2958,250 L3032,250"/>
+<text x="2995" y="208" text-anchor="middle" font-size="13">n / ε</text>
+<circle cx="3070" cy="250" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="3070" y="254" text-anchor="middle" font-size="10">s10_a1_20</text>
+<path class="edge" d="M3108,250 L3182,250"/>
+<text x="3145" y="208" text-anchor="middle" font-size="13">g / ε</text>
+<circle cx="3220" cy="250" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="3220" y="254" text-anchor="middle" font-size="10">s10_a1_21</text>
+<path class="edge" d="M3258,250 L3332,250"/>
+<text x="3295" y="208" text-anchor="middle" font-size="13">u / ε</text>
+<circle cx="3370" cy="250" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="3370" y="254" text-anchor="middle" font-size="10">s10_a1_22</text>
+<path class="edge" d="M3408,250 L3482,250"/>
+<text x="3445" y="208" text-anchor="middle" font-size="13">a / ε</text>
+<circle cx="3520" cy="250" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="3520" y="254" text-anchor="middle" font-size="10">s10_a1_23</text>
+<path class="edge" d="M3558,250 L3632,250"/>
+<text x="3595" y="208" text-anchor="middle" font-size="13">g / ε</text>
+<circle cx="3670" cy="250" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="3670" y="254" text-anchor="middle" font-size="10">s10_a1_24</text>
+<path class="edge" d="M3708,250 L3782,250"/>
+<text x="3745" y="304" text-anchor="middle" font-size="12">SQL</text>
+<text x="3745" y="208" text-anchor="middle" font-size="13">e /</text>
+<circle cx="3820" cy="250" r="38" fill="#f8fafc" stroke="#475569"/>
+<circle cx="3820" cy="250" r="33" fill="none" stroke="#475569"/>
+<text x="3820" y="254" text-anchor="middle" font-size="10">s10_a1_25</text>
+<path class="edge" d="M105,470.0 L155,360 L182,360"/>
+<text x="170" y="318" text-anchor="middle" font-size="13">p / ε</text>
+<circle cx="220" cy="360" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="220" y="364" text-anchor="middle" font-size="10">s11_a0_1</text>
+<path class="edge" d="M258,360 L332,360"/>
+<text x="295" y="318" text-anchor="middle" font-size="13">o / ε</text>
+<circle cx="370" cy="360" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="370" y="364" text-anchor="middle" font-size="10">s11_a0_2</text>
+<path class="edge" d="M408,360 L482,360"/>
+<text x="445" y="318" text-anchor="middle" font-size="13">s / ε</text>
+<circle cx="520" cy="360" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="520" y="364" text-anchor="middle" font-size="10">s11_a0_3</text>
+<path class="edge" d="M558,360 L632,360"/>
+<text x="595" y="318" text-anchor="middle" font-size="13">t / ε</text>
+<circle cx="670" cy="360" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="670" y="364" text-anchor="middle" font-size="10">s11_a0_4</text>
+<path class="edge" d="M708,360 L782,360"/>
+<text x="745" y="318" text-anchor="middle" font-size="13">g / ε</text>
+<circle cx="820" cy="360" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="820" y="364" text-anchor="middle" font-size="10">s11_a0_5</text>
+<path class="edge" d="M858,360 L932,360"/>
+<text x="895" y="318" text-anchor="middle" font-size="13">r / ε</text>
+<circle cx="970" cy="360" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="970" y="364" text-anchor="middle" font-size="10">s11_a0_6</text>
+<path class="edge" d="M1008,360 L1082,360"/>
+<text x="1045" y="318" text-anchor="middle" font-size="13">e / ε</text>
+<circle cx="1120" cy="360" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="1120" y="364" text-anchor="middle" font-size="10">s11_a0_7</text>
+<path class="edge" d="M1158,360 L1232,360"/>
+<text x="1195" y="318" text-anchor="middle" font-size="13">s / ε</text>
+<circle cx="1270" cy="360" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="1270" y="364" text-anchor="middle" font-size="10">s11_a0_8</text>
+<path class="edge" d="M1308,360 L1382,360"/>
+<text x="1345" y="318" text-anchor="middle" font-size="13">q / ε</text>
+<circle cx="1420" cy="360" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="1420" y="364" text-anchor="middle" font-size="10">s11_a0_9</text>
+<path class="edge" d="M1458,360 L1532,360"/>
+<text x="1495" y="414" text-anchor="middle" font-size="12">POSTGRESQL</text>
+<text x="1495" y="318" text-anchor="middle" font-size="13">l /</text>
+<circle cx="1570" cy="360" r="38" fill="#f8fafc" stroke="#475569"/>
+<circle cx="1570" cy="360" r="33" fill="none" stroke="#475569"/>
+<text x="1570" y="364" text-anchor="middle" font-size="10">s11_a0_10</text>
+<path class="edge" d="M105,470.0 L155,470 L182,470"/>
+<text x="170" y="428" text-anchor="middle" font-size="13">p / ε</text>
+<circle cx="220" cy="470" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="220" y="474" text-anchor="middle" font-size="10">s11_a1_1</text>
+<path class="edge" d="M258,470 L332,470"/>
+<text x="295" y="428" text-anchor="middle" font-size="13">o / ε</text>
+<circle cx="370" cy="470" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="370" y="474" text-anchor="middle" font-size="10">s11_a1_2</text>
+<path class="edge" d="M408,470 L482,470"/>
+<text x="445" y="428" text-anchor="middle" font-size="13">s / ε</text>
+<circle cx="520" cy="470" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="520" y="474" text-anchor="middle" font-size="10">s11_a1_3</text>
+<path class="edge" d="M558,470 L632,470"/>
+<text x="595" y="428" text-anchor="middle" font-size="13">t / ε</text>
+<circle cx="670" cy="470" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="670" y="474" text-anchor="middle" font-size="10">s11_a1_4</text>
+<path class="edge" d="M708,470 L782,470"/>
+<text x="745" y="428" text-anchor="middle" font-size="13">g / ε</text>
+<circle cx="820" cy="470" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="820" y="474" text-anchor="middle" font-size="10">s11_a1_5</text>
+<path class="edge" d="M858,470 L932,470"/>
+<text x="895" y="428" text-anchor="middle" font-size="13">r / ε</text>
+<circle cx="970" cy="470" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="970" y="474" text-anchor="middle" font-size="10">s11_a1_6</text>
+<path class="edge" d="M1008,470 L1082,470"/>
+<text x="1045" y="428" text-anchor="middle" font-size="13">e / ε</text>
+<circle cx="1120" cy="470" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="1120" y="474" text-anchor="middle" font-size="10">s11_a1_7</text>
+<path class="edge" d="M1158,470 L1232,470"/>
+<text x="1195" y="524" text-anchor="middle" font-size="12">POSTGRESQL</text>
+<text x="1195" y="428" text-anchor="middle" font-size="13">s /</text>
+<circle cx="1270" cy="470" r="38" fill="#f8fafc" stroke="#475569"/>
+<circle cx="1270" cy="470" r="33" fill="none" stroke="#475569"/>
+<text x="1270" y="474" text-anchor="middle" font-size="10">s11_a1_8</text>
+<path class="edge" d="M105,470.0 L155,580 L182,580"/>
+<text x="170" y="538" text-anchor="middle" font-size="13">m / ε</text>
+<circle cx="220" cy="580" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="220" y="584" text-anchor="middle" font-size="10">s12_a0_1</text>
+<path class="edge" d="M258,580 L332,580"/>
+<text x="295" y="538" text-anchor="middle" font-size="13">y / ε</text>
+<circle cx="370" cy="580" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="370" y="584" text-anchor="middle" font-size="10">s12_a0_2</text>
+<path class="edge" d="M408,580 L482,580"/>
+<text x="445" y="538" text-anchor="middle" font-size="13">s / ε</text>
+<circle cx="520" cy="580" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="520" y="584" text-anchor="middle" font-size="10">s12_a0_3</text>
+<path class="edge" d="M558,580 L632,580"/>
+<text x="595" y="538" text-anchor="middle" font-size="13">q / ε</text>
+<circle cx="670" cy="580" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="670" y="584" text-anchor="middle" font-size="10">s12_a0_4</text>
+<path class="edge" d="M708,580 L782,580"/>
+<text x="745" y="634" text-anchor="middle" font-size="12">MYSQL</text>
+<text x="745" y="538" text-anchor="middle" font-size="13">l /</text>
+<circle cx="820" cy="580" r="38" fill="#f8fafc" stroke="#475569"/>
+<circle cx="820" cy="580" r="33" fill="none" stroke="#475569"/>
+<text x="820" y="584" text-anchor="middle" font-size="10">s12_a0_5</text>
+<path class="edge" d="M105,470.0 L155,690 L182,690"/>
+<text x="170" y="648" text-anchor="middle" font-size="13">m / ε</text>
+<circle cx="220" cy="690" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="220" y="694" text-anchor="middle" font-size="10">s13_a0_1</text>
+<path class="edge" d="M258,690 L332,690"/>
+<text x="295" y="648" text-anchor="middle" font-size="13">o / ε</text>
+<circle cx="370" cy="690" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="370" y="694" text-anchor="middle" font-size="10">s13_a0_2</text>
+<path class="edge" d="M408,690 L482,690"/>
+<text x="445" y="648" text-anchor="middle" font-size="13">n / ε</text>
+<circle cx="520" cy="690" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="520" y="694" text-anchor="middle" font-size="10">s13_a0_3</text>
+<path class="edge" d="M558,690 L632,690"/>
+<text x="595" y="648" text-anchor="middle" font-size="13">g / ε</text>
+<circle cx="670" cy="690" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="670" y="694" text-anchor="middle" font-size="10">s13_a0_4</text>
+<path class="edge" d="M708,690 L782,690"/>
+<text x="745" y="648" text-anchor="middle" font-size="13">o / ε</text>
+<circle cx="820" cy="690" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="820" y="694" text-anchor="middle" font-size="10">s13_a0_5</text>
+<path class="edge" d="M858,690 L932,690"/>
+<text x="895" y="648" text-anchor="middle" font-size="13">d / ε</text>
+<circle cx="970" cy="690" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="970" y="694" text-anchor="middle" font-size="10">s13_a0_6</text>
+<path class="edge" d="M1008,690 L1082,690"/>
+<text x="1045" y="744" text-anchor="middle" font-size="12">MONGODB</text>
+<text x="1045" y="648" text-anchor="middle" font-size="13">b /</text>
+<circle cx="1120" cy="690" r="38" fill="#f8fafc" stroke="#475569"/>
+<circle cx="1120" cy="690" r="33" fill="none" stroke="#475569"/>
+<text x="1120" y="694" text-anchor="middle" font-size="10">s13_a0_7</text>
+<path class="edge" d="M105,470.0 L155,800 L182,800"/>
+<text x="170" y="758" text-anchor="middle" font-size="13">m / ε</text>
+<circle cx="220" cy="800" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="220" y="804" text-anchor="middle" font-size="10">s13_a1_1</text>
+<path class="edge" d="M258,800 L332,800"/>
+<text x="295" y="758" text-anchor="middle" font-size="13">o / ε</text>
+<circle cx="370" cy="800" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="370" y="804" text-anchor="middle" font-size="10">s13_a1_2</text>
+<path class="edge" d="M408,800 L482,800"/>
+<text x="445" y="758" text-anchor="middle" font-size="13">n / ε</text>
+<circle cx="520" cy="800" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="520" y="804" text-anchor="middle" font-size="10">s13_a1_3</text>
+<path class="edge" d="M558,800 L632,800"/>
+<text x="595" y="758" text-anchor="middle" font-size="13">g / ε</text>
+<circle cx="670" cy="800" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="670" y="804" text-anchor="middle" font-size="10">s13_a1_4</text>
+<path class="edge" d="M708,800 L782,800"/>
+<text x="745" y="758" text-anchor="middle" font-size="13">o / ε</text>
+<circle cx="820" cy="800" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="820" y="804" text-anchor="middle" font-size="10">s13_a1_5</text>
+<path class="edge" d="M858,800 L932,800"/>
+<text x="895" y="758" text-anchor="middle" font-size="13">␠ / ε</text>
+<circle cx="970" cy="800" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="970" y="804" text-anchor="middle" font-size="10">s13_a1_6</text>
+<path class="edge" d="M1008,800 L1082,800"/>
+<text x="1045" y="758" text-anchor="middle" font-size="13">d / ε</text>
+<circle cx="1120" cy="800" r="38" fill="#f8fafc" stroke="#475569"/>
+<text x="1120" y="804" text-anchor="middle" font-size="10">s13_a1_7</text>
+<path class="edge" d="M1158,800 L1232,800"/>
+<text x="1195" y="854" text-anchor="middle" font-size="12">MONGODB</text>
+<text x="1195" y="758" text-anchor="middle" font-size="13">b /</text>
+<circle cx="1270" cy="800" r="38" fill="#f8fafc" stroke="#475569"/>
+<circle cx="1270" cy="800" r="33" fill="none" stroke="#475569"/>
+<text x="1270" y="804" text-anchor="middle" font-size="10">s13_a1_8</text>
+</svg>
