@@ -1,0 +1,130 @@
+[
+  {
+    "id": "FULL_STACK_DEVELOPER",
+    "origin": "required_profile_team_defined_pattern",
+    "required_groups": [
+      [
+        "JAVASCRIPT",
+        "TYPESCRIPT"
+      ],
+      [
+        "REACT",
+        "ANGULAR",
+        "VUE"
+      ],
+      [
+        "NODE_JS",
+        "DJANGO",
+        "SPRING_BOOT"
+      ],
+      [
+        "SQL",
+        "POSTGRESQL",
+        "MYSQL",
+        "MONGODB"
+      ],
+      [
+        "GIT"
+      ]
+    ],
+    "optional": [
+      "REST_API",
+      "DOCKER"
+    ]
+  },
+  {
+    "id": "MACHINE_LEARNING_ENGINEER",
+    "origin": "required_profile_team_defined_pattern",
+    "required_groups": [
+      [
+        "PYTHON"
+      ],
+      [
+        "PANDAS",
+        "NUMPY"
+      ],
+      [
+        "TENSORFLOW",
+        "PYTORCH"
+      ],
+      [
+        "SQL",
+        "POSTGRESQL",
+        "MYSQL"
+      ],
+      [
+        "GIT"
+      ]
+    ],
+    "optional": [
+      "SCIKIT_LEARN",
+      "ML_MODEL",
+      "DOCKER"
+    ]
+  },
+  {
+    "id": "BACKEND_DEVELOPER",
+    "origin": "team_selected_pending_additional_teacher_requirements",
+    "required_groups": [
+      [
+        "SQL",
+        "POSTGRESQL",
+        "MYSQL",
+        "MONGODB"
+      ],
+      [
+        "REST_API"
+      ],
+      [
+        "GIT"
+      ]
+    ],
+    "required_pair_alternatives": [
+      [
+        "JAVA",
+        "SPRING_BOOT"
+      ],
+      [
+        "PYTHON",
+        "DJANGO"
+      ],
+      [
+        "JAVASCRIPT",
+        "NODE_JS"
+      ],
+      [
+        "TYPESCRIPT",
+        "NODE_JS"
+      ]
+    ],
+    "optional": [
+      "DOCKER"
+    ]
+  },
+  {
+    "id": "DATA_ENGINEER",
+    "origin": "team_selected_pending_additional_teacher_requirements",
+    "required_groups": [
+      [
+        "PYTHON"
+      ],
+      [
+        "SQL",
+        "POSTGRESQL",
+        "MYSQL"
+      ],
+      [
+        "ETL",
+        "AIRFLOW",
+        "APACHE_SPARK"
+      ],
+      [
+        "GIT"
+      ]
+    ],
+    "optional": [
+      "DOCKER",
+      "PANDAS"
+    ]
+  }
+]

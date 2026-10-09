@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1650" height="670" viewBox="0 0 1650 670">
+<rect width="100%" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#345566"/></marker></defs>
+<style>text{font-family:Arial,sans-serif;fill:#16384d}.edge{fill:none;stroke:#345566;stroke-width:1.5;marker-end:url(#arrow)}</style>
+<text x="25" y="38" font-size="25" font-weight="bold">FULL_STACK_DEVELOPER</text>
+<text x="25" y="69" font-size="16">ε-NFA · arrow = transition · double circle = final · A / R labels are defined below.</text>
+<text x="25" y="95" font-size="15">before / seen = required member not yet seen / seen in this bucket. No ε edge bypasses a requirement.</text>
+<path class="edge" d="M183,186 C145,110 255,110 217,186"/>
+<text x="200" y="127" text-anchor="middle" font-size="13">A0</text>
+<path class="edge" d="M234,210 L296,210"/>
+<text x="265.0" y="196.0" text-anchor="middle" font-size="13">A0</text>
+<path class="edge" d="M313,186 C275,110 385,110 347,186"/>
+<text x="330" y="127" text-anchor="middle" font-size="13">A0</text>
+<path class="edge" d="M364,210 L436,210"/>
+<text x="400.0" y="196.0" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M453,186 C415,110 525,110 487,186"/>
+<text x="470" y="127" text-anchor="middle" font-size="13">A1</text>
+<path class="edge" d="M504,210 L566,210"/>
+<text x="535.0" y="196.0" text-anchor="middle" font-size="13">A1</text>
+<path class="edge" d="M583,186 C545,110 655,110 617,186"/>
+<text x="600" y="127" text-anchor="middle" font-size="13">A1</text>
+<path class="edge" d="M634,210 L706,210"/>
+<text x="670.0" y="196.0" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M723,186 C685,110 795,110 757,186"/>
+<text x="740" y="127" text-anchor="middle" font-size="13">A2</text>
+<path class="edge" d="M774,210 L836,210"/>
+<text x="805.0" y="196.0" text-anchor="middle" font-size="13">A2</text>
+<path class="edge" d="M853,186 C815,110 925,110 887,186"/>
+<text x="870" y="127" text-anchor="middle" font-size="13">A2</text>
+<path class="edge" d="M904,210 L976,210"/>
+<text x="940.0" y="196.0" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M993,186 C955,110 1065,110 1027,186"/>
+<text x="1010" y="127" text-anchor="middle" font-size="13">A3</text>
+<path class="edge" d="M1044,210 L1106,210"/>
+<text x="1075.0" y="196.0" text-anchor="middle" font-size="13">A3</text>
+<path class="edge" d="M1123,186 C1085,110 1195,110 1157,186"/>
+<text x="1140" y="127" text-anchor="middle" font-size="13">A3</text>
+<path class="edge" d="M1174,210 L1246,210"/>
+<text x="1210.0" y="196.0" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M1263,186 C1225,110 1335,110 1297,186"/>
+<text x="1280" y="127" text-anchor="middle" font-size="13">A4</text>
+<path class="edge" d="M1314,210 L1376,210"/>
+<text x="1345.0" y="196.0" text-anchor="middle" font-size="13">A4</text>
+<path class="edge" d="M1393,186 C1355,110 1465,110 1427,186"/>
+<text x="1410" y="127" text-anchor="middle" font-size="13">A4</text>
+<path class="edge" d="M1444,210 L1551,245.0"/>
+<text x="1497.5" y="213.5" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M99,245.0 L166,210"/>
+<text x="132.5" y="213.5" text-anchor="middle" font-size="13">ε</text>
+<circle cx="200" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="200" y="215" text-anchor="middle" font-size="13">before</text>
+<text x="200" y="265" text-anchor="middle" font-size="12">b0_g0_before</text>
+<circle cx="330" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="330" y="215" text-anchor="middle" font-size="13">seen</text>
+<text x="330" y="265" text-anchor="middle" font-size="12">b0_g0_seen</text>
+<circle cx="470" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="470" y="215" text-anchor="middle" font-size="13">before</text>
+<text x="470" y="265" text-anchor="middle" font-size="12">b0_g1_before</text>
+<circle cx="600" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="600" y="215" text-anchor="middle" font-size="13">seen</text>
+<text x="600" y="265" text-anchor="middle" font-size="12">b0_g1_seen</text>
+<circle cx="740" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="740" y="215" text-anchor="middle" font-size="13">before</text>
+<text x="740" y="265" text-anchor="middle" font-size="12">b0_g2_before</text>
+<circle cx="870" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="870" y="215" text-anchor="middle" font-size="13">seen</text>
+<text x="870" y="265" text-anchor="middle" font-size="12">b0_g2_seen</text>
+<circle cx="1010" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="1010" y="215" text-anchor="middle" font-size="13">before</text>
+<text x="1010" y="265" text-anchor="middle" font-size="12">b0_g3_before</text>
+<circle cx="1140" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="1140" y="215" text-anchor="middle" font-size="13">seen</text>
+<text x="1140" y="265" text-anchor="middle" font-size="12">b0_g3_seen</text>
+<circle cx="1280" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="1280" y="215" text-anchor="middle" font-size="13">before</text>
+<text x="1280" y="265" text-anchor="middle" font-size="12">b0_g4_before</text>
+<circle cx="1410" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="1410" y="215" text-anchor="middle" font-size="13">seen</text>
+<text x="1410" y="265" text-anchor="middle" font-size="12">b0_g4_seen</text>
+<circle cx="65" cy="245.0" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="65" y="250.0" text-anchor="middle" font-size="13">q0</text>
+<circle cx="1585" cy="245.0" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<circle cx="1585" cy="245.0" r="28" fill="none" stroke="#16384d"/>
+<text x="1585" y="250.0" text-anchor="middle" font-size="13">qf</text>
+<path class="edge" d="M5,245.0 L30,245.0"/>
+<text x="165" y="300" font-size="15">Branch 0: Each bucket requires at least one of its symbols.</text>
+<text x="25" y="415" font-size="18" font-weight="bold">Complete bucket alphabets (all loop transitions)</text>
+<text x="25" y="452" font-size="16">A0 = {JAVASCRIPT, TYPESCRIPT}</text>
+<text x="25" y="490" font-size="16">A1 = {ANGULAR, REACT, VUE}</text>
+<text x="25" y="528" font-size="16">A2 = {DJANGO, NODE_JS, SPRING_BOOT}</text>
+<text x="25" y="566" font-size="16">A3 = {MONGODB, MYSQL, POSTGRESQL, SQL}</text>
+<text x="25" y="604" font-size="16">A4 = {GIT}</text>
+</svg>

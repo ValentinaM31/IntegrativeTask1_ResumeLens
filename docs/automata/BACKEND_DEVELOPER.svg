@@ -1,0 +1,312 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1650" height="1330" viewBox="0 0 1650 1330">
+<rect width="100%" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#345566"/></marker></defs>
+<style>text{font-family:Arial,sans-serif;fill:#16384d}.edge{fill:none;stroke:#345566;stroke-width:1.5;marker-end:url(#arrow)}</style>
+<text x="25" y="38" font-size="25" font-weight="bold">BACKEND_DEVELOPER</text>
+<text x="25" y="69" font-size="16">ε-NFA · arrow = transition · double circle = final · A / R labels are defined below.</text>
+<text x="25" y="95" font-size="15">before / seen = required member not yet seen / seen in this bucket. No ε edge bypasses a requirement.</text>
+<path class="edge" d="M183,186 C145,110 255,110 217,186"/>
+<text x="200" y="127" text-anchor="middle" font-size="13">A0</text>
+<path class="edge" d="M234,210 L296,210"/>
+<text x="265.0" y="196.0" text-anchor="middle" font-size="13">R0,0</text>
+<path class="edge" d="M313,186 C275,110 385,110 347,186"/>
+<text x="330" y="127" text-anchor="middle" font-size="13">A0</text>
+<path class="edge" d="M364,210 L436,210"/>
+<text x="400.0" y="196.0" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M453,186 C415,110 525,110 487,186"/>
+<text x="470" y="127" text-anchor="middle" font-size="13">A1</text>
+<path class="edge" d="M504,210 L566,210"/>
+<text x="535.0" y="196.0" text-anchor="middle" font-size="13">R0,1</text>
+<path class="edge" d="M583,186 C545,110 655,110 617,186"/>
+<text x="600" y="127" text-anchor="middle" font-size="13">A1</text>
+<path class="edge" d="M634,210 L706,210"/>
+<text x="670.0" y="196.0" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M723,186 C685,110 795,110 757,186"/>
+<text x="740" y="127" text-anchor="middle" font-size="13">A2</text>
+<path class="edge" d="M774,210 L836,210"/>
+<text x="805.0" y="196.0" text-anchor="middle" font-size="13">A2</text>
+<path class="edge" d="M853,186 C815,110 925,110 887,186"/>
+<text x="870" y="127" text-anchor="middle" font-size="13">A2</text>
+<path class="edge" d="M904,210 L976,210"/>
+<text x="940.0" y="196.0" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M993,186 C955,110 1065,110 1027,186"/>
+<text x="1010" y="127" text-anchor="middle" font-size="13">A3</text>
+<path class="edge" d="M1044,210 L1106,210"/>
+<text x="1075.0" y="196.0" text-anchor="middle" font-size="13">A3</text>
+<path class="edge" d="M1123,186 C1085,110 1195,110 1157,186"/>
+<text x="1140" y="127" text-anchor="middle" font-size="13">A3</text>
+<path class="edge" d="M1174,210 L1246,210"/>
+<text x="1210.0" y="196.0" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M1263,186 C1225,110 1335,110 1297,186"/>
+<text x="1280" y="127" text-anchor="middle" font-size="13">A4</text>
+<path class="edge" d="M1314,210 L1376,210"/>
+<text x="1345.0" y="196.0" text-anchor="middle" font-size="13">A4</text>
+<path class="edge" d="M1393,186 C1355,110 1465,110 1427,186"/>
+<text x="1410" y="127" text-anchor="middle" font-size="13">A4</text>
+<path class="edge" d="M1444,210 L1551,575.0"/>
+<text x="1497.5" y="378.5" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M183,406 C145,330 255,330 217,406"/>
+<text x="200" y="347" text-anchor="middle" font-size="13">A0</text>
+<path class="edge" d="M234,430 L296,430"/>
+<text x="265.0" y="416.0" text-anchor="middle" font-size="13">R1,0</text>
+<path class="edge" d="M313,406 C275,330 385,330 347,406"/>
+<text x="330" y="347" text-anchor="middle" font-size="13">A0</text>
+<path class="edge" d="M364,430 L436,430"/>
+<text x="400.0" y="416.0" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M453,406 C415,330 525,330 487,406"/>
+<text x="470" y="347" text-anchor="middle" font-size="13">A1</text>
+<path class="edge" d="M504,430 L566,430"/>
+<text x="535.0" y="416.0" text-anchor="middle" font-size="13">R1,1</text>
+<path class="edge" d="M583,406 C545,330 655,330 617,406"/>
+<text x="600" y="347" text-anchor="middle" font-size="13">A1</text>
+<path class="edge" d="M634,430 L706,430"/>
+<text x="670.0" y="416.0" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M723,406 C685,330 795,330 757,406"/>
+<text x="740" y="347" text-anchor="middle" font-size="13">A2</text>
+<path class="edge" d="M774,430 L836,430"/>
+<text x="805.0" y="416.0" text-anchor="middle" font-size="13">A2</text>
+<path class="edge" d="M853,406 C815,330 925,330 887,406"/>
+<text x="870" y="347" text-anchor="middle" font-size="13">A2</text>
+<path class="edge" d="M904,430 L976,430"/>
+<text x="940.0" y="416.0" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M993,406 C955,330 1065,330 1027,406"/>
+<text x="1010" y="347" text-anchor="middle" font-size="13">A3</text>
+<path class="edge" d="M1044,430 L1106,430"/>
+<text x="1075.0" y="416.0" text-anchor="middle" font-size="13">A3</text>
+<path class="edge" d="M1123,406 C1085,330 1195,330 1157,406"/>
+<text x="1140" y="347" text-anchor="middle" font-size="13">A3</text>
+<path class="edge" d="M1174,430 L1246,430"/>
+<text x="1210.0" y="416.0" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M1263,406 C1225,330 1335,330 1297,406"/>
+<text x="1280" y="347" text-anchor="middle" font-size="13">A4</text>
+<path class="edge" d="M1314,430 L1376,430"/>
+<text x="1345.0" y="416.0" text-anchor="middle" font-size="13">A4</text>
+<path class="edge" d="M1393,406 C1355,330 1465,330 1427,406"/>
+<text x="1410" y="347" text-anchor="middle" font-size="13">A4</text>
+<path class="edge" d="M1444,430 L1551,575.0"/>
+<text x="1497.5" y="488.5" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M183,626 C145,550 255,550 217,626"/>
+<text x="200" y="567" text-anchor="middle" font-size="13">A0</text>
+<path class="edge" d="M234,650 L296,650"/>
+<text x="265.0" y="636.0" text-anchor="middle" font-size="13">R2,0</text>
+<path class="edge" d="M313,626 C275,550 385,550 347,626"/>
+<text x="330" y="567" text-anchor="middle" font-size="13">A0</text>
+<path class="edge" d="M364,650 L436,650"/>
+<text x="400.0" y="636.0" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M453,626 C415,550 525,550 487,626"/>
+<text x="470" y="567" text-anchor="middle" font-size="13">A1</text>
+<path class="edge" d="M504,650 L566,650"/>
+<text x="535.0" y="636.0" text-anchor="middle" font-size="13">R2,1</text>
+<path class="edge" d="M583,626 C545,550 655,550 617,626"/>
+<text x="600" y="567" text-anchor="middle" font-size="13">A1</text>
+<path class="edge" d="M634,650 L706,650"/>
+<text x="670.0" y="636.0" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M723,626 C685,550 795,550 757,626"/>
+<text x="740" y="567" text-anchor="middle" font-size="13">A2</text>
+<path class="edge" d="M774,650 L836,650"/>
+<text x="805.0" y="636.0" text-anchor="middle" font-size="13">A2</text>
+<path class="edge" d="M853,626 C815,550 925,550 887,626"/>
+<text x="870" y="567" text-anchor="middle" font-size="13">A2</text>
+<path class="edge" d="M904,650 L976,650"/>
+<text x="940.0" y="636.0" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M993,626 C955,550 1065,550 1027,626"/>
+<text x="1010" y="567" text-anchor="middle" font-size="13">A3</text>
+<path class="edge" d="M1044,650 L1106,650"/>
+<text x="1075.0" y="636.0" text-anchor="middle" font-size="13">A3</text>
+<path class="edge" d="M1123,626 C1085,550 1195,550 1157,626"/>
+<text x="1140" y="567" text-anchor="middle" font-size="13">A3</text>
+<path class="edge" d="M1174,650 L1246,650"/>
+<text x="1210.0" y="636.0" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M1263,626 C1225,550 1335,550 1297,626"/>
+<text x="1280" y="567" text-anchor="middle" font-size="13">A4</text>
+<path class="edge" d="M1314,650 L1376,650"/>
+<text x="1345.0" y="636.0" text-anchor="middle" font-size="13">A4</text>
+<path class="edge" d="M1393,626 C1355,550 1465,550 1427,626"/>
+<text x="1410" y="567" text-anchor="middle" font-size="13">A4</text>
+<path class="edge" d="M1444,650 L1551,575.0"/>
+<text x="1497.5" y="598.5" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M183,846 C145,770 255,770 217,846"/>
+<text x="200" y="787" text-anchor="middle" font-size="13">A0</text>
+<path class="edge" d="M234,870 L296,870"/>
+<text x="265.0" y="856.0" text-anchor="middle" font-size="13">R3,0</text>
+<path class="edge" d="M313,846 C275,770 385,770 347,846"/>
+<text x="330" y="787" text-anchor="middle" font-size="13">A0</text>
+<path class="edge" d="M364,870 L436,870"/>
+<text x="400.0" y="856.0" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M453,846 C415,770 525,770 487,846"/>
+<text x="470" y="787" text-anchor="middle" font-size="13">A1</text>
+<path class="edge" d="M504,870 L566,870"/>
+<text x="535.0" y="856.0" text-anchor="middle" font-size="13">R3,1</text>
+<path class="edge" d="M583,846 C545,770 655,770 617,846"/>
+<text x="600" y="787" text-anchor="middle" font-size="13">A1</text>
+<path class="edge" d="M634,870 L706,870"/>
+<text x="670.0" y="856.0" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M723,846 C685,770 795,770 757,846"/>
+<text x="740" y="787" text-anchor="middle" font-size="13">A2</text>
+<path class="edge" d="M774,870 L836,870"/>
+<text x="805.0" y="856.0" text-anchor="middle" font-size="13">A2</text>
+<path class="edge" d="M853,846 C815,770 925,770 887,846"/>
+<text x="870" y="787" text-anchor="middle" font-size="13">A2</text>
+<path class="edge" d="M904,870 L976,870"/>
+<text x="940.0" y="856.0" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M993,846 C955,770 1065,770 1027,846"/>
+<text x="1010" y="787" text-anchor="middle" font-size="13">A3</text>
+<path class="edge" d="M1044,870 L1106,870"/>
+<text x="1075.0" y="856.0" text-anchor="middle" font-size="13">A3</text>
+<path class="edge" d="M1123,846 C1085,770 1195,770 1157,846"/>
+<text x="1140" y="787" text-anchor="middle" font-size="13">A3</text>
+<path class="edge" d="M1174,870 L1246,870"/>
+<text x="1210.0" y="856.0" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M1263,846 C1225,770 1335,770 1297,846"/>
+<text x="1280" y="787" text-anchor="middle" font-size="13">A4</text>
+<path class="edge" d="M1314,870 L1376,870"/>
+<text x="1345.0" y="856.0" text-anchor="middle" font-size="13">A4</text>
+<path class="edge" d="M1393,846 C1355,770 1465,770 1427,846"/>
+<text x="1410" y="787" text-anchor="middle" font-size="13">A4</text>
+<path class="edge" d="M1444,870 L1551,575.0"/>
+<text x="1497.5" y="708.5" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M99,575.0 L166,210"/>
+<text x="132.5" y="378.5" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M99,575.0 L166,430"/>
+<text x="132.5" y="488.5" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M99,575.0 L166,650"/>
+<text x="132.5" y="598.5" text-anchor="middle" font-size="13">ε</text>
+<path class="edge" d="M99,575.0 L166,870"/>
+<text x="132.5" y="708.5" text-anchor="middle" font-size="13">ε</text>
+<circle cx="200" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="200" y="215" text-anchor="middle" font-size="13">before</text>
+<text x="200" y="265" text-anchor="middle" font-size="12">b0_g0_before</text>
+<circle cx="330" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="330" y="215" text-anchor="middle" font-size="13">seen</text>
+<text x="330" y="265" text-anchor="middle" font-size="12">b0_g0_seen</text>
+<circle cx="470" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="470" y="215" text-anchor="middle" font-size="13">before</text>
+<text x="470" y="265" text-anchor="middle" font-size="12">b0_g1_before</text>
+<circle cx="600" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="600" y="215" text-anchor="middle" font-size="13">seen</text>
+<text x="600" y="265" text-anchor="middle" font-size="12">b0_g1_seen</text>
+<circle cx="740" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="740" y="215" text-anchor="middle" font-size="13">before</text>
+<text x="740" y="265" text-anchor="middle" font-size="12">b0_g2_before</text>
+<circle cx="870" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="870" y="215" text-anchor="middle" font-size="13">seen</text>
+<text x="870" y="265" text-anchor="middle" font-size="12">b0_g2_seen</text>
+<circle cx="1010" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="1010" y="215" text-anchor="middle" font-size="13">before</text>
+<text x="1010" y="265" text-anchor="middle" font-size="12">b0_g3_before</text>
+<circle cx="1140" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="1140" y="215" text-anchor="middle" font-size="13">seen</text>
+<text x="1140" y="265" text-anchor="middle" font-size="12">b0_g3_seen</text>
+<circle cx="1280" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="1280" y="215" text-anchor="middle" font-size="13">before</text>
+<text x="1280" y="265" text-anchor="middle" font-size="12">b0_g4_before</text>
+<circle cx="1410" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="1410" y="215" text-anchor="middle" font-size="13">seen</text>
+<text x="1410" y="265" text-anchor="middle" font-size="12">b0_g4_seen</text>
+<circle cx="200" cy="430" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="200" y="435" text-anchor="middle" font-size="13">before</text>
+<text x="200" y="485" text-anchor="middle" font-size="12">b1_g0_before</text>
+<circle cx="330" cy="430" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="330" y="435" text-anchor="middle" font-size="13">seen</text>
+<text x="330" y="485" text-anchor="middle" font-size="12">b1_g0_seen</text>
+<circle cx="470" cy="430" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="470" y="435" text-anchor="middle" font-size="13">before</text>
+<text x="470" y="485" text-anchor="middle" font-size="12">b1_g1_before</text>
+<circle cx="600" cy="430" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="600" y="435" text-anchor="middle" font-size="13">seen</text>
+<text x="600" y="485" text-anchor="middle" font-size="12">b1_g1_seen</text>
+<circle cx="740" cy="430" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="740" y="435" text-anchor="middle" font-size="13">before</text>
+<text x="740" y="485" text-anchor="middle" font-size="12">b1_g2_before</text>
+<circle cx="870" cy="430" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="870" y="435" text-anchor="middle" font-size="13">seen</text>
+<text x="870" y="485" text-anchor="middle" font-size="12">b1_g2_seen</text>
+<circle cx="1010" cy="430" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="1010" y="435" text-anchor="middle" font-size="13">before</text>
+<text x="1010" y="485" text-anchor="middle" font-size="12">b1_g3_before</text>
+<circle cx="1140" cy="430" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="1140" y="435" text-anchor="middle" font-size="13">seen</text>
+<text x="1140" y="485" text-anchor="middle" font-size="12">b1_g3_seen</text>
+<circle cx="1280" cy="430" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="1280" y="435" text-anchor="middle" font-size="13">before</text>
+<text x="1280" y="485" text-anchor="middle" font-size="12">b1_g4_before</text>
+<circle cx="1410" cy="430" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="1410" y="435" text-anchor="middle" font-size="13">seen</text>
+<text x="1410" y="485" text-anchor="middle" font-size="12">b1_g4_seen</text>
+<circle cx="200" cy="650" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="200" y="655" text-anchor="middle" font-size="13">before</text>
+<text x="200" y="705" text-anchor="middle" font-size="12">b2_g0_before</text>
+<circle cx="330" cy="650" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="330" y="655" text-anchor="middle" font-size="13">seen</text>
+<text x="330" y="705" text-anchor="middle" font-size="12">b2_g0_seen</text>
+<circle cx="470" cy="650" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="470" y="655" text-anchor="middle" font-size="13">before</text>
+<text x="470" y="705" text-anchor="middle" font-size="12">b2_g1_before</text>
+<circle cx="600" cy="650" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="600" y="655" text-anchor="middle" font-size="13">seen</text>
+<text x="600" y="705" text-anchor="middle" font-size="12">b2_g1_seen</text>
+<circle cx="740" cy="650" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="740" y="655" text-anchor="middle" font-size="13">before</text>
+<text x="740" y="705" text-anchor="middle" font-size="12">b2_g2_before</text>
+<circle cx="870" cy="650" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="870" y="655" text-anchor="middle" font-size="13">seen</text>
+<text x="870" y="705" text-anchor="middle" font-size="12">b2_g2_seen</text>
+<circle cx="1010" cy="650" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="1010" y="655" text-anchor="middle" font-size="13">before</text>
+<text x="1010" y="705" text-anchor="middle" font-size="12">b2_g3_before</text>
+<circle cx="1140" cy="650" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="1140" y="655" text-anchor="middle" font-size="13">seen</text>
+<text x="1140" y="705" text-anchor="middle" font-size="12">b2_g3_seen</text>
+<circle cx="1280" cy="650" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="1280" y="655" text-anchor="middle" font-size="13">before</text>
+<text x="1280" y="705" text-anchor="middle" font-size="12">b2_g4_before</text>
+<circle cx="1410" cy="650" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="1410" y="655" text-anchor="middle" font-size="13">seen</text>
+<text x="1410" y="705" text-anchor="middle" font-size="12">b2_g4_seen</text>
+<circle cx="200" cy="870" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="200" y="875" text-anchor="middle" font-size="13">before</text>
+<text x="200" y="925" text-anchor="middle" font-size="12">b3_g0_before</text>
+<circle cx="330" cy="870" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="330" y="875" text-anchor="middle" font-size="13">seen</text>
+<text x="330" y="925" text-anchor="middle" font-size="12">b3_g0_seen</text>
+<circle cx="470" cy="870" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="470" y="875" text-anchor="middle" font-size="13">before</text>
+<text x="470" y="925" text-anchor="middle" font-size="12">b3_g1_before</text>
+<circle cx="600" cy="870" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="600" y="875" text-anchor="middle" font-size="13">seen</text>
+<text x="600" y="925" text-anchor="middle" font-size="12">b3_g1_seen</text>
+<circle cx="740" cy="870" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="740" y="875" text-anchor="middle" font-size="13">before</text>
+<text x="740" y="925" text-anchor="middle" font-size="12">b3_g2_before</text>
+<circle cx="870" cy="870" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="870" y="875" text-anchor="middle" font-size="13">seen</text>
+<text x="870" y="925" text-anchor="middle" font-size="12">b3_g2_seen</text>
+<circle cx="1010" cy="870" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="1010" y="875" text-anchor="middle" font-size="13">before</text>
+<text x="1010" y="925" text-anchor="middle" font-size="12">b3_g3_before</text>
+<circle cx="1140" cy="870" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="1140" y="875" text-anchor="middle" font-size="13">seen</text>
+<text x="1140" y="925" text-anchor="middle" font-size="12">b3_g3_seen</text>
+<circle cx="1280" cy="870" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="1280" y="875" text-anchor="middle" font-size="13">before</text>
+<text x="1280" y="925" text-anchor="middle" font-size="12">b3_g4_before</text>
+<circle cx="1410" cy="870" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="1410" y="875" text-anchor="middle" font-size="13">seen</text>
+<text x="1410" y="925" text-anchor="middle" font-size="12">b3_g4_seen</text>
+<circle cx="65" cy="575.0" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<text x="65" y="580.0" text-anchor="middle" font-size="13">q0</text>
+<circle cx="1585" cy="575.0" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
+<circle cx="1585" cy="575.0" r="28" fill="none" stroke="#16384d"/>
+<text x="1585" y="580.0" text-anchor="middle" font-size="13">qf</text>
+<path class="edge" d="M5,575.0 L30,575.0"/>
+<text x="165" y="300" font-size="15">Branch 0: R0,0 = {JAVA}; R0,1 = {SPRING_BOOT} (compatible pair)</text>
+<text x="165" y="520" font-size="15">Branch 1: R1,0 = {PYTHON}; R1,1 = {DJANGO} (compatible pair)</text>
+<text x="165" y="740" font-size="15">Branch 2: R2,0 = {JAVASCRIPT}; R2,1 = {NODE_JS} (compatible pair)</text>
+<text x="165" y="960" font-size="15">Branch 3: R3,0 = {TYPESCRIPT}; R3,1 = {NODE_JS} (compatible pair)</text>
+<text x="25" y="1075" font-size="18" font-weight="bold">Complete bucket alphabets (all loop transitions)</text>
+<text x="25" y="1112" font-size="16">A0 = {JAVA, JAVASCRIPT, PYTHON, TYPESCRIPT}</text>
+<text x="25" y="1150" font-size="16">A1 = {DJANGO, NODE_JS, SPRING_BOOT}</text>
+<text x="25" y="1188" font-size="16">A2 = {MONGODB, MYSQL, POSTGRESQL, SQL}</text>
+<text x="25" y="1226" font-size="16">A3 = {REST_API}</text>
+<text x="25" y="1264" font-size="16">A4 = {GIT}</text>
+</svg>

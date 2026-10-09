@@ -1,0 +1,26 @@
+[
+  {
+    "profile": "FULL_STACK_DEVELOPER",
+    "states": 12,
+    "symbols": 13,
+    "transitions": 45
+  },
+  {
+    "profile": "MACHINE_LEARNING_ENGINEER",
+    "states": 12,
+    "symbols": 9,
+    "transitions": 33
+  },
+  {
+    "profile": "BACKEND_DEVELOPER",
+    "states": 42,
+    "symbols": 13,
+    "transitions": 160
+  },
+  {
+    "profile": "DATA_ENGINEER",
+    "states": 10,
+    "symbols": 8,
+    "transitions": 29
+  }
+]

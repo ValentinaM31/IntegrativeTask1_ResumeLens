@@ -1,17 +1,17 @@
 # ResumeLens
 
-Process UTF-8 TXT resumes using Python `re` and real finite-state transducers. Extract candidate information and normalize skill variants into JSON with verifiable evidence.
+Process UTF-8 TXT resumes using Python `re`, real finite-state transducers and four profile automata. Extract candidate information, normalize skill variants into JSON with verifiable evidence and recognize qualification patterns.
 
 ## Installation
 
-Python 3.10 or later. Verified platform: Windows with Python 3.12.14.
+Python 3.10 or later. Verified environments: the original Windows first-stage environment and the Linux Python 3.12.14 recognition-stage environment.
 
 ```powershell
 py -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -e .
 ```
 
-Dependencies: `pyformlang==1.0.11` and `jsonschema==4.26.0`. `requirements-lock.txt` records the verified Python 3.12 environment. To reproduce it, install that file and then run `pip install --no-deps -e .`. On Linux/macOS use `.venv/bin/python`; these platforms have not been verified.
+Dependencies: `pyformlang==1.0.11` and `jsonschema==4.26.0`. `requirements-lock.txt` records the original verified Python 3.12 environment. To reproduce it, install that file and then run `pip install --no-deps -e .`. On Linux/macOS use `.venv/bin/python`; macOS has not been verified.
 
 ## Usage
 
@@ -22,13 +22,15 @@ Dependencies: `pyformlang==1.0.11` and `jsonschema==4.26.0`. `requirements-lock.
 `--name` supplies a name if no explicit name line exists. `--force` permits replacing existing output. The CLI creates destination folders, preserves CRLF and accepts a UTF-8 BOM. Invalid input returns exit code 2 and an English error message.
 
 ```python
-from resumelens import process_resume
+from resumelens import process_resume, classify_skills
 
 with open("resume.txt", encoding="utf-8-sig", newline="") as stream:
     text = stream.read()
 result = process_resume(text, name=None)
 candidate = result["candidate"]
 skills = result["normalized_skills"]
+classification = classify_skills(skills)
+accepted_profiles = classification["accepted_profiles"]
 ```
 
 Offsets refer to the exact decoded input. Results include positive mentions, exclusions, unique symbols, translation links and warnings. No proficiency scores or hiring decisions are inferred.
@@ -40,15 +42,17 @@ Offsets refer to the exact decoded input. Results include positive mentions, exc
 .\.venv\Scripts\python.exe tools/validate_design.py
 .\.venv\Scripts\python.exe tools/check_acceptance.py
 .\.venv\Scripts\python.exe tools/evaluate.py
+.\.venv\Scripts\python.exe tools/export_automata.py
+.\.venv\Scripts\python.exe tools/classify_examples.py
 ```
 
-There are 39 automated tests, eight main English samples and 23 annotated synthetic cases: fifteen original, six historically reserved and two additional limit cases. Spanish input fixtures and regex alternatives retain documented bilingual support. See [test results](docs/test-results.md) and [evaluation](docs/evaluation.md).
+There are 51 automated tests (39 first-stage and 12 recognition tests), eight main English samples and 23 annotated synthetic extraction cases: fifteen original, six historically reserved and two additional limit cases. All eight samples also have executed profile classifications in `data/classification/`. Spanish input fixtures and regex alternatives retain documented bilingual support. See [test results](docs/test-results.md), [profile models](docs/profile-recognition.md) and [evaluation](docs/evaluation.md).
 
 ## Structure
 
 | Directory | Contents |
 |---|---|
-| src/resumelens | Extraction, FSTs, validation and CLI |
+| src/resumelens | Extraction, FSTs, validation, CLI and profile recognition |
 | config | Catalog of 26 symbols, 56 aliases and profile design patterns |
 | contracts | JSON schema 1.0 and input/output example |
 | tests | Behavior and integration tests |
@@ -62,6 +66,8 @@ See [design](docs/design.md), [modules](docs/module-design.md), [integration](do
 
 Candidate extraction supports documented contact, education and experience formats. Education and experience retain line records. Eight explicit negation patterns support lists, clause boundaries and contrast. JS/TS require skills context. Unsuffixed React requires documented technical context. Pandas requires skills context or explicit use for data analysis/processing. Other wording, homonyms, double negation, irony and unknown technologies may produce errors.
 
-Profile automata, classification, textX DSL, UI and HTML are not implemented. JSON Schema does not replace a textX grammar. Alphabetical skill order is not an automaton input sequence.
+Profile recognition uses four epsilon-NFAs and the documented canonical bucket order. Backend requires a compatible language/framework pair. Profiles can overlap. Classification results remain separate from JSON 1.0. See [complete five-tuples and diagrams](docs/profile-recognition.md).
+
+The textX DSL, UI and HTML remain pending for subsequent increments. JSON Schema does not replace a textX grammar. Alphabetical skill order is not an automaton input sequence.
 
 When changing the catalog or schema, synchronize packaged resources, regenerate models and run tests. `tools/export_models.py` exports complete models; `tools/build_poster.py` is the existing poster generator.

@@ -1,4 +1,4 @@
-# Extraction and normalization design
+# Extraction, normalization and recognition design
 
 ResumeLens turns resume text into candidate information and canonical symbols. Regex locates original expressions; FSTs model equivalences. Every transformation retains verifiable evidence.
 
@@ -6,7 +6,7 @@ ResumeLens turns resume text into candidate information and canonical symbols. R
 
 UTF-8 TXT → Python re extraction → pyformlang FST normalization → validation → JSON 1.0.
 
-The overall architecture also includes profile recognition with automata and a textX-validated representation DSL. Only extraction and normalization are implemented; their JSON supplies later recognition and representation.
+The first-stage JSON now supplies executable profile recognition through a separate `classify_skills()` API. Four epsilon-NFAs consume profile-specific canonical sequences. A textX-validated representation DSL, HTML and UI remain subsequent stages.
 
 ## Technical decisions
 
@@ -19,7 +19,8 @@ The overall architecture also includes profile recognition with automata and a t
 | Normalization | One FST per category | Common implementation with separate formal vocabularies |
 | Preparation | casefold of a copy | Ignores capitalization without changing evidence |
 | Output | Schema-validated JSON 1.0 | Structured, reproducible exchange |
-| Ordering | Unique alphabetical symbols | Stable comparison; profile ordering is prepared later |
+| Ordering | Unique alphabetical symbols in JSON; separate canonical buckets per profile | Stable first-stage exchange and order-independent recognition |
+| Recognition | Common epsilon-NFA constructor | Explicit required groups and compatible-pair branches |
 
 Four categories cover languages, frameworks/libraries, databases and tools/qualifications. Longer aliases precede shorter ones. Normalization consumes the complete variant and emits one symbol. PostgreSQL does not imply SQL; PySpark does not imply Apache Spark.
 
@@ -29,7 +30,7 @@ Documentation, code comments, CLI messages and main examples are English. Spanis
 
 `config/profiles_design.json` describes Full Stack Developer, Machine Learning Engineer, Backend Developer and Data Engineer. Every required group must be satisfied, with alternatives inside groups. Backend additionally requires a compatible language/framework pair. Extra skills must not cause rejection.
 
-These configurable patterns are design criteria, not hiring decisions. Assignment examples motivate documented minimums. Additional profile requirements must be checked against their specifications before implementing recognition.
+These configurable patterns are design criteria, not hiring decisions. Assignment examples motivate documented minimums. Additional teacher requirements are still absent; the implementation follows the team's existing explicit rules. Complete formal definitions and preparation rules are in [profile-recognition.md](profile-recognition.md).
 
 ## Limits
 

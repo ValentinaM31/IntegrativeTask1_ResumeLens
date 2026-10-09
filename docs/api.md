@@ -20,6 +20,15 @@ Retain the exact text to highlight evidence: `text[start:end] == raw`. JSON incl
 
 Alphabetical `normalized_skills` order is not automaton reading order. Recognition must prepare sequences for each profile and execute its model. Schema 1.0 forbids extra properties; profile results belong in a separate later model.
 
+## Recognition API
+
+`from resumelens import classify_skills` exposes stage 3. Pass `result["normalized_skills"]`;
+the returned dictionary has `accepted_profiles` and four `profiles` results, including
+the actual input sequence and rejection explanations. It uses real epsilon-NFA
+acceptance and leaves `result` unchanged. Several profiles may be accepted. An empty
+collection rejects all profiles; unknown/non-string symbols or invalid collections
+raise ValueError. See [recognition definitions and examples](profile-recognition.md).
+
 `ValueError` reports empty input or semantic inconsistency. File/encoding errors are reported by the CLI. Unknown terms are recorded only when passed to the normalizer; extraction does not discover arbitrary technologies. Program diagnostics are in English.
 
 ## Contract changes

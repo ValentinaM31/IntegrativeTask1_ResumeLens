@@ -1,0 +1,115 @@
+{
+  "accepted_profiles": [
+    "BACKEND_DEVELOPER"
+  ],
+  "profiles": [
+    {
+      "profile": "FULL_STACK_DEVELOPER",
+      "accepted": false,
+      "sequence": [
+        "SPRING_BOOT",
+        "MYSQL",
+        "GIT"
+      ],
+      "missing_groups": [
+        [
+          "JAVASCRIPT",
+          "TYPESCRIPT"
+        ],
+        [
+          "REACT",
+          "ANGULAR",
+          "VUE"
+        ]
+      ],
+      "compatible_pair_missing": false,
+      "optional_present": [
+        "DOCKER",
+        "REST_API"
+      ],
+      "ignored_for_pattern": [
+        "DOCKER",
+        "JAVA",
+        "REST_API"
+      ]
+    },
+    {
+      "profile": "MACHINE_LEARNING_ENGINEER",
+      "accepted": false,
+      "sequence": [
+        "MYSQL",
+        "GIT"
+      ],
+      "missing_groups": [
+        [
+          "PYTHON"
+        ],
+        [
+          "PANDAS",
+          "NUMPY"
+        ],
+        [
+          "TENSORFLOW",
+          "PYTORCH"
+        ]
+      ],
+      "compatible_pair_missing": false,
+      "optional_present": [
+        "DOCKER"
+      ],
+      "ignored_for_pattern": [
+        "DOCKER",
+        "JAVA",
+        "REST_API",
+        "SPRING_BOOT"
+      ]
+    },
+    {
+      "profile": "BACKEND_DEVELOPER",
+      "accepted": true,
+      "sequence": [
+        "JAVA",
+        "SPRING_BOOT",
+        "MYSQL",
+        "REST_API",
+        "GIT"
+      ],
+      "missing_groups": [],
+      "compatible_pair_missing": false,
+      "optional_present": [
+        "DOCKER"
+      ],
+      "ignored_for_pattern": [
+        "DOCKER"
+      ]
+    },
+    {
+      "profile": "DATA_ENGINEER",
+      "accepted": false,
+      "sequence": [
+        "MYSQL",
+        "GIT"
+      ],
+      "missing_groups": [
+        [
+          "PYTHON"
+        ],
+        [
+          "ETL",
+          "AIRFLOW",
+          "APACHE_SPARK"
+        ]
+      ],
+      "compatible_pair_missing": false,
+      "optional_present": [
+        "DOCKER"
+      ],
+      "ignored_for_pattern": [
+        "DOCKER",
+        "JAVA",
+        "REST_API",
+        "SPRING_BOOT"
+      ]
+    }
+  ]
+}

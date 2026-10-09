@@ -60,7 +60,7 @@ Unknown inputs are recorded only if received by the normalizer. The extractor ma
 
 ## Later consumption
 
-`profiles_design.json` specifies four design patterns without executing classification. Recognition must order input per profile and execute automata. Alphabetical JSON order is not that sequence. Classification results belong in a later model before generating/validating the DSL; HTML must consume the validated model.
+`profiles_design.json` now supplies four executable epsilon-NFA patterns. Call `classify_skills(result["normalized_skills"])` from the public package to prepare profile-specific input and execute recognition. Alphabetical JSON order is not that sequence. The returned classification is separate from JSON 1.0. A later component must generate and validate the DSL before producing HTML. See [stage 3](profile-recognition.md).
 
 Do not add properties to version 1.0, whose schema forbids them. Keep later results separate or agree on a new contract version. Public modules are extraction.py, normalization.py, first_stage.py and cli.py.
 

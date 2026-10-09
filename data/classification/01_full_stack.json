@@ -1,0 +1,95 @@
+{
+  "accepted_profiles": [
+    "FULL_STACK_DEVELOPER"
+  ],
+  "profiles": [
+    {
+      "profile": "FULL_STACK_DEVELOPER",
+      "accepted": true,
+      "sequence": [
+        "JAVASCRIPT",
+        "REACT",
+        "NODE_JS",
+        "POSTGRESQL",
+        "GIT"
+      ],
+      "missing_groups": [],
+      "compatible_pair_missing": false,
+      "optional_present": [],
+      "ignored_for_pattern": []
+    },
+    {
+      "profile": "MACHINE_LEARNING_ENGINEER",
+      "accepted": false,
+      "sequence": [
+        "POSTGRESQL",
+        "GIT"
+      ],
+      "missing_groups": [
+        [
+          "PYTHON"
+        ],
+        [
+          "PANDAS",
+          "NUMPY"
+        ],
+        [
+          "TENSORFLOW",
+          "PYTORCH"
+        ]
+      ],
+      "compatible_pair_missing": false,
+      "optional_present": [],
+      "ignored_for_pattern": [
+        "JAVASCRIPT",
+        "NODE_JS",
+        "REACT"
+      ]
+    },
+    {
+      "profile": "BACKEND_DEVELOPER",
+      "accepted": false,
+      "sequence": [
+        "JAVASCRIPT",
+        "NODE_JS",
+        "POSTGRESQL",
+        "GIT"
+      ],
+      "missing_groups": [
+        [
+          "REST_API"
+        ]
+      ],
+      "compatible_pair_missing": false,
+      "optional_present": [],
+      "ignored_for_pattern": [
+        "REACT"
+      ]
+    },
+    {
+      "profile": "DATA_ENGINEER",
+      "accepted": false,
+      "sequence": [
+        "POSTGRESQL",
+        "GIT"
+      ],
+      "missing_groups": [
+        [
+          "PYTHON"
+        ],
+        [
+          "ETL",
+          "AIRFLOW",
+          "APACHE_SPARK"
+        ]
+      ],
+      "compatible_pair_missing": false,
+      "optional_present": [],
+      "ignored_for_pattern": [
+        "JAVASCRIPT",
+        "NODE_JS",
+        "REACT"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "accepted_profiles": [
+    "MACHINE_LEARNING_ENGINEER"
+  ],
+  "profiles": [
+    {
+      "profile": "FULL_STACK_DEVELOPER",
+      "accepted": false,
+      "sequence": [
+        "SQL",
+        "GIT"
+      ],
+      "missing_groups": [
+        [
+          "JAVASCRIPT",
+          "TYPESCRIPT"
+        ],
+        [
+          "REACT",
+          "ANGULAR",
+          "VUE"
+        ],
+        [
+          "NODE_JS",
+          "DJANGO",
+          "SPRING_BOOT"
+        ]
+      ],
+      "compatible_pair_missing": false,
+      "optional_present": [],
+      "ignored_for_pattern": [
+        "ML_MODEL",
+        "PANDAS",
+        "PYTHON",
+        "TENSORFLOW"
+      ]
+    },
+    {
+      "profile": "MACHINE_LEARNING_ENGINEER",
+      "accepted": true,
+      "sequence": [
+        "PYTHON",
+        "PANDAS",
+        "TENSORFLOW",
+        "SQL",
+        "GIT"
+      ],
+      "missing_groups": [],
+      "compatible_pair_missing": false,
+      "optional_present": [
+        "ML_MODEL"
+      ],
+      "ignored_for_pattern": [
+        "ML_MODEL"
+      ]
+    },
+    {
+      "profile": "BACKEND_DEVELOPER",
+      "accepted": false,
+      "sequence": [
+        "PYTHON",
+        "SQL",
+        "GIT"
+      ],
+      "missing_groups": [
+        [
+          "REST_API"
+        ]
+      ],
+      "compatible_pair_missing": true,
+      "optional_present": [],
+      "ignored_for_pattern": [
+        "ML_MODEL",
+        "PANDAS",
+        "TENSORFLOW"
+      ]
+    },
+    {
+      "profile": "DATA_ENGINEER",
+      "accepted": false,
+      "sequence": [
+        "PYTHON",
+        "SQL",
+        "GIT"
+      ],
+      "missing_groups": [
+        [
+          "ETL",
+          "AIRFLOW",
+          "APACHE_SPARK"
+        ]
+      ],
+      "compatible_pair_missing": false,
+      "optional_present": [
+        "PANDAS"
+      ],
+      "ignored_for_pattern": [
+        "ML_MODEL",
+        "PANDAS",
+        "TENSORFLOW"
+      ]
+    }
+  ]
+}

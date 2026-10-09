@@ -12,7 +12,7 @@ flowchart LR
     F --> P
     P --> V[Schema and semantic validation]
     V --> J[JSON 1.0 or dictionary]
-    J --> A[Profile automata: pending]
+    J --> A[classification.py and four epsilon-NFAs]
     A --> D[textX DSL: pending]
     D --> H[HTML and UI: pending]
 ```
@@ -30,6 +30,11 @@ flowchart LR
 | first_stage.process_resume | Text, optional name | Complete 1.0 object | Public entry point |
 | first_stage.validate_result | 1.0 object and exact text | None or exception | Schema, spans, indices and actual translations |
 | cli.main | CLI arguments | Exit 0/2, JSON or diagnostic | Preserves CRLF; prevents overwrite by default |
+| classification.load_profiles / validate_profile | Packaged configuration / profile dictionary | Four profiles / None or ValueError | Known symbols, nonempty requirements and disjoint buckets |
+| classification.profile_branches | Profile dictionary | Allowed and required sets per branch/bucket | Common structure for all four patterns |
+| classification.build_profile_automaton | Profile dictionary | pyformlang EpsilonNFA | Loops, required transitions and epsilon composition |
+| classification.canonical_sequence | Canonical skills and profile | Ordered relevant symbols | Retains all compatible-pair candidates |
+| classification.classify_skills | Canonical-symbol collection | accepted_profiles and four detailed results | Executes accepts(); separate from JSON 1.0 |
 
 ## Types and evidence
 
@@ -55,4 +60,4 @@ Eight negation patterns cover the immediate alias or a list separated by comma, 
 
 Empty input is rejected. The CLI reports invalid files, encoding and input/output identity in English. Default FSTs are built once and privately cached; results are fresh on every call. There is no persistent candidate state or UI dependency.
 
-JSON is a data boundary, not proof of profile acceptance. Later recognition adds its results to another model before grammar-validated visualization.
+JSON is a data boundary, not proof of profile acceptance. Recognition now returns its results in a separate object; grammar-validated visualization remains a subsequent increment. Packaged profile configuration matches `config/profiles_design.json`, checked by tests. Private cached machines are reused; callers receive fresh result data.

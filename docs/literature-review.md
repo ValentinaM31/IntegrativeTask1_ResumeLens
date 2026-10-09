@@ -18,6 +18,7 @@ This review connects resume context, regular expressions and transduction models
 | Mohri 1997 | States, alphabets and transduction relations | Formal variants/output model |
 | pyformlang FST API | Initial/final states, transitions and translate | Real normalization execution |
 | JSON Schema 2020-12 | Structure, types and constraints | Exchange contract |
+| pyformlang finite-automaton API | Epsilon-NFA transitions and accepts() | Execute shared qualification-pattern recognizers |
 
 Regex and FSTs provide explicit definitions and verifiable paths. Section context reduces errors in supported formats, while stress cases expose semantic limits. This is a ResumeLens design/evaluation conclusion, not evidence of superiority over learned models.
 
@@ -28,3 +29,4 @@ Regex and FSTs provide explicit definitions and verifiable paths. Section contex
 - Mohri, M. (1997). *Finite-State Transducers in Language and Speech Processing*. Computational Linguistics 23(2), 269–311. [ACL](https://aclanthology.org/J97-2003/).
 - [pyformlang FST](https://pyformlang.readthedocs.io/en/latest/modules/fst.html).
 - [JSON Schema 2020-12](https://json-schema.org/draft/2020-12/json-schema-core).
+- [pyformlang finite automata](https://pyformlang.readthedocs.io/en/latest/modules/finite_automaton.html). Consulted for the recognition increment before finalizing the implementation. Epsilon-NFA composition makes alternatives explicit; its language differs from the character-level alias transducers.
