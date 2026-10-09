@@ -1,5 +1,54 @@
 # Verification results
 
+## Complete-workflow increment — 2026-10-09
+
+Verified on Linux, Python 3.12.14, using the existing pinned pyformlang 1.0.11,
+jsonschema 4.26.0 and textX 4.4.0 dependencies. Package version is 1.3.0;
+first-stage schema version and composed-result pipeline version remain 1.0.
+
+| Check | Result |
+|---|---|
+| Full unittest suite in the editable environment | 89 tests passed: previous 67 plus 22 workflow/rendering/CLI tests |
+| Full unittest suite in a second fresh environment with pinned dependencies and installed wheel | 89 tests passed |
+| `python tools/generate_workflow_examples.py` | Eight complete bundles generated after DSL validation |
+| `python tools/check_workflow_acceptance.py` | Real CLI and API agree in all four files for all eight samples; CLI runs from outside the repository |
+| `python -m pip check` | No dependency conflicts in editable and pinned wheel environments |
+| Installed wheel executed with isolated Python outside the repository | Version 1.3.0, grammar resource, four-stage API, bundle saving and console entry point verified |
+| New workflow tests with cp1252 simulated as the default Path text-read encoding | All 22 passed; new fixture reads explicitly specify UTF-8 |
+| Rendered HTML inspection | Full Stack, incomplete and multiple-profile examples rendered with WeasyPrint 70.0; incomplete and multiple-record layouts visually inspected |
+
+The reports retain repeated contacts, education/experience records and multiple
+accepted profiles. Candidate-derived text is escaped; syntax and semantic failures
+prevent HTML generation. Saving checks consistency and all target paths before
+writing. Tests cover overwrite rejection, force behavior, preservation of unrelated
+files, input hard-link protection, BOM/CRLF, Unicode and malformed inputs.
+
+Visual inspection used a separate QA renderer, not a browser engine. No new runtime
+dependency is added. Real Windows execution, mobile browser layout and browser-engine
+compatibility remain to be verified. A Windows run and its newline correction are
+documented below. Output writes are not a filesystem transaction;
+a mid-write operating-system failure can leave a partial bundle. The interactive
+input UI, final project-wide documentation/presentation and Git-history requirements
+remain outside this increment. Earlier verification is retained below.
+
+### Windows newline correction before publishing this increment
+
+The user ran all 89 tests on Windows. One fixture-comparison test failed in its
+eight sample subcases; the symlink-permission test was skipped. The first-stage
+JSON fixtures contain offsets for LF input, while the checkout samples contained
+CRLF. Every preceding newline therefore shifted subsequent evidence positions.
+Converting all eight samples to CRLF in an isolated Linux checkout reproduced
+the same eight failures. Production processing correctly preserved those offsets.
+
+Only the synthetic-fixture generator and comparison test now read samples with
+universal-newline normalization to their documented LF input. The test additionally
+processes CRLF variants, validates evidence against the exact input, checks the
+expected offset shifts and compares classification, DSL and HTML with LF results.
+The production API/CLI and raw-input acceptance check keep their original behavior.
+The corrected 89-test suite and eight-sample acceptance check pass on Linux with
+both LF and CRLF sample checkouts; regeneration produces the same stored bundles.
+The user must rerun the corrected suite to verify their Windows installation.
+
 ## Candidate-language increment — 2026-10-09 UTC
 
 Verified on Linux with Python 3.12.14, pyformlang 1.0.11, jsonschema 4.26.0,
@@ -112,4 +161,4 @@ The previous revision had 35 tests; three Pandas regressions raised the total to
 
 Fifteen admitted cases yield TP=25/FP=0/FN=0; six historical reserved cases yield TP=14/FP=0/FN=0. Two stress cases yield TP=0/FP=0/FN=2, with undefined precision. Reserved cases now serve as regression after extractor changes. Prior results and reclassification reasons are retained; see `evaluation.md`.
 
-Complete FST exports were regenerated from the executable machines and their components checked by tests. Their visual layout and the existing partial poster were reviewed in an earlier revision. The poster has not been regenerated and retains earlier metrics, identified in its README. This historical first-stage verification did not cover profile automata. Current recognition and DSL results are recorded above; UI and HTML remain pending.
+Complete FST exports were regenerated from the executable machines and their components checked by tests. Their visual layout and the existing partial poster were reviewed in an earlier revision. The poster has not been regenerated and retains earlier metrics, identified in its README. This historical first-stage verification did not cover profile automata. Current recognition, DSL and workflow results are recorded above; the interactive input UI remains pending.

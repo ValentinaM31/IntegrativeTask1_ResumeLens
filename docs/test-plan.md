@@ -35,4 +35,12 @@
 | DSL integration | Eight existing resumes, repeated records and three profiles | Generated DSL parses to expected candidate data |
 | Packaging | Grammar resource available outside the repository | Installed wheel builds its textX metamodel independently of cwd |
 
+| Workflow | Eight sample inputs through all stages | First-stage/classification/DSL unchanged; stored bundles match actual execution |
+| Rendering | Names, records, contacts, empty data and multiple profiles | Complete standalone report with escaped candidate text |
+| Rendering gate | Invalid syntax or inconsistent accepted profiles | No HTML result |
+| Saving | Modified result, existing targets, target directories and symlinks | Errors before writes for deterministic validation/path conflicts |
+| Saving | Force overwrite and unrelated destination files | Replace only the four named bundle files |
+| Workflow CLI | BOM/CRLF, Unicode, fallback name, invalid files, input aliases | Consistent evidence; code 0/2; no input overwrite |
+| Execution | Installed module from a different cwd | Complete output bundle without cwd-dependent resources |
+
 Automated tests are in `tests/`. Annotated evaluation separates admitted cases and stress limits; see `test-results.md` and `evaluation.md`.

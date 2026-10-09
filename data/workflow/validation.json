@@ -1,0 +1,67 @@
+{
+  "status": "executed_complete_workflow",
+  "cases": [
+    {
+      "source": "data/samples/01_full_stack.txt",
+      "bundle": "data/workflow/01_full_stack",
+      "accepted_profiles": [
+        "FULL_STACK_DEVELOPER"
+      ],
+      "dsl_validated": true
+    },
+    {
+      "source": "data/samples/02_machine_learning.txt",
+      "bundle": "data/workflow/02_machine_learning",
+      "accepted_profiles": [
+        "MACHINE_LEARNING_ENGINEER"
+      ],
+      "dsl_validated": true
+    },
+    {
+      "source": "data/samples/03_backend.txt",
+      "bundle": "data/workflow/03_backend",
+      "accepted_profiles": [
+        "BACKEND_DEVELOPER"
+      ],
+      "dsl_validated": true
+    },
+    {
+      "source": "data/samples/04_data_engineer.txt",
+      "bundle": "data/workflow/04_data_engineer",
+      "accepted_profiles": [
+        "DATA_ENGINEER"
+      ],
+      "dsl_validated": true
+    },
+    {
+      "source": "data/samples/05_aliases_duplicates.txt",
+      "bundle": "data/workflow/05_aliases_duplicates",
+      "accepted_profiles": [
+        "FULL_STACK_DEVELOPER"
+      ],
+      "dsl_validated": true
+    },
+    {
+      "source": "data/samples/06_incomplete.txt",
+      "bundle": "data/workflow/06_incomplete",
+      "accepted_profiles": [],
+      "dsl_validated": true
+    },
+    {
+      "source": "data/samples/07_boundaries_negation.txt",
+      "bundle": "data/workflow/07_boundaries_negation",
+      "accepted_profiles": [],
+      "dsl_validated": true
+    },
+    {
+      "source": "data/samples/08_multiple_records.txt",
+      "bundle": "data/workflow/08_multiple_records",
+      "accepted_profiles": [
+        "BACKEND_DEVELOPER",
+        "DATA_ENGINEER",
+        "MACHINE_LEARNING_ENGINEER"
+      ],
+      "dsl_validated": true
+    }
+  ]
+}

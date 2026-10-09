@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "candidate": {
+    "name": "Ana Example",
+    "emails": [
+      {
+        "raw": "ana@example.com",
+        "start": 25,
+        "end": 40
+      }
+    ],
+    "phones": [],
+    "links": [],
+    "education": [],
+    "experience": []
+  },
+  "extracted_skills": [
+    {
+      "raw": "Python",
+      "start": 49,
+      "end": 55
+    },
+    {
+      "raw": "Git",
+      "start": 57,
+      "end": 60
+    }
+  ],
+  "excluded_mentions": [],
+  "warnings": [],
+  "normalized_skills": [
+    "GIT",
+    "PYTHON"
+  ],
+  "normalization_evidence": [
+    {
+      "extracted_index": 0,
+      "canonical": "PYTHON"
+    },
+    {
+      "extracted_index": 1,
+      "canonical": "GIT"
+    }
+  ],
+  "unknown_skills": []
+}

@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0",
+  "candidate": {
+    "name": "Sam Example",
+    "emails": [],
+    "phones": [],
+    "links": [
+      {
+        "raw": "https://github.com/example-user",
+        "start": 26,
+        "end": 57
+      }
+    ],
+    "education": [],
+    "experience": [
+      {
+        "raw": "no experience with Python",
+        "start": 70,
+        "end": 95
+      },
+      {
+        "raw": "no experience with TensorFlow",
+        "start": 108,
+        "end": 137
+      }
+    ]
+  },
+  "extracted_skills": [
+    {
+      "raw": "JavaScript",
+      "start": 146,
+      "end": 156
+    },
+    {
+      "raw": "Git",
+      "start": 158,
+      "end": 161
+    },
+    {
+      "raw": "React.js",
+      "start": 163,
+      "end": 171
+    }
+  ],
+  "excluded_mentions": [
+    {
+      "raw": "Python",
+      "start": 89,
+      "end": 95,
+      "reason": "Explicit simple negation"
+    },
+    {
+      "raw": "TensorFlow",
+      "start": 127,
+      "end": 137,
+      "reason": "Explicit simple negation"
+    },
+    {
+      "raw": "TS",
+      "start": 190,
+      "end": 192,
+      "reason": "Ambiguous alias outside a skills section"
+    },
+    {
+      "raw": "JS",
+      "start": 201,
+      "end": 203,
+      "reason": "Ambiguous alias outside a skills section"
+    }
+  ],
+  "warnings": [],
+  "normalized_skills": [
+    "GIT",
+    "JAVASCRIPT",
+    "REACT"
+  ],
+  "normalization_evidence": [
+    {
+      "extracted_index": 0,
+      "canonical": "JAVASCRIPT"
+    },
+    {
+      "extracted_index": 1,
+      "canonical": "GIT"
+    },
+    {
+      "extracted_index": 2,
+      "canonical": "REACT"
+    }
+  ],
+  "unknown_skills": []
+}

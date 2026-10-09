@@ -6,7 +6,7 @@ ResumeLens turns resume text into candidate information and canonical symbols. R
 
 UTF-8 TXT → Python re extraction → pyformlang FST normalization → validation → JSON 1.0.
 
-The first-stage JSON now supplies executable profile recognition through a separate `classify_skills()` API. Four epsilon-NFAs consume profile-specific canonical sequences. The separate candidate DSL is now generated and validated with textX. HTML and UI remain subsequent stages.
+The first-stage JSON now supplies executable profile recognition through a separate `classify_skills()` API. Four epsilon-NFAs consume profile-specific canonical sequences. The separate candidate DSL is now generated and validated with textX. The complete workflow now renders standalone HTML from that validated language. The interactive UI remains a subsequent stage.
 
 ## Technical decisions
 
@@ -23,6 +23,8 @@ The first-stage JSON now supplies executable profile recognition through a separ
 | Recognition | Common epsilon-NFA constructor | Explicit required groups and compatible-pair branches |
 | Representation | Packaged textX grammar and JSON-style strings | Explicit syntax, escaping and repeatable records |
 | DSL validation | Parse and recheck accepted profiles | Reject syntax errors, duplicates and inconsistent declarations |
+| HTML | Render parsed DSL with escaped values | Candidate reports without remote assets or scripts |
+| Complete workflow | Separate API/CLI and four-file bundle | Preserve the original JSON API and command |
 
 Four categories cover languages, frameworks/libraries, databases and tools/qualifications. Longer aliases precede shorter ones. Normalization consumes the complete variant and emits one symbol. PostgreSQL does not imply SQL; PySpark does not imply Apache Spark.
 

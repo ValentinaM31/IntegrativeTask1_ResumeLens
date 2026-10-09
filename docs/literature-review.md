@@ -33,3 +33,5 @@ Regex and FSTs provide explicit definitions and verifiable paths. Section contex
 - [pyformlang finite automata](https://pyformlang.readthedocs.io/en/latest/modules/finite_automaton.html). Consulted for the recognition increment before finalizing the implementation. Epsilon-NFA composition makes alternatives explicit; its language differs from the character-level alias transducers.
 
 - textX [grammar](https://textx.github.io/textX/grammar.html), [metamodel](https://textx.github.io/textX/metamodel.html) and [parser configuration](https://textx.github.io/textX/parser_config.html). Consulted before finalizing the DSL increment. textX checks candidate-language syntax; separate semantic checks execute recognition to verify accepted-profile declarations. JSON Schema remains the original exchange-contract validator.
+
+- Python [html.escape](https://docs.python.org/3/library/html.html), [pathlib](https://docs.python.org/3/library/pathlib.html) and [open](https://docs.python.org/3/library/functions.html#open). Consulted for escaped HTML text, explicit UTF-8 output and exclusive file creation in the complete-workflow increment.

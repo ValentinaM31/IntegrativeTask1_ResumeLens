@@ -1,8 +1,8 @@
 # Candidate profile language
 
-This increment defines the candidate DSL, generates it from stages 1–3 and validates
-it with textX 4.4.0. It does not generate HTML or introduce an interactive UI; those
-belong to later increments. The original first-stage JSON 1.0 remains unchanged.
+The candidate-language increment defined the DSL, generated it from stages 1–3
+and validated it with textX 4.4.0. HTML is implemented in the following
+[complete-workflow increment](complete-workflow.md); the interactive input UI remains pending. The original first-stage JSON 1.0 remains unchanged.
 
 ## Representation
 
@@ -138,8 +138,9 @@ candidate = parse_candidate_dsl(source)
 assert candidate["accepted_profiles"] == ["FULL_STACK_DEVELOPER"]
 ```
 
-Future HTML must consume data from a successfully validated specification. That
-renderer and the single end-to-end CLI are deliberately not introduced here.
+The following [complete-workflow increment](complete-workflow.md) implements HTML
+from successfully validated specifications and adds a separate end-to-end CLI.
+Those components were not introduced in the candidate-language increment itself.
 
 ## Examples and checks
 
@@ -156,7 +157,7 @@ checks. These are synthetic/regression examples, not a blind accuracy benchmark.
 Sixteen new tests verify records and contacts, empty sections, null/string names,
 Unicode and escaping, all 26 skill symbols, errors, duplicates, inconsistent
 classification, three simultaneous profiles, resource packaging, input immutability
-and every preserved valid/invalid example. The full suite now has 67 tests.
+and every preserved valid/invalid example. That increment brought the suite to 67 tests; the complete workflow adds 22, for 89 total.
 
 ## Sources consulted
 

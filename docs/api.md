@@ -39,7 +39,16 @@ string from the unchanged JSON 1.0 and separate recognition result. The public
 profile coherence, and returns a dictionary with name, contacts, education,
 experience, skills and accepted_profiles. It supports repeated records and escaping;
 syntax errors are textX exceptions and additional semantic failures are ValueError.
-See [full grammar and examples](candidate-language.md). No HTML or UI is produced here.
+See [full grammar and examples](candidate-language.md). These DSL functions do not render HTML; use the separate complete workflow below.
+
+## Complete workflow and rendering API
+
+`process_complete_resume(text, name=None)` returns pipeline version 1.0, the unchanged
+first-stage object, recognition results, generated DSL, parsed candidate and HTML.
+`render_candidate_html(dsl_source)` always parses before rendering. `save_bundle(result,
+destination, force=False)` verifies consistency before writing four UTF-8 files; it
+rejects existing outputs by default. See [complete workflow](complete-workflow.md)
+for fields, errors and practical limits. The original TXT-to-JSON CLI is unchanged.
 
 ## Contract changes
 

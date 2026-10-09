@@ -60,9 +60,9 @@ Unknown inputs are recorded only if received by the normalizer. The extractor ma
 
 ## Later consumption
 
-`profiles_design.json` now supplies four executable epsilon-NFA patterns. Call `classify_skills(result["normalized_skills"])` from the public package to prepare profile-specific input and execute recognition. Alphabetical JSON order is not that sequence. The returned classification is separate from JSON 1.0. Call `generate_candidate_dsl(result, classification)` and then `parse_candidate_dsl(source)` to generate and validate the candidate DSL. A later HTML renderer must consume the successfully validated candidate. See [stage 3](profile-recognition.md) and the [candidate language](candidate-language.md).
+`profiles_design.json` now supplies four executable epsilon-NFA patterns. Call `classify_skills(result["normalized_skills"])` from the public package to prepare profile-specific input and execute recognition. Alphabetical JSON order is not that sequence. The returned classification is separate from JSON 1.0. Call `generate_candidate_dsl(result, classification)` and then `parse_candidate_dsl(source)` to generate and validate the candidate DSL. The implemented `render_candidate_html(source)` parses the DSL before rendering. `process_complete_resume(text, name=None)` composes all stages, and `save_bundle(result, destination)` writes the four outputs. See [workflow integration](complete-workflow.md). See [stage 3](profile-recognition.md) and the [candidate language](candidate-language.md).
 
-Do not add properties to version 1.0, whose schema forbids them. Keep later results separate or agree on a new contract version. The public package exports `process_resume`, `classify_skills`, `generate_candidate_dsl` and `parse_candidate_dsl`. The CLI still runs the original TXT-to-JSON component.
+Do not add properties to version 1.0, whose schema forbids them. Keep later results separate or agree on a new contract version. The package exports the existing first-stage, recognition and DSL functions plus `render_candidate_html`, `process_complete_resume` and `save_bundle`. The original CLI retains TXT-to-JSON behavior; `python -m resumelens.workflow_cli` is the complete bundle command.
 
 ## Acceptance procedure
 

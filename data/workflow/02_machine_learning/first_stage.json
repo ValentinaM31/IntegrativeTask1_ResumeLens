@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0",
+  "candidate": {
+    "name": "Morgan Sample",
+    "emails": [
+      {
+        "raw": "morgan@example.com",
+        "start": 27,
+        "end": 45
+      }
+    ],
+    "phones": [],
+    "links": [],
+    "education": [
+      {
+        "raw": "Master in Data Science",
+        "start": 57,
+        "end": 79
+      }
+    ],
+    "experience": [
+      {
+        "raw": "2 years of experience developing predictive models.",
+        "start": 92,
+        "end": 143
+      }
+    ]
+  },
+  "extracted_skills": [
+    {
+      "raw": "predictive models",
+      "start": 125,
+      "end": 142
+    },
+    {
+      "raw": "Python",
+      "start": 162,
+      "end": 168
+    },
+    {
+      "raw": "Pandas",
+      "start": 170,
+      "end": 176
+    },
+    {
+      "raw": "TensorFlow",
+      "start": 178,
+      "end": 188
+    },
+    {
+      "raw": "SQL",
+      "start": 190,
+      "end": 193
+    },
+    {
+      "raw": "Git",
+      "start": 195,
+      "end": 198
+    }
+  ],
+  "excluded_mentions": [],
+  "warnings": [],
+  "normalized_skills": [
+    "GIT",
+    "ML_MODEL",
+    "PANDAS",
+    "PYTHON",
+    "SQL",
+    "TENSORFLOW"
+  ],
+  "normalization_evidence": [
+    {
+      "extracted_index": 0,
+      "canonical": "ML_MODEL"
+    },
+    {
+      "extracted_index": 1,
+      "canonical": "PYTHON"
+    },
+    {
+      "extracted_index": 2,
+      "canonical": "PANDAS"
+    },
+    {
+      "extracted_index": 3,
+      "canonical": "TENSORFLOW"
+    },
+    {
+      "extracted_index": 4,
+      "canonical": "SQL"
+    },
+    {
+      "extracted_index": 5,
+      "canonical": "GIT"
+    }
+  ],
+  "unknown_skills": []
+}

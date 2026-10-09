@@ -1,0 +1,88 @@
+{
+  "schema_version": "1.0",
+  "candidate": {
+    "name": "Mateo Example",
+    "emails": [
+      {
+        "raw": "mateo@example.com",
+        "start": 27,
+        "end": 44
+      }
+    ],
+    "phones": [],
+    "links": [],
+    "education": [
+      {
+        "raw": "Bachelor in Computer Science",
+        "start": 56,
+        "end": 84
+      }
+    ],
+    "experience": [
+      {
+        "raw": "3 years of experience processing data.",
+        "start": 97,
+        "end": 135
+      }
+    ]
+  },
+  "extracted_skills": [
+    {
+      "raw": "Python3",
+      "start": 144,
+      "end": 151
+    },
+    {
+      "raw": "Structured Query Language",
+      "start": 153,
+      "end": 178
+    },
+    {
+      "raw": "Apache Airflow",
+      "start": 180,
+      "end": 194
+    },
+    {
+      "raw": "extract transform load",
+      "start": 196,
+      "end": 218
+    },
+    {
+      "raw": "Git",
+      "start": 220,
+      "end": 223
+    }
+  ],
+  "excluded_mentions": [],
+  "warnings": [],
+  "normalized_skills": [
+    "AIRFLOW",
+    "ETL",
+    "GIT",
+    "PYTHON",
+    "SQL"
+  ],
+  "normalization_evidence": [
+    {
+      "extracted_index": 0,
+      "canonical": "PYTHON"
+    },
+    {
+      "extracted_index": 1,
+      "canonical": "SQL"
+    },
+    {
+      "extracted_index": 2,
+      "canonical": "AIRFLOW"
+    },
+    {
+      "extracted_index": 3,
+      "canonical": "ETL"
+    },
+    {
+      "extracted_index": 4,
+      "canonical": "GIT"
+    }
+  ],
+  "unknown_skills": []
+}
