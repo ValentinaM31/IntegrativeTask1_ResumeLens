@@ -1,0 +1,101 @@
+{
+  "status": "executed_dsl_validation",
+  "valid": [
+    {
+      "source": "data/samples/01_full_stack.txt",
+      "dsl": "data/dsl/valid/01_full_stack.rl",
+      "accepted_profiles": [
+        "FULL_STACK_DEVELOPER"
+      ]
+    },
+    {
+      "source": "data/samples/02_machine_learning.txt",
+      "dsl": "data/dsl/valid/02_machine_learning.rl",
+      "accepted_profiles": [
+        "MACHINE_LEARNING_ENGINEER"
+      ]
+    },
+    {
+      "source": "data/samples/03_backend.txt",
+      "dsl": "data/dsl/valid/03_backend.rl",
+      "accepted_profiles": [
+        "BACKEND_DEVELOPER"
+      ]
+    },
+    {
+      "source": "data/samples/04_data_engineer.txt",
+      "dsl": "data/dsl/valid/04_data_engineer.rl",
+      "accepted_profiles": [
+        "DATA_ENGINEER"
+      ]
+    },
+    {
+      "source": "data/samples/05_aliases_duplicates.txt",
+      "dsl": "data/dsl/valid/05_aliases_duplicates.rl",
+      "accepted_profiles": [
+        "FULL_STACK_DEVELOPER"
+      ]
+    },
+    {
+      "source": "data/samples/06_incomplete.txt",
+      "dsl": "data/dsl/valid/06_incomplete.rl",
+      "accepted_profiles": []
+    },
+    {
+      "source": "data/samples/07_boundaries_negation.txt",
+      "dsl": "data/dsl/valid/07_boundaries_negation.rl",
+      "accepted_profiles": []
+    },
+    {
+      "source": "data/samples/08_multiple_records.txt",
+      "dsl": "data/dsl/valid/08_multiple_records.rl",
+      "accepted_profiles": [
+        "BACKEND_DEVELOPER",
+        "DATA_ENGINEER",
+        "MACHINE_LEARNING_ENGINEER"
+      ]
+    }
+  ],
+  "invalid": [
+    {
+      "dsl": "data/dsl/invalid/01_missing_brace.rl",
+      "error_kind": "syntax",
+      "reason": "Closing candidate brace is required"
+    },
+    {
+      "dsl": "data/dsl/invalid/02_unquoted_name.rl",
+      "error_kind": "syntax",
+      "reason": "Names require a JSON string or null"
+    },
+    {
+      "dsl": "data/dsl/invalid/03_unknown_skill.rl",
+      "error_kind": "syntax",
+      "reason": "Skills use the finite canonical alphabet"
+    },
+    {
+      "dsl": "data/dsl/invalid/04_bad_escape.rl",
+      "error_kind": "syntax",
+      "reason": "Only JSON string escapes are admitted"
+    },
+    {
+      "dsl": "data/dsl/invalid/05_wrong_section.rl",
+      "error_kind": "syntax",
+      "reason": "Section keywords are exact"
+    },
+    {
+      "dsl": "data/dsl/invalid/06_duplicate_skill.rl",
+      "error_kind": "semantic",
+      "reason": "Repeated canonical skill declarations are rejected"
+    },
+    {
+      "dsl": "data/dsl/invalid/07_missing_profile.rl",
+      "error_kind": "semantic",
+      "reason": "Accepted profiles must match recognition"
+    },
+    {
+      "dsl": "data/dsl/invalid/08_false_profile.rl",
+      "error_kind": "semantic",
+      "reason": "A declared profile must be recognized"
+    }
+  ]
+}

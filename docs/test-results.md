@@ -1,5 +1,39 @@
 # Verification results
 
+## Candidate-language increment — 2026-10-09 UTC
+
+Verified on Linux with Python 3.12.14, pyformlang 1.0.11, jsonschema 4.26.0,
+textX 4.4.0 and Arpeggio 2.0.3. A second fresh environment installed the complete
+`requirements-lock.txt` followed by the built wheel with `--no-deps`.
+
+| Check | Result |
+|---|---|
+| `python -m unittest discover -s tests -q` | 67 passed: 39 original + 12 recognition + 16 DSL tests; verified in editable and wheel installations |
+| `python tools/generate_dsl_examples.py` | Eight generated/parsed candidate examples accepted; five syntax and three semantic examples rejected |
+| `python tools/check_acceptance.py` | Original API/CLI agree in six scenarios; JSON 1.0 evidence remains valid |
+| `python tools/validate_design.py` | Catalog, profile criteria and existing sample expectations remain coherent |
+| `python -m pip check` in the pinned wheel environment | No dependency conflicts |
+| Version 1.2.0 wheel executed with isolated Python from outside the repository | Installed package and grammar resource confirmed; generation, textX parsing and Full Stack recognition passed |
+
+The DSL tests cover string escaping, null/empty sections, repeated records and contacts,
+canonical vocabulary, structural errors, duplicate declarations, profile coherence,
+multiple accepted profiles, resource access and input immutability. The stored fixtures
+are synthetic regression cases. New recognition/DSL behavior has not been executed on
+Windows or macOS in this increment. HTML, a combined workflow CLI and UI remain pending.
+The following sections preserve verification from earlier increments.
+
+### Windows encoding correction before publishing this increment
+
+A user run on Windows passed the 16 DSL tests and failed one recognition-model
+comparison. That test read the UTF-8 automaton JSON using the system's default
+encoding. Decoding the same file with cp1252 reproduced the failure on Linux:
+the epsilon label became two incorrect characters, so reconstruction inserted
+ordinary-symbol transitions in place of epsilon transitions. UTF-8 decoding
+restored equality. Recognition tests now explicitly read all JSON fixtures as
+UTF-8 and verify the epsilon label; the full transition-dictionary comparison
+remains in place. This documents the reported failure and reproduced cause;
+the corrected suite still requires execution on the user's Windows installation.
+
 ## Recognition increment — 2026-10-08
 
 Verified on Linux, Python 3.12.14, pyformlang 1.0.11 and jsonschema 4.26.0 in a fresh
@@ -33,8 +67,9 @@ These are deterministic synthetic/regression checks, not a real-resume accuracy 
 | 07_boundaries_negation | None |
 | 08_multiple_records | Backend, Data Engineer, Machine Learning |
 
-First-stage JSON 1.0 and the original CLI remain compatible. Later DSL, HTML and UI
-are not included. The sections below retain the historical first-stage verification.
+First-stage JSON 1.0 and the original CLI remained compatible in this recognition
+increment. DSL, HTML and UI were not included in that increment. The sections below
+retain the historical first-stage verification.
 
 ## Original first-stage verification
 
@@ -77,4 +112,4 @@ The previous revision had 35 tests; three Pandas regressions raised the total to
 
 Fifteen admitted cases yield TP=25/FP=0/FN=0; six historical reserved cases yield TP=14/FP=0/FN=0. Two stress cases yield TP=0/FP=0/FN=2, with undefined precision. Reserved cases now serve as regression after extractor changes. Prior results and reclassification reasons are retained; see `evaluation.md`.
 
-Complete FST exports were regenerated from the executable machines and their components checked by tests. Their visual layout and the existing partial poster were reviewed in an earlier revision. The poster has not been regenerated and retains earlier metrics, identified in its README. This historical first-stage verification did not cover profile automata. Current recognition results are recorded above; textX, UI and HTML remain outside this increment.
+Complete FST exports were regenerated from the executable machines and their components checked by tests. Their visual layout and the existing partial poster were reviewed in an earlier revision. The poster has not been regenerated and retains earlier metrics, identified in its README. This historical first-stage verification did not cover profile automata. Current recognition and DSL results are recorded above; UI and HTML remain pending.

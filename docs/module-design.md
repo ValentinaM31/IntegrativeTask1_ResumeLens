@@ -3,7 +3,7 @@
 Modules separate extraction, normalization, validation and execution to preserve the link between input and output.
 
 ```mermaid
-flowchart LR
+flowchart TD
     T[UTF-8 TXT or interface text] --> E[extraction.py and re]
     C[Alias catalog] --> E
     C --> F[normalization.py and pyformlang FST]
@@ -13,7 +13,7 @@ flowchart LR
     P --> V[Schema and semantic validation]
     V --> J[JSON 1.0 or dictionary]
     J --> A[classification.py and four epsilon-NFAs]
-    A --> D[textX DSL: pending]
+    A --> D[dsl.py and packaged textX grammar]
     D --> H[HTML and UI: pending]
 ```
 
@@ -35,6 +35,8 @@ flowchart LR
 | classification.build_profile_automaton | Profile dictionary | pyformlang EpsilonNFA | Loops, required transitions and epsilon composition |
 | classification.canonical_sequence | Canonical skills and profile | Ordered relevant symbols | Retains all compatible-pair candidates |
 | classification.classify_skills | Canonical-symbol collection | accepted_profiles and four detailed results | Executes accepts(); separate from JSON 1.0 |
+| dsl.generate_candidate_dsl | JSON 1.0 and recognition result | Candidate DSL string | JSON escaping, canonical symbols and repeated records |
+| dsl.parse_candidate_dsl | Candidate DSL string | Validated candidate dictionary | textX syntax, unique declarations and profile coherence |
 
 ## Types and evidence
 
@@ -60,4 +62,4 @@ Eight negation patterns cover the immediate alias or a list separated by comma, 
 
 Empty input is rejected. The CLI reports invalid files, encoding and input/output identity in English. Default FSTs are built once and privately cached; results are fresh on every call. There is no persistent candidate state or UI dependency.
 
-JSON is a data boundary, not proof of profile acceptance. Recognition now returns its results in a separate object; grammar-validated visualization remains a subsequent increment. Packaged profile configuration matches `config/profiles_design.json`, checked by tests. Private cached machines are reused; callers receive fresh result data.
+JSON is a data boundary, not proof of profile acceptance. Recognition now returns its results in a separate object; textX validates the separate candidate representation before future visualization. HTML remains a subsequent increment. Packaged profile configuration matches `config/profiles_design.json`, checked by tests. Private cached machines are reused; callers receive fresh result data.

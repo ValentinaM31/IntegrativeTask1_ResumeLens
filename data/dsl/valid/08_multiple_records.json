@@ -1,0 +1,36 @@
+{
+  "name": "Daniela Example",
+  "contacts": [
+    {
+      "kind": "email",
+      "value": "daniela@example.com"
+    },
+    {
+      "kind": "email",
+      "value": "daniela.work@example.com"
+    }
+  ],
+  "education": [
+    "Bachelor in Computer Science",
+    "Master in Data Science"
+  ],
+  "experience": [
+    "2 years of experience developing web services.",
+    "1 year of experience processing data."
+  ],
+  "skills": [
+    "DJANGO",
+    "ETL",
+    "GIT",
+    "PANDAS",
+    "POSTGRESQL",
+    "PYTHON",
+    "PYTORCH",
+    "REST_API"
+  ],
+  "accepted_profiles": [
+    "BACKEND_DEVELOPER",
+    "DATA_ENGINEER",
+    "MACHINE_LEARNING_ENGINEER"
+  ]
+}

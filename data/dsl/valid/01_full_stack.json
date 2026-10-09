@@ -1,0 +1,33 @@
+{
+  "name": "Alex Sample",
+  "contacts": [
+    {
+      "kind": "email",
+      "value": "alex@example.com"
+    },
+    {
+      "kind": "phone",
+      "value": "+57 300 000 0001"
+    },
+    {
+      "kind": "link",
+      "value": "https://www.linkedin.com/in/alex-example"
+    }
+  ],
+  "education": [
+    "Bachelor in Computer Science"
+  ],
+  "experience": [
+    "3 years of experience developing web applications."
+  ],
+  "skills": [
+    "GIT",
+    "JAVASCRIPT",
+    "NODE_JS",
+    "POSTGRESQL",
+    "REACT"
+  ],
+  "accepted_profiles": [
+    "FULL_STACK_DEVELOPER"
+  ]
+}

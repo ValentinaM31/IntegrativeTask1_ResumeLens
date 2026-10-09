@@ -1,0 +1,20 @@
+{
+  "name": "Sam Example",
+  "contacts": [
+    {
+      "kind": "link",
+      "value": "https://github.com/example-user"
+    }
+  ],
+  "education": [],
+  "experience": [
+    "no experience with Python",
+    "no experience with TensorFlow"
+  ],
+  "skills": [
+    "GIT",
+    "JAVASCRIPT",
+    "REACT"
+  ],
+  "accepted_profiles": []
+}

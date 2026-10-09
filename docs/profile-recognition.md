@@ -187,8 +187,9 @@ invalid configurations and the equivalence of exported transition relations.
 Recognition assesses these finite team-defined patterns using the extracted evidence.
 It cannot recover an omitted/negated skill, prove expertise or detect arbitrary new
 technologies. Education and experience are retained by stage 1 but are not numerical
-requirements in these profile patterns. The separate textX grammar, candidate DSL,
-HTML generation and interactive UI are not part of this increment.
+requirements in these profile patterns. The separate textX grammar and candidate DSL are provided by the following
+[candidate-language increment](candidate-language.md). HTML generation and interactive
+UI remain later stages; neither is part of profile recognition.
 
 The official [pyformlang finite-automaton API](https://pyformlang.readthedocs.io/en/latest/modules/finite_automaton.html)
 documents epsilon-NFAs and acceptance execution. The implementation is verified with

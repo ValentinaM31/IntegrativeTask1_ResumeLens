@@ -1,0 +1,16 @@
+{
+  "name": "Ana Example",
+  "contacts": [
+    {
+      "kind": "email",
+      "value": "ana@example.com"
+    }
+  ],
+  "education": [],
+  "experience": [],
+  "skills": [
+    "GIT",
+    "PYTHON"
+  ],
+  "accepted_profiles": []
+}

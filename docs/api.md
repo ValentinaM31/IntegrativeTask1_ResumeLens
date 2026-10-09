@@ -1,6 +1,6 @@
 # Processing API
 
-`process_resume(text, name=None)` returns a fresh contract 1.0 object. It can be consumed by another component or the CLI without profile models or textX.
+`process_resume(text, name=None)` returns a fresh contract 1.0 object. It can be consumed by another component or the CLI without running profile recognition or textX validation.
 
 ```python
 from resumelens import process_resume
@@ -30,6 +30,16 @@ collection rejects all profiles; unknown/non-string symbols or invalid collectio
 raise ValueError. See [recognition definitions and examples](profile-recognition.md).
 
 `ValueError` reports empty input or semantic inconsistency. File/encoding errors are reported by the CLI. Unknown terms are recorded only when passed to the normalizer; extraction does not discover arbitrary technologies. Program diagnostics are in English.
+
+## Candidate-language API
+
+`generate_candidate_dsl(first_stage, classification)` returns a candidate specification
+string from the unchanged JSON 1.0 and separate recognition result. The public
+`parse_candidate_dsl(source)` executes textX, checks duplicate declarations and
+profile coherence, and returns a dictionary with name, contacts, education,
+experience, skills and accepted_profiles. It supports repeated records and escaping;
+syntax errors are textX exceptions and additional semantic failures are ValueError.
+See [full grammar and examples](candidate-language.md). No HTML or UI is produced here.
 
 ## Contract changes
 

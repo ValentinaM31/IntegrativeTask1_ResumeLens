@@ -1,6 +1,6 @@
 # ResumeLens
 
-Process UTF-8 TXT resumes using Python `re`, real finite-state transducers and four profile automata. Extract candidate information, normalize skill variants into JSON with verifiable evidence and recognize qualification patterns.
+Process UTF-8 TXT resumes using Python `re`, real finite-state transducers, four profile automata and a textX candidate language. Extract evidence, normalize qualifications, recognize patterns and generate/validate a structured candidate specification.
 
 ## Installation
 
@@ -11,7 +11,7 @@ py -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -e .
 ```
 
-Dependencies: `pyformlang==1.0.11` and `jsonschema==4.26.0`. `requirements-lock.txt` records the original verified Python 3.12 environment. To reproduce it, install that file and then run `pip install --no-deps -e .`. On Linux/macOS use `.venv/bin/python`; macOS has not been verified.
+Dependencies: `pyformlang==1.0.11`, `jsonschema==4.26.0` and `textX==4.4.0`. `requirements-lock.txt` retains the original first-stage pins and adds textX/Arpeggio for this increment. Install that file and then run `pip install --no-deps -e .` to reproduce the pinned environment. On Linux/macOS use `.venv/bin/python`; macOS has not been verified.
 
 ## Usage
 
@@ -44,15 +44,16 @@ Offsets refer to the exact decoded input. Results include positive mentions, exc
 .\.venv\Scripts\python.exe tools/evaluate.py
 .\.venv\Scripts\python.exe tools/export_automata.py
 .\.venv\Scripts\python.exe tools/classify_examples.py
+.\.venv\Scripts\python.exe tools/generate_dsl_examples.py
 ```
 
-There are 51 automated tests (39 first-stage and 12 recognition tests), eight main English samples and 23 annotated synthetic extraction cases: fifteen original, six historically reserved and two additional limit cases. All eight samples also have executed profile classifications in `data/classification/`. Spanish input fixtures and regex alternatives retain documented bilingual support. See [test results](docs/test-results.md), [profile models](docs/profile-recognition.md) and [evaluation](docs/evaluation.md).
+There are 67 automated tests (39 first-stage, 12 recognition and 16 candidate-language tests), eight main English samples and 23 annotated synthetic extraction cases: fifteen original, six historically reserved and two additional limit cases. All eight samples have executed profile classifications in `data/classification/` and validated candidate specifications in `data/dsl/`. Spanish input fixtures and regex alternatives retain documented bilingual support. See [test results](docs/test-results.md), [profile models](docs/profile-recognition.md), [candidate grammar](docs/candidate-language.md) and [evaluation](docs/evaluation.md).
 
 ## Structure
 
 | Directory | Contents |
 |---|---|
-| src/resumelens | Extraction, FSTs, validation, CLI and profile recognition |
+| src/resumelens | Extraction, FSTs, validation, CLI, recognition and textX DSL |
 | config | Catalog of 26 symbols, 56 aliases and profile design patterns |
 | contracts | JSON schema 1.0 and input/output example |
 | tests | Behavior and integration tests |
@@ -68,6 +69,8 @@ Candidate extraction supports documented contact, education and experience forma
 
 Profile recognition uses four epsilon-NFAs and the documented canonical bucket order. Backend requires a compatible language/framework pair. Profiles can overlap. Classification results remain separate from JSON 1.0. See [complete five-tuples and diagrams](docs/profile-recognition.md).
 
-The textX DSL, UI and HTML remain pending for subsequent increments. JSON Schema does not replace a textX grammar. Alphabetical skill order is not an automaton input sequence.
+The candidate DSL now has a complete EBNF specification and executable textX grammar. Generate it with `generate_candidate_dsl(first, classification)` and validate it with `parse_candidate_dsl(source)`; see [API and examples](docs/candidate-language.md). Syntax and semantic errors prevent acceptance.
+
+The end-to-end CLI, HTML visualization and interactive UI remain pending for subsequent increments. JSON Schema does not replace textX validation. Alphabetical skill order is not an automaton input sequence.
 
 When changing the catalog or schema, synchronize packaged resources, regenerate models and run tests. `tools/export_models.py` exports complete models; `tools/build_poster.py` is the existing poster generator.

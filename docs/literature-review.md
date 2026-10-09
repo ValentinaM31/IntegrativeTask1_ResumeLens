@@ -19,6 +19,7 @@ This review connects resume context, regular expressions and transduction models
 | pyformlang FST API | Initial/final states, transitions and translate | Real normalization execution |
 | JSON Schema 2020-12 | Structure, types and constraints | Exchange contract |
 | pyformlang finite-automaton API | Epsilon-NFA transitions and accepts() | Execute shared qualification-pattern recognizers |
+| textX grammar/metamodel/parser configuration | Match rules, lists, parsing and keyword boundaries | Candidate representation syntax and validation |
 
 Regex and FSTs provide explicit definitions and verifiable paths. Section context reduces errors in supported formats, while stress cases expose semantic limits. This is a ResumeLens design/evaluation conclusion, not evidence of superiority over learned models.
 
@@ -30,3 +31,5 @@ Regex and FSTs provide explicit definitions and verifiable paths. Section contex
 - [pyformlang FST](https://pyformlang.readthedocs.io/en/latest/modules/fst.html).
 - [JSON Schema 2020-12](https://json-schema.org/draft/2020-12/json-schema-core).
 - [pyformlang finite automata](https://pyformlang.readthedocs.io/en/latest/modules/finite_automaton.html). Consulted for the recognition increment before finalizing the implementation. Epsilon-NFA composition makes alternatives explicit; its language differs from the character-level alias transducers.
+
+- textX [grammar](https://textx.github.io/textX/grammar.html), [metamodel](https://textx.github.io/textX/metamodel.html) and [parser configuration](https://textx.github.io/textX/parser_config.html). Consulted before finalizing the DSL increment. textX checks candidate-language syntax; separate semantic checks execute recognition to verify accepted-profile declarations. JSON Schema remains the original exchange-contract validator.

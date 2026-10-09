@@ -1,0 +1,16 @@
+{
+  "name": "Taylor Example",
+  "contacts": [],
+  "education": [],
+  "experience": [],
+  "skills": [
+    "GIT",
+    "JAVASCRIPT",
+    "NODE_JS",
+    "POSTGRESQL",
+    "REACT"
+  ],
+  "accepted_profiles": [
+    "FULL_STACK_DEVELOPER"
+  ]
+}

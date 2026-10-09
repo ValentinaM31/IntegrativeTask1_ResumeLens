@@ -1,0 +1,26 @@
+{
+  "name": "Morgan Sample",
+  "contacts": [
+    {
+      "kind": "email",
+      "value": "morgan@example.com"
+    }
+  ],
+  "education": [
+    "Master in Data Science"
+  ],
+  "experience": [
+    "2 years of experience developing predictive models."
+  ],
+  "skills": [
+    "GIT",
+    "ML_MODEL",
+    "PANDAS",
+    "PYTHON",
+    "SQL",
+    "TENSORFLOW"
+  ],
+  "accepted_profiles": [
+    "MACHINE_LEARNING_ENGINEER"
+  ]
+}

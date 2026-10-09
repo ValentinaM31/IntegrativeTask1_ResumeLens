@@ -1,0 +1,28 @@
+Candidate:
+    'candidate' '{'
+      'name' name=NameValue ';'
+      'contacts' '{' contacts*=Contact '}'
+      'education' '{' education*=Record '}'
+      'experience' '{' experience*=Record '}'
+      'skills' '{' skills*=SkillEntry '}'
+      'accepted_profiles' '{' profiles*=ProfileEntry '}'
+    '}'
+;
+NameValue: JsonString | 'null';
+Contact: kind=ContactKind value=JsonString ';';
+ContactKind: 'email' | 'phone' | 'link';
+Record: 'record' value=JsonString ';';
+SkillEntry: 'skill' value=SkillSymbol ';';
+ProfileEntry: 'profile' value=ProfileSymbol ';';
+SkillSymbol:
+    'JAVASCRIPT' | 'TYPESCRIPT' | 'PYTHON' | 'JAVA' |
+    'REACT' | 'ANGULAR' | 'VUE' | 'NODE_JS' | 'DJANGO' | 'SPRING_BOOT' |
+    'SQL' | 'POSTGRESQL' | 'MYSQL' | 'MONGODB' | 'PANDAS' | 'NUMPY' |
+    'SCIKIT_LEARN' | 'TENSORFLOW' | 'PYTORCH' | 'REST_API' | 'GIT' |
+    'DOCKER' | 'ML_MODEL' | 'APACHE_SPARK' | 'AIRFLOW' | 'ETL'
+;
+ProfileSymbol:
+    'FULL_STACK_DEVELOPER' | 'MACHINE_LEARNING_ENGINEER' |
+    'BACKEND_DEVELOPER' | 'DATA_ENGINEER'
+;
+JsonString: /"([^"\\\x00-\x1f]|\\["\\\/bfnrt]|\\u[0-9a-fA-F]{4})*"/;

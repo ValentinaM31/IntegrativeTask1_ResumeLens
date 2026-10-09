@@ -1,0 +1,30 @@
+{
+  "name": "Laura Example",
+  "contacts": [
+    {
+      "kind": "email",
+      "value": "laura@example.com"
+    },
+    {
+      "kind": "phone",
+      "value": "+57 300 000 0003"
+    }
+  ],
+  "education": [
+    "Bachelor in Computer Science"
+  ],
+  "experience": [
+    "2 years of experience developing services."
+  ],
+  "skills": [
+    "DOCKER",
+    "GIT",
+    "JAVA",
+    "MYSQL",
+    "REST_API",
+    "SPRING_BOOT"
+  ],
+  "accepted_profiles": [
+    "BACKEND_DEVELOPER"
+  ]
+}

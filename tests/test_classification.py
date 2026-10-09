@@ -16,7 +16,7 @@ class RecognitionTests(unittest.TestCase):
         return classify_skills(skills)["accepted_profiles"]
 
     def test_existing_sample_expectations(self):
-        cases = json.loads((ROOT / "data/expected_samples.json").read_text())["cases"]
+        cases = json.loads((ROOT / "data/expected_samples.json").read_text(encoding="utf-8"))["cases"]
         for case in cases:
             with self.subTest(case=case["file"]):
                 text = (ROOT / case["file"]).read_text(encoding="utf-8")
@@ -78,7 +78,7 @@ class RecognitionTests(unittest.TestCase):
         self.assertFalse(machine.accepts([]))
 
     def test_packaged_profile_configuration(self):
-        self.assertEqual(load_profiles(), json.loads((ROOT / "config/profiles_design.json").read_text()))
+        self.assertEqual(load_profiles(), json.loads((ROOT / "config/profiles_design.json").read_text(encoding="utf-8")))
         for profile in load_profiles():
             buckets = [allowed for allowed, _ in profile_branches(profile)[0]]
             self.assertEqual(sum(map(len, buckets)), len(set.union(*buckets)))
@@ -114,7 +114,8 @@ class RecognitionTests(unittest.TestCase):
     def test_generated_models_and_classifications_match_execution(self):
         from pyformlang.finite_automaton import Epsilon, EpsilonNFA
         for profile in load_profiles():
-            model = json.loads((ROOT / "docs/automata" / (profile["id"] + ".json")).read_text())
+            model = json.loads((ROOT / "docs/automata" / (profile["id"] + ".json")).read_text(encoding="utf-8"))
+            self.assertEqual(model["epsilon_label"], "ε")
             actual = build_profile_automaton(profile)
             self.assertEqual(model["Q"], sorted(state.value for state in actual.states))
             self.assertEqual(model["Sigma"], sorted(symbol.value for symbol in actual.symbols))
@@ -126,12 +127,12 @@ class RecognitionTests(unittest.TestCase):
             for source, symbol, target in model["delta"]:
                 restored.add_transition(source, Epsilon() if symbol == "ε" else symbol, target)
             self.assertEqual(actual.to_dict(), restored.to_dict())
-        cases = json.loads((ROOT / "data/expected_samples.json").read_text())["cases"]
+        cases = json.loads((ROOT / "data/expected_samples.json").read_text(encoding="utf-8"))["cases"]
         for case in cases:
             path = ROOT / case["file"]
             first = process_resume(path.read_text(encoding="utf-8"))
             expected = classify_skills(first["normalized_skills"])
-            persisted = json.loads((ROOT / "data/classification" / (path.stem + ".json")).read_text())
+            persisted = json.loads((ROOT / "data/classification" / (path.stem + ".json")).read_text(encoding="utf-8"))
             self.assertEqual(persisted, expected)
 
 

@@ -1,6 +1,6 @@
 # Extraction and normalization integration guide
 
-The component receives UTF-8 text, extracts evidence with Python re, normalizes variants using real pyformlang FSTs and returns validated JSON 1.0. Its API is independent of profile recognition, textX and UI.
+The component receives UTF-8 text, extracts evidence with Python re, normalizes variants using real pyformlang FSTs and returns validated JSON 1.0. The first-stage API does not execute profile recognition, textX validation or UI code; the installed project now includes the dependencies for the later APIs.
 
 ## PowerShell installation
 
@@ -10,7 +10,7 @@ py -m venv .venv
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-For the verified Python 3.12 environment, first install `requirements-lock.txt`, then `pip install --no-deps -e .`. Normal installation declares pyformlang 1.0.11 and jsonschema 4.26.0. Activation is unnecessary. Other platforms are unverified.
+For the verified Python 3.12 environment, first install `requirements-lock.txt`, then `pip install --no-deps -e .`. Normal installation declares pyformlang 1.0.11, jsonschema 4.26.0 and textX 4.4.0. Activation is unnecessary. The original first stage was verified on Windows; the recognition/DSL increments were verified on Linux with Python 3.12.14.
 
 ## CLI
 
@@ -60,9 +60,9 @@ Unknown inputs are recorded only if received by the normalizer. The extractor ma
 
 ## Later consumption
 
-`profiles_design.json` now supplies four executable epsilon-NFA patterns. Call `classify_skills(result["normalized_skills"])` from the public package to prepare profile-specific input and execute recognition. Alphabetical JSON order is not that sequence. The returned classification is separate from JSON 1.0. A later component must generate and validate the DSL before producing HTML. See [stage 3](profile-recognition.md).
+`profiles_design.json` now supplies four executable epsilon-NFA patterns. Call `classify_skills(result["normalized_skills"])` from the public package to prepare profile-specific input and execute recognition. Alphabetical JSON order is not that sequence. The returned classification is separate from JSON 1.0. Call `generate_candidate_dsl(result, classification)` and then `parse_candidate_dsl(source)` to generate and validate the candidate DSL. A later HTML renderer must consume the successfully validated candidate. See [stage 3](profile-recognition.md) and the [candidate language](candidate-language.md).
 
-Do not add properties to version 1.0, whose schema forbids them. Keep later results separate or agree on a new contract version. Public modules are extraction.py, normalization.py, first_stage.py and cli.py.
+Do not add properties to version 1.0, whose schema forbids them. Keep later results separate or agree on a new contract version. The public package exports `process_resume`, `classify_skills`, `generate_candidate_dsl` and `parse_candidate_dsl`. The CLI still runs the original TXT-to-JSON component.
 
 ## Acceptance procedure
 

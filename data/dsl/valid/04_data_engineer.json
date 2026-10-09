@@ -1,0 +1,25 @@
+{
+  "name": "Mateo Example",
+  "contacts": [
+    {
+      "kind": "email",
+      "value": "mateo@example.com"
+    }
+  ],
+  "education": [
+    "Bachelor in Computer Science"
+  ],
+  "experience": [
+    "3 years of experience processing data."
+  ],
+  "skills": [
+    "AIRFLOW",
+    "ETL",
+    "GIT",
+    "PYTHON",
+    "SQL"
+  ],
+  "accepted_profiles": [
+    "DATA_ENGINEER"
+  ]
+}

@@ -28,4 +28,11 @@
 | Models | Exported complete transition relation | Reconstructed machine matches executable relation |
 | Recognition integration | Eight existing sample expectations | All classifications match; three simultaneous profiles in sample 08 |
 
+| DSL structure | Required fixed-order sections, empty lists and whole-input parsing | Valid documents accepted; missing/reordered sections and trailing text rejected |
+| DSL strings | Null name, Unicode, quotes, backslashes and controls | Exact round trip for valid JSON-style strings; malformed strings rejected |
+| DSL vocabulary | All 26 canonical skills and four profile names | Exact case-sensitive tokens; unknown symbols and prefix extensions rejected |
+| DSL semantics | Repeated skill/profile declarations and incompatible profiles | Duplicates, omitted accepted profiles and invented profiles rejected |
+| DSL integration | Eight existing resumes, repeated records and three profiles | Generated DSL parses to expected candidate data |
+| Packaging | Grammar resource available outside the repository | Installed wheel builds its textX metamodel independently of cwd |
+
 Automated tests are in `tests/`. Annotated evaluation separates admitted cases and stress limits; see `test-results.md` and `evaluation.md`.

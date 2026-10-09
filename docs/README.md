@@ -9,6 +9,7 @@
 | regex.md | Exact expressions and limits |
 | transducers.md | Complete septuples and explained paths |
 | profile-recognition.md / automata/ | Four executable epsilon-NFAs, complete five-tuples, diagrams and recognition API |
+| candidate-language.md | Complete EBNF, terminals/nonterminals, textX grammar, generation and validation |
 | data-contract.md | JSON 1.0 contract |
 | test-plan.md / test-results.md | Scenarios and verified results |
 | evaluation.md | Annotations, metrics and limitations |
