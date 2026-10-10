@@ -1,0 +1,43 @@
+name: Verify ResumeLens
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: |
+            pyproject.toml
+            requirements-lock.txt
+      - name: Install pinned dependencies and package
+        if: matrix.python == '3.12'
+        run: |
+          python -m pip install -r requirements-lock.txt
+          python -m pip install --no-deps -e .
+      - name: Install dependencies compatible with Python 3.10
+        if: matrix.python == '3.10'
+        run: python -m pip install -e .
+      - name: Check dependency consistency
+        run: python -m pip check
+      - name: Run behavior and integration tests
+        run: python -m unittest discover -s tests -v
+      - name: Check formal model design
+        run: python tools/validate_design.py
+      - name: Verify original command
+        run: python tools/check_acceptance.py
+      - name: Verify complete command
+        run: python tools/check_workflow_acceptance.py
+      - name: Verify HTTP processing and downloads
+        run: python tools/check_web_acceptance.py
