@@ -220,6 +220,33 @@ class WorkflowTests(unittest.TestCase):
                 save_bundle({}, destination)
             self.assertFalse(destination.exists())
 
+    def test_changed_evidence_and_translation_links_block_export(self):
+        mutations = [
+            lambda r: r['first_stage']['extracted_skills'][0].update(start=999, end=1005),
+            lambda r: r['first_stage']['candidate']['emails'][0].update(raw='other@example.com'),
+            lambda r: r['first_stage']['normalization_evidence'][0].update(extracted_index=999),
+            lambda r: r.update(source_text='Different source'),
+            lambda r: r.pop('source_text'),
+            lambda r: r.update(source_text=None),
+        ]
+        with tempfile.TemporaryDirectory() as folder:
+            for index, mutate in enumerate(mutations):
+                with self.subTest(mutation=index):
+                    result = copy.deepcopy(self.result)
+                    mutate(result)
+                    destination = Path(folder) / str(index)
+                    with self.assertRaises(ValueError):
+                        save_bundle(result, destination)
+                    self.assertFalse(destination.exists())
+
+    def test_source_text_is_retained_in_memory_and_not_exported(self):
+        self.assertEqual(self.result['source_text'], self.text)
+        with tempfile.TemporaryDirectory() as folder:
+            save_bundle(self.result, folder)
+            first = json.loads((Path(folder) / 'first_stage.json').read_text(encoding='utf-8'))
+            self.assertNotIn('source_text', first)
+            self.assertEqual(sorted(p.name for p in Path(folder).iterdir()), sorted(BUNDLE_FILES))
+
     def test_symlink_output_is_rejected_before_any_write(self):
         with tempfile.TemporaryDirectory() as folder:
             destination = Path(folder) / 'bundle'

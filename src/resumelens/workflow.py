@@ -1,9 +1,8 @@
 """Compose all four stages while preserving the first-stage JSON 1.0 contract."""
 import json
-from importlib.resources import files
 from pathlib import Path
-from jsonschema import Draft202012Validator, ValidationError
-from .first_stage import process_resume
+from jsonschema import ValidationError
+from .first_stage import process_resume, validate_result
 from .classification import classify_skills
 from .dsl import generate_candidate_dsl, parse_candidate_dsl
 from .rendering import render_candidate_html
@@ -18,7 +17,7 @@ def process_complete_resume(text, name=None):
     source = generate_candidate_dsl(first, classification)
     candidate = parse_candidate_dsl(source)
     html = render_candidate_html(source)
-    return {"pipeline_version": "1.0", "first_stage": first,
+    return {"pipeline_version": "1.0", "source_text": text, "first_stage": first,
             "classification": classification, "dsl": source,
             "validated_candidate": candidate, "html": html}
 
@@ -29,8 +28,10 @@ def _bundle_payloads(result):
         if result["pipeline_version"] != "1.0":
             raise ValueError("Unsupported pipeline version")
         first = result["first_stage"]
-        schema = json.loads(files("resumelens").joinpath("first_stage.schema.json").read_text(encoding="utf-8"))
-        Draft202012Validator(schema).validate(first)
+        text = result["source_text"]
+        if not isinstance(text, str):
+            raise ValueError("Workflow source text must be a string")
+        validate_result(first, text)
         classification = classify_skills(first["normalized_skills"])
         source = result["dsl"]
         candidate = parse_candidate_dsl(source)

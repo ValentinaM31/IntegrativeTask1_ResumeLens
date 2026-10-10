@@ -70,6 +70,7 @@ assert render_candidate_html(result["dsl"]) == result["html"]
 | Key | Meaning |
 |---|---|
 | `pipeline_version` | `"1.0"`, the composed-result format, independent of package version 1.4.0 |
+| `source_text` | Exact decoded input retained in memory for evidence validation; omitted from saved bundle files |
 | `first_stage` | Original validated JSON 1.0 object |
 | `classification` | Result of `classify_skills(first_stage["normalized_skills"])` |
 | `dsl` | Generated candidate-language source |
@@ -83,11 +84,12 @@ always parses and validates its argument before returning HTML; it cannot bypass
 textX by accepting an arbitrary candidate dictionary.
 
 `save_bundle(result, destination, force=False)` returns the destination Path. Before
-creating any output, it verifies pipeline version, first-stage schema structure,
+creating any output, it verifies pipeline version, first-stage schema and evidence against `source_text`, actual FST translations,
 recognition results, generated DSL, parsed candidate and HTML consistency. It expects
 an unmodified result from the processing API, rather than an independently edited
-collection of outputs. Without original input text, saving cannot recheck whether
-stored evidence offsets still describe that original resume.
+collection of outputs. The result must retain its `source_text`; missing source text or altered evidence
+blocks saving before any destination is created. The four exported file formats
+remain unchanged.
 
 ## Report behavior
 
