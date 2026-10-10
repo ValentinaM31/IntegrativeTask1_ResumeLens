@@ -52,4 +52,12 @@ for fields, errors and practical limits. The original TXT-to-JSON CLI is unchang
 
 ## Contract changes
 
+The local UI exposes a separate HTTP adapter documented in [local-ui.md](local-ui.md).
+`resumelens.web.process_web_request({"text": text, "name": name})` validates request
+types/sizes and returns `result`, four text `downloads` and base64 `bundle_zip`.
+It reuses the complete API and bundle consistency checks. No existing API or JSON
+schema is changed. `create_server(port)` serves fixed packaged assets and
+`POST /api/process` on loopback; these adapter functions are not re-exported from
+the first-stage package API.
+
 Changing a symbol affects the catalog, FSTs, schema enum and profile configuration. Incompatible changes require a new version. Added aliases must remain unique after casefold; regenerate formalizations and regex documentation, then run tests.

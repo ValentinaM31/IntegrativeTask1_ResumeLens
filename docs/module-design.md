@@ -4,7 +4,9 @@ Modules separate extraction, normalization, validation and execution to preserve
 
 ```mermaid
 flowchart TD
-    T[UTF-8 TXT or interface text] --> E[extraction.py and re]
+    U[ui/: browser input and outputs] --> W[web.py: local HTTP adapter]
+    W --> T[UTF-8 TXT or interface text]
+    T --> E[extraction.py and re]
     C[Alias catalog] --> E
     C --> F[normalization.py and pyformlang FST]
     E -->|Original evidence| F
@@ -15,7 +17,7 @@ flowchart TD
     J --> A[classification.py and four epsilon-NFAs]
     A --> D[dsl.py and packaged textX grammar]
     D --> H[rendering.py: standalone HTML]
-    H --> U[Interactive input UI: pending]
+    H --> U
 ```
 
 ## Responsibilities
@@ -42,6 +44,9 @@ flowchart TD
 | workflow.process_complete_resume | Exact text, optional name | First-stage result, classification, DSL, parsed candidate and HTML | Connects all four stages without altering JSON 1.0 |
 | workflow.save_bundle | Complete result and destination | Four UTF-8 files | Cross-stage consistency and overwrite preflight |
 | workflow_cli.main | CLI arguments | Exit 0/2, bundle or diagnostic | BOM/CRLF compatibility and original-input protection |
+| web.process_web_request | JSON text and optional name | Complete result, four downloads and base64 ZIP | Type/size checks and existing bundle validation |
+| web.create_server / main | Local port / CLI arguments | Loopback server / exit 0 or 2 | Fixed routes, packaged assets and Ctrl+C shutdown |
+| ui/app.js | File bytes, text and HTTP response | Four decisions, report and browser downloads | Strict UTF-8, exact unedited CRLF, cleared stale results |
 
 ## Types and evidence
 
@@ -67,4 +72,4 @@ Eight negation patterns cover the immediate alias or a list separated by comma, 
 
 Empty input is rejected. The CLI reports invalid files, encoding and input/output identity in English. Default FSTs are built once and privately cached; results are fresh on every call. There is no persistent candidate state or UI dependency.
 
-JSON is a data boundary, not proof of profile acceptance. Recognition now returns its results in a separate object; textX validates the separate candidate representation before future visualization. HTML is generated only after that validation; the input UI remains a subsequent increment. Packaged profile configuration matches `config/profiles_design.json`, checked by tests. Private cached machines are reused; callers receive fresh result data.
+JSON is a data boundary, not proof of profile acceptance. Recognition returns its results in a separate object; textX validates the candidate representation before HTML generation. The local UI uses that same complete workflow. Packaged profile configuration matches `config/profiles_design.json`, checked by tests. Private cached machines are reused; callers receive fresh result data. The HTTP adapter serializes processing around cached parser/model access and keeps no candidate history.

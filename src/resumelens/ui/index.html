@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ResumeLens | Resume screening</title>
+  <link rel="stylesheet" href="/app.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+<header class="topbar"><a href="/" class="brand" aria-label="ResumeLens home">Resume<span>Lens</span></a><span class="local">Local workspace</span></header>
+<main>
+  <div class="intro"><p class="eyebrow">From resume to structured candidate</p><h1>See where qualifications match.</h1><p>Load or paste a resume to check four professional profiles and create a candidate report.</p></div>
+  <section class="panel" aria-labelledby="input-heading">
+    <div class="panel-heading"><div><p class="step">01 / Resume input</p><h2 id="input-heading">Start with the candidate's resume</h2></div><span class="tag">UTF-8 TXT · up to 64 KiB</span></div>
+    <form id="resume-form">
+      <fieldset id="input-fields">
+        <legend class="sr-only">Resume and optional candidate name</legend>
+        <div class="toolbar"><div><label for="resume-file">Load a TXT file</label><input id="resume-file" type="file" accept=".txt,text/plain" aria-describedby="file-help"></div><button id="example-button" type="button" class="secondary">Try an example</button></div>
+        <p id="file-help" class="hint">Or paste text below. Loading a file replaces the text; editing it uses the revised text.</p>
+        <label for="resume-text">Resume text</label>
+        <textarea id="resume-text" rows="12" placeholder="Name: Ana&#10;Email: ana@example.com&#10;Technical Skills: Python, Pandas, TensorFlow, SQL, Git." required spellcheck="false" aria-describedby="input-count"></textarea>
+        <p id="input-count" class="hint">No resume loaded.</p>
+        <label for="candidate-name">Candidate name <span class="optional">(optional fallback)</span></label>
+        <input id="candidate-name" type="text" maxlength="200" placeholder="Use only when the resume has no explicit name" autocomplete="off">
+        <div class="actions"><button id="process-button" type="submit">Process resume</button><button id="clear-button" type="button" class="secondary">Clear</button></div>
+      </fieldset>
+    </form>
+    <p id="status" role="status" aria-live="polite">Ready when you are.</p>
+    <noscript><p class="error">Enable JavaScript to process resumes through this interface.</p></noscript>
+  </section>
+  <section id="results" hidden aria-labelledby="results-heading">
+    <div class="result-heading"><div><p class="step">02 / Validated results</p><h2 id="results-heading">Candidate results</h2><p id="summary"></p></div><a id="zip-download" class="button" download="resumelens_bundle.zip">Download all files</a></div>
+    <div class="panel"><h3>Professional profile checks</h3><p class="hint">Each profile is evaluated independently. A candidate can match several profiles.</p><div id="profile-checks" class="profile-grid"></div></div>
+    <div class="panel"><div class="panel-heading"><h3>Candidate report</h3><a id="html-download" download="candidate.html">Download HTML</a></div><iframe id="report-preview" title="Validated candidate report" sandbox></iframe></div>
+    <div class="panel"><h3>Processing details</h3><p class="hint">Inspect the extracted evidence, profile decisions and validated candidate specification.</p>
+      <details><summary>Extraction and normalized qualifications <a id="first-download" download="first_stage.json">Download JSON</a></summary><pre id="first-json" tabindex="0"></pre></details>
+      <details><summary>Four-profile recognition <a id="classification-download" download="classification.json">Download JSON</a></summary><pre id="classification-json" tabindex="0"></pre></details>
+      <details><summary>Validated candidate specification <a id="dsl-download" download="candidate.rl">Download DSL</a></summary><pre id="candidate-dsl" tabindex="0"></pre></details>
+    </div>
+  </section>
+  <footer><p>Processed locally in memory. ResumeLens checks explicit qualifications against documented patterns; it does not rank candidates or make hiring decisions.</p></footer>
+</main>
+</body>
+</html>

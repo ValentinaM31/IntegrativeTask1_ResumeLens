@@ -1,6 +1,6 @@
 # Processing and representation acceptance matrix
 
-Complete means the documented extraction, normalization, recognition, candidate-language and HTML workflow scope; it does not certify the interactive UI, final presentation materials or the complete Git history.
+Complete means the documented extraction, normalization, recognition, candidate-language, HTML and local UI scope; it does not certify final presentation materials or the complete Git history.
 
 | Requirement | Evidence | Check | Status |
 |---|---|---|---|
@@ -24,7 +24,8 @@ Complete means the documented extraction, normalization, recognition, candidate-
 | textX syntax and semantic validation | tests/test_dsl.py, data/dsl/ | 16 tests; eight valid and eight invalid examples | Complete |
 | Complete four-stage workflow | workflow.py, workflow_cli.py | Eight executed bundles; original JSON/CLI compatibility | Complete |
 | HTML after validated DSL | rendering.py, data/workflow/ | Syntax/semantic rejection, escaping, records and multiple profiles | Complete |
-| Interactive input UI | Following increment | Input, processing and report display | Pending |
+| Interactive input UI | web.py, ui/, local-ui.md | Paste/load TXT, fallback name, four decisions, report, downloads and errors | Complete; Linux Chrome verified, Windows UI repeat run required |
+| Web downloads | web.py, tests/test_web.py | Eight HTTP/API results, ZIP and individually downloaded files | Complete |
 
 ## Verified corrections
 

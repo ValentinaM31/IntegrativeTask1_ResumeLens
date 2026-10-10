@@ -1,10 +1,10 @@
 # ResumeLens
 
-Process UTF-8 TXT resumes using Python `re`, real finite-state transducers, four profile automata and a textX candidate language. Run the complete workflow to extract evidence, normalize qualifications, recognize profiles and generate a standalone HTML report from a validated specification.
+Process UTF-8 TXT resumes using Python `re`, real finite-state transducers, four profile automata and a textX candidate language. Use the local browser interface or CLI to extract evidence, normalize qualifications, recognize profiles and generate a standalone HTML report from a validated specification.
 
 ## Installation
 
-Python 3.10 or later. Verified environments: the original Windows first-stage environment and the Linux Python 3.12.14 recognition/DSL/workflow environment. New workflow behavior still needs execution on Windows.
+Python 3.10 or later. The corrected 89-test workflow suite passed on the user's Windows installation. Version 1.4.0 and its local browser interface are verified on Linux with Python 3.12.14; the new UI still requires verification on Windows.
 
 ```powershell
 py -m venv .venv
@@ -14,6 +14,24 @@ py -m venv .venv
 Dependencies: `pyformlang==1.0.11`, `jsonschema==4.26.0` and `textX==4.4.0`. `requirements-lock.txt` retains the original first-stage pins and adds textX/Arpeggio for this increment. Install that file and then run `pip install --no-deps -e .` to reproduce the pinned environment. On Linux/macOS use `.venv/bin/python`; macOS has not been verified.
 
 ## Usage
+
+### Browser interface
+
+```powershell
+.\.venv\Scripts\python.exe -m resumelens.web
+```
+
+Keep the terminal open while using the browser. Load a UTF-8 TXT file or paste a
+resume, optionally supply a fallback name, then select **Process resume**. The UI
+shows all four profile decisions, rejection reasons and the validated candidate
+report. Download the two JSON files, DSL and HTML individually or together as a ZIP.
+No candidate files are automatically written by the server.
+
+The printed URL is `http://127.0.0.1:8765`. If browser opening fails, open it manually.
+Use `--port 8766` if the port is occupied, or `--no-browser` to open the URL yourself.
+Press **Ctrl+C** in the terminal to stop. See [interface guide and limits](docs/local-ui.md).
+
+### Original TXT-to-JSON command
 
 ```powershell
 .\.venv\Scripts\python.exe -m resumelens data/samples/01_full_stack.txt -o outputs/alex.json
@@ -56,15 +74,16 @@ The directory contains `first_stage.json`, `classification.json`, `candidate.rl`
 .\.venv\Scripts\python.exe tools/generate_dsl_examples.py
 .\.venv\Scripts\python.exe tools/generate_workflow_examples.py
 .\.venv\Scripts\python.exe tools/check_workflow_acceptance.py
+.\.venv\Scripts\python.exe tools/check_web_acceptance.py
 ```
 
-There are 89 automated tests (39 first-stage, 12 recognition, 16 candidate-language and 22 workflow/rendering/CLI tests), eight main English samples and 23 annotated synthetic extraction cases: fifteen original, six historically reserved and two additional limit cases. All eight samples have executed profile classifications in `data/classification/` and validated candidate specifications in `data/dsl/`. Complete JSON/DSL/HTML bundles are in `data/workflow/`. Spanish input fixtures and regex alternatives retain documented bilingual support. See [test results](docs/test-results.md), [profile models](docs/profile-recognition.md), [candidate grammar](docs/candidate-language.md) and [evaluation](docs/evaluation.md).
+There are 109 automated tests (39 first-stage, 12 recognition, 16 candidate-language, 22 workflow/rendering/CLI and 20 local-HTTP/UI-entry tests), eight main English samples and 23 annotated synthetic extraction cases: fifteen original, six historically reserved and two additional limit cases. All eight samples have executed profile classifications in `data/classification/` and validated candidate specifications in `data/dsl/`. Complete JSON/DSL/HTML bundles are in `data/workflow/`. Browser interactions were additionally checked with Chrome for Testing on Linux; see the documented manual UI checklist. Spanish input fixtures and regex alternatives retain documented bilingual support. See [test results](docs/test-results.md), [profile models](docs/profile-recognition.md), [candidate grammar](docs/candidate-language.md) and [evaluation](docs/evaluation.md).
 
 ## Structure
 
 | Directory | Contents |
 |---|---|
-| src/resumelens | Extraction, FSTs, validation, recognition, textX DSL, HTML and both CLIs |
+| src/resumelens | Extraction, FSTs, validation, recognition, textX DSL, reports, CLI commands and local UI |
 | config | Catalog of 26 symbols, 56 aliases and profile design patterns |
 | contracts | JSON schema 1.0 and input/output example |
 | tests | Behavior and integration tests |
@@ -82,6 +101,6 @@ Profile recognition uses four epsilon-NFAs and the documented canonical bucket o
 
 The candidate DSL now has a complete EBNF specification and executable textX grammar. Generate it with `generate_candidate_dsl(first, classification)` and validate it with `parse_candidate_dsl(source)`; see [API and examples](docs/candidate-language.md). Syntax and semantic errors prevent acceptance.
 
-The complete processing API, workflow CLI and HTML reports are implemented. The interactive input UI remains pending for the next increment. JSON Schema does not replace textX validation. Alphabetical skill order is not an automaton input sequence.
+The complete processing API, workflow CLI, HTML reports and interactive local UI are implemented. Final poster/presentation updates and the complete requirement/history audit remain for the final increment. JSON Schema does not replace textX validation. Alphabetical skill order is not an automaton input sequence.
 
 When changing the catalog or schema, synchronize packaged resources, regenerate models and run tests. `tools/export_models.py` exports complete models; `tools/build_poster.py` is the existing poster generator.

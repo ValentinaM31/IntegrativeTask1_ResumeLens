@@ -2,7 +2,9 @@
 
 The candidate-language increment defined the DSL, generated it from stages 1–3
 and validated it with textX 4.4.0. HTML is implemented in the following
-[complete-workflow increment](complete-workflow.md); the interactive input UI remains pending. The original first-stage JSON 1.0 remains unchanged.
+[complete-workflow increment](complete-workflow.md); the interactive input UI is
+provided by the [fourth increment](local-ui.md). The original first-stage JSON 1.0
+remains unchanged.
 
 ## Representation
 

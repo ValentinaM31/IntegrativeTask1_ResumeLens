@@ -70,6 +70,15 @@ Run `python tools/check_acceptance.py` using a freshly installed environment. Si
 
 Sample 07 excludes negated Python/TensorFlow and ambiguous mentions while retaining JavaScript, Git and React.js. Compare persisted outputs with `data/results/`. Call `validate_result(result, text)` to verify spans.
 
+## Local input interface
+
+Run `python -m resumelens.web` from the installed environment to open the local UI.
+It adapts loaded/pasted text to `process_complete_resume`, displays all four profile
+decisions and the report, and downloads the four validated outputs or a ZIP.
+Unedited file uploads preserve CRLF/BOM decoding conventions; edited/pasted text
+uses the text area's current content. No server-side candidate persistence is added.
+See [local-ui.md](local-ui.md) for PowerShell steps and the manual browser checklist.
+
 ## Limits
 
 React and Pandas require supported technical context; other technical wording may be excluded. Eight explicit negation patterns bound clauses but do not resolve double negation or irony. Angular has possible nontechnical homonyms. Contact formats are limited; education/work records do not establish truth. See `regex.md` and `evaluation.md`.

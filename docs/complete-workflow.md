@@ -8,8 +8,8 @@ UTF-8 TXT → `re` extraction → real pyformlang FST translations → JSON 1.0 
 
 The original `process_resume()` API and `python -m resumelens` TXT-to-JSON command
 retain their existing behavior. HTML reports represent validated candidate data;
-they are not an interactive input interface. The browser interface belongs to the
-following increment.
+the local browser interface added in the fourth increment consumes this same
+workflow. See [local-ui.md](local-ui.md) for interactive input and downloads.
 
 ## Run from PowerShell
 
@@ -69,7 +69,7 @@ assert render_candidate_html(result["dsl"]) == result["html"]
 
 | Key | Meaning |
 |---|---|
-| `pipeline_version` | `"1.0"`, the composed-result format, independent of package version 1.3.0 |
+| `pipeline_version` | `"1.0"`, the composed-result format, independent of package version 1.4.0 |
 | `first_stage` | Original validated JSON 1.0 object |
 | `classification` | Result of `classify_skills(first_stage["normalized_skills"])` |
 | `dsl` | Generated candidate-language source |
@@ -140,7 +140,8 @@ processes CRLF variants, validates their exact evidence spans and shifted offset
 and verifies that classification, DSL and HTML remain identical.
 The acceptance tool executes the real CLI from another working directory for all
 eight samples and compares all four output files with the public API.
-The full suite has 89 tests: the previous 67 plus 22 workflow/rendering/CLI tests.
+This workflow increment added 22 tests to the previous 67. With the fourth
+increment's 20 local HTTP/entry tests, the current full suite contains 109 tests.
 Coverage includes HTML escaping, repeated records, three simultaneous profiles,
 invalid DSL, mutated outputs, overwrite preflight, force behavior, input aliases,
 BOM/CRLF, Unicode and execution outside the repository.
@@ -149,7 +150,9 @@ Symlink/hard-link checks run where the filesystem and permissions permit creatin
 those links; the corresponding tests otherwise report a skip. New workflow behavior
 has been executed on Linux with Python 3.12.14. A Windows run exposed a fixture
 LF/CRLF offset mismatch, reproduced and corrected using a CRLF checkout on Linux.
-The corrected suite still requires a repeat run on Windows. All new text fixture
+The user subsequently reran the corrected 89-test suite on Windows successfully,
+with one symlink-permission skip. The fourth increment's new UI needs its own
+Windows verification. All new text fixture
 reads explicitly use UTF-8, including the recognition correction already published
 in the preceding increment.
 

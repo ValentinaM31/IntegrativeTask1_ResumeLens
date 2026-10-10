@@ -189,8 +189,9 @@ It cannot recover an omitted/negated skill, prove expertise or detect arbitrary 
 technologies. Education and experience are retained by stage 1 but are not numerical
 requirements in these profile patterns. The separate textX grammar and candidate DSL are provided by the following
 [candidate-language increment](candidate-language.md). The following
-[complete-workflow increment](complete-workflow.md) generates HTML; the interactive
-UI remains pending. Neither component decides profile recognition.
+[complete-workflow increment](complete-workflow.md) generates HTML; the
+[fourth increment](local-ui.md) adds the interactive UI. Both consume the executed
+profile recognition results.
 
 The official [pyformlang finite-automaton API](https://pyformlang.readthedocs.io/en/latest/modules/finite_automaton.html)
 documents epsilon-NFAs and acceptance execution. The implementation is verified with

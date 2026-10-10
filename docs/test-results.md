@@ -1,5 +1,50 @@
 # Verification results
 
+## Local browser interface increment — 2026-10-09
+
+Verified package 1.4.0 on Linux with Python 3.12.14 and the unchanged pinned
+dependencies. The preceding corrected 89-test suite was also reported successful
+by the user on Windows, with the symlink-permission test skipped. This new UI
+increment has not yet been run on the user's Windows installation.
+
+| Check | Result |
+|---|---|
+| Full suite in editable installation | 109 tests passed: previous 89 plus 20 HTTP/entry tests |
+| Full suite in a fresh pinned environment with installed wheel | 109 tests passed |
+| `python tools/check_web_acceptance.py` | All eight real HTTP/API results agree; all four files in each ZIP verified |
+| Existing extraction and complete-workflow acceptance | Six extraction scenarios and eight workflow samples still agree with their CLIs |
+| Wheel from outside the repository with isolated Python | Version 1.4.0, all four UI resources, processing API and `resumelens-ui` entry point verified |
+| `python -m pip check` | No dependency conflicts in editable and wheel environments |
+| `node --check src/resumelens/ui/app.js` | JavaScript syntax valid |
+| Real browser interaction | 12 scenario groups passed using Chrome Headless Shell 153.0.8010.12 and Playwright 1.63.0 on Linux |
+| Desktop and 390px mobile-width screenshots | Visually inspected; no horizontal overflow |
+
+Browser checks covered initial assets, the packaged example, all eight uploaded
+samples, four independent decisions, the sandboxed report, ZIP and four individual
+downloads, exact BOM/CRLF/emoji offsets, pasted/edited text, fallback name, stale
+result removal, invalid files, escaped injection, mobile layout, connection failure,
+clearing the form and absence of page exceptions/external requests. ZIP contents
+and individual downloads were compared byte for byte. Original file CRLF survives
+the text area's LF display until the user edits; Python character offsets remain
+unchanged.
+
+The twenty new unittest cases exercise actual loopback HTTP connections, input
+validation and request limits, fixed resources/routes, external Host/Origin
+rejection, invalid DSL, download consistency, independent concurrent candidates,
+port conflicts, browser options and clean shutdown. Processing is serialized
+around cached models/parser, and no candidate files or request data are logged or
+written by the server. ZIP output uses fixed filenames and timestamps.
+
+Browser QA dependencies and downloaded Chrome were used only in the temporary
+verification environment; they are not project dependencies. UI operation uses
+the Python standard library and the existing processing dependencies. Windows UI,
+macOS and other browser engines still require verification. A local 390px viewport
+check is not a test on a physical mobile device. The final poster/presentation,
+academic evidence and repository-history audit remain for the fifth increment.
+
+Reproduce runtime checks and the manual browser checklist in [local-ui.md](local-ui.md).
+Historical verification from the preceding increments follows.
+
 ## Complete-workflow increment — 2026-10-09
 
 Verified on Linux, Python 3.12.14, using the existing pinned pyformlang 1.0.11,
@@ -161,4 +206,4 @@ The previous revision had 35 tests; three Pandas regressions raised the total to
 
 Fifteen admitted cases yield TP=25/FP=0/FN=0; six historical reserved cases yield TP=14/FP=0/FN=0. Two stress cases yield TP=0/FP=0/FN=2, with undefined precision. Reserved cases now serve as regression after extractor changes. Prior results and reclassification reasons are retained; see `evaluation.md`.
 
-Complete FST exports were regenerated from the executable machines and their components checked by tests. Their visual layout and the existing partial poster were reviewed in an earlier revision. The poster has not been regenerated and retains earlier metrics, identified in its README. This historical first-stage verification did not cover profile automata. Current recognition, DSL and workflow results are recorded above; the interactive input UI remains pending.
+Complete FST exports were regenerated from the executable machines and their components checked by tests. Their visual layout and the existing partial poster were reviewed in an earlier revision. The poster has not been regenerated and retains earlier metrics, identified in its README. This historical first-stage verification did not cover profile automata. Current recognition, DSL, workflow and local UI results are recorded above.

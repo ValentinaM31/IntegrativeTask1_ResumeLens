@@ -44,3 +44,21 @@
 | Execution | Installed module from a different cwd | Complete output bundle without cwd-dependent resources |
 
 Automated tests are in `tests/`. Annotated evaluation separates admitted cases and stress limits; see `test-results.md` and `evaluation.md`.
+
+## Local UI and HTTP scenarios
+
+| Component | Scenario | Expected behavior |
+|---|---|---|
+| Local HTTP | Eight samples and simultaneous candidate requests | Exact public API results; candidates remain independent |
+| Downloads | In-memory ZIP versus saved CLI bundle | Exactly four UTF-8 files with identical bytes |
+| Input | BOM, CRLF, Unicode/emoji and optional name | Original decoded spans; explicit name takes precedence |
+| Errors | Wrong types, fields, JSON, encoding, size, content type or length | English JSON error with no result or download |
+| Validation | Invalid generated DSL or unexpected processing failure | No HTML/download; no traceback or input content exposed |
+| Routes | Unknown/traversal paths and external Host/Origin | Rejected without exposing repository files |
+| Entry point | Occupied/invalid port, browser options and Ctrl+C | Diagnostic or clean stop; resources available outside cwd |
+| Browser | Paste/upload, edits, repeated processing, example and clear | Current input/results only; no stale downloads |
+| Browser | Four decisions, reasons, sandboxed report and untrusted text | Actual profile outcomes; text escaped; no active injected elements |
+| Browser | Downloads, narrow viewport and connection failure | Matching ZIP/files, responsive layout and recoverable controls |
+
+The 20 HTTP/entry tests use only installed runtime dependencies. The real-browser
+interaction check is separate QA; reproduce it manually using [local-ui.md](local-ui.md).
