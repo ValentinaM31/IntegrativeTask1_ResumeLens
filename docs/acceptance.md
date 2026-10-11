@@ -15,6 +15,7 @@ Complete means the documented extraction, normalization, recognition, candidate-
 | Complete automaton five-tuples and diagrams | profile-recognition.md, automata/ | Relations reconstructed and compared with execution | Complete |
 | Recognition results | data/classification/ | Eight sample outputs match existing expectations | Complete; synthetic examples |
 | Profile explanations | classification.py, profile-explanations.md, test_profile_explanations.py | Missing groups, pair incompatibility, configured alternatives, real CLI/HTTP and shared JSON/HTML messages | Complete for configured requirements |
+| Disk export recovery | workflow.py, bundle-recovery.md, test_bundle_recovery.py | Prepared files, original backups, four failure positions across 16 original-presence combinations, failed recovery and retry | Complete for controlled filesystem failures; abrupt termination requires inspection |
 | Reproducible cases | samples/, results/, evaluation/ | Eight main English samples, 23 annotated cases | Complete; synthetic evaluation |
 | English project text | README, docs, source/messages | Tests, regeneration, text review | Complete; quoted bilingual input remains |
 | Sources | literature-review.md | Full-paper/abstract distinction | Available foundation, not systematic review |

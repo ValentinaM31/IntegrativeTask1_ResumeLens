@@ -125,11 +125,23 @@ at a target filename is rejected even with force. Unrelated files in the destina
 remain intact. The CLI also protects input aliases, including existing hard links,
 from being overwritten by a bundle output.
 
-Validation and deterministic path conflicts happen before writing. The four file
-writes are not a filesystem transaction: an operating-system failure or another
-process changing paths during writing can leave a partial bundle. Inspect the
-reported output directory after such a failure. Concurrent writes to one bundle
-directory are outside this increment's scope.
+Validation and deterministic target conflicts happen before writing. The saver
+then exclusively creates `.resumelens-export.lock` inside the destination,
+prepares all four outputs there and copies every existing original before touching
+final reports. Cooperating exporters cannot write to the same destination while
+that workspace exists. Previously absent filenames are reserved with exclusive
+creation before replacing individual outputs.
+
+If a controlled publication failure occurs, touched originals are restored from
+their backups and newly created reports are removed. If restoration itself fails,
+`BundleRecoveryError` reports the retained backup directory; further exports are
+blocked until recovery and cleanup. A cleanup-only failure warns and preserves the
+actual success/error outcome. See [recovery instructions](bundle-recovery.md).
+
+Individual replacements do not form an atomic or crash-durable four-file
+transaction. Readers can observe intermediate generations or empty reserved
+files. Abrupt process termination or power loss requires inspection, and unrelated
+programs editing the destination do not honor this coordination mechanism.
 
 ## Reproduction and coverage
 
@@ -152,8 +164,9 @@ eight samples and compares all four output files with the public API.
 This workflow increment added 22 tests to the previous 67. With the fourth
 increment's 20 local HTTP/entry tests, that suite contained 109 tests. Subsequent
 evidence-validation checks added two workflow tests; fourteen focused negation
-regressions brought that total to 125. Seventeen profile-explanation tests bring
-the current total to 145 (including three rejected-POST transport regressions). See [current results](test-results.md)
+regressions brought that total to 125. Seventeen profile-explanation tests and
+three rejected-POST transport regressions brought that total to 145. Fifteen
+bundle-recovery tests bring the current total to 160. See [current results](test-results.md)
 and [negation behavior](negation-handling.md).
 Coverage includes HTML escaping, repeated records, three simultaneous profiles,
 invalid DSL, mutated outputs, overwrite preflight, force behavior, input aliases,

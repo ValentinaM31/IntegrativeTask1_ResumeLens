@@ -50,6 +50,10 @@
 | Rendering gate | Invalid syntax or inconsistent accepted profiles | No HTML result |
 | Saving | Modified result, existing targets, target directories and symlinks | Errors before writes for deterministic validation/path conflicts |
 | Saving | Force overwrite and unrelated destination files | Replace only the four named bundle files |
+| Export preparation | Partial writes, flush, backup and recovery-record failures | Existing reports remain byte-identical before publication |
+| Export recovery | All 16 original-presence combinations; failure at each of four replacements | Restore original bytes/timestamps and remove only newly created reports |
+| Export coordination | Competing exporter, existing workspace and late no-force collision | Reject collision; preserve workspace owner and unrelated files |
+| Export diagnostics | Failed rollback, cleanup failure, caught interruption and CLI retry | Retain complete backups when needed; preserve error outcome and recover/retry |
 | Workflow CLI | BOM/CRLF, Unicode, fallback name, invalid files, input aliases | Consistent evidence; code 0/2; no input overwrite |
 | Execution | Installed module from a different cwd | Complete output bundle without cwd-dependent resources |
 
@@ -91,5 +95,5 @@ details and scrolling, all five actual downloads, retry after network/server
 errors, repeated live-region updates and narrow/high contrast layouts. Downloads
 must match the real HTTP response byte for byte. See
 [keyboard navigation](keyboard-navigation.md) for setup and a manual alternative.
-These interaction checks are distinct from the 145 Python unittest cases and
+These interaction checks are distinct from the 160 Python unittest cases and
 from a screen-reader or full accessibility audit.

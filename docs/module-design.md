@@ -42,7 +42,7 @@ flowchart TD
 | dsl.parse_candidate_dsl | Candidate DSL string | Validated candidate dictionary | textX syntax, unique declarations and profile coherence |
 | rendering.render_candidate_html | Candidate DSL string | Standalone HTML | Parses before rendering; escapes candidate-derived text |
 | workflow.process_complete_resume | Exact text, optional name | First-stage result, classification, DSL, parsed candidate and HTML | Connects all four stages without altering JSON 1.0 |
-| workflow.save_bundle | Complete result and destination | Four UTF-8 files | Cross-stage consistency and overwrite preflight |
+| workflow.save_bundle | Complete result and destination | Four UTF-8 files or filesystem diagnostic | Cross-stage consistency, exclusive workspace, prepared outputs, original backups and controlled rollback |
 | workflow_cli.main | CLI arguments | Exit 0/2, bundle or diagnostic | BOM/CRLF compatibility and original-input protection |
 | web.process_web_request | JSON text and optional name | Complete result, four downloads and base64 ZIP | Type/size checks and existing bundle validation |
 | web.create_server / main | Local port / CLI arguments | Loopback server / exit 0 or 2 | Fixed routes, packaged assets and Ctrl+C shutdown |

@@ -1,5 +1,67 @@
 # Verification results
 
+## Bundle recovery CLI fixture correction — 2026-10-11
+
+The user ran the initial bundle-recovery extension on Windows: 160 tests, one
+failure in `test_cli_reports_failure_preserves_reports_and_can_retry` and the
+expected symlink-permission skip. The mismatch was a skill start position of 25
+instead of the test's LF expectation of 24.
+
+The test wrote its TXT through `Path.write_text` with default newline translation.
+On Windows, LF becomes CRLF, while the production CLI correctly preserves that
+decoded CRLF input. The expected bundle was generated from the original LF string.
+The same 24/25 difference was reproduced on Linux by writing explicit CRLF bytes.
+A checkout using CRLF fixtures alone did not expose this runtime text-write issue.
+
+The corrected test writes exact UTF-8 bytes and runs both LF and CRLF subcases.
+Each compares the CLI's four report files against the API processing that same
+decoded input, after an injected export failure, verified restoration and retry.
+The saver, CLI and evidence-position behavior are unchanged.
+
+Verification on Linux with Python 3.12.14: all 15 recovery tests and the full
+160-test suite pass with both newline subcases. Native Windows verification of
+this correction remains pending. This correction belongs to the same disk export
+commit and does not require a separate progression commit.
+
+## Disk export protection and recovery — 2026-10-11
+
+Based on published `2f6f9c7` (keyboard navigation and accessible feedback). This
+extension changes only disk bundle saving and adds fifteen filesystem regression
+tests plus recovery documentation. Processing, profiles, runtime dependencies,
+package version 1.4.0 and the four output formats remain unchanged.
+
+Verified on Linux with Python 3.12.14 and the existing locked dependencies. Native
+Windows execution of this extension has not been performed in this environment;
+run the commands in [bundle-recovery.md](bundle-recovery.md) after applying it.
+Historical Windows confirmation below applies to preceding changes.
+
+| Check | Result |
+|---|---|
+| Full Python suite | 160 passed, including 15 new bundle-recovery methods |
+| Original-presence/publication failures | 64 subcases passed: each of four promotion failures across all 16 original-presence combinations; original bytes, timestamps and file presence restored |
+| Successful replacement | All 16 original-presence combinations produce the exact four payloads and retain unrelated files and supported original mode bits |
+| Preparation errors | Partial staged write, flush, backup and initial recovery-record errors leave final reports unchanged |
+| Publication/interruption | Commit-record error and exceptions before/after replacement trigger recovery; caught KeyboardInterrupt restores reports |
+| Coordination | Competing exporter is rejected without disturbing its owner; existing workspace and late no-force collision are preserved |
+| Incomplete rollback | Explicit error retains all original byte copies; manual recovery is verified and a fresh export succeeds |
+| Cleanup errors | RuntimeWarning preserves actual success/failure outcome; retained record identifies prepared or committed state |
+| CLI failure and retry | Exit 2 restores old reports; subsequent real CLI export succeeds with exit 0 |
+| Workflow acceptance | Eight real CLI/API sample bundles agree in all four files |
+| Web acceptance | Eight real HTTP/API samples agree; all four ZIP entries verified |
+| First-stage acceptance | Six real API/CLI scenarios agree |
+| Design/dependencies | Catalog/profile/sample consistency and pip check pass |
+| Fresh patch / CRLF checkout | Patch applies on `2f6f9c7`; all 160 tests also pass with CRLF fixtures; fourteen changed files match after newline normalization |
+| Stored bundle regeneration | Eight bundles regenerated with no tracked fixture changes |
+
+Faults are injected around actual filesystem writes, copies and replacements in
+temporary directories. Original report fixtures deliberately contain non-UTF-8
+bytes and CRLF. These subcases demonstrate controlled error recovery, not power
+loss durability, simultaneous reader consistency or independent resume accuracy.
+The eighteen browser groups documented below were verified for the preceding UI
+commit; browser interaction code is unchanged in this extension.
+
+Earlier results follow unchanged.
+
 ## Keyboard navigation and accessible feedback — 2026-10-11
 
 Based on published `a9efc1e` (the profile explanations and rejected-POST correction

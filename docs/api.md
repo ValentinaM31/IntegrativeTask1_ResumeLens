@@ -54,9 +54,15 @@ See [full grammar and examples](candidate-language.md). These DSL functions do n
 first-stage object, recognition results, generated DSL, parsed candidate and HTML.
 `render_candidate_html(dsl_source)` always parses before rendering and recomputes
 the four profile explanations from the validated candidate skills. `save_bundle(result,
-destination, force=False)` verifies consistency before writing four UTF-8 files; it
-rejects existing outputs by default. See [complete workflow](complete-workflow.md)
-for fields, errors and practical limits. The original TXT-to-JSON CLI is unchanged.
+destination, force=False)` verifies consistency before preparing four UTF-8 files;
+it rejects existing outputs by default. Disk exports preserve original copies and
+restore prior files after controlled publication failures. If restoration is
+incomplete, `resumelens.workflow.BundleRecoveryError` (an `OSError` subclass)
+provides `recovery_directory` and `rollback_errors`; backups remain available and
+the CLI returns exit code 2. A cleanup-only failure issues a `RuntimeWarning`
+without replacing the publication outcome. See [complete workflow](complete-workflow.md)
+and [recovery](bundle-recovery.md) for fields, errors and practical limits. The
+original TXT-to-JSON CLI is unchanged.
 
 ## Contract changes
 

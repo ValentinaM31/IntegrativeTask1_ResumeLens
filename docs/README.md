@@ -13,6 +13,7 @@
 | profile-explanations.md | Missing groups, Backend incompatibilities, configured repair alternatives and shared JSON/UI/HTML explanations |
 | candidate-language.md | Complete EBNF, terminals/nonterminals, textX grammar, generation and validation |
 | complete-workflow.md | Four-stage API/CLI, validated HTML, bundle files and overwrite behavior |
+| bundle-recovery.md | Staged disk export, original backups, controlled failure recovery and abrupt-termination limits |
 | local-ui.md | Browser interface, loopback server, uploads, input fidelity, downloads and acceptance |
 | keyboard-navigation.md | Focus destinations, live feedback, keyboard downloads and reproducible browser interaction checks |
 | data-contract.md | JSON 1.0 contract |

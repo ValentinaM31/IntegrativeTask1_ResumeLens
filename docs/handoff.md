@@ -64,6 +64,13 @@ Unknown inputs are recorded only if received by the normalizer. The extractor ma
 
 Do not add properties to version 1.0, whose schema forbids them. Keep later results separate or agree on a new contract version. The package exports the existing first-stage, recognition and DSL functions plus `render_candidate_html`, `process_complete_resume` and `save_bundle`. The original CLI retains TXT-to-JSON behavior; `python -m resumelens.workflow_cli` is the complete bundle command.
 
+Disk exports now prepare the four outputs and keep byte copies of existing reports
+before replacing them. Controlled failures trigger recovery; an incomplete
+recovery retains the originals in the reported workspace and blocks another export
+to that directory. Inspect [bundle recovery](bundle-recovery.md) before removing
+such a workspace. API signatures and exported formats are unchanged. Native
+Windows verification of this extension is still required using the current suite.
+
 ## Acceptance procedure
 
 Run `python tools/check_acceptance.py` using a freshly installed environment. Six cases cover normal and incomplete resumes, repetitions, exclusions, contrast and animal pandas. It compares API/CLI with identical decoded text and optional name, validates evidence and checks expected symbols.
