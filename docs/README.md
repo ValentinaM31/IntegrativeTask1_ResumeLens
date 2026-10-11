@@ -7,6 +7,7 @@
 | handoff.md | Installation, integration and acceptance procedure |
 | api.md | Result consumption and compatibility |
 | regex.md | Exact expressions and limits |
+| negation-handling.md | Explicit knowledge/use negations, list scope, React predicates and end-to-end regressions |
 | transducers.md | Complete septuples and explained paths |
 | profile-recognition.md / automata/ | Four executable epsilon-NFAs, complete five-tuples, diagrams and recognition API |
 | candidate-language.md | Complete EBNF, terminals/nonterminals, textX grammar, generation and validation |

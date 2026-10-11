@@ -13,9 +13,10 @@ PATTERNS = {
     "skills_header": r"^[ \t]*(?:Technical Skills|Skills|Habilidades(?: técnicas)?|Tecnologías|Tecnologias|Competencias)[ \t]*:",
     "section_header": r"^[ \t]*(?:[A-ZÁÉÍÓÚÑ][\w ÁÉÍÓÚÑáéíóúñ/-]{0,45})[ \t]*:",
     "section_title": r"^[ \t]*(?P<label>Education|Educación|Educacion|Degree|Título|Titulo|Experience|Experiencia|Work Experience|Professional Experience|Experiencia laboral|Technical Skills|Skills|Habilidades(?: técnicas)?|Tecnologías|Tecnologias|Competencias|Projects|Proyectos|Summary|Resumen|Contact|Contacto|Languages|Idiomas|Certifications|Certificaciones)(?:[ \t]*:[ \t]*(?P<value>[^\r\n]*))?[ \t]*$",
-    "negation": r"(?<!\w)(?:no experience with|sin experiencia en|no knowledge of|sin conocimientos de|(?:I[ \t]+)?do not use|(?:I[ \t]+)?don't use|no tengo experiencia (?:en|con)|no uso)[ \t]+",
+    "negation": r"(?<!\w)(?:no experience with|sin experiencia en|no knowledge of|sin conocimientos de|(?:I[ \t]+)?(?:do[ \t]+not|don['’]t|cannot|can[ \t]+not|can['’]t)[ \t]+(?:use|know)|no tengo experiencia (?:en|con)|no[ \t]+(?:uso|sé|se|conozco))[ \t]+",
     "clause_boundary": r"[!?;\r\n]|\.(?=[ \t]|$)|(?<!\w)(?:but|however|pero|aunque|sin[ \t]+embargo)(?!\w)",
     "react_technical": r"(?<!\w)(?:develop(?:ed|ing|s)?|build(?:ing|s)?|built|work(?:ed|ing|s)?|desarroll(?:o|é|amos|ando)|trabaj(?:o|é|amos|ando))[^\r\n.!?;]{0,80}(?<!\w)(?:using|with|usando|con)[ \t]+$",
+    "react_knowledge": r"(?<!\w)(?:(?:I[ \t]+)?(?:know|use)|(?:yo[ \t]+)?(?:sé|se|conozco|uso))[ \t]+$",
     "react_after": r"^[ \t]+(?:framework|library|biblioteca)(?!\w)",
     "pandas_before": r"(?<!\w)(?:I[ \t]+)?(?:use|used|using|uso|usé|usando|utilizo|utilicé|utilizando)[ \t]+$",
     "pandas_after": r"^[ \t]+(?:for[ \t]+(?:data[ \t]+(?:analysis|processing)|processing[ \t]+data|analysing[ \t]+data)|para[ \t]+(?:procesar[ \t]+datos|analizar[ \t]+datos|análisis[ \t]+de[ \t]+datos|procesamiento[ \t]+de[ \t]+datos))(?!\w)",
@@ -99,7 +100,7 @@ def _negative_list_prefix(remainder, pattern):
         if not found:
             return False
         remainder = remainder[found.end():]
-        separator = re.match(r"[ \t]*(?:[,/]|\b(?:and|or|y|o)\b)[ \t]*", remainder, re.IGNORECASE)
+        separator = re.match(r"[ \t]*(?:,[ \t]*(?:(?:and|or|nor|y|o|ni)\b)?|/|\b(?:and|or|nor|y|o|ni)\b)[ \t]*", remainder, re.IGNORECASE)
         if not separator:
             return False
         remainder = remainder[separator.end():]
@@ -118,6 +119,7 @@ def _react_context(text, match, contexts):
         return True
     prefix = _clause_prefix(text, match.start())
     return bool(REGEX["react_technical"].search(prefix)
+                or REGEX["react_knowledge"].search(prefix)
                 or REGEX["react_after"].match(text[match.end():]))
 
 

@@ -81,4 +81,4 @@ See [local-ui.md](local-ui.md) for PowerShell steps and the manual browser check
 
 ## Limits
 
-React and Pandas require supported technical context; other technical wording may be excluded. Eight explicit negation patterns bound clauses but do not resolve double negation or irony. Angular has possible nontechnical homonyms. Contact formats are limited; education/work records do not establish truth. See `regex.md` and `evaluation.md`.
+React and Pandas require supported technical context; other technical wording may be excluded. Immediate know/use predicates now admit React, while explicit knowledge/use negations take precedence. Negation supports straight/curly apostrophes and Spanish no sé/se/conozco, and bounds known-alias lists by clauses and lines; it does not resolve double negation or irony. Angular has possible nontechnical homonyms. Contact formats are limited; education/work records do not establish truth. See `negation-handling.md`, `regex.md` and `evaluation.md`.

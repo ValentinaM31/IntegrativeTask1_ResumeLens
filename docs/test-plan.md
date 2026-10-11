@@ -12,6 +12,12 @@
 | Context | JS/TS in lists/prose; React framework/verb | Explicit supported context only |
 | Pandas | Technical usage and animals | Technical positives retained, animals excluded |
 | Negation | Supported phrases, lists and contrast | Reasoned exclusions, later positives retained |
+| Negation knowledge | do not know, don't/don’t know/use, no sé/se/conozco, tabs and case | Negated mentions excluded even inside skills headings |
+| Negation lists | nor/ni and a comma before a conjunction; dotted aliases | All directly coordinated known aliases excluded with exact spans |
+| Negation scope | Punctuation, contrast, line breaks, new predicates and repeated positive mentions | Other positive skills survive; later positive repetitions normalize normally |
+| React predicates | I know/use React versus I know how to react to changes | Immediate technical predicate accepted; ordinary verb excluded |
+| Negation workflow | JS, NodeJS, Postgres and Git plus negated React | Full Stack rejected until a positive React/Angular mention is present |
+| Negation integration | BOM/CRLF file through both real CLIs and actual HTTP/ZIP | API, classification, parsed DSL, HTML and downloads agree |
 | FST | Unknown input, prefix and suffix | No valid translation |
 | Catalog | Conflicting alias | Explicit error |
 | Integration | Repeated/reordered variants | Unique symbols, retained evidence links |

@@ -62,11 +62,11 @@ A line is one evidence record, not necessarily an entire job. Grouping multiline
 
 ## Context and negation
 
-JS/TS require skills headings with recognized-alias continuation lists. Unsuffixed React accepts that context, supported development/work phrases ending in using/with or Spanish equivalents, or a following framework/library word. React.js/ReactJS remain literal.
+JS/TS require skills headings with recognized-alias continuation lists. Unsuffixed React accepts that context, supported development/work phrases ending in using/with or Spanish equivalents, immediate know/use or sé/se/conozco/uso predicates, or a following framework/library word. Explicit negation is evaluated before these context checks. React.js/ReactJS remain literal.
 
 Pandas accepts skills sections or both an immediate use verb and a data analysis/processing complement. Capitalization alone is insufficient.
 
-Eight negation patterns cover the immediate alias or a list separated by comma, slash or and/or/y/o. Closing punctuation, semicolons and contrast connectors end scope. Double negation and irony remain unsupported.
+Explicit negative phrases include do not know/use, don't/don’t know/use and no sé/se/conozco, in addition to the existing experience/knowledge and no uso forms. They cover the immediate alias or a known-alias list separated by comma, slash or and/or/nor/y/o/ni, including a comma before a conjunction. Other words interrupt the list. Closing punctuation, semicolons, line breaks and contrast connectors end scope. New knowledge/use forms allow horizontal spaces/tabs without crossing lines. Double negation and irony remain unsupported. See [negation examples and limits](negation-handling.md).
 
 ## Errors and shared state
 

@@ -143,7 +143,10 @@ and verifies that classification, DSL and HTML remain identical.
 The acceptance tool executes the real CLI from another working directory for all
 eight samples and compares all four output files with the public API.
 This workflow increment added 22 tests to the previous 67. With the fourth
-increment's 20 local HTTP/entry tests, the current full suite contains 109 tests.
+increment's 20 local HTTP/entry tests, that suite contained 109 tests. Subsequent
+evidence-validation checks added two workflow tests; fourteen focused negation
+regressions bring the current total to 125. See [current results](test-results.md)
+and [negation behavior](negation-handling.md).
 Coverage includes HTML escaping, repeated records, three simultaneous profiles,
 invalid DSL, mutated outputs, overwrite preflight, force behavior, input aliases,
 BOM/CRLF, Unicode and execution outside the repository.

@@ -6,7 +6,7 @@ Complete means the documented extraction, normalization, recognition, candidate-
 |---|---|---|---|
 | Candidate/skills regex | extraction.py, regex.md | Records, contact, aliases, offsets | Complete in supported formats |
 | React/Pandas/JS/TS context | extraction.py | Technical cases and nontechnical prose | Complete for explicit rules |
-| Negation/contrast | extraction.py, regex.md | Eight patterns, lists, later positives | Complete for explicit rules |
+| Negation/contrast | extraction.py, regex.md, test_negation.py | Knowledge/use forms, apostrophes, Spanish variants, lists, later positives and false-profile regression through CLI/HTTP | Complete for explicit rules |
 | Real pyformlang FSTs | normalization.py | 56 aliases, case, unknowns, conflicts, ambiguous outputs | Complete |
 | Complete formal models | transducers.md, models/ | Matches actual machines and exports | Complete |
 | Contract 1.0/evidence | first_stage.py, schema | Version, types, offsets, indices, translations | Complete |

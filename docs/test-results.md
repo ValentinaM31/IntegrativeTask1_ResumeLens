@@ -1,5 +1,40 @@
 # Verification results
 
+## Explicit skill-negation correction — 2026-10-10
+
+Based on `9d0b5f1` (the existing evidence-validation and CI updates included),
+the unchanged baseline passed 111 tests. New regression cases reproduced the
+incorrect Full Stack acceptance caused by `I do not know React` inside a skills
+line, the missing positive `I know React`, and unsupported knowledge/list forms.
+The correction extends explicit phrases and list coordination, and adds a narrow
+immediate knowledge/use context for React. Negation is checked before context.
+
+Verified on Linux with Python 3.12.14 and the unchanged pinned dependencies:
+pyformlang 1.0.11, jsonschema 4.26.0 and textX 4.4.0. Package version stays 1.4.0;
+JSON and pipeline versions stay 1.0. Windows execution of this correction must be
+checked locally before publication; historical Windows checks below remain valid
+for the versions they describe.
+
+| Check | Result |
+|---|---|
+| Full editable-install suite | 125 passed: 111 existing plus 14 focused negation tests |
+| Fresh pinned environment with installed wheel | 125 passed; no dependency conflicts |
+| New extraction regressions | English/Spanish knowledge/use negation, straight/curly apostrophes, inability forms, tabs/case, list conjunctions, repeated positives, ordinary react verb, Pandas context and Unicode/CRLF spans |
+| New complete-workflow regressions | False Full Stack acceptance corrected; positive React/Angular recovers acceptance through the existing automaton and validated DSL |
+| Real CLI and HTTP regressions | BOM/CRLF file agrees with API through both CLIs outside the repository; actual HTTP decision and all four ZIP contents agree |
+| Existing acceptance tools | Six extraction scenarios, eight complete CLI/API bundles and eight HTTP/API bundles remain consistent |
+| `python tools/validate_design.py` | Catalog, profiles, schema example and eight expectations remain consistent |
+| `python tools/document_regex.py` | Documentation regenerated from actual patterns; a repeat run produces identical content |
+| `python tools/evaluate.py` | Existing 23-case synthetic results unchanged: 25 supported and 14 historical-reserved true positives; two stress omissions remain |
+| Installed wheel with isolated Python outside the repository | Negation, positive recovery and packaged resources execute successfully |
+
+The fourteen tests contain phrase/list/scope subcases rather than fourteen new
+independent evaluation examples. They do not establish accuracy on real resumes.
+Other negative phrases, unknown aliases in lists, double negation and irony remain
+documented limits. No browser-engine interaction was added in this correction;
+HTTP/ZIP behavior was tested and a manual UI replay is documented in
+[negation-handling.md](negation-handling.md). Earlier results follow unchanged.
+
 ## Local browser interface increment — 2026-10-09
 
 Verified package 1.4.0 on Linux with Python 3.12.14 and the unchanged pinned
