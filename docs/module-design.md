@@ -70,6 +70,13 @@ Explicit negative phrases include do not know/use, don't/don’t know/use and no
 
 ## Errors and shared state
 
+Profile recognition also derives `explanations` and `pair_diagnostics` after the
+actual NFA decision. Labels come from the catalog and alternatives from the
+validated profile configuration. The UI uses those messages as text; standalone
+HTML recomputes them from parsed DSL skills and escapes them. Missing alternatives
+do not introduce inferred skills or a second acceptance rule. See
+[diagnostic structure and examples](profile-explanations.md).
+
 Empty input is rejected. The CLI reports invalid files, encoding and input/output identity in English. Default FSTs are built once and privately cached; results are fresh on every call. There is no persistent candidate state or UI dependency.
 
 JSON is a data boundary, not proof of profile acceptance. Recognition returns its results in a separate object; textX validates the candidate representation before HTML generation. The local UI uses that same complete workflow. Packaged profile configuration matches `config/profiles_design.json`, checked by tests. Private cached machines are reused; callers receive fresh result data. The HTTP adapter serializes processing around cached parser/model access and keeps no candidate history.

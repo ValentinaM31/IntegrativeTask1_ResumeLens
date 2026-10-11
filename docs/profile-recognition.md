@@ -167,7 +167,11 @@ assert classification["accepted_profiles"] == ["FULL_STACK_DEVELOPER"]
 The return object has `accepted_profiles` (unique, alphabetical) and `profiles`
 (one result for each configured profile). Each result includes `profile`, `accepted`,
 `sequence`, `missing_groups`, `compatible_pair_missing`, `optional_present` and
-`ignored_for_pattern`. Groups preserve their configured alternative order. Empty
+`ignored_for_pattern`, plus `explanations` and `pair_diagnostics`. The latter fields
+describe missing groups and configured compatible-pair alternatives after the
+automaton decision. They neither infer new skills nor change the accepted language.
+See [diagnostic fields and examples](profile-explanations.md).
+Groups preserve their configured alternative order. Empty
 skills are valid and reject all four profiles. Invalid symbols/collections raise ValueError.
 
 ```powershell

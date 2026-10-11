@@ -83,6 +83,13 @@ accepted profiles. `render_candidate_html(dsl_source)` is independently callable
 always parses and validates its argument before returning HTML; it cannot bypass
 textX by accepting an arbitrary candidate dictionary.
 
+The standalone HTML now includes four qualification checks as well as accepted
+profiles. Its explanations and compatible-pair alternatives are recomputed from
+the parsed DSL skills through the same recognition API used by the web cards.
+Classification JSON adds `explanations` and `pair_diagnostics`; all earlier fields,
+first-stage JSON 1.0, candidate grammar and profile decisions remain compatible.
+See [diagnostics and examples](profile-explanations.md).
+
 `save_bundle(result, destination, force=False)` returns the destination Path. Before
 creating any output, it verifies pipeline version, first-stage schema and evidence against `source_text`, actual FST translations,
 recognition results, generated DSL, parsed candidate and HTML consistency. It expects
@@ -145,7 +152,8 @@ eight samples and compares all four output files with the public API.
 This workflow increment added 22 tests to the previous 67. With the fourth
 increment's 20 local HTTP/entry tests, that suite contained 109 tests. Subsequent
 evidence-validation checks added two workflow tests; fourteen focused negation
-regressions bring the current total to 125. See [current results](test-results.md)
+regressions brought that total to 125. Seventeen profile-explanation tests bring
+the current total to 145 (including three rejected-POST transport regressions). See [current results](test-results.md)
 and [negation behavior](negation-handling.md).
 Coverage includes HTML escaping, repeated records, three simultaneous profiles,
 invalid DSL, mutated outputs, overwrite preflight, force behavior, input aliases,

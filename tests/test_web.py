@@ -1,22 +1,24 @@
 """Real local HTTP integration, downloaded bundles and input validation."""
 from concurrent.futures import ThreadPoolExecutor
-from contextlib import redirect_stderr, redirect_stdout
+from contextlib import contextmanager, redirect_stderr, redirect_stdout
 import base64
 import http.client
 from importlib.resources import files
 from io import BytesIO, StringIO
 import json
+import socket
 from pathlib import Path
 import subprocess
 import sys
 import tempfile
-from threading import Thread
+from threading import Event, Thread
 import unittest
 from unittest.mock import patch
 from zipfile import ZipFile
 from resumelens import process_complete_resume, parse_candidate_dsl, save_bundle
 from resumelens.first_stage import validate_result
 from resumelens.web import (MAX_REQUEST_BYTES, MAX_TEXT_BYTES, create_server,
+                            LocalHTTPServer, ResumeLensHandler, REJECT_DRAIN_SECONDS,
                             main, process_web_request)
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -145,12 +147,93 @@ class WebTests(unittest.TestCase):
             self.assertEqual(status, expected)
 
     def test_external_origin_and_host_are_rejected(self):
-        for headers in [{'Origin': 'https://example.com'}, {'Origin': 'null'}, {'Host': 'example.com'}]:
-            status, _, raw = self.post({'text': 'Name: Ana'}, {'Content-Type': 'application/json', **headers})
-            self.assertEqual(status, 403)
-            self.assertIn('error', json.loads(raw))
+        with patch('resumelens.web.process_web_request') as process:
+            for headers in [{'Origin': 'https://example.com'}, {'Origin': 'null'}, {'Host': 'example.com'}]:
+                for text in ['Name: Ana', 'Name: María 😀\r\n' + 'α' * 40000]:
+                    with self.subTest(headers=headers, bytes=len(text.encode('utf-8'))):
+                        status, _, raw = self.post({'text': text}, {'Content-Type': 'application/json', **headers})
+                        self.assertEqual(status, 403)
+                        self.assertEqual(set(json.loads(raw)), {'error'})
+            process.assert_not_called()
         status, _, _ = self.request(headers={'Host': 'example.com'})
         self.assertEqual(status, 403)
+
+    @contextmanager
+    def observed_server(self):
+        """Observe actual connection completion without changing request handling."""
+        finished = Event()
+
+        class ObservedHandler(ResumeLensHandler):
+            def finish(self):
+                try:
+                    super().finish()
+                finally:
+                    finished.set()
+
+        server = LocalHTTPServer(('127.0.0.1', 0), ObservedHandler)
+        thread = Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        try:
+            yield server.server_port, finished
+        finally:
+            server.shutdown()
+            server.server_close()
+            thread.join(timeout=5)
+
+    def test_rejected_post_replies_before_delayed_body_and_then_closes_cleanly(self):
+        body = json.dumps({'text': 'Name: María 😀'}, ensure_ascii=False).encode('utf-8')
+        with self.observed_server() as (port, finished), \
+                patch('resumelens.web.process_web_request') as process, \
+                socket.create_connection(('127.0.0.1', port), timeout=5) as connection:
+            headers = (f'POST /api/process HTTP/1.1\r\nHost: 127.0.0.1:{port}\r\n'
+                       'Origin: https://example.com\r\nContent-Type: application/json\r\n'
+                       f'Content-Length: {len(body)}\r\nExpect: 100-continue\r\n\r\n')
+            connection.sendall(headers.encode('ascii'))
+            connection.settimeout(REJECT_DRAIN_SECONDS / 2)
+            response = http.client.HTTPResponse(connection)
+            response.begin()
+            self.assertEqual(response.status, 403)
+            self.assertEqual(set(json.loads(response.read())), {'error'})
+            self.assertFalse(finished.wait(0.05), 'Closed before the delayed body arrived')
+            connection.sendall(body[:3])
+            connection.sendall(body[3:])
+            connection.settimeout(5)
+            self.assertTrue(finished.wait(5))
+            self.assertEqual(connection.recv(1), b'')
+            process.assert_not_called()
+
+    def test_rejected_post_missing_body_has_a_bounded_close(self):
+        with self.observed_server() as (port, finished), \
+                patch('resumelens.web.process_web_request') as process, \
+                socket.create_connection(('127.0.0.1', port), timeout=5) as connection:
+            connection.sendall((f'POST /api/process HTTP/1.1\r\nHost: 127.0.0.1:{port}\r\n'
+                                'Origin: null\r\nContent-Length: 100\r\n\r\n').encode('ascii'))
+            connection.settimeout(REJECT_DRAIN_SECONDS / 2)
+            response = http.client.HTTPResponse(connection)
+            response.begin()
+            self.assertEqual(response.status, 403)
+            self.assertEqual(set(json.loads(response.read())), {'error'})
+            self.assertTrue(finished.wait(REJECT_DRAIN_SECONDS + 2))
+            self.assertEqual(connection.recv(1), b'')
+            process.assert_not_called()
+
+    def test_rejected_unbounded_or_ambiguous_body_is_not_awaited(self):
+        cases = ['', f'Content-Length: {MAX_REQUEST_BYTES + 1}\r\n',
+                 'Content-Length: -1\r\n', 'Content-Length: invalid\r\n',
+                 'Content-Length: 10\r\nContent-Length: 10\r\n',
+                 'Content-Length: 10\r\nTransfer-Encoding: chunked\r\n']
+        for framing in cases:
+            with self.subTest(framing=framing), self.observed_server() as (port, finished), \
+                    patch('resumelens.web.process_web_request') as process, \
+                    socket.create_connection(('127.0.0.1', port), timeout=5) as connection:
+                connection.sendall((f'POST /api/process HTTP/1.1\r\nHost: example.com\r\n'
+                                    + framing + '\r\n').encode('ascii'))
+                response = http.client.HTTPResponse(connection)
+                response.begin()
+                self.assertEqual(response.status, 403)
+                self.assertEqual(set(json.loads(response.read())), {'error'})
+                self.assertTrue(finished.wait(REJECT_DRAIN_SECONDS / 2))
+                process.assert_not_called()
 
     def test_unknown_routes_and_traversal_cannot_read_files(self):
         for path in ['/pyproject.toml', '/../README.md', '/%2e%2e/README.md', '/api/results', '/ui/example.txt']:

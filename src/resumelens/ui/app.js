@@ -133,11 +133,23 @@ function renderResults(data) {
     decision.className = "decision";
     decision.textContent = profile.accepted ? "Accepted" : "Not accepted";
     card.append(decision);
-    const explanation = document.createElement("p");
-    const missing = profile.missing_groups.map((group) => group.join(" or "));
-    if (profile.compatible_pair_missing) missing.push("a compatible language/framework pair");
-    explanation.textContent = profile.accepted ? "All required qualification groups are present." : `Missing: ${missing.join("; ") || "an accepted qualification pattern"}.`;
-    card.append(explanation);
+    for (const message of profile.explanations) {
+      const explanation = document.createElement("p");
+      explanation.textContent = message;
+      card.append(explanation);
+    }
+    if (profile.compatible_pair_missing && profile.pair_diagnostics) {
+      const label = document.createElement("p");
+      label.textContent = "Supported pairs — one complete pair is sufficient:";
+      card.append(label);
+      const alternatives = document.createElement("ul");
+      for (const option of profile.pair_diagnostics.alternatives) {
+        const item = document.createElement("li");
+        item.textContent = option.message;
+        alternatives.append(item);
+      }
+      card.append(alternatives);
+    }
     byId("profile-checks").append(card);
   }
   byId("first-json").textContent = data.downloads["first_stage.json"];

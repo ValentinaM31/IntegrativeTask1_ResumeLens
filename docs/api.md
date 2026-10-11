@@ -29,6 +29,13 @@ acceptance and leaves `result` unchanged. Several profiles may be accepted. An e
 collection rejects all profiles; unknown/non-string symbols or invalid collections
 raise ValueError. See [recognition definitions and examples](profile-recognition.md).
 
+Each profile result additionally exposes `explanations` (English messages for the
+actual decision) and `pair_diagnostics` (null for profiles without a pair rule;
+otherwise status, present languages/frameworks and configured alternatives with
+their missing symbols and messages). Existing fields and decisions are preserved.
+These explanations are derived after `machine.accepts(sequence)` and do not decide
+acceptance. See [field definitions and examples](profile-explanations.md).
+
 `ValueError` reports empty input or semantic inconsistency. File/encoding errors are reported by the CLI. Unknown terms are recorded only when passed to the normalizer; extraction does not discover arbitrary technologies. Program diagnostics are in English.
 
 ## Candidate-language API
@@ -45,7 +52,8 @@ See [full grammar and examples](candidate-language.md). These DSL functions do n
 
 `process_complete_resume(text, name=None)` returns pipeline version 1.0, the unchanged
 first-stage object, recognition results, generated DSL, parsed candidate and HTML.
-`render_candidate_html(dsl_source)` always parses before rendering. `save_bundle(result,
+`render_candidate_html(dsl_source)` always parses before rendering and recomputes
+the four profile explanations from the validated candidate skills. `save_bundle(result,
 destination, force=False)` verifies consistency before writing four UTF-8 files; it
 rejects existing outputs by default. See [complete workflow](complete-workflow.md)
 for fields, errors and practical limits. The original TXT-to-JSON CLI is unchanged.

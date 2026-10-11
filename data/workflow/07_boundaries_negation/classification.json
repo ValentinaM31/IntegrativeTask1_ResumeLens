@@ -23,6 +23,11 @@
         ]
       ],
       "compatible_pair_missing": false,
+      "explanations": [
+        "Missing one of: Node.js or Django or Spring Boot.",
+        "Missing one of: SQL or PostgreSQL or MySQL or MongoDB."
+      ],
+      "pair_diagnostics": null,
       "optional_present": [],
       "ignored_for_pattern": []
     },
@@ -51,6 +56,13 @@
         ]
       ],
       "compatible_pair_missing": false,
+      "explanations": [
+        "Missing required qualification: Python.",
+        "Missing one of: Pandas or NumPy.",
+        "Missing one of: TensorFlow or PyTorch.",
+        "Missing one of: SQL or PostgreSQL or MySQL."
+      ],
+      "pair_diagnostics": null,
       "optional_present": [],
       "ignored_for_pattern": [
         "JAVASCRIPT",
@@ -76,6 +88,63 @@
         ]
       ],
       "compatible_pair_missing": true,
+      "explanations": [
+        "No supported backend framework is present. Languages found: JavaScript.",
+        "Missing one of: SQL or PostgreSQL or MySQL or MongoDB.",
+        "Missing required qualification: REST API."
+      ],
+      "pair_diagnostics": {
+        "status": "missing_framework",
+        "languages_present": [
+          "JAVASCRIPT"
+        ],
+        "frameworks_present": [],
+        "alternatives": [
+          {
+            "pair": [
+              "JAVA",
+              "SPRING_BOOT"
+            ],
+            "missing": [
+              "JAVA",
+              "SPRING_BOOT"
+            ],
+            "message": "Java + Spring Boot: missing Java and Spring Boot."
+          },
+          {
+            "pair": [
+              "PYTHON",
+              "DJANGO"
+            ],
+            "missing": [
+              "PYTHON",
+              "DJANGO"
+            ],
+            "message": "Python + Django: missing Python and Django."
+          },
+          {
+            "pair": [
+              "JAVASCRIPT",
+              "NODE_JS"
+            ],
+            "missing": [
+              "NODE_JS"
+            ],
+            "message": "JavaScript + Node.js: missing Node.js."
+          },
+          {
+            "pair": [
+              "TYPESCRIPT",
+              "NODE_JS"
+            ],
+            "missing": [
+              "TYPESCRIPT",
+              "NODE_JS"
+            ],
+            "message": "TypeScript + Node.js: missing TypeScript and Node.js."
+          }
+        ]
+      },
       "optional_present": [],
       "ignored_for_pattern": [
         "REACT"
@@ -103,6 +172,12 @@
         ]
       ],
       "compatible_pair_missing": false,
+      "explanations": [
+        "Missing required qualification: Python.",
+        "Missing one of: SQL or PostgreSQL or MySQL.",
+        "Missing one of: ETL or Apache Airflow or Apache Spark."
+      ],
+      "pair_diagnostics": null,
       "optional_present": [],
       "ignored_for_pattern": [
         "JAVASCRIPT",

@@ -27,6 +27,12 @@
         ]
       ],
       "compatible_pair_missing": false,
+      "explanations": [
+        "Missing one of: JavaScript or TypeScript.",
+        "Missing one of: React or Angular or Vue.",
+        "Missing one of: Node.js or Django or Spring Boot."
+      ],
+      "pair_diagnostics": null,
       "optional_present": [],
       "ignored_for_pattern": [
         "AIRFLOW",
@@ -53,6 +59,11 @@
         ]
       ],
       "compatible_pair_missing": false,
+      "explanations": [
+        "Missing one of: Pandas or NumPy.",
+        "Missing one of: TensorFlow or PyTorch."
+      ],
+      "pair_diagnostics": null,
       "optional_present": [],
       "ignored_for_pattern": [
         "AIRFLOW",
@@ -73,6 +84,62 @@
         ]
       ],
       "compatible_pair_missing": true,
+      "explanations": [
+        "No supported backend framework is present. Languages found: Python.",
+        "Missing required qualification: REST API."
+      ],
+      "pair_diagnostics": {
+        "status": "missing_framework",
+        "languages_present": [
+          "PYTHON"
+        ],
+        "frameworks_present": [],
+        "alternatives": [
+          {
+            "pair": [
+              "JAVA",
+              "SPRING_BOOT"
+            ],
+            "missing": [
+              "JAVA",
+              "SPRING_BOOT"
+            ],
+            "message": "Java + Spring Boot: missing Java and Spring Boot."
+          },
+          {
+            "pair": [
+              "PYTHON",
+              "DJANGO"
+            ],
+            "missing": [
+              "DJANGO"
+            ],
+            "message": "Python + Django: missing Django."
+          },
+          {
+            "pair": [
+              "JAVASCRIPT",
+              "NODE_JS"
+            ],
+            "missing": [
+              "JAVASCRIPT",
+              "NODE_JS"
+            ],
+            "message": "JavaScript + Node.js: missing JavaScript and Node.js."
+          },
+          {
+            "pair": [
+              "TYPESCRIPT",
+              "NODE_JS"
+            ],
+            "missing": [
+              "TYPESCRIPT",
+              "NODE_JS"
+            ],
+            "message": "TypeScript + Node.js: missing TypeScript and Node.js."
+          }
+        ]
+      },
       "optional_present": [],
       "ignored_for_pattern": [
         "AIRFLOW",
@@ -91,6 +158,10 @@
       ],
       "missing_groups": [],
       "compatible_pair_missing": false,
+      "explanations": [
+        "All required qualification groups are present."
+      ],
+      "pair_diagnostics": null,
       "optional_present": [],
       "ignored_for_pattern": []
     }

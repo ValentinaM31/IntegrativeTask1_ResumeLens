@@ -89,6 +89,55 @@ def canonical_sequence(skills, profile):
     return [symbol for bucket in buckets for symbol in sorted(values & bucket)]
 
 
+def _qualification_explanations(values, profile, accepted, missing, labels):
+    """Describe configured requirements after the automaton has made its decision."""
+    pairs = profile.get("required_pair_alternatives", [])
+    diagnostics = None
+    reasons = []
+    if pairs:
+        languages = sorted(values.intersection(pair[0] for pair in pairs))
+        frameworks = sorted(values.intersection(pair[1] for pair in pairs))
+        alternatives = []
+        for pair in pairs:
+            absent = [symbol for symbol in pair if symbol not in values]
+            label = " + ".join(labels[symbol] for symbol in pair)
+            message = (label + ": missing " + " and ".join(labels[symbol] for symbol in absent)
+                       if absent else label + ": present") + "."
+            alternatives.append({"pair": list(pair), "missing": absent, "message": message})
+        if any(not option["missing"] for option in alternatives):
+            status = "matched"
+        elif languages and frameworks:
+            status = "incompatible"
+            reasons.append("Languages found: " + ", ".join(labels[s] for s in languages)
+                           + ". Frameworks found: " + ", ".join(labels[s] for s in frameworks)
+                           + ". These do not form an admitted language/framework pair.")
+        elif languages:
+            status = "missing_framework"
+            reasons.append("No supported backend framework is present. Languages found: "
+                           + ", ".join(labels[s] for s in languages) + ".")
+        elif frameworks:
+            status = "missing_language"
+            reasons.append("No supported backend language is present. Frameworks found: "
+                           + ", ".join(labels[s] for s in frameworks) + ".")
+        else:
+            status = "missing_both"
+            reasons.append("No supported backend language or framework is present.")
+        diagnostics = {"status": status, "languages_present": languages,
+                       "frameworks_present": frameworks, "alternatives": alternatives}
+    for group in missing:
+        reasons.append(("Missing required qualification: " if len(group) == 1 else "Missing one of: ")
+                       + " or ".join(labels[symbol] for symbol in group) + ".")
+    if accepted:
+        reasons = ["All required qualification groups are present."]
+        if diagnostics is not None:
+            matched = [option["pair"] for option in diagnostics["alternatives"] if not option["missing"]]
+            reasons.append("Compatible pair found: " + "; ".join(
+                " + ".join(labels[symbol] for symbol in pair) for pair in matched) + ".")
+    elif not reasons:
+        reasons.append("The profile automaton rejected the qualification sequence.")
+    return reasons, diagnostics
+
+
 def classify_skills(skills):
     if isinstance(skills, (str, bytes)):
         raise ValueError("Skills must be a collection of canonical symbols")
@@ -98,7 +147,8 @@ def classify_skills(skills):
         raise ValueError("Skills must be a collection of canonical symbols") from error
     if any(not isinstance(value, str) for value in values):
         raise ValueError("Canonical symbols must be strings")
-    known = {skill["canonical"] for skill in load_catalog()["skills"]}
+    labels = {skill["canonical"]: skill["aliases"][0] for skill in load_catalog()["skills"]}
+    known = set(labels)
     if not values <= known:
         raise ValueError("Unknown canonical symbols: " + ", ".join(sorted(values - known)))
     results = []
@@ -108,10 +158,12 @@ def classify_skills(skills):
         missing = [list(group) for group in profile["required_groups"] if not values.intersection(group)]
         pairs = profile.get("required_pair_alternatives", [])
         pair_missing = bool(pairs and not any(set(pair) <= values for pair in pairs))
+        explanations, diagnostics = _qualification_explanations(values, profile, accepted, missing, labels)
         # These explanations do not decide acceptance; accepts() above does.
         results.append({"profile": profile["id"], "accepted": accepted,
                         "sequence": sequence, "missing_groups": missing,
                         "compatible_pair_missing": pair_missing,
+                        "explanations": explanations, "pair_diagnostics": diagnostics,
                         "optional_present": sorted(values.intersection(profile["optional"])),
                         "ignored_for_pattern": sorted(values - set(sequence))})
     return {"accepted_profiles": sorted(row["profile"] for row in results if row["accepted"]),

@@ -10,6 +10,7 @@
 | negation-handling.md | Explicit knowledge/use negations, list scope, React predicates and end-to-end regressions |
 | transducers.md | Complete septuples and explained paths |
 | profile-recognition.md / automata/ | Four executable epsilon-NFAs, complete five-tuples, diagrams and recognition API |
+| profile-explanations.md | Missing groups, Backend incompatibilities, configured repair alternatives and shared JSON/UI/HTML explanations |
 | candidate-language.md | Complete EBNF, terminals/nonterminals, textX grammar, generation and validation |
 | complete-workflow.md | Four-stage API/CLI, validated HTML, bundle files and overwrite behavior |
 | local-ui.md | Browser interface, loopback server, uploads, input fidelity, downloads and acceptance |

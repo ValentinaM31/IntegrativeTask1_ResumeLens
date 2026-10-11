@@ -1,5 +1,83 @@
 # Verification results
 
+## Rejected POST connection correction — 2026-10-11
+
+The user ran the initial profile-explanation extension on Windows with Python
+3.14: 142 tests, one connection error in
+`test_external_origin_and_host_are_rejected`, and one expected symlink-permission
+skip. The error was `ConnectionAbortedError: [WinError 10053]` while receiving the
+403 response. It is a transport failure, not a failed profile explanation.
+
+Review found that early POST rejection sent its response and closed while the
+request body remained unread. Premature TCP closure can prevent an HTTP response
+from reaching its client (RFC 9112 section 9.6). This is a plausible explanation
+for the reported failure, not a native Windows reproduction or proof of its
+precise OS cause.
+
+The correction flushes the error response first, then discards a clearly framed
+body of at most 512 KiB with a one-second total deadline. It never parses or
+processes rejected content. Invalid, absent, duplicate, oversized or chunked
+framing is not awaited. Cleanup timeout/disconnect does not send a second error.
+Ordinary processing and the original Host/Origin rejection remain unchanged.
+
+Verified on Linux with Python 3.12.14 and the existing pinned dependencies:
+
+| Check | Result |
+|---|---|
+| Complete suite after the transport correction | 145 passed, including 23 HTTP/entry tests |
+| Regression against the original HTTP handler | The new delayed-body test fails on its premature close |
+| Delayed UTF-8 POST / Expect header | Full 403 received before sending body; clean close after body arrives; no processing |
+| Missing or ambiguous rejected body | Cleanup is bounded; invalid or oversized framing is not awaited |
+| External Host/Origin with short and larger Unicode bodies | 403 JSON responses; candidate processing never invoked |
+| Existing HTTP and complete-workflow acceptance | Eight samples agree with API; all four ZIP/output files verified |
+| Dependency check | No broken requirements |
+
+Native Windows/Python 3.14 verification of this correction is still required.
+Run the complete suite and both acceptance tools before publishing. The Windows
+symlink-permission skip remains expected; a connection error must not be skipped.
+The initial 142-test checks below describe the extension before this correction.
+
+## Profile-requirement explanations — 2026-10-10
+
+Based on published commit `11c1d8c`, whose unchanged baseline passed 125 tests on
+Linux. The user also reported that baseline passing on Windows with one skipped
+test, and both existing CLI and HTTP acceptance checks succeeding. This extension
+adds explanations for all four profiles and structured Backend pair diagnostics;
+the NFA patterns, original classification fields, first-stage JSON and DSL are
+unchanged. Windows execution of this new extension remains to be checked locally.
+
+Verified on Linux, Python 3.12.14, with unchanged pyformlang 1.0.11, jsonschema
+4.26.0 and textX 4.4.0 dependencies. Package version remains 1.4.0.
+
+| Check | Result |
+|---|---|
+| Full editable-install suite | 142 passed: 125 existing plus 17 explanation tests |
+| Fresh pinned environment with installed wheel | 142 passed; `pip check` reports no conflicts |
+| New explanation tests | Five Backend statuses, four profiles, multiple pairs, optional skills, fresh results, configured alternatives and actual NFA authority |
+| Pair/remaining-group combinations | 96 Backend combinations retain their expected accept/reject decisions |
+| Existing eight classification outputs | Every original field is identical to the baseline after excluding the two new diagnostic fields |
+| Stored examples | Eight classification outputs and eight workflow classification/HTML outputs regenerated; repeat generation produces identical files |
+| API/CLI/HTTP acceptance | Six first-stage scenarios, eight complete workflow samples and eight HTTP/ZIP samples agree |
+| New CLI/export integration | Actual CLI outside the repository, BOM/CRLF, all four outputs, real HTTP/ZIP and HTML messages verified; changed explanations block export |
+| Isolated installed wheel outside the repository | New fields, rejection and standalone HTML execute successfully |
+| Design and JavaScript checks | `validate_design.py`, dependency check and `node --check` succeed |
+| Browser interaction | Ten explanation scenarios passed in Chrome Headless Shell 151.0.7922.34 using Playwright 1.62.1 |
+| Browser downloads | Classification JSON, standalone HTML and ZIP downloaded through the actual UI match their response content byte for byte |
+| Layout inspection | Desktop and 390px-width profile cards visually inspected; no horizontal page overflow or JavaScript page exceptions |
+
+Browser scenarios cover incompatible Java/Django, missing language/framework/both,
+a valid pair with a missing database group, multiple accepted pairs, missing groups
+for Full Stack/ML/Data, and accepted Full Stack. Each visible card and standalone
+report message was compared with its shared API explanation. These checks exercise
+the added explanations; they are not a complete accessibility audit or tests on a
+physical mobile device. The browser tooling is confined to the temporary QA
+environment and is not a project dependency.
+
+The seventeen tests include ninety-six pair/group subcases, not a new independent
+evaluation dataset. Explanations remain limited to the configured finite patterns
+and recognized canonical skills; they cannot verify proficiency or recover omitted
+skills. Earlier verification follows unchanged.
+
 ## Explicit skill-negation correction — 2026-10-10
 
 Based on `9d0b5f1` (the existing evidence-validation and CI updates included),

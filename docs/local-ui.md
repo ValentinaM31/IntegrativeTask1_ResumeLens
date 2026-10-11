@@ -60,6 +60,13 @@ The request body limit is 512 KiB to allow JSON escaping of 64 KiB text.
 Unexpected fields and invalid types, encoding, JSON or size are rejected.
 Cached parser/model access is serialized with a lock; static resource requests
 remain threaded. Requests have a ten-second socket timeout.
+Early POST errors are flushed before a rejected body is discarded. Cleanup reads
+only one unambiguous, nonnegative Content-Length within the 512 KiB limit, with
+a one-second total deadline. It never decodes or processes rejected content.
+Missing, invalid, duplicate, oversized or chunked framing is not awaited. This
+bounds cleanup; it does not guarantee graceful delivery for malformed traffic
+or a peer that keeps sending after the deadline. See the HTTP correction in
+[test results](test-results.md).
 On Windows, binding uses exclusive address ownership so an occupied port produces
 an error instead of sharing another server's address. Choose another `--port` if
 an old connection temporarily prevents immediate reuse after stopping the server.
@@ -96,8 +103,8 @@ intended as a local course application, not a public production hosting service.
 .\.venv\Scripts\python.exe tools/check_workflow_acceptance.py
 ```
 
-The full suite contains 109 tests: the preceding 89 plus 20 real HTTP/entry-point
-tests. The web acceptance tool starts/stops its own server on an available port and
+The current full suite contains 145 tests, including 23 real HTTP/entry-point
+tests and 17 profile-explanation checks. The web acceptance tool starts/stops its own server on an available port and
 compares all eight samples with the public API, validating the four ZIP contents.
 It does not require a running UI, a browser automation library or administrator access.
 The earlier Windows symlink-permission skip remains acceptable.
@@ -108,6 +115,9 @@ Manually verify the actual browser after installation:
 |---|---|
 | Try an example, then process | Alex Sample report, four decisions, Full Stack accepted |
 | Upload sample 08 | Three accepted profiles, repeated contacts and records retained |
+| Process `Skills: Java, Django, SQL, REST API, Git` | Backend rejected; Java/Django incompatibility shown; each valid alternative lists its missing symbols |
+| Add `Spring Boot` to that list and process again | Backend accepted with Java + Spring Boot; no other pair is required |
+| Remove SQL while retaining Java + Spring Boot, REST API and Git | Backend rejected for its database group; a compatible pair is still acknowledged in JSON |
 | Upload a UTF-8 BOM/CRLF file | Valid output; JSON offsets describe the decoded original file |
 | Paste a resume without a name and supply a fallback | Supplied name appears in the report |
 | Edit input/name after processing | Old results and downloads disappear |

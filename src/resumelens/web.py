@@ -8,6 +8,7 @@ import json
 import socket
 import sys
 from threading import Lock
+from time import monotonic
 from urllib.parse import urlsplit
 import webbrowser
 from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
@@ -16,6 +17,7 @@ from .workflow import process_complete_resume, _bundle_payloads
 
 MAX_TEXT_BYTES = 64 * 1024
 MAX_REQUEST_BYTES = 512 * 1024
+REJECT_DRAIN_SECONDS = 1.0
 _PROCESSING_LOCK = Lock()
 ASSETS = {
     '/': ('index.html', 'text/html; charset=utf-8'),
@@ -90,13 +92,50 @@ class ResumeLensHandler(BaseHTTPRequestHandler):
         self.close_connection = True
         self.wfile.write(content)
 
+    def _reject(self, status, content):
+        """Send an early error, then discard a bounded, framed POST body.
+
+        Closing with unread body bytes can reset the connection before the
+        client receives the error. Flush the response first so a client waiting
+        for an error (or 100 Continue) need not send its body to get a reply.
+        Never decode, process, or retain rejected content.
+        """
+        self._send(status, content)
+        self.wfile.flush()
+        if self.command != 'POST' or self.headers.get('Transfer-Encoding'):
+            return
+        lengths = self.headers.get_all('Content-Length', [])
+        if len(lengths) != 1 or not lengths[0].isascii() or not lengths[0].isdigit():
+            return
+        try:
+            remaining = int(lengths[0])
+        except ValueError:
+            return
+        if not 0 < remaining <= MAX_REQUEST_BYTES:
+            return
+        deadline = monotonic() + REJECT_DRAIN_SECONDS
+        try:
+            while remaining:
+                timeout = deadline - monotonic()
+                if timeout <= 0:
+                    break
+                self.connection.settimeout(timeout)
+                block = self.rfile.read1(min(remaining, 64 * 1024))
+                if not block:
+                    break
+                remaining -= len(block)
+        except OSError:
+            # The error response is already sent; a disconnect or timeout while
+            # discarding an invalid request must not produce a second response.
+            pass
+
     def _local_request(self):
         if self.headers.get('Host') != self.origin.removeprefix('http://'):
-            self._send(403, {'error': 'Open the interface using the printed 127.0.0.1 URL.'})
+            self._reject(403, {'error': 'Open the interface using the printed 127.0.0.1 URL.'})
             return False
         origin = self.headers.get('Origin')
         if origin is not None and origin != self.origin:
-            self._send(403, {'error': 'Requests must come from the local ResumeLens interface.'})
+            self._reject(403, {'error': 'Requests must come from the local ResumeLens interface.'})
             return False
         return True
 
@@ -114,24 +153,24 @@ class ResumeLensHandler(BaseHTTPRequestHandler):
         if not self._local_request():
             return
         if urlsplit(self.path).path != '/api/process':
-            self._send(404, {'error': 'Not found.'})
+            self._reject(404, {'error': 'Not found.'})
             return
         if self.headers.get_content_type() != 'application/json':
-            self._send(415, {'error': 'Use application/json with UTF-8 encoding.'})
+            self._reject(415, {'error': 'Use application/json with UTF-8 encoding.'})
             return
         if self.headers.get('Transfer-Encoding'):
-            self._send(400, {'error': 'Chunked requests are not supported.'})
+            self._reject(400, {'error': 'Chunked requests are not supported.'})
             return
         try:
             length = int(self.headers.get('Content-Length', ''))
         except ValueError:
-            self._send(411, {'error': 'A valid Content-Length is required.'})
+            self._reject(411, {'error': 'A valid Content-Length is required.'})
             return
         if length < 0:
-            self._send(400, {'error': 'Content-Length must be nonnegative.'})
+            self._reject(400, {'error': 'Content-Length must be nonnegative.'})
             return
         if length > MAX_REQUEST_BYTES:
-            self._send(413, {'error': 'The request exceeds the 512 KiB limit.'})
+            self._reject(413, {'error': 'The request exceeds the 512 KiB limit.'})
             return
         try:
             raw = self.rfile.read(length)

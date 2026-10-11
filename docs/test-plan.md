@@ -28,6 +28,10 @@
 | Recognition | All Full Stack alternative combinations | Accepted with every group; rejected after removing a group |
 | Recognition | ML/Data library, engine, database and pipeline alternatives | Documented alternatives accepted; missing groups rejected |
 | Backend | Every single language/framework combination | Only four compatible pairs accepted with remaining requirements |
+| Backend explanations | Incompatible pair, missing language, missing framework or neither | Distinct diagnostic and every configured pair's missing symbols |
+| Profile explanations | Required groups versus optional skills, valid pair with missing database | Exact missing alternatives; no optional substitution or false incompatibility |
+| Diagnostic authority | Configured alternatives, fresh results and automaton rejection | Messages follow configuration and actual NFA decision; mutations do not leak |
+| Explanation integration | CLI, real HTTP/ZIP, standalone HTML and tampered messages | Shared explanations survive downloads; inconsistent exports rejected |
 | Backend | Multiple languages/frameworks including one valid pair | Accepted without preselecting a pair in ordering |
 | Recognition | Order permutations, repeated symbols and extra skills | Stable results; optional/unrelated symbols do not cause rejection |
 | Recognition | Empty/invalid input or overlapping configuration buckets | Empty skills reject all; invalid inputs/configurations raise errors |
@@ -66,5 +70,13 @@ Automated tests are in `tests/`. Annotated evaluation separates admitted cases a
 | Browser | Four decisions, reasons, sandboxed report and untrusted text | Actual profile outcomes; text escaped; no active injected elements |
 | Browser | Downloads, narrow viewport and connection failure | Matching ZIP/files, responsive layout and recoverable controls |
 
-The 20 HTTP/entry tests use only installed runtime dependencies. The real-browser
+The 23 HTTP/entry tests use only installed runtime dependencies. The real-browser
 interaction check is separate QA; reproduce it manually using [local-ui.md](local-ui.md).
+
+### Rejected POST connection regressions
+
+Verify a full JSON 403 response before a delayed UTF-8 body arrives, then clean
+connection closure after its bytes are discarded. Verify a missing body cannot
+hold cleanup indefinitely, and absent/invalid/duplicate/oversized/chunked framing
+is not awaited. All rejected requests must bypass candidate processing. Keep
+the actual external Host/Origin tests; do not skip connection failures.
