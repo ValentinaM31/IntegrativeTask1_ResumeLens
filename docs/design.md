@@ -39,6 +39,12 @@ Documentation, code comments, CLI messages and main examples are English. Spanis
 
 These configurable patterns are design criteria, not hiring decisions. Assignment examples motivate documented minimums. Additional teacher requirements are still absent; the implementation follows the team's existing explicit rules. Complete formal definitions and preparation rules are in [profile-recognition.md](profile-recognition.md).
 
+The Machine Learning learning-library group now admits Scikit-learn, TensorFlow
+or PyTorch, matching the alternative transition labels in the assignment's page 5
+diagram. Scikit-learn is no longer optional for that pattern: its presence can
+satisfy the group, but does not waive Python, data-library, database or Git
+requirements. See [reference mapping and retained team choices](profile-alignment.md).
+
 ## Limits
 
 A mention does not establish proficiency. Explicit sections, contextual React/Pandas/JS/TS rules and bounded negation provide traceability, not general language understanding. Education/experience retain text without inferring institution, company or accumulated duration. Other homonyms, double negation and unknown vocabulary are documented in `evaluation.md`.

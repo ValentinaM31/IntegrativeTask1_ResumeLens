@@ -73,6 +73,13 @@ Windows verification of this extension is still required using the current suite
 
 ## Acceptance procedure
 
+The Machine Learning pattern admits Scikit-learn, TensorFlow or PyTorch as
+alternatives for one required group. Update both copies of `profiles_design.json`
+when changing this rule; the automata, profile explanations and textX semantic
+validation all consume it. See [profile alignment](profile-alignment.md) and
+`data/profile-alignment/` for three targeted full-pipeline regressions. Earlier
+stored DSLs that omit a newly accepted profile must be regenerated before parsing.
+
 Run `python tools/check_acceptance.py` using a freshly installed environment. Six cases cover normal and incomplete resumes, repetitions, exclusions, contrast and animal pandas. It compares API/CLI with identical decoded text and optional name, validates evidence and checks expected symbols.
 
 Sample 07 excludes negated Python/TensorFlow and ambiguous mentions while retaining JavaScript, Git and React.js. Compare persisted outputs with `data/results/`. Call `validate_result(result, text)` to verify spans.

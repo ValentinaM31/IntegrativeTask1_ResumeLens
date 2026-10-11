@@ -1,0 +1,20 @@
+{
+  "purpose": "Targeted regressions for the assignment's Machine Learning diagram; not independent resume evaluation",
+  "cases": [
+    {
+      "file": "scikit_only.txt",
+      "normalized_skills": ["GIT", "PANDAS", "POSTGRESQL", "PYTHON", "SCIKIT_LEARN"],
+      "accepted_profiles": ["MACHINE_LEARNING_ENGINEER"]
+    },
+    {
+      "file": "model_without_library.txt",
+      "normalized_skills": ["DOCKER", "GIT", "ML_MODEL", "NUMPY", "PYTHON", "SQL"],
+      "accepted_profiles": []
+    },
+    {
+      "file": "negated_scikit.txt",
+      "normalized_skills": ["GIT", "NUMPY", "PYTHON", "SQL"],
+      "accepted_profiles": []
+    }
+  ]
+}

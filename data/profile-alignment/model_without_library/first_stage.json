@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0",
+  "candidate": {
+    "name": "Luis Reference",
+    "emails": [],
+    "phones": [],
+    "links": [],
+    "education": [],
+    "experience": []
+  },
+  "extracted_skills": [
+    {
+      "raw": "Python",
+      "start": 29,
+      "end": 35
+    },
+    {
+      "raw": "NumPy",
+      "start": 37,
+      "end": 42
+    },
+    {
+      "raw": "machine learning models",
+      "start": 44,
+      "end": 67
+    },
+    {
+      "raw": "SQL",
+      "start": 69,
+      "end": 72
+    },
+    {
+      "raw": "Git",
+      "start": 74,
+      "end": 77
+    },
+    {
+      "raw": "Docker",
+      "start": 79,
+      "end": 85
+    }
+  ],
+  "excluded_mentions": [],
+  "warnings": [],
+  "normalized_skills": [
+    "DOCKER",
+    "GIT",
+    "ML_MODEL",
+    "NUMPY",
+    "PYTHON",
+    "SQL"
+  ],
+  "normalization_evidence": [
+    {
+      "extracted_index": 0,
+      "canonical": "PYTHON"
+    },
+    {
+      "extracted_index": 1,
+      "canonical": "NUMPY"
+    },
+    {
+      "extracted_index": 2,
+      "canonical": "ML_MODEL"
+    },
+    {
+      "extracted_index": 3,
+      "canonical": "SQL"
+    },
+    {
+      "extracted_index": 4,
+      "canonical": "GIT"
+    },
+    {
+      "extracted_index": 5,
+      "canonical": "DOCKER"
+    }
+  ],
+  "unknown_skills": []
+}

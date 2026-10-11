@@ -1,0 +1,2 @@
+Name: Ana Reference
+Skills: Python, Pandas, sklearn, PostgreSQL, Git.

@@ -44,6 +44,7 @@
         "NUMPY"
       ],
       [
+        "SCIKIT_LEARN",
         "TENSORFLOW",
         "PYTORCH"
       ],
@@ -57,7 +58,6 @@
       ]
     ],
     "optional": [
-      "SCIKIT_LEARN",
       "ML_MODEL",
       "DOCKER"
     ]

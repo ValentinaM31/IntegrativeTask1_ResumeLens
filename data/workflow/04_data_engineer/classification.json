@@ -54,6 +54,7 @@
           "NUMPY"
         ],
         [
+          "SCIKIT_LEARN",
           "TENSORFLOW",
           "PYTORCH"
         ]
@@ -61,7 +62,7 @@
       "compatible_pair_missing": false,
       "explanations": [
         "Missing one of: Pandas or NumPy.",
-        "Missing one of: TensorFlow or PyTorch."
+        "Missing one of: Scikit-learn or TensorFlow or PyTorch."
       ],
       "pair_diagnostics": null,
       "optional_present": [],

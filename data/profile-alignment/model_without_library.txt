@@ -1,0 +1,2 @@
+Name: Luis Reference
+Skills: Python, NumPy, machine learning models, SQL, Git, Docker.

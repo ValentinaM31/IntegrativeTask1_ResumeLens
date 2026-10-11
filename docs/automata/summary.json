@@ -8,8 +8,8 @@
   {
     "profile": "MACHINE_LEARNING_ENGINEER",
     "states": 12,
-    "symbols": 9,
-    "transitions": 33
+    "symbols": 10,
+    "transitions": 36
   },
   {
     "profile": "BACKEND_DEVELOPER",

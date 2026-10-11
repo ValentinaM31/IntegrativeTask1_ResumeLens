@@ -24,6 +24,7 @@
     "POSTGRESQL",
     "PYTHON",
     "PYTORCH",
+    "SCIKIT_LEARN",
     "SQL",
     "TENSORFLOW"
   ],
@@ -95,6 +96,16 @@
     ],
     [
       "b0_g2_before",
+      "SCIKIT_LEARN",
+      "b0_g2_before"
+    ],
+    [
+      "b0_g2_before",
+      "SCIKIT_LEARN",
+      "b0_g2_seen"
+    ],
+    [
+      "b0_g2_before",
       "TENSORFLOW",
       "b0_g2_before"
     ],
@@ -106,6 +117,11 @@
     [
       "b0_g2_seen",
       "PYTORCH",
+      "b0_g2_seen"
+    ],
+    [
+      "b0_g2_seen",
+      "SCIKIT_LEARN",
       "b0_g2_seen"
     ],
     [

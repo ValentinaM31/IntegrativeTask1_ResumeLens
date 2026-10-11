@@ -66,6 +66,12 @@ original TXT-to-JSON CLI is unchanged.
 
 ## Contract changes
 
+The Machine Learning learning-library group accepts Scikit-learn, TensorFlow or
+PyTorch. This changes recognition outcomes for qualifying Scikit-learn-only
+inputs without changing JSON schemas or function signatures. Previously saved
+DSLs that omit a newly accepted profile must be regenerated to satisfy current
+semantic validation. See [profile alignment](profile-alignment.md).
+
 The local UI exposes a separate HTTP adapter documented in [local-ui.md](local-ui.md).
 `resumelens.web.process_web_request({"text": text, "name": name})` validates request
 types/sizes and returns `result`, four text `downloads` and base64 `bundle_zip`.

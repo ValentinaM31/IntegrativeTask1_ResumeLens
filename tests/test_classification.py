@@ -34,7 +34,7 @@ class RecognitionTests(unittest.TestCase):
                 self.assertNotIn("FULL_STACK_DEVELOPER", self.accepted(combination[:missing] + combination[missing + 1:]))
 
     def test_ml_alternatives_and_no_inferred_sql(self):
-        for library, engine, database in itertools.product(("PANDAS", "NUMPY"), ("TENSORFLOW", "PYTORCH"), ("SQL", "POSTGRESQL", "MYSQL")):
+        for library, engine, database in itertools.product(("PANDAS", "NUMPY"), ("SCIKIT_LEARN", "TENSORFLOW", "PYTORCH"), ("SQL", "POSTGRESQL", "MYSQL")):
             skills = ["PYTHON", library, engine, database, "GIT"]
             self.assertIn("MACHINE_LEARNING_ENGINEER", self.accepted(skills))
             for symbol in skills:

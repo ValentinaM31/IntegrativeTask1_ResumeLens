@@ -12,6 +12,7 @@ Complete means the documented extraction, normalization, recognition, candidate-
 | Contract 1.0/evidence | first_stage.py, schema | Version, types, offsets, indices, translations | Complete |
 | API/CLI | first_stage.py, cli.py | Fresh environment, six acceptance scenarios | Complete |
 | Four executable profiles | classification.py, profiles_design.json | Alternatives, missing groups, compatible pairs, overlap | Complete for team-defined patterns |
+| Reference-profile alignment | profile-alignment.md, test_profile_alignment.py, automata/MACHINE_LEARNING_ENGINEER.* | Scikit-learn/TensorFlow/PyTorch alternative group from assignment page 5; full API/CLI/HTTP/DSL regression bundles | Reference diagram aligned; separate additional-profile teacher requirements remain unverified |
 | Complete automaton five-tuples and diagrams | profile-recognition.md, automata/ | Relations reconstructed and compared with execution | Complete |
 | Recognition results | data/classification/ | Eight sample outputs match existing expectations | Complete; synthetic examples |
 | Profile explanations | classification.py, profile-explanations.md, test_profile_explanations.py | Missing groups, pair incompatibility, configured alternatives, real CLI/HTTP and shared JSON/HTML messages | Complete for configured requirements |

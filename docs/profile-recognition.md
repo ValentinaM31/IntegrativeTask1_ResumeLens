@@ -7,17 +7,20 @@ proficiency estimates or hiring decisions are produced.
 
 ## Patterns and their origin
 
-The implementation follows the existing `config/profiles_design.json`. The assignment
+The implementation follows `config/profiles_design.json`. The assignment
 describes possible qualifications and examples; these are the team's explicit minimum
 patterns, not an assertion that every illustrative qualification is mandatory.
-Requirements for the two additional profiles were announced separately but are not
+The Machine Learning diagram on page 5 admits Scikit-learn, TensorFlow or PyTorch
+in the same alternative group; this is now reflected in the executable pattern.
+See [requirement alignment](profile-alignment.md) for the reference mapping.
+Detailed requirements for the two additional profiles were announced separately but are not
 included in this repository. Backend and Data Engineer therefore retain the documented
 team-defined criteria, subject to any later teacher specification.
 
 | Profile | Mandatory pattern | Optional, informational only |
 |---|---|---|
 | Full Stack | JS/TS; React/Angular/Vue; Node/Django/Spring Boot; SQL/PostgreSQL/MySQL/MongoDB; Git | REST API, Docker |
-| Machine Learning | Python; Pandas/NumPy; TensorFlow/PyTorch; SQL/PostgreSQL/MySQL; Git | Scikit-learn, ML model, Docker |
+| Machine Learning | Python; Pandas/NumPy; Scikit-learn/TensorFlow/PyTorch; SQL/PostgreSQL/MySQL; Git | ML model, Docker |
 | Backend | A compatible language/framework pair; SQL/PostgreSQL/MySQL/MongoDB; REST API; Git | Docker |
 | Data Engineer | Python; SQL/PostgreSQL/MySQL; ETL/Airflow/Apache Spark; Git | Docker, Pandas |
 
@@ -91,12 +94,12 @@ B = 1, n = 5, R(0,i) = Ai for all i.
 |---|---|
 | 0 | {PYTHON} |
 | 1 | {PANDAS, NUMPY} |
-| 2 | {TENSORFLOW, PYTORCH} |
+| 2 | {SCIKIT_LEARN, TENSORFLOW, PYTORCH} |
 | 3 | {SQL, POSTGRESQL, MYSQL} |
 | 4 | {GIT} |
 
-The language is A0+ A1+ A2+ A3+ A4+. There are 12 states, 9 alphabet symbols and
-33 transition triples. [Complete tuple](automata/MACHINE_LEARNING_ENGINEER.json),
+The language is A0+ A1+ A2+ A3+ A4+. There are 12 states, 10 alphabet symbols and
+36 transition triples. [Complete tuple](automata/MACHINE_LEARNING_ENGINEER.json),
 [diagram](automata/MACHINE_LEARNING_ENGINEER.svg).
 
 ### Backend Developer

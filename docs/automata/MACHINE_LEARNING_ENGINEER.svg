@@ -87,7 +87,7 @@
 <text x="25" y="415" font-size="18" font-weight="bold">Complete bucket alphabets (all loop transitions)</text>
 <text x="25" y="452" font-size="16">A0 = {PYTHON}</text>
 <text x="25" y="490" font-size="16">A1 = {NUMPY, PANDAS}</text>
-<text x="25" y="528" font-size="16">A2 = {PYTORCH, TENSORFLOW}</text>
+<text x="25" y="528" font-size="16">A2 = {PYTORCH, SCIKIT_LEARN, TENSORFLOW}</text>
 <text x="25" y="566" font-size="16">A3 = {MYSQL, POSTGRESQL, SQL}</text>
 <text x="25" y="604" font-size="16">A4 = {GIT}</text>
 </svg>

@@ -1,5 +1,45 @@
 # Verification results
 
+## Assignment-profile alignment — 2026-10-11
+
+Based on published `5b4a6a2` (disk export recovery, including the LF/CRLF test
+correction). The user confirmed the preceding corrected suite passed on Windows.
+Both uploaded assignment copies were read and the page 5 diagram visually checked:
+Scikit-learn, TensorFlow and PyTorch label alternative transitions in one group.
+Scikit-learn now fills that required group instead of remaining optional.
+
+Verified on Linux with Python 3.12.14 and the unchanged locked dependencies. Native
+Windows execution of this new extension is pending. The first-stage JSON 1.0,
+public signatures, grammar, catalog and package version 1.4.0 remain unchanged;
+the intentional change is the Machine Learning acceptance criterion. The separate
+teacher specification for additional profiles was not available for verification.
+
+| Check | Result |
+|---|---|
+| Full Python suite | 168 passed, including eight new alignment methods |
+| Reference diagram paths | All 12 minimal combinations accepted by the real automaton and public classifier |
+| Missing/bad order | Direct automaton rejects empty, reversed and each one-group-missing Scikit-learn sequence |
+| Extended alternatives | Existing ML test covers 18 data/library/database combinations, including retained MySQL choice; removing each group rejects |
+| Canonical preparation | All three learning libraries retained; duplicates collapse and group order remains canonical |
+| Alias/overlap/DSL | All three Scikit-learn aliases normalize; Backend, Data Engineer and Machine Learning can qualify together; false/missing DSL profile claims reject |
+| Negative evidence | Optional model/Docker and negated English/Spanish library mentions do not fill the learning-library group |
+| Dedicated CLI acceptance | Three fixtures with UTF-8 BOM, LF and CRLF (six subprocess runs) agree with API bytes for all four files |
+| Dedicated HTTP/ZIP | Three real requests agree with API and every individual/ZIP payload |
+| Existing acceptance | Eight workflow API/CLI bundles and eight real HTTP/API/ZIP samples agree |
+| Formal exports | ML JSON/CSV/DOT/SVG updated: 12 states, 10 symbols, 36 transition triples; executable/exported relations agree |
+| Stored examples | Eight existing classifications/DSL/workflow examples regenerated; accepted-profile expectations unchanged; three targeted alignment bundles added |
+| Design/dependencies | Catalog/profile/sample design validation and pip check pass |
+| Fresh patch / CRLF checkout | Applies on `5b4a6a2`; all 168 tests also pass with CRLF fixtures; sixty changed files match after newline normalization |
+| Targeted bundle reproducibility | All three regression bundles regenerate byte-identically |
+
+These new examples deliberately exercise a confirmed mismatch and its boundaries;
+they are regression evidence, not independent resume evaluation or general accuracy
+claims. The previous eighteen actual browser groups are unchanged and are not
+part of the 168 Python-test count. See [profile alignment](profile-alignment.md) for
+reference provenance, retained team choices and saved-DSL compatibility.
+
+Earlier results follow unchanged.
+
 ## Bundle recovery CLI fixture correction — 2026-10-11
 
 The user ran the initial bundle-recovery extension on Windows: 160 tests, one

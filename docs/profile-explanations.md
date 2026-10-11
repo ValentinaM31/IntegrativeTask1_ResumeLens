@@ -57,8 +57,10 @@ another permitted database qualification, it remains rejected for that group.
 
 For the other profiles, missing alternatives are also named explicitly: for
 example, `Missing one of: React or Angular or Vue.` for Full Stack, or
-`Missing one of: TensorFlow or PyTorch.` for Machine Learning. Scikit-learn remains optional
-under the current configuration; this extension does not change the profile rules.
+`Missing one of: Scikit-learn or TensorFlow or PyTorch.` for Machine Learning.
+Scikit-learn now satisfies that required alternative group, following the
+assignment diagram; see [profile alignment](profile-alignment.md). ML model and
+Docker remain optional and do not substitute for a learning library.
 
 ## UI, standalone report and exports
 

@@ -101,11 +101,13 @@ class ProfileExplanationTests(unittest.TestCase):
         self.assertEqual([["REACT", "ANGULAR", "VUE"]], row["missing_groups"])
         self.assertEqual(["Missing one of: React or Angular or Vue."], row["explanations"])
 
-    def test_ml_optional_library_does_not_fill_required_engine(self):
+    def test_ml_scikit_learn_fills_the_required_library_group(self):
         row = profile_row(["PYTHON", "NUMPY", "SCIKIT_LEARN", "SQL", "GIT"], "MACHINE_LEARNING_ENGINEER")
-        self.assertFalse(row["accepted"])
-        self.assertEqual(["SCIKIT_LEARN"], row["optional_present"])
-        self.assertEqual(["Missing one of: TensorFlow or PyTorch."], row["explanations"])
+        self.assertTrue(row["accepted"])
+        self.assertEqual([], row["optional_present"])
+        self.assertIn("SCIKIT_LEARN", row["sequence"])
+        self.assertEqual([], row["missing_groups"])
+        self.assertEqual(["All required qualification groups are present."], row["explanations"])
 
     def test_data_engineer_missing_pipeline_group_is_described(self):
         row = profile_row(["PYTHON", "SQL", "GIT"], "DATA_ENGINEER")

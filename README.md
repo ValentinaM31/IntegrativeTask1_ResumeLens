@@ -4,7 +4,7 @@ Process UTF-8 TXT resumes using Python `re`, real finite-state transducers, four
 
 ## Installation
 
-Python 3.10 or later. The current bundle-recovery extension is verified on Linux with Python 3.12.14. Run the verification commands below after applying it on Windows; historical platform checks are recorded in [test results](docs/test-results.md).
+Python 3.10 or later. The current profile-alignment extension is verified on Linux with Python 3.12.14. Run the verification commands below after applying it on Windows; historical platform checks are recorded in [test results](docs/test-results.md).
 
 ```powershell
 py -m venv .venv
@@ -82,7 +82,14 @@ The directory contains `first_stage.json`, `classification.json`, `candidate.rl`
 .\.venv\Scripts\python.exe tools/check_web_acceptance.py
 ```
 
-There are 160 automated tests (39 first-stage, 12 recognition, 16 candidate-language, 24 workflow/rendering/CLI, 23 local-HTTP/UI-entry, 14 focused negation regressions, 17 profile-explanation tests and 15 bundle-recovery tests), eight main English samples and 23 annotated synthetic extraction cases: fifteen original, six historically reserved and two additional limit cases. The focused regressions include real CLI and HTTP/ZIP checks; they are not an independently collected evaluation dataset. All eight samples have executed profile classifications in `data/classification/` and validated candidate specifications in `data/dsl/`. Complete JSON/DSL/HTML bundles are in `data/workflow/`. Browser interactions include eighteen reproducible keyboard scenario groups checked with Chrome for Testing on Linux; see [keyboard verification](docs/keyboard-navigation.md). Spanish input fixtures and regex alternatives retain documented bilingual support. See [test results](docs/test-results.md), [profile models](docs/profile-recognition.md), [candidate grammar](docs/candidate-language.md) and [evaluation](docs/evaluation.md).
+There are 168 automated tests (39 first-stage, 12 recognition, 16 candidate-language, 24 workflow/rendering/CLI, 23 local-HTTP/UI-entry, 14 focused negation regressions, 17 profile-explanation tests, 15 bundle-recovery tests and 8 profile-alignment tests), eight main English samples and 23 annotated synthetic extraction cases: fifteen original, six historically reserved and two additional limit cases. The focused regressions include real CLI and HTTP/ZIP checks; they are not an independently collected evaluation dataset. All eight samples have executed profile classifications in `data/classification/` and validated candidate specifications in `data/dsl/`. Complete JSON/DSL/HTML bundles are in `data/workflow/`. Browser interactions include eighteen reproducible keyboard scenario groups checked with Chrome for Testing on Linux; see [keyboard verification](docs/keyboard-navigation.md). Spanish input fixtures and regex alternatives retain documented bilingual support. See [test results](docs/test-results.md), [profile models](docs/profile-recognition.md), [candidate grammar](docs/candidate-language.md) and [evaluation](docs/evaluation.md).
+
+Machine Learning accepts Scikit-learn, TensorFlow or PyTorch as alternatives for
+its required learning-library group, following the assignment's page 5 diagram.
+See [requirement alignment](docs/profile-alignment.md) for the reference criteria,
+team-defined extensions and three targeted regression bundles in
+`data/profile-alignment/`. Backend and Data Engineer retain their team-defined
+patterns; separate additional teacher specifications are not included here.
 
 Disk bundle exports prepare all four outputs and preserve existing originals before
 replacement. Controlled failures restore prior report bytes and file presence;

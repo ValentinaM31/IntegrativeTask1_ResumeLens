@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "candidate": {
+    "name": "Ana Reference",
+    "emails": [],
+    "phones": [],
+    "links": [],
+    "education": [],
+    "experience": []
+  },
+  "extracted_skills": [
+    {
+      "raw": "Python",
+      "start": 28,
+      "end": 34
+    },
+    {
+      "raw": "Pandas",
+      "start": 36,
+      "end": 42
+    },
+    {
+      "raw": "sklearn",
+      "start": 44,
+      "end": 51
+    },
+    {
+      "raw": "PostgreSQL",
+      "start": 53,
+      "end": 63
+    },
+    {
+      "raw": "Git",
+      "start": 65,
+      "end": 68
+    }
+  ],
+  "excluded_mentions": [],
+  "warnings": [],
+  "normalized_skills": [
+    "GIT",
+    "PANDAS",
+    "POSTGRESQL",
+    "PYTHON",
+    "SCIKIT_LEARN"
+  ],
+  "normalization_evidence": [
+    {
+      "extracted_index": 0,
+      "canonical": "PYTHON"
+    },
+    {
+      "extracted_index": 1,
+      "canonical": "PANDAS"
+    },
+    {
+      "extracted_index": 2,
+      "canonical": "SCIKIT_LEARN"
+    },
+    {
+      "extracted_index": 3,
+      "canonical": "POSTGRESQL"
+    },
+    {
+      "extracted_index": 4,
+      "canonical": "GIT"
+    }
+  ],
+  "unknown_skills": []
+}

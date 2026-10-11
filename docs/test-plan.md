@@ -27,6 +27,9 @@
 | Stress | Unknown technology and double negation | Failures reported as limitations |
 | Recognition | All Full Stack alternative combinations | Accepted with every group; rejected after removing a group |
 | Recognition | ML/Data library, engine, database and pipeline alternatives | Documented alternatives accepted; missing groups rejected |
+| Assignment alignment | Three ML library alternatives and two reference databases | All 12 minimal diagram paths accepted by the actual automaton; missing buckets/bad order rejected |
+| Scikit-learn integration | Three aliases, simultaneous profiles, model-only/negated library cases | Correct normalization, accepted/rejected DSL claims and visible report decisions |
+| Alignment adapters | BOM with explicit LF/CRLF through real CLI; actual HTTP and ZIP | Each of three targeted fixtures agrees with the API across all four payloads |
 | Backend | Every single language/framework combination | Only four compatible pairs accepted with remaining requirements |
 | Backend explanations | Incompatible pair, missing language, missing framework or neither | Distinct diagnostic and every configured pair's missing symbols |
 | Profile explanations | Required groups versus optional skills, valid pair with missing database | Exact missing alternatives; no optional substitution or false incompatibility |
@@ -95,5 +98,5 @@ details and scrolling, all five actual downloads, retry after network/server
 errors, repeated live-region updates and narrow/high contrast layouts. Downloads
 must match the real HTTP response byte for byte. See
 [keyboard navigation](keyboard-navigation.md) for setup and a manual alternative.
-These interaction checks are distinct from the 160 Python unittest cases and
+These interaction checks are distinct from the 168 Python unittest cases and
 from a screen-reader or full accessibility audit.
