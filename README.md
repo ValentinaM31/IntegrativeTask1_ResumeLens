@@ -4,7 +4,7 @@ Process UTF-8 TXT resumes using Python `re`, real finite-state transducers, four
 
 ## Installation
 
-Python 3.10 or later. The current profile-explanation extension is verified on Linux with Python 3.12.14. Run the verification commands below after applying it on Windows; historical platform checks are recorded in [test results](docs/test-results.md).
+Python 3.10 or later. The current keyboard-navigation extension is verified on Linux with Python 3.12.14. Run the verification commands below after applying it on Windows; historical platform checks are recorded in [test results](docs/test-results.md).
 
 ```powershell
 py -m venv .venv
@@ -29,6 +29,11 @@ No candidate files are automatically written by the server.
 
 The printed URL is `http://127.0.0.1:8765`. If browser opening fails, open it manually.
 Use `--port 8766` if the port is occupied, or `--no-browser` to open the URL yourself.
+
+Keyboard navigation includes a skip link, focus after loading/processing, field
+errors, result navigation and native expandable details with separate downloads.
+See [keyboard checks](docs/keyboard-navigation.md) for the manual flow and optional
+automated browser checks. Node.js and Playwright are needed only for that optional QA.
 Press **Ctrl+C** in the terminal to stop. See [interface guide and limits](docs/local-ui.md).
 
 ### Original TXT-to-JSON command
@@ -77,7 +82,7 @@ The directory contains `first_stage.json`, `classification.json`, `candidate.rl`
 .\.venv\Scripts\python.exe tools/check_web_acceptance.py
 ```
 
-There are 145 automated tests (39 first-stage, 12 recognition, 16 candidate-language, 24 workflow/rendering/CLI, 23 local-HTTP/UI-entry, 14 focused negation regressions and 17 profile-explanation tests), eight main English samples and 23 annotated synthetic extraction cases: fifteen original, six historically reserved and two additional limit cases. The focused regressions include real CLI and HTTP/ZIP checks; they are not an independently collected evaluation dataset. All eight samples have executed profile classifications in `data/classification/` and validated candidate specifications in `data/dsl/`. Complete JSON/DSL/HTML bundles are in `data/workflow/`. Browser interactions were additionally checked with Chrome for Testing on Linux; see the documented manual UI checklist. Spanish input fixtures and regex alternatives retain documented bilingual support. See [test results](docs/test-results.md), [profile models](docs/profile-recognition.md), [candidate grammar](docs/candidate-language.md) and [evaluation](docs/evaluation.md).
+There are 145 automated tests (39 first-stage, 12 recognition, 16 candidate-language, 24 workflow/rendering/CLI, 23 local-HTTP/UI-entry, 14 focused negation regressions and 17 profile-explanation tests), eight main English samples and 23 annotated synthetic extraction cases: fifteen original, six historically reserved and two additional limit cases. The focused regressions include real CLI and HTTP/ZIP checks; they are not an independently collected evaluation dataset. All eight samples have executed profile classifications in `data/classification/` and validated candidate specifications in `data/dsl/`. Complete JSON/DSL/HTML bundles are in `data/workflow/`. Browser interactions include eighteen reproducible keyboard scenario groups checked with Chrome for Testing on Linux; see [keyboard verification](docs/keyboard-navigation.md). Spanish input fixtures and regex alternatives retain documented bilingual support. See [test results](docs/test-results.md), [profile models](docs/profile-recognition.md), [candidate grammar](docs/candidate-language.md) and [evaluation](docs/evaluation.md).
 
 ## Structure
 

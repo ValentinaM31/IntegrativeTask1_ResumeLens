@@ -14,6 +14,7 @@
 | candidate-language.md | Complete EBNF, terminals/nonterminals, textX grammar, generation and validation |
 | complete-workflow.md | Four-stage API/CLI, validated HTML, bundle files and overwrite behavior |
 | local-ui.md | Browser interface, loopback server, uploads, input fidelity, downloads and acceptance |
+| keyboard-navigation.md | Focus destinations, live feedback, keyboard downloads and reproducible browser interaction checks |
 | data-contract.md | JSON 1.0 contract |
 | test-plan.md / test-results.md | Scenarios and verified results |
 | evaluation.md | Annotations, metrics and limitations |

@@ -25,7 +25,7 @@ Complete means the documented extraction, normalization, recognition, candidate-
 | textX syntax and semantic validation | tests/test_dsl.py, data/dsl/ | 16 tests; eight valid and eight invalid examples | Complete |
 | Complete four-stage workflow | workflow.py, workflow_cli.py | Eight executed bundles; original JSON/CLI compatibility | Complete |
 | HTML after validated DSL | rendering.py, data/workflow/ | Syntax/semantic rejection, escaping, records and multiple profiles | Complete |
-| Interactive input UI | web.py, ui/, local-ui.md | Paste/load TXT, fallback name, four decisions, report, downloads and errors | Complete; Linux Chrome verified, Windows UI repeat run required |
+| Interactive input UI | web.py, ui/, local-ui.md, keyboard-navigation.md | Paste/load TXT, fallback name, four decisions, reports/downloads, keyboard flow and error recovery | Complete for the documented scope; 18 Linux browser keyboard scenarios verified, native Windows UI repeat run required |
 | Web downloads | web.py, tests/test_web.py | Eight HTTP/API results, ZIP and individually downloaded files | Complete |
 
 ## Verified corrections

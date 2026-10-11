@@ -80,3 +80,16 @@ connection closure after its bytes are discarded. Verify a missing body cannot
 hold cleanup indefinitely, and absent/invalid/duplicate/oversized/chunked framing
 is not awaited. All rejected requests must bypass candidate processing. Keep
 the actual external Host/Origin tests; do not skip connection failures.
+
+## Keyboard and feedback interaction scenarios
+
+Run `tools/check_ui_keyboard.py` with the optional Node.js/Playwright QA tools.
+Its eighteen scenario groups exercise actual keyboard events in a browser engine:
+input order, a complete keyboard-only workflow, file/example/process busy states,
+focus destinations and focus preservation, field errors and recovery, native
+details and scrolling, all five actual downloads, retry after network/server
+errors, repeated live-region updates and narrow/high contrast layouts. Downloads
+must match the real HTTP response byte for byte. See
+[keyboard navigation](keyboard-navigation.md) for setup and a manual alternative.
+These interaction checks are distinct from the 145 Python unittest cases and
+from a screen-reader or full accessibility audit.

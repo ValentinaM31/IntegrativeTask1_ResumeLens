@@ -46,6 +46,14 @@ The address deliberately uses `127.0.0.1`, rather than `localhost` or a LAN host
 7. Editing input/name, loading another file, clearing the form or a failed request
    removes previous results and download links. Process again to obtain new outputs.
 
+Loading a valid file or example focuses the text area; successful processing focuses
+the results heading. Errors focus the relevant input or an error message with a
+return link. Status and errors have separate live regions, the form exposes its
+busy state, and focus is preserved if the user navigates away during a pending
+operation. Download links are separate from native details summaries. See
+[keyboard navigation](keyboard-navigation.md) for the complete behavior, manual
+checklist and eighteen reproducible real-browser scenarios.
+
 Downloads use the browser's normal save behavior. They do not overwrite repository
 files or automatically create an `outputs/` directory. The downloaded HTML report
 can be opened independently after stopping the server.
@@ -131,8 +139,8 @@ Chrome for Testing 153.0.8010.12 on Linux was used for automated interaction and
 desktop/mobile-width screenshots. Browser QA tooling is separate from runtime and
 the unittest suite. Real Windows browser behavior, macOS and other browser engines
 still require verification. Limits of extraction, catalog and team-defined profile
-patterns remain documented in [evaluation.md](evaluation.md). Final academic
-poster/presentation and overall repository-history checks belong to the fifth increment.
+patterns remain documented in [evaluation.md](evaluation.md). The later keyboard
+checks and their exact environment are recorded in [test results](test-results.md).
 
 ## References
 

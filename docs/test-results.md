@@ -1,5 +1,43 @@
 # Verification results
 
+## Keyboard navigation and accessible feedback — 2026-10-11
+
+Based on published `a9efc1e` (the profile explanations and rejected-POST correction
+included). The user confirmed the preceding checks passed on their Windows setup.
+This change updates the three packaged UI assets, adds optional browser QA scripts
+and documents the focus/feedback behavior. Processing code, runtime dependencies,
+JSON contracts, profile patterns, stored outputs and package version 1.4.0 are
+unchanged.
+
+Verified on Linux with Python 3.12.14 and the existing locked dependencies. Browser
+interaction used Node.js 24.19.0, Playwright 1.62.1 and Chrome Headless Shell
+151.0.7922.34. An isolated wheel installation was used to verify packaged resources
+through the actual browser as well as the editable installation.
+
+| Check | Result |
+|---|---|
+| Existing full Python suite | 145 passed; the browser groups are not included in this count |
+| Keyboard browser acceptance | 18 scenario groups passed against the actual local server |
+| Installed wheel/browser interaction | The same 18 groups passed using resources from site-packages |
+| Entire keyboard-only journey | Skip, load example, name field, process, ZIP download, edit and clear succeed using keyboard navigation |
+| Busy operations | File/example/process states disable inputs, expose busy feedback and keep a meaningful focus destination; duplicate submit is ignored |
+| Focus after completion | Valid uploads/examples focus text; results focus the named heading; a user who tabs away during a request retains their focus |
+| Errors and recovery | Empty/oversized text and invalid files associate an error with the input; failed example/network/server/unreadable-response cases restore controls and a keyboard return path |
+| Downloads and details | All five Enter-activated downloads match the actual response bytes; native Enter/Space panels and arrow-key text scrolling work |
+| Feedback semantics | Stable status/alert regions, repeated errors, input error cleanup and stale output invalidation verified in the DOM |
+| Layout/focus | 390px layout, reduced-motion preference and forced-colors focus checked; mobile screenshot inspected without horizontal overflow |
+| Existing acceptance | Eight real HTTP/API samples and all four ZIP entries agree; eight workflow API/CLI bundles agree |
+| Design/dependencies/syntax | Design validation, pip check and both JavaScript syntax checks pass |
+
+The eighteen groups are actual browser interactions, not HTML-attribute checks
+alone, independent resume evaluation, or a certification of accessibility. They
+include controlled delays/failures and a separate full workflow with no mouse or
+programmatic focus setup. Spoken announcements with a screen reader and native
+Windows keyboard/browser behavior still require local verification. Installation
+and manual reproduction are in [keyboard-navigation.md](keyboard-navigation.md).
+
+Earlier results follow unchanged.
+
 ## Rejected POST connection correction — 2026-10-11
 
 The user ran the initial profile-explanation extension on Windows with Python

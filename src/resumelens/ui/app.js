@@ -7,10 +7,12 @@ const nameInput = byId("candidate-name");
 const fileInput = byId("resume-file");
 const fields = byId("input-fields");
 const status = byId("status");
+const errorMessage = byId("error-message");
 const limit = 64 * 1024;
 const encoder = new TextEncoder();
 let sourceText = "";
 let downloadUrls = [];
+let busy = false;
 const profileNames = {
   FULL_STACK_DEVELOPER: "Full Stack Developer",
   MACHINE_LEARNING_ENGINEER: "Machine Learning Engineer",
@@ -19,13 +21,50 @@ const profileNames = {
 };
 
 function message(text, kind = "") {
-  status.textContent = text;
+  status.textContent = kind === "error" ? "" : text;
   status.className = kind;
-  status.setAttribute("role", kind === "error" ? "alert" : "status");
+  errorMessage.textContent = kind === "error" ? text : "";
+  byId("error-input-link").hidden = kind !== "error";
+}
+
+function clearInvalidInputs() {
+  textInput.removeAttribute("aria-invalid");
+  textInput.setAttribute("aria-describedby", "input-count");
+  fileInput.removeAttribute("aria-invalid");
+  fileInput.setAttribute("aria-describedby", "file-help");
+}
+
+function inputError(text, input, helpId) {
+  message(text, "error");
+  input.setAttribute("aria-invalid", "true");
+  input.setAttribute("aria-describedby", `${helpId} error-message`);
+  input.focus();
+}
+
+function startOperation(text) {
+  busy = true;
+  clearInvalidInputs();
+  message(text);
+  const previousFocus = document.activeElement;
+  fields.disabled = true;
+  form.setAttribute("aria-busy", "true");
+  // Disabling a focused control otherwise leaves keyboard users on the body.
+  // The status region is outside the busy form, so updates are not deferred.
+  if (fields.contains(previousFocus) || previousFocus === document.body) byId("input-heading").focus();
+}
+
+function finishOperation(target) {
+  busy = false;
+  fields.disabled = false;
+  form.setAttribute("aria-busy", "false");
+  // Respect a user who has already tabbed away while the request was pending.
+  if (document.activeElement === byId("input-heading") || document.activeElement === document.body) target.focus();
 }
 
 function clearResults() {
   byId("results").hidden = true;
+  byId("results-link").hidden = true;
+  for (const details of byId("results").querySelectorAll("details")) details.open = false;
   byId("report-preview").removeAttribute("srcdoc");
   byId("profile-checks").replaceChildren();
   for (const id of ["first-json", "classification-json", "candidate-dsl"]) byId(id).textContent = "";
@@ -48,6 +87,7 @@ function setInput(text) {
 }
 
 textInput.addEventListener("input", () => {
+  clearInvalidInputs();
   sourceText = textInput.value;
   fileInput.value = "";
   clearResults();
@@ -55,15 +95,17 @@ textInput.addEventListener("input", () => {
   message("Resume edited. Process it to update the results.");
 });
 nameInput.addEventListener("input", () => {
+  clearInvalidInputs();
   clearResults();
   message("Name updated. Process the resume again.");
 });
 
 fileInput.addEventListener("change", async () => {
   const file = fileInput.files[0];
-  if (!file) return;
+  if (!file || busy) return;
   setInput("");
-  fields.disabled = true;
+  startOperation(`Loading ${file.name}…`);
+  let target = textInput;
   try {
     if (!file.name.toLowerCase().endsWith(".txt")) throw new Error("Choose a TXT file.");
     if (file.size > limit + 3) throw new Error("The file exceeds the 64 KiB limit.");
@@ -80,15 +122,19 @@ fileInput.addEventListener("change", async () => {
   } catch (error) {
     fileInput.value = "";
     message(error.message, "error");
+    fileInput.setAttribute("aria-invalid", "true");
+    fileInput.setAttribute("aria-describedby", "file-help error-message");
+    target = fileInput;
   } finally {
-    fields.disabled = false;
+    finishOperation(target);
   }
 });
 
 byId("example-button").addEventListener("click", async () => {
+  if (busy) return;
   clearResults();
-  fields.disabled = true;
-  message("Loading example…");
+  startOperation("Loading example…");
+  let target = textInput;
   try {
     const response = await fetch("/example.txt", {cache: "no-store"});
     if (!response.ok) throw new Error("The example could not be loaded.");
@@ -98,16 +144,31 @@ byId("example-button").addEventListener("click", async () => {
     message("Synthetic Full Stack example loaded. Select Process resume.");
   } catch (error) {
     message(error.message, "error");
+    target = errorMessage;
   } finally {
-    fields.disabled = false;
+    finishOperation(target);
   }
 });
 
 byId("clear-button").addEventListener("click", () => {
+  if (busy) return;
   form.reset();
+  clearInvalidInputs();
   setInput("");
   message("Ready when you are.");
   textInput.focus();
+});
+
+for (const id of ["back-to-input", "error-input-link"]) {
+  byId(id).addEventListener("click", (event) => {
+    event.preventDefault();
+    if (busy) byId("input-heading").focus();
+    else textInput.focus();
+  });
+}
+byId("results-link").addEventListener("click", (event) => {
+  event.preventDefault();
+  if (!byId("results").hidden) byId("results-heading").focus();
 });
 
 function downloadLink(id, content, mime) {
@@ -163,31 +224,39 @@ function renderResults(data) {
   const zip = Uint8Array.from(atob(data.bundle_zip), (character) => character.charCodeAt(0));
   downloadLink("zip-download", zip, "application/zip");
   byId("results").hidden = false;
+  byId("results-link").hidden = false;
 }
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
+  if (busy) return;
   clearResults();
-  if (!sourceText.trim()) return message("Paste a resume or load a nonempty UTF-8 TXT file.", "error");
-  if (encoder.encode(sourceText).length > limit) return message("Resume text exceeds the 64 KiB limit.", "error");
-  fields.disabled = true;
-  message("Processing resume…");
+  clearInvalidInputs();
+  if (!sourceText.trim()) return inputError("Paste a resume or load a nonempty UTF-8 TXT file.", textInput, "input-count");
+  if (encoder.encode(sourceText).length > limit) return inputError("Resume text exceeds the 64 KiB limit.", textInput, "input-count");
+  startOperation("Processing resume…");
+  let target = byId("results-heading");
   try {
     const response = await fetch("/api/process", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({text: sourceText, name: nameInput.value.trim() || null}),
     });
-    const data = await response.json();
+    let data;
+    try {
+      data = await response.json();
+    } catch (error) {
+      throw new Error("The server returned an unreadable response. Try processing the resume again.");
+    }
     if (!response.ok) throw new Error(data.error || "The resume could not be processed.");
     renderResults(data);
     message("Processing complete. Review the profile checks and download the validated outputs.", "success");
-    byId("results").scrollIntoView({behavior: "smooth", block: "start"});
   } catch (error) {
     clearResults();
     message(error instanceof TypeError ? "Cannot reach ResumeLens. Keep the server terminal open and try again." : error.message, "error");
+    target = errorMessage;
   } finally {
-    fields.disabled = false;
+    finishOperation(target);
   }
 });
 window.addEventListener("beforeunload", () => downloadUrls.forEach((url) => URL.revokeObjectURL(url)));
