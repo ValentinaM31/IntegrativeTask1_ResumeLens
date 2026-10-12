@@ -1,12 +1,47 @@
-__pycache__/
+# Python environments, build outputs and caches
 .venv/
-.pytest_cache/
-outputs/
-*.pyc
-.deps/
-build/
+.venv-*/
+venv/
+env/
+__pycache__/
+*.py[cod]
 *.egg-info/
+build/
 dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Local execution, dependency and browser-check artifacts
+outputs/
 tmp/
-.idea/
+.deps/
 .ui-test-deps/
+node_modules/
+*.log
+
+# Local patch files and delivery archives
+*.patch
+*.diff
+*.rej
+*.orig
+*.zip
+
+# Personal editor, operating-system and environment files
+.idea/
+.vscode/
+*.code-workspace
+*.iml
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini
+.env
+.env.*
+!.env.example
