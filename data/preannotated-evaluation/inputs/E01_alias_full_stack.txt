@@ -1,0 +1,2 @@
+Name: Iris Vale
+Technical Skills: JS, ReactJS, Node.js, Postgres, Git SCM.

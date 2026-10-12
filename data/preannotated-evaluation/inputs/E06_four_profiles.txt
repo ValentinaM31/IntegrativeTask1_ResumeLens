@@ -1,0 +1,2 @@
+Name: Hugo Vale
+Skills: TypeScript, React, NodeJS, SQL, Git, REST API, Python, Pandas, sklearn, ETL.

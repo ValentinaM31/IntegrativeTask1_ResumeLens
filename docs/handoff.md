@@ -73,6 +73,14 @@ Windows verification of this extension is still required using the current suite
 
 ## Acceptance procedure
 
+Run `python tools/evaluate_preannotated.py --check` to reproduce the eighteen
+new fixed-label cases without rewriting the committed reports. Four stress cases
+retain known interpretation errors; a successful check means the recorded
+measurements are reproduced, not that every annotation was matched. Preserve the
+input/annotation fingerprints. Any later source change requires explicit
+`--allow-changed-rules` and is recorded as regression. See
+[protocol, error interpretation and commands](preannotated-evaluation.md).
+
 The Machine Learning pattern admits Scikit-learn, TensorFlow or PyTorch as
 alternatives for one required group. Update both copies of `profiles_design.json`
 when changing this rule; the automata, profile explanations and textX semantic

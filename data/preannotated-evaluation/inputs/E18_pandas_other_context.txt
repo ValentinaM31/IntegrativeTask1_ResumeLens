@@ -1,0 +1,3 @@
+Name: Alba Vale
+Skills: Python, sklearn, SQL, Git.
+I clean CSV files with pandas.

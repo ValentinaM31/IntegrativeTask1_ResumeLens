@@ -1,5 +1,12 @@
 # Module design and integration
 
+`tools/evaluate_preannotated.py` is an evaluation adapter, separate from the
+runtime pipeline. It loads and validates the frozen labels and fingerprints,
+calls `process_complete_resume`, checks cross-stage integrity, scores exact spans,
+canonical/profile sets and candidate fields, and produces reproducible reports.
+Its `--check` mode reads stored reports without rewriting them. The core API and
+formal models are unchanged; see [evaluation protocol](preannotated-evaluation.md).
+
 Modules separate extraction, normalization, validation and execution to preserve the link between input and output.
 
 ```mermaid

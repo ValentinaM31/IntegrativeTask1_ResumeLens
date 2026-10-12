@@ -1,0 +1,3 @@
+Nombre: Celia Vale
+Habilidades: Python, NumPy, SQL, Git.
+No uso TensorFlow ni sklearn.

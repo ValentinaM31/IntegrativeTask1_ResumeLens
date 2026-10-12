@@ -1,0 +1,2 @@
+Name: Mateo Vale
+Skills: Python, NumPy, scikit learn, SQL, Git.

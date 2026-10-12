@@ -1,0 +1,6 @@
+﻿Name: Zoë Núñez
+Email: zoe@example.com
+Email: zoe.work@example.org
+Phone: +57 315 987 6543
+Link: https://github.com/zoe-nunez
+Skills: Python, NumPy, Py Torch, SQL, Git.

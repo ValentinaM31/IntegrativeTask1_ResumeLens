@@ -1,5 +1,49 @@
 # Verification results
 
+## Preannotated complete-pipeline evaluation — 2026-10-11
+
+Based on published `6d6ea17` (profile requirements aligned with the assignment).
+The user confirmed the preceding extension was published. This change adds a
+separate eighteen-case synthetic corpus, frozen manual labels/reference snapshots,
+an evaluator and thirteen protocol/scoring tests. Application code, catalog, formal
+models, schemas, public APIs and runtime dependencies are unchanged.
+
+The labels were drafted with AI assistance before these cases were executed.
+The author was familiar with earlier project behavior; this is not independent
+external-human or blind evaluation. Freeze hashes detect later edits, not external
+proof of authorship or time. Existing evaluation/history artifacts are preserved.
+
+Verified on Linux with Python 3.12.14 and the unchanged locked dependencies.
+Native Windows execution of this extension is pending.
+
+| Check | Result |
+|---|---|
+| Full Python suite | 181 passed, including thirteen new evaluator tests |
+| Fixed-label evaluation | 18 internally valid pipelines; 14 fully match all annotations |
+| Supported cases | 14 cases, positive mention TP76/FP0/FN0; all units exact |
+| Stress cases retained | 4 cases, positive mention TP18/FP3/FN3; all four recorded as disagreements |
+| Overall mention metrics | TP94/FP3/FN3; micro precision/recall/F1 0.9691 on these selected synthetic inputs only |
+| Profile metrics | TP17/FP1/FN2; exact accepted-profile sets in 15/18 cases; confusion matrices recorded for all four profiles |
+| Candidate evidence | Names exact in 18/18; 2 emails, 1 phone, 1 link, 2 education and 2 experience records recovered; sparse coverage only |
+| Protocol integrity | Annotation SHA-256 remains the pre-run value; exact input hashes, BOM/CRLF case and all 21 runtime fingerprints verified |
+| Scoring tests | Exact repeated positions, null denominators, micro aggregation, unknown FN, false profile acceptance/rejection and caught pipeline failure verified |
+| Reproduction CLI | Stored reports match execution; external output location works; stale-report check fails without rewriting |
+| Tampering/later changes | Changed annotations or input bytes reject; checkout or imported-package source changes need explicit later-regression mode without resetting the freeze |
+| Existing workflow/web acceptance | Eight API/CLI sample bundles and eight actual HTTP/API/ZIP samples agree |
+| Design/dependencies | Design validation and pip check pass |
+| Fresh CRLF checkout / patch application | Dataset text policy applied first, remaining hunks second; all 181 tests pass and all 18 input files retain original bytes |
+| Freeze preservation | All 38 patch files verified; annotation SHA-256 and original input hashes remain unchanged after evaluation and portability checks |
+
+The four disagreements are an omitted Rust mention, a double-negated Python
+mention, job-advertisement qualifications attributed to the candidate and a
+technical Pandas phrase outside the bounded context rules. The latter three also
+affect Machine Learning decisions. Expectations and stress groups were not changed
+to improve metrics after execution. A passing evaluator check reproduces the
+recorded measurements; it does not imply that every semantic annotation matched.
+See [protocol and interpretation](preannotated-evaluation.md).
+
+Earlier results follow unchanged.
+
 ## Assignment-profile alignment — 2026-10-11
 
 Based on published `5b4a6a2` (disk export recovery, including the LF/CRLF test

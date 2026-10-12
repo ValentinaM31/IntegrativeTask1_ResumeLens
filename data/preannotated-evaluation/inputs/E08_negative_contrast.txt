@@ -1,0 +1,3 @@
+Name: Eric Vale
+Skills: JS, NodeJS, Postgres, Git.
+I do not know React, but I use Angular.

@@ -4,7 +4,7 @@ Process UTF-8 TXT resumes using Python `re`, real finite-state transducers, four
 
 ## Installation
 
-Python 3.10 or later. The current profile-alignment extension is verified on Linux with Python 3.12.14. Run the verification commands below after applying it on Windows; historical platform checks are recorded in [test results](docs/test-results.md).
+Python 3.10 or later. The current preannotated-evaluation extension is verified on Linux with Python 3.12.14. Run the verification commands below after applying it on Windows; historical platform checks are recorded in [test results](docs/test-results.md).
 
 ```powershell
 py -m venv .venv
@@ -82,7 +82,18 @@ The directory contains `first_stage.json`, `classification.json`, `candidate.rl`
 .\.venv\Scripts\python.exe tools/check_web_acceptance.py
 ```
 
-There are 168 automated tests (39 first-stage, 12 recognition, 16 candidate-language, 24 workflow/rendering/CLI, 23 local-HTTP/UI-entry, 14 focused negation regressions, 17 profile-explanation tests, 15 bundle-recovery tests and 8 profile-alignment tests), eight main English samples and 23 annotated synthetic extraction cases: fifteen original, six historically reserved and two additional limit cases. The focused regressions include real CLI and HTTP/ZIP checks; they are not an independently collected evaluation dataset. All eight samples have executed profile classifications in `data/classification/` and validated candidate specifications in `data/dsl/`. Complete JSON/DSL/HTML bundles are in `data/workflow/`. Browser interactions include eighteen reproducible keyboard scenario groups checked with Chrome for Testing on Linux; see [keyboard verification](docs/keyboard-navigation.md). Spanish input fixtures and regex alternatives retain documented bilingual support. See [test results](docs/test-results.md), [profile models](docs/profile-recognition.md), [candidate grammar](docs/candidate-language.md) and [evaluation](docs/evaluation.md).
+There are 181 automated tests (39 first-stage, 12 recognition, 16 candidate-language, 24 workflow/rendering/CLI, 23 local-HTTP/UI-entry, 14 focused negation regressions, 17 profile-explanation tests, 15 bundle-recovery tests, 8 profile-alignment tests and 13 evaluation-protocol/scoring tests), eight main English samples and 23 historical annotated synthetic extraction cases: fifteen original, six historically reserved and two additional limit cases. The focused regressions include real CLI and HTTP/ZIP checks; they are not an independently collected evaluation dataset. All eight samples have executed profile classifications in `data/classification/` and validated candidate specifications in `data/dsl/`. Complete JSON/DSL/HTML bundles are in `data/workflow/`. Browser interactions include eighteen reproducible keyboard scenario groups checked with Chrome for Testing on Linux; see [keyboard verification](docs/keyboard-navigation.md). Spanish input fixtures and regex alternatives retain documented bilingual support. See [test results](docs/test-results.md), [profile models](docs/profile-recognition.md), [candidate grammar](docs/candidate-language.md) and [evaluation](docs/evaluation.md).
+
+A separate [preannotated evaluation](docs/preannotated-evaluation.md) adds 18 new
+synthetic cases with labels fixed before execution: 14 supported-format cases and
+four stress cases. All 18 produce valid pipelines; 14 match all annotations. The
+four observed limitations remain in the report. These AI-assisted examples are
+independent of predicted outputs, with no external-human or real-resume accuracy
+claim. Verify the stored JSON/Markdown reports without rewriting them:
+
+```powershell
+.\.venv\Scripts\python.exe tools/evaluate_preannotated.py --check
+```
 
 Machine Learning accepts Scikit-learn, TensorFlow or PyTorch as alternatives for
 its required learning-library group, following the assignment's page 5 diagram.

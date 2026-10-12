@@ -1,0 +1,2 @@
+Name: Omar Vale
+Skills: Java, Spring Boot, MySQL, REST API, Git, Docker.

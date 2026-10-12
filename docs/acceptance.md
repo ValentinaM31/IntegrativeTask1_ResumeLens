@@ -18,6 +18,7 @@ Complete means the documented extraction, normalization, recognition, candidate-
 | Profile explanations | classification.py, profile-explanations.md, test_profile_explanations.py | Missing groups, pair incompatibility, configured alternatives, real CLI/HTTP and shared JSON/HTML messages | Complete for configured requirements |
 | Disk export recovery | workflow.py, bundle-recovery.md, test_bundle_recovery.py | Prepared files, original backups, four failure positions across 16 original-presence combinations, failed recovery and retry | Complete for controlled filesystem failures; abrupt termination requires inspection |
 | Reproducible cases | samples/, results/, evaluation/ | Eight main English samples, 23 annotated cases | Complete; synthetic evaluation |
+| Preannotated pipeline evaluation | preannotated-evaluation.md, data/preannotated-evaluation/, evaluate_preannotated.py | Frozen labels/inputs, 18 valid pipelines, 14 exact cases, retained span/profile errors and reproducible JSON/Markdown | Complete for synthetic evaluation; no external-human or population-accuracy claim |
 | English project text | README, docs, source/messages | Tests, regeneration, text review | Complete; quoted bilingual input remains |
 | Sources | literature-review.md | Full-paper/abstract distinction | Available foundation, not systematic review |
 | Integration guide | handoff.md | API/CLI acceptance | Complete |

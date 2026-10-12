@@ -20,6 +20,7 @@
 | data-contract.md | JSON 1.0 contract |
 | test-plan.md / test-results.md | Scenarios and verified results |
 | evaluation.md | Annotations, metrics and limitations |
+| preannotated-evaluation.md | Eighteen new frozen synthetic inputs, manual-label provenance, complete-pipeline scoring, errors and reproducibility |
 | literature-review.md / fundamentals.md | Sources and formal foundations |
 | acceptance.md | Requirements and supporting evidence |
 

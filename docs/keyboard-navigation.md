@@ -65,7 +65,7 @@ return a nonzero exit status; they are not reported as a successful skipped test
 
 Expected final output: `Keyboard browser acceptance: 18 scenario groups passed`,
 followed by the actual Chromium version. These checks are separate from the
-168 Python unittest cases. They include:
+181 Python unittest cases. They include:
 
 - A complete keyboard-only example/process/ZIP/edit/clear journey and normal
   forward/reverse input navigation.

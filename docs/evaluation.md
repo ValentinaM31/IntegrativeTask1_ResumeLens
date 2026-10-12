@@ -1,5 +1,12 @@
 # Reproducible skill-mention evaluation
 
+This document covers the original 23-case skill-mention evaluation. A separate
+[preannotated complete-pipeline evaluation](preannotated-evaluation.md) adds 18
+new AI-assisted synthetic inputs, labels fixed before execution, runtime/input
+fingerprints and profile/candidate scoring. Its outputs are under
+`data/preannotated-evaluation/`; the historical annotations and results below are
+retained rather than merged or relabelled as a new blind evaluation.
+
 There are 23 synthetic annotated cases: fifteen original cases in `cases.json`, six historically reserved in `holdout.json` and two additional limits in `limitations.json`. They are not real resumes or an external corpus. Original cases guided rule adjustments. Reserved cases were written after freezing earlier behavior; current reuse is regression, not a new blind evaluation.
 
 `holdout_protocol.json` retains the earlier extractor SHA-256. `results.json` reports `rules_unchanged_since_holdout_creation=false`: Pandas corrections and English diagnostics changed the source. The fingerprint is not reset to imply independence. This procedure does not establish independent human evaluation.

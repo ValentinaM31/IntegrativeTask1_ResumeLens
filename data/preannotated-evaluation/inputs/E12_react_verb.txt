@@ -1,0 +1,3 @@
+Name: Noor Vale
+I know how to react to unexpected changes.
+Skills: Python, NumPy, scikit learn, SQL, Git.

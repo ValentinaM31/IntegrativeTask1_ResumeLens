@@ -1,0 +1,6 @@
+Technical Skills:
+Python
+NumPy
+PyTorch
+SQL
+Git

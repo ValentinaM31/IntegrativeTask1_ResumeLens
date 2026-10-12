@@ -1,0 +1,1281 @@
+{
+  "dataset_id": "preannotated_synthetic_2026_10_11",
+  "annotation_version": "1.0",
+  "provenance": "AI-assisted synthetic inputs and manual labels drafted before this dataset was executed; no external human annotator or real resumes; author familiar with prior project behavior.",
+  "cases": [
+    {
+      "id": "E01_alias_full_stack",
+      "group": "supported",
+      "tags": [
+        "aliases",
+        "full_stack"
+      ],
+      "input": "inputs/E01_alias_full_stack.txt",
+      "name_override": null,
+      "expected": {
+        "positive_mentions": [
+          {
+            "raw": "JS",
+            "start": 34,
+            "end": 36,
+            "canonical": "JAVASCRIPT"
+          },
+          {
+            "raw": "ReactJS",
+            "start": 38,
+            "end": 45,
+            "canonical": "REACT"
+          },
+          {
+            "raw": "Node.js",
+            "start": 47,
+            "end": 54,
+            "canonical": "NODE_JS"
+          },
+          {
+            "raw": "Postgres",
+            "start": 56,
+            "end": 64,
+            "canonical": "POSTGRESQL"
+          },
+          {
+            "raw": "Git SCM",
+            "start": 66,
+            "end": 73,
+            "canonical": "GIT"
+          }
+        ],
+        "excluded_mentions": [],
+        "normalized_skills": [
+          "GIT",
+          "JAVASCRIPT",
+          "NODE_JS",
+          "POSTGRESQL",
+          "REACT"
+        ],
+        "accepted_profiles": [
+          "FULL_STACK_DEVELOPER"
+        ],
+        "candidate": {
+          "name": "Iris Vale",
+          "emails": [],
+          "phones": [],
+          "links": [],
+          "education": [],
+          "experience": []
+        }
+      }
+    },
+    {
+      "id": "E02_scikit_learning",
+      "group": "supported",
+      "tags": [
+        "aliases",
+        "machine_learning"
+      ],
+      "input": "inputs/E02_scikit_learning.txt",
+      "name_override": null,
+      "expected": {
+        "positive_mentions": [
+          {
+            "raw": "Python",
+            "start": 25,
+            "end": 31,
+            "canonical": "PYTHON"
+          },
+          {
+            "raw": "NumPy",
+            "start": 33,
+            "end": 38,
+            "canonical": "NUMPY"
+          },
+          {
+            "raw": "scikit learn",
+            "start": 40,
+            "end": 52,
+            "canonical": "SCIKIT_LEARN"
+          },
+          {
+            "raw": "SQL",
+            "start": 54,
+            "end": 57,
+            "canonical": "SQL"
+          },
+          {
+            "raw": "Git",
+            "start": 59,
+            "end": 62,
+            "canonical": "GIT"
+          }
+        ],
+        "excluded_mentions": [],
+        "normalized_skills": [
+          "GIT",
+          "NUMPY",
+          "PYTHON",
+          "SCIKIT_LEARN",
+          "SQL"
+        ],
+        "accepted_profiles": [
+          "MACHINE_LEARNING_ENGINEER"
+        ],
+        "candidate": {
+          "name": "Mateo Vale",
+          "emails": [],
+          "phones": [],
+          "links": [],
+          "education": [],
+          "experience": []
+        }
+      }
+    },
+    {
+      "id": "E03_incompatible_backend",
+      "group": "supported",
+      "tags": [
+        "incompatible_pairs"
+      ],
+      "input": "inputs/E03_incompatible_backend.txt",
+      "name_override": null,
+      "expected": {
+        "positive_mentions": [
+          {
+            "raw": "Java",
+            "start": 24,
+            "end": 28,
+            "canonical": "JAVA"
+          },
+          {
+            "raw": "Django",
+            "start": 30,
+            "end": 36,
+            "canonical": "DJANGO"
+          },
+          {
+            "raw": "MySQL",
+            "start": 38,
+            "end": 43,
+            "canonical": "MYSQL"
+          },
+          {
+            "raw": "REST API",
+            "start": 45,
+            "end": 53,
+            "canonical": "REST_API"
+          },
+          {
+            "raw": "Git",
+            "start": 55,
+            "end": 58,
+            "canonical": "GIT"
+          }
+        ],
+        "excluded_mentions": [],
+        "normalized_skills": [
+          "DJANGO",
+          "GIT",
+          "JAVA",
+          "MYSQL",
+          "REST_API"
+        ],
+        "accepted_profiles": [],
+        "candidate": {
+          "name": "Lina Vale",
+          "emails": [],
+          "phones": [],
+          "links": [],
+          "education": [],
+          "experience": []
+        }
+      }
+    },
+    {
+      "id": "E04_compatible_backend",
+      "group": "supported",
+      "tags": [
+        "compatible_pairs",
+        "optional"
+      ],
+      "input": "inputs/E04_compatible_backend.txt",
+      "name_override": null,
+      "expected": {
+        "positive_mentions": [
+          {
+            "raw": "Java",
+            "start": 24,
+            "end": 28,
+            "canonical": "JAVA"
+          },
+          {
+            "raw": "Spring Boot",
+            "start": 30,
+            "end": 41,
+            "canonical": "SPRING_BOOT"
+          },
+          {
+            "raw": "MySQL",
+            "start": 43,
+            "end": 48,
+            "canonical": "MYSQL"
+          },
+          {
+            "raw": "REST API",
+            "start": 50,
+            "end": 58,
+            "canonical": "REST_API"
+          },
+          {
+            "raw": "Git",
+            "start": 60,
+            "end": 63,
+            "canonical": "GIT"
+          },
+          {
+            "raw": "Docker",
+            "start": 65,
+            "end": 71,
+            "canonical": "DOCKER"
+          }
+        ],
+        "excluded_mentions": [],
+        "normalized_skills": [
+          "DOCKER",
+          "GIT",
+          "JAVA",
+          "MYSQL",
+          "REST_API",
+          "SPRING_BOOT"
+        ],
+        "accepted_profiles": [
+          "BACKEND_DEVELOPER"
+        ],
+        "candidate": {
+          "name": "Omar Vale",
+          "emails": [],
+          "phones": [],
+          "links": [],
+          "education": [],
+          "experience": []
+        }
+      }
+    },
+    {
+      "id": "E05_data_pipeline",
+      "group": "supported",
+      "tags": [
+        "data_engineering",
+        "aliases"
+      ],
+      "input": "inputs/E05_data_pipeline.txt",
+      "name_override": null,
+      "expected": {
+        "positive_mentions": [
+          {
+            "raw": "Python",
+            "start": 24,
+            "end": 30,
+            "canonical": "PYTHON"
+          },
+          {
+            "raw": "PostgreSQL",
+            "start": 32,
+            "end": 42,
+            "canonical": "POSTGRESQL"
+          },
+          {
+            "raw": "Apache Airflow",
+            "start": 44,
+            "end": 58,
+            "canonical": "AIRFLOW"
+          },
+          {
+            "raw": "Git",
+            "start": 60,
+            "end": 63,
+            "canonical": "GIT"
+          }
+        ],
+        "excluded_mentions": [],
+        "normalized_skills": [
+          "AIRFLOW",
+          "GIT",
+          "POSTGRESQL",
+          "PYTHON"
+        ],
+        "accepted_profiles": [
+          "DATA_ENGINEER"
+        ],
+        "candidate": {
+          "name": "Vera Vale",
+          "emails": [],
+          "phones": [],
+          "links": [],
+          "education": [],
+          "experience": []
+        }
+      }
+    },
+    {
+      "id": "E06_four_profiles",
+      "group": "supported",
+      "tags": [
+        "simultaneous_profiles",
+        "aliases"
+      ],
+      "input": "inputs/E06_four_profiles.txt",
+      "name_override": null,
+      "expected": {
+        "positive_mentions": [
+          {
+            "raw": "TypeScript",
+            "start": 24,
+            "end": 34,
+            "canonical": "TYPESCRIPT"
+          },
+          {
+            "raw": "React",
+            "start": 36,
+            "end": 41,
+            "canonical": "REACT"
+          },
+          {
+            "raw": "NodeJS",
+            "start": 43,
+            "end": 49,
+            "canonical": "NODE_JS"
+          },
+          {
+            "raw": "SQL",
+            "start": 51,
+            "end": 54,
+            "canonical": "SQL"
+          },
+          {
+            "raw": "Git",
+            "start": 56,
+            "end": 59,
+            "canonical": "GIT"
+          },
+          {
+            "raw": "REST API",
+            "start": 61,
+            "end": 69,
+            "canonical": "REST_API"
+          },
+          {
+            "raw": "Python",
+            "start": 71,
+            "end": 77,
+            "canonical": "PYTHON"
+          },
+          {
+            "raw": "Pandas",
+            "start": 79,
+            "end": 85,
+            "canonical": "PANDAS"
+          },
+          {
+            "raw": "sklearn",
+            "start": 87,
+            "end": 94,
+            "canonical": "SCIKIT_LEARN"
+          },
+          {
+            "raw": "ETL",
+            "start": 96,
+            "end": 99,
+            "canonical": "ETL"
+          }
+        ],
+        "excluded_mentions": [],
+        "normalized_skills": [
+          "ETL",
+          "GIT",
+          "NODE_JS",
+          "PANDAS",
+          "PYTHON",
+          "REACT",
+          "REST_API",
+          "SCIKIT_LEARN",
+          "SQL",
+          "TYPESCRIPT"
+        ],
+        "accepted_profiles": [
+          "BACKEND_DEVELOPER",
+          "DATA_ENGINEER",
+          "FULL_STACK_DEVELOPER",
+          "MACHINE_LEARNING_ENGINEER"
+        ],
+        "candidate": {
+          "name": "Hugo Vale",
+          "emails": [],
+          "phones": [],
+          "links": [],
+          "education": [],
+          "experience": []
+        }
+      }
+    },
+    {
+      "id": "E07_repeated_records",
+      "group": "supported",
+      "tags": [
+        "repeated_mentions",
+        "repeated_records"
+      ],
+      "input": "inputs/E07_repeated_records.txt",
+      "name_override": null,
+      "expected": {
+        "positive_mentions": [
+          {
+            "raw": "JS",
+            "start": 24,
+            "end": 26,
+            "canonical": "JAVASCRIPT"
+          },
+          {
+            "raw": "Javascript",
+            "start": 28,
+            "end": 38,
+            "canonical": "JAVASCRIPT"
+          },
+          {
+            "raw": "React.js",
+            "start": 40,
+            "end": 48,
+            "canonical": "REACT"
+          },
+          {
+            "raw": "NodeJS",
+            "start": 50,
+            "end": 56,
+            "canonical": "NODE_JS"
+          },
+          {
+            "raw": "SQL",
+            "start": 58,
+            "end": 61,
+            "canonical": "SQL"
+          },
+          {
+            "raw": "Git",
+            "start": 63,
+            "end": 66,
+            "canonical": "GIT"
+          },
+          {
+            "raw": "Git",
+            "start": 68,
+            "end": 71,
+            "canonical": "GIT"
+          }
+        ],
+        "excluded_mentions": [],
+        "normalized_skills": [
+          "GIT",
+          "JAVASCRIPT",
+          "NODE_JS",
+          "REACT",
+          "SQL"
+        ],
+        "accepted_profiles": [
+          "FULL_STACK_DEVELOPER"
+        ],
+        "candidate": {
+          "name": "Sara Vale",
+          "emails": [],
+          "phones": [],
+          "links": [],
+          "education": [
+            {
+              "raw": "BSc Computing",
+              "start": 84,
+              "end": 97
+            },
+            {
+              "raw": "BSc Computing",
+              "start": 98,
+              "end": 111
+            }
+          ],
+          "experience": [
+            {
+              "raw": "Developer at Lab One",
+              "start": 124,
+              "end": 144
+            },
+            {
+              "raw": "Developer at Lab One",
+              "start": 145,
+              "end": 165
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "E08_negative_contrast",
+      "group": "supported",
+      "tags": [
+        "negation",
+        "contrast"
+      ],
+      "input": "inputs/E08_negative_contrast.txt",
+      "name_override": null,
+      "expected": {
+        "positive_mentions": [
+          {
+            "raw": "JS",
+            "start": 24,
+            "end": 26,
+            "canonical": "JAVASCRIPT"
+          },
+          {
+            "raw": "NodeJS",
+            "start": 28,
+            "end": 34,
+            "canonical": "NODE_JS"
+          },
+          {
+            "raw": "Postgres",
+            "start": 36,
+            "end": 44,
+            "canonical": "POSTGRESQL"
+          },
+          {
+            "raw": "Git",
+            "start": 46,
+            "end": 49,
+            "canonical": "GIT"
+          },
+          {
+            "raw": "Angular",
+            "start": 82,
+            "end": 89,
+            "canonical": "ANGULAR"
+          }
+        ],
+        "excluded_mentions": [
+          {
+            "raw": "React",
+            "start": 65,
+            "end": 70,
+            "reason": "explicit_negation"
+          }
+        ],
+        "normalized_skills": [
+          "ANGULAR",
+          "GIT",
+          "JAVASCRIPT",
+          "NODE_JS",
+          "POSTGRESQL"
+        ],
+        "accepted_profiles": [
+          "FULL_STACK_DEVELOPER"
+        ],
+        "candidate": {
+          "name": "Eric Vale",
+          "emails": [],
+          "phones": [],
+          "links": [],
+          "education": [],
+          "experience": []
+        }
+      }
+    },
+    {
+      "id": "E09_spanish_negation",
+      "group": "supported",
+      "tags": [
+        "negation",
+        "spanish"
+      ],
+      "input": "inputs/E09_spanish_negation.txt",
+      "name_override": null,
+      "expected": {
+        "positive_mentions": [
+          {
+            "raw": "Python",
+            "start": 32,
+            "end": 38,
+            "canonical": "PYTHON"
+          },
+          {
+            "raw": "NumPy",
+            "start": 40,
+            "end": 45,
+            "canonical": "NUMPY"
+          },
+          {
+            "raw": "SQL",
+            "start": 47,
+            "end": 50,
+            "canonical": "SQL"
+          },
+          {
+            "raw": "Git",
+            "start": 52,
+            "end": 55,
+            "canonical": "GIT"
+          }
+        ],
+        "excluded_mentions": [
+          {
+            "raw": "TensorFlow",
+            "start": 64,
+            "end": 74,
+            "reason": "explicit_negation"
+          },
+          {
+            "raw": "sklearn",
+            "start": 78,
+            "end": 85,
+            "reason": "explicit_negation"
+          }
+        ],
+        "normalized_skills": [
+          "GIT",
+          "NUMPY",
+          "PYTHON",
+          "SQL"
+        ],
+        "accepted_profiles": [],
+        "candidate": {
+          "name": "Celia Vale",
+          "emails": [],
+          "phones": [],
+          "links": [],
+          "education": [],
+          "experience": []
+        }
+      }
+    },
+    {
+      "id": "E10_two_profiles",
+      "group": "supported",
+      "tags": [
+        "simultaneous_profiles",
+        "missing_groups"
+      ],
+      "input": "inputs/E10_two_profiles.txt",
+      "name_override": null,
+      "expected": {
+        "positive_mentions": [
+          {
+            "raw": "Python",
+            "start": 23,
+            "end": 29,
+            "canonical": "PYTHON"
+          },
+          {
+            "raw": "Django",
+            "start": 31,
+            "end": 37,
+            "canonical": "DJANGO"
+          },
+          {
+            "raw": "SQL",
+            "start": 39,
+            "end": 42,
+            "canonical": "SQL"
+          },
+          {
+            "raw": "REST API",
+            "start": 44,
+            "end": 52,
+            "canonical": "REST_API"
+          },
+          {
+            "raw": "Git",
+            "start": 54,
+            "end": 57,
+            "canonical": "GIT"
+          },
+          {
+            "raw": "ETL",
+            "start": 59,
+            "end": 62,
+            "canonical": "ETL"
+          }
+        ],
+        "excluded_mentions": [],
+        "normalized_skills": [
+          "DJANGO",
+          "ETL",
+          "GIT",
+          "PYTHON",
+          "REST_API",
+          "SQL"
+        ],
+        "accepted_profiles": [
+          "BACKEND_DEVELOPER",
+          "DATA_ENGINEER"
+        ],
+        "candidate": {
+          "name": "Teo Vale",
+          "emails": [],
+          "phones": [],
+          "links": [],
+          "education": [],
+          "experience": []
+        }
+      }
+    },
+    {
+      "id": "E11_animal_pandas",
+      "group": "supported",
+      "tags": [
+        "homonyms",
+        "pandas_context"
+      ],
+      "input": "inputs/E11_animal_pandas.txt",
+      "name_override": null,
+      "expected": {
+        "positive_mentions": [
+          {
+            "raw": "React",
+            "start": 48,
+            "end": 53,
+            "canonical": "REACT"
+          },
+          {
+            "raw": "Python",
+            "start": 63,
+            "end": 69,
+            "canonical": "PYTHON"
+          },
+          {
+            "raw": "SQL",
+            "start": 71,
+            "end": 74,
+            "canonical": "SQL"
+          },
+          {
+            "raw": "Git",
+            "start": 76,
+            "end": 79,
+            "canonical": "GIT"
+          }
+        ],
+        "excluded_mentions": [
+          {
+            "raw": "pandas",
+            "start": 22,
+            "end": 28,
+            "reason": "animal_context"
+          }
+        ],
+        "normalized_skills": [
+          "GIT",
+          "PYTHON",
+          "REACT",
+          "SQL"
+        ],
+        "accepted_profiles": [],
+        "candidate": {
+          "name": "Lee Vale",
+          "emails": [],
+          "phones": [],
+          "links": [],
+          "education": [],
+          "experience": []
+        }
+      }
+    },
+    {
+      "id": "E12_react_verb",
+      "group": "supported",
+      "tags": [
+        "homonyms",
+        "react_context"
+      ],
+      "input": "inputs/E12_react_verb.txt",
+      "name_override": null,
+      "expected": {
+        "positive_mentions": [
+          {
+            "raw": "Python",
+            "start": 67,
+            "end": 73,
+            "canonical": "PYTHON"
+          },
+          {
+            "raw": "NumPy",
+            "start": 75,
+            "end": 80,
+            "canonical": "NUMPY"
+          },
+          {
+            "raw": "scikit learn",
+            "start": 82,
+            "end": 94,
+            "canonical": "SCIKIT_LEARN"
+          },
+          {
+            "raw": "SQL",
+            "start": 96,
+            "end": 99,
+            "canonical": "SQL"
+          },
+          {
+            "raw": "Git",
+            "start": 101,
+            "end": 104,
+            "canonical": "GIT"
+          }
+        ],
+        "excluded_mentions": [
+          {
+            "raw": "react",
+            "start": 30,
+            "end": 35,
+            "reason": "ordinary_verb"
+          }
+        ],
+        "normalized_skills": [
+          "GIT",
+          "NUMPY",
+          "PYTHON",
+          "SCIKIT_LEARN",
+          "SQL"
+        ],
+        "accepted_profiles": [
+          "MACHINE_LEARNING_ENGINEER"
+        ],
+        "candidate": {
+          "name": "Noor Vale",
+          "emails": [],
+          "phones": [],
+          "links": [],
+          "education": [],
+          "experience": []
+        }
+      }
+    },
+    {
+      "id": "E13_unicode_bom_crlf",
+      "group": "supported",
+      "tags": [
+        "unicode",
+        "bom",
+        "crlf",
+        "multiple_contacts"
+      ],
+      "input": "inputs/E13_unicode_bom_crlf.txt",
+      "name_override": null,
+      "expected": {
+        "positive_mentions": [
+          {
+            "raw": "Python",
+            "start": 139,
+            "end": 145,
+            "canonical": "PYTHON"
+          },
+          {
+            "raw": "NumPy",
+            "start": 147,
+            "end": 152,
+            "canonical": "NUMPY"
+          },
+          {
+            "raw": "Py Torch",
+            "start": 154,
+            "end": 162,
+            "canonical": "PYTORCH"
+          },
+          {
+            "raw": "SQL",
+            "start": 164,
+            "end": 167,
+            "canonical": "SQL"
+          },
+          {
+            "raw": "Git",
+            "start": 169,
+            "end": 172,
+            "canonical": "GIT"
+          }
+        ],
+        "excluded_mentions": [],
+        "normalized_skills": [
+          "GIT",
+          "NUMPY",
+          "PYTHON",
+          "PYTORCH",
+          "SQL"
+        ],
+        "accepted_profiles": [
+          "MACHINE_LEARNING_ENGINEER"
+        ],
+        "candidate": {
+          "name": "Zoë Núñez",
+          "emails": [
+            {
+              "raw": "zoe@example.com",
+              "start": 24,
+              "end": 39
+            },
+            {
+              "raw": "zoe.work@example.org",
+              "start": 48,
+              "end": 68
+            }
+          ],
+          "phones": [
+            {
+              "raw": "+57 315 987 6543",
+              "start": 77,
+              "end": 93
+            }
+          ],
+          "links": [
+            {
+              "raw": "https://github.com/zoe-nunez",
+              "start": 101,
+              "end": 129
+            }
+          ],
+          "education": [],
+          "experience": []
+        }
+      }
+    },
+    {
+      "id": "E14_fallback_name",
+      "group": "supported",
+      "tags": [
+        "multiline",
+        "fallback_name"
+      ],
+      "input": "inputs/E14_fallback_name.txt",
+      "name_override": "Nora Fallback",
+      "expected": {
+        "positive_mentions": [
+          {
+            "raw": "Python",
+            "start": 18,
+            "end": 24,
+            "canonical": "PYTHON"
+          },
+          {
+            "raw": "NumPy",
+            "start": 25,
+            "end": 30,
+            "canonical": "NUMPY"
+          },
+          {
+            "raw": "PyTorch",
+            "start": 31,
+            "end": 38,
+            "canonical": "PYTORCH"
+          },
+          {
+            "raw": "SQL",
+            "start": 39,
+            "end": 42,
+            "canonical": "SQL"
+          },
+          {
+            "raw": "Git",
+            "start": 43,
+            "end": 46,
+            "canonical": "GIT"
+          }
+        ],
+        "excluded_mentions": [],
+        "normalized_skills": [
+          "GIT",
+          "NUMPY",
+          "PYTHON",
+          "PYTORCH",
+          "SQL"
+        ],
+        "accepted_profiles": [
+          "MACHINE_LEARNING_ENGINEER"
+        ],
+        "candidate": {
+          "name": "Nora Fallback",
+          "emails": [],
+          "phones": [],
+          "links": [],
+          "education": [],
+          "experience": []
+        }
+      }
+    },
+    {
+      "id": "E15_unknown_rust",
+      "group": "stress",
+      "tags": [
+        "unknown_technology"
+      ],
+      "input": "inputs/E15_unknown_rust.txt",
+      "name_override": null,
+      "expected": {
+        "positive_mentions": [
+          {
+            "raw": "Rust",
+            "start": 24,
+            "end": 28,
+            "canonical": null
+          },
+          {
+            "raw": "Python",
+            "start": 30,
+            "end": 36,
+            "canonical": "PYTHON"
+          },
+          {
+            "raw": "Django",
+            "start": 38,
+            "end": 44,
+            "canonical": "DJANGO"
+          },
+          {
+            "raw": "SQL",
+            "start": 46,
+            "end": 49,
+            "canonical": "SQL"
+          },
+          {
+            "raw": "REST API",
+            "start": 51,
+            "end": 59,
+            "canonical": "REST_API"
+          },
+          {
+            "raw": "Git",
+            "start": 61,
+            "end": 64,
+            "canonical": "GIT"
+          }
+        ],
+        "excluded_mentions": [],
+        "normalized_skills": [
+          "DJANGO",
+          "GIT",
+          "PYTHON",
+          "REST_API",
+          "SQL"
+        ],
+        "accepted_profiles": [
+          "BACKEND_DEVELOPER"
+        ],
+        "candidate": {
+          "name": "Nico Vale",
+          "emails": [],
+          "phones": [],
+          "links": [],
+          "education": [],
+          "experience": []
+        }
+      }
+    },
+    {
+      "id": "E16_double_negation",
+      "group": "stress",
+      "tags": [
+        "double_negation"
+      ],
+      "input": "inputs/E16_double_negation.txt",
+      "name_override": null,
+      "expected": {
+        "positive_mentions": [
+          {
+            "raw": "NumPy",
+            "start": 24,
+            "end": 29,
+            "canonical": "NUMPY"
+          },
+          {
+            "raw": "sklearn",
+            "start": 31,
+            "end": 38,
+            "canonical": "SCIKIT_LEARN"
+          },
+          {
+            "raw": "SQL",
+            "start": 40,
+            "end": 43,
+            "canonical": "SQL"
+          },
+          {
+            "raw": "Git",
+            "start": 45,
+            "end": 48,
+            "canonical": "GIT"
+          },
+          {
+            "raw": "Python",
+            "start": 93,
+            "end": 99,
+            "canonical": "PYTHON"
+          }
+        ],
+        "excluded_mentions": [],
+        "normalized_skills": [
+          "GIT",
+          "NUMPY",
+          "PYTHON",
+          "SCIKIT_LEARN",
+          "SQL"
+        ],
+        "accepted_profiles": [
+          "MACHINE_LEARNING_ENGINEER"
+        ],
+        "candidate": {
+          "name": "Emil Vale",
+          "emails": [],
+          "phones": [],
+          "links": [],
+          "education": [],
+          "experience": []
+        }
+      }
+    },
+    {
+      "id": "E17_external_requirement",
+      "group": "stress",
+      "tags": [
+        "source_attribution"
+      ],
+      "input": "inputs/E17_external_requirement.txt",
+      "name_override": null,
+      "expected": {
+        "positive_mentions": [
+          {
+            "raw": "Java",
+            "start": 24,
+            "end": 28,
+            "canonical": "JAVA"
+          },
+          {
+            "raw": "Spring Boot",
+            "start": 30,
+            "end": 41,
+            "canonical": "SPRING_BOOT"
+          },
+          {
+            "raw": "SQL",
+            "start": 43,
+            "end": 46,
+            "canonical": "SQL"
+          },
+          {
+            "raw": "REST API",
+            "start": 48,
+            "end": 56,
+            "canonical": "REST_API"
+          },
+          {
+            "raw": "Git",
+            "start": 58,
+            "end": 61,
+            "canonical": "GIT"
+          }
+        ],
+        "excluded_mentions": [
+          {
+            "raw": "Python",
+            "start": 92,
+            "end": 98,
+            "reason": "external_job_requirement"
+          },
+          {
+            "raw": "NumPy",
+            "start": 100,
+            "end": 105,
+            "reason": "external_job_requirement"
+          },
+          {
+            "raw": "sklearn",
+            "start": 110,
+            "end": 117,
+            "reason": "external_job_requirement"
+          }
+        ],
+        "normalized_skills": [
+          "GIT",
+          "JAVA",
+          "REST_API",
+          "SPRING_BOOT",
+          "SQL"
+        ],
+        "accepted_profiles": [
+          "BACKEND_DEVELOPER"
+        ],
+        "candidate": {
+          "name": "Mira Vale",
+          "emails": [],
+          "phones": [],
+          "links": [],
+          "education": [],
+          "experience": []
+        }
+      }
+    },
+    {
+      "id": "E18_pandas_other_context",
+      "group": "stress",
+      "tags": [
+        "pandas_context",
+        "technical_prose"
+      ],
+      "input": "inputs/E18_pandas_other_context.txt",
+      "name_override": null,
+      "expected": {
+        "positive_mentions": [
+          {
+            "raw": "Python",
+            "start": 24,
+            "end": 30,
+            "canonical": "PYTHON"
+          },
+          {
+            "raw": "sklearn",
+            "start": 32,
+            "end": 39,
+            "canonical": "SCIKIT_LEARN"
+          },
+          {
+            "raw": "SQL",
+            "start": 41,
+            "end": 44,
+            "canonical": "SQL"
+          },
+          {
+            "raw": "Git",
+            "start": 46,
+            "end": 49,
+            "canonical": "GIT"
+          },
+          {
+            "raw": "pandas",
+            "start": 74,
+            "end": 80,
+            "canonical": "PANDAS"
+          }
+        ],
+        "excluded_mentions": [],
+        "normalized_skills": [
+          "GIT",
+          "PANDAS",
+          "PYTHON",
+          "SCIKIT_LEARN",
+          "SQL"
+        ],
+        "accepted_profiles": [
+          "MACHINE_LEARNING_ENGINEER"
+        ],
+        "candidate": {
+          "name": "Alba Vale",
+          "emails": [],
+          "phones": [],
+          "links": [],
+          "education": [],
+          "experience": []
+        }
+      }
+    }
+  ]
+}

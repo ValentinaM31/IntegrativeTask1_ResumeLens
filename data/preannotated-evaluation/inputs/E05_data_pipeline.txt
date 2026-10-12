@@ -1,0 +1,2 @@
+Name: Vera Vale
+Skills: Python, PostgreSQL, Apache Airflow, Git.

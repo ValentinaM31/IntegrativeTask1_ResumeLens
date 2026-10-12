@@ -62,6 +62,13 @@
 
 Automated tests are in `tests/`. Annotated evaluation separates admitted cases and stress limits; see `test-results.md` and `evaluation.md`.
 
+The separate preannotated dataset has eighteen new inputs: fourteen supported
+and four stress cases. Its expected spans, canonical symbols, candidate fields
+and profiles are fixed before execution. Protocol tests cover annotation/input
+tampering, changed-source regression mode, exact repeated spans, unknown skills,
+micro metrics, profile false acceptance/rejection, caught pipeline errors and
+non-writing report verification. See [protocol and results](preannotated-evaluation.md).
+
 ## Local UI and HTTP scenarios
 
 | Component | Scenario | Expected behavior |
@@ -98,5 +105,5 @@ details and scrolling, all five actual downloads, retry after network/server
 errors, repeated live-region updates and narrow/high contrast layouts. Downloads
 must match the real HTTP response byte for byte. See
 [keyboard navigation](keyboard-navigation.md) for setup and a manual alternative.
-These interaction checks are distinct from the 168 Python unittest cases and
+These interaction checks are distinct from the 181 Python unittest cases and
 from a screen-reader or full accessibility audit.

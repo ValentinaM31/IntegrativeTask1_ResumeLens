@@ -1,0 +1,4 @@
+Name: Lee Vale
+I like pandas at the zoo.
+I know React.
+Skills: Python, SQL, Git.

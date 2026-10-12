@@ -1,0 +1,2652 @@
+{
+  "report_version": "1.0",
+  "dataset_id": "preannotated_synthetic_2026_10_11",
+  "provenance": "AI-assisted synthetic inputs and manual labels drafted before this dataset was executed; no external human annotator or real resumes; author familiar with prior project behavior.",
+  "baseline_commit": "6d6ea17a37385d872f49925569db847777b01948",
+  "annotations_sha256": "16bc5bbe5ec874806d1e6ceac77e9d6b30da0350312d584034501aa52344928e",
+  "frozen_at_utc": "2026-10-11T23:21:19.193408+00:00",
+  "runtime_unchanged_since_freeze": true,
+  "changed_runtime_sources": [],
+  "comparison_kind": "frozen_baseline_comparison",
+  "independence_limit": "Expectations not derived from ResumeLens outputs; synthetic AI-assisted author is familiar with prior rules/limits. Not a blind, external-human or population evaluation. Later reuse is regression.",
+  "method": "Exact decoded-text spans, unique canonical symbols and accepted-profile sets; micro metrics. Candidate field spans scored separately. Empty metric denominators are null.",
+  "summary": {
+    "overall": {
+      "cases": 18,
+      "pipeline_valid": 18,
+      "all_annotations_exact": 14,
+      "candidate_name_exact": 18,
+      "unknown_positive_misses": 1,
+      "positive_mentions": {
+        "tp": 94,
+        "fp": 3,
+        "fn": 3,
+        "precision": 0.9690721649484536,
+        "recall": 0.9690721649484536,
+        "f1": 0.9690721649484536,
+        "exact_cases": 14
+      },
+      "excluded_mentions": {
+        "tp": 5,
+        "fp": 2,
+        "fn": 3,
+        "precision": 0.7142857142857143,
+        "recall": 0.625,
+        "f1": 0.6666666666666666,
+        "exact_cases": 15
+      },
+      "canonical_skills": {
+        "tp": 92,
+        "fp": 3,
+        "fn": 2,
+        "precision": 0.968421052631579,
+        "recall": 0.9787234042553191,
+        "f1": 0.9735449735449735,
+        "exact_cases": 15
+      },
+      "accepted_profiles": {
+        "tp": 17,
+        "fp": 1,
+        "fn": 2,
+        "precision": 0.9444444444444444,
+        "recall": 0.8947368421052632,
+        "f1": 0.918918918918919,
+        "exact_cases": 15
+      },
+      "candidate_fields": {
+        "emails": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "exact_cases": 18
+        },
+        "phones": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "exact_cases": 18
+        },
+        "links": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "exact_cases": 18
+        },
+        "education": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "exact_cases": 18
+        },
+        "experience": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "exact_cases": 18
+        }
+      },
+      "profile_confusion": {
+        "FULL_STACK_DEVELOPER": {
+          "tp": 4,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tn": 14
+        },
+        "MACHINE_LEARNING_ENGINEER": {
+          "tp": 5,
+          "fp": 1,
+          "fn": 2,
+          "precision": 0.8333333333333334,
+          "recall": 0.7142857142857143,
+          "f1": 0.7692307692307693,
+          "tn": 10
+        },
+        "BACKEND_DEVELOPER": {
+          "tp": 5,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tn": 13
+        },
+        "DATA_ENGINEER": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tn": 15
+        }
+      }
+    },
+    "supported": {
+      "cases": 14,
+      "pipeline_valid": 14,
+      "all_annotations_exact": 14,
+      "candidate_name_exact": 14,
+      "unknown_positive_misses": 0,
+      "positive_mentions": {
+        "tp": 76,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_cases": 14
+      },
+      "excluded_mentions": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_cases": 14
+      },
+      "canonical_skills": {
+        "tp": 74,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_cases": 14
+      },
+      "accepted_profiles": {
+        "tp": 15,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_cases": 14
+      },
+      "candidate_fields": {
+        "emails": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "exact_cases": 14
+        },
+        "phones": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "exact_cases": 14
+        },
+        "links": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "exact_cases": 14
+        },
+        "education": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "exact_cases": 14
+        },
+        "experience": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "exact_cases": 14
+        }
+      },
+      "profile_confusion": {
+        "FULL_STACK_DEVELOPER": {
+          "tp": 4,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tn": 10
+        },
+        "MACHINE_LEARNING_ENGINEER": {
+          "tp": 5,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tn": 9
+        },
+        "BACKEND_DEVELOPER": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tn": 11
+        },
+        "DATA_ENGINEER": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tn": 11
+        }
+      }
+    },
+    "stress": {
+      "cases": 4,
+      "pipeline_valid": 4,
+      "all_annotations_exact": 0,
+      "candidate_name_exact": 4,
+      "unknown_positive_misses": 1,
+      "positive_mentions": {
+        "tp": 18,
+        "fp": 3,
+        "fn": 3,
+        "precision": 0.8571428571428571,
+        "recall": 0.8571428571428571,
+        "f1": 0.8571428571428571,
+        "exact_cases": 0
+      },
+      "excluded_mentions": {
+        "tp": 0,
+        "fp": 2,
+        "fn": 3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact_cases": 1
+      },
+      "canonical_skills": {
+        "tp": 18,
+        "fp": 3,
+        "fn": 2,
+        "precision": 0.8571428571428571,
+        "recall": 0.9,
+        "f1": 0.8780487804878049,
+        "exact_cases": 1
+      },
+      "accepted_profiles": {
+        "tp": 2,
+        "fp": 1,
+        "fn": 2,
+        "precision": 0.6666666666666666,
+        "recall": 0.5,
+        "f1": 0.5714285714285714,
+        "exact_cases": 1
+      },
+      "candidate_fields": {
+        "emails": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact_cases": 4
+        },
+        "phones": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact_cases": 4
+        },
+        "links": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact_cases": 4
+        },
+        "education": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact_cases": 4
+        },
+        "experience": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact_cases": 4
+        }
+      },
+      "profile_confusion": {
+        "FULL_STACK_DEVELOPER": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "tn": 4
+        },
+        "MACHINE_LEARNING_ENGINEER": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tn": 1
+        },
+        "BACKEND_DEVELOPER": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tn": 2
+        },
+        "DATA_ENGINEER": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "tn": 4
+        }
+      }
+    }
+  },
+  "cases": [
+    {
+      "id": "E01_alias_full_stack",
+      "input": "inputs/E01_alias_full_stack.txt",
+      "group": "supported",
+      "tags": [
+        "aliases",
+        "full_stack"
+      ],
+      "positive_mentions": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "excluded_mentions": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "canonical_skills": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "accepted_profiles": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "unknown_positive_misses": [],
+      "candidate_name_exact": true,
+      "candidate_fields": {
+        "emails": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "phones": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "links": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "education": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "experience": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        }
+      },
+      "expected_profiles": [
+        "FULL_STACK_DEVELOPER"
+      ],
+      "actual_profiles": [
+        "FULL_STACK_DEVELOPER"
+      ],
+      "pipeline_valid": true,
+      "pipeline_error": null,
+      "all_annotations_exact": true
+    },
+    {
+      "id": "E02_scikit_learning",
+      "input": "inputs/E02_scikit_learning.txt",
+      "group": "supported",
+      "tags": [
+        "aliases",
+        "machine_learning"
+      ],
+      "positive_mentions": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "excluded_mentions": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "canonical_skills": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "accepted_profiles": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "unknown_positive_misses": [],
+      "candidate_name_exact": true,
+      "candidate_fields": {
+        "emails": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "phones": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "links": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "education": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "experience": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        }
+      },
+      "expected_profiles": [
+        "MACHINE_LEARNING_ENGINEER"
+      ],
+      "actual_profiles": [
+        "MACHINE_LEARNING_ENGINEER"
+      ],
+      "pipeline_valid": true,
+      "pipeline_error": null,
+      "all_annotations_exact": true
+    },
+    {
+      "id": "E03_incompatible_backend",
+      "input": "inputs/E03_incompatible_backend.txt",
+      "group": "supported",
+      "tags": [
+        "incompatible_pairs"
+      ],
+      "positive_mentions": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "excluded_mentions": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "canonical_skills": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "accepted_profiles": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "unknown_positive_misses": [],
+      "candidate_name_exact": true,
+      "candidate_fields": {
+        "emails": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "phones": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "links": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "education": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "experience": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        }
+      },
+      "expected_profiles": [],
+      "actual_profiles": [],
+      "pipeline_valid": true,
+      "pipeline_error": null,
+      "all_annotations_exact": true
+    },
+    {
+      "id": "E04_compatible_backend",
+      "input": "inputs/E04_compatible_backend.txt",
+      "group": "supported",
+      "tags": [
+        "compatible_pairs",
+        "optional"
+      ],
+      "positive_mentions": {
+        "tp": 6,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "excluded_mentions": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "canonical_skills": {
+        "tp": 6,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "accepted_profiles": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "unknown_positive_misses": [],
+      "candidate_name_exact": true,
+      "candidate_fields": {
+        "emails": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "phones": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "links": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "education": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "experience": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        }
+      },
+      "expected_profiles": [
+        "BACKEND_DEVELOPER"
+      ],
+      "actual_profiles": [
+        "BACKEND_DEVELOPER"
+      ],
+      "pipeline_valid": true,
+      "pipeline_error": null,
+      "all_annotations_exact": true
+    },
+    {
+      "id": "E05_data_pipeline",
+      "input": "inputs/E05_data_pipeline.txt",
+      "group": "supported",
+      "tags": [
+        "data_engineering",
+        "aliases"
+      ],
+      "positive_mentions": {
+        "tp": 4,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "excluded_mentions": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "canonical_skills": {
+        "tp": 4,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "accepted_profiles": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "unknown_positive_misses": [],
+      "candidate_name_exact": true,
+      "candidate_fields": {
+        "emails": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "phones": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "links": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "education": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "experience": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        }
+      },
+      "expected_profiles": [
+        "DATA_ENGINEER"
+      ],
+      "actual_profiles": [
+        "DATA_ENGINEER"
+      ],
+      "pipeline_valid": true,
+      "pipeline_error": null,
+      "all_annotations_exact": true
+    },
+    {
+      "id": "E06_four_profiles",
+      "input": "inputs/E06_four_profiles.txt",
+      "group": "supported",
+      "tags": [
+        "simultaneous_profiles",
+        "aliases"
+      ],
+      "positive_mentions": {
+        "tp": 10,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "excluded_mentions": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "canonical_skills": {
+        "tp": 10,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "accepted_profiles": {
+        "tp": 4,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "unknown_positive_misses": [],
+      "candidate_name_exact": true,
+      "candidate_fields": {
+        "emails": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "phones": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "links": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "education": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "experience": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        }
+      },
+      "expected_profiles": [
+        "BACKEND_DEVELOPER",
+        "DATA_ENGINEER",
+        "FULL_STACK_DEVELOPER",
+        "MACHINE_LEARNING_ENGINEER"
+      ],
+      "actual_profiles": [
+        "BACKEND_DEVELOPER",
+        "DATA_ENGINEER",
+        "FULL_STACK_DEVELOPER",
+        "MACHINE_LEARNING_ENGINEER"
+      ],
+      "pipeline_valid": true,
+      "pipeline_error": null,
+      "all_annotations_exact": true
+    },
+    {
+      "id": "E07_repeated_records",
+      "input": "inputs/E07_repeated_records.txt",
+      "group": "supported",
+      "tags": [
+        "repeated_mentions",
+        "repeated_records"
+      ],
+      "positive_mentions": {
+        "tp": 7,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "excluded_mentions": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "canonical_skills": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "accepted_profiles": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "unknown_positive_misses": [],
+      "candidate_name_exact": true,
+      "candidate_fields": {
+        "emails": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "phones": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "links": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "education": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "experience": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        }
+      },
+      "expected_profiles": [
+        "FULL_STACK_DEVELOPER"
+      ],
+      "actual_profiles": [
+        "FULL_STACK_DEVELOPER"
+      ],
+      "pipeline_valid": true,
+      "pipeline_error": null,
+      "all_annotations_exact": true
+    },
+    {
+      "id": "E08_negative_contrast",
+      "input": "inputs/E08_negative_contrast.txt",
+      "group": "supported",
+      "tags": [
+        "negation",
+        "contrast"
+      ],
+      "positive_mentions": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "excluded_mentions": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "canonical_skills": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "accepted_profiles": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "unknown_positive_misses": [],
+      "candidate_name_exact": true,
+      "candidate_fields": {
+        "emails": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "phones": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "links": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "education": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "experience": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        }
+      },
+      "expected_profiles": [
+        "FULL_STACK_DEVELOPER"
+      ],
+      "actual_profiles": [
+        "FULL_STACK_DEVELOPER"
+      ],
+      "pipeline_valid": true,
+      "pipeline_error": null,
+      "all_annotations_exact": true
+    },
+    {
+      "id": "E09_spanish_negation",
+      "input": "inputs/E09_spanish_negation.txt",
+      "group": "supported",
+      "tags": [
+        "negation",
+        "spanish"
+      ],
+      "positive_mentions": {
+        "tp": 4,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "excluded_mentions": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "canonical_skills": {
+        "tp": 4,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "accepted_profiles": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "unknown_positive_misses": [],
+      "candidate_name_exact": true,
+      "candidate_fields": {
+        "emails": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "phones": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "links": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "education": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "experience": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        }
+      },
+      "expected_profiles": [],
+      "actual_profiles": [],
+      "pipeline_valid": true,
+      "pipeline_error": null,
+      "all_annotations_exact": true
+    },
+    {
+      "id": "E10_two_profiles",
+      "input": "inputs/E10_two_profiles.txt",
+      "group": "supported",
+      "tags": [
+        "simultaneous_profiles",
+        "missing_groups"
+      ],
+      "positive_mentions": {
+        "tp": 6,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "excluded_mentions": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "canonical_skills": {
+        "tp": 6,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "accepted_profiles": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "unknown_positive_misses": [],
+      "candidate_name_exact": true,
+      "candidate_fields": {
+        "emails": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "phones": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "links": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "education": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "experience": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        }
+      },
+      "expected_profiles": [
+        "BACKEND_DEVELOPER",
+        "DATA_ENGINEER"
+      ],
+      "actual_profiles": [
+        "BACKEND_DEVELOPER",
+        "DATA_ENGINEER"
+      ],
+      "pipeline_valid": true,
+      "pipeline_error": null,
+      "all_annotations_exact": true
+    },
+    {
+      "id": "E11_animal_pandas",
+      "input": "inputs/E11_animal_pandas.txt",
+      "group": "supported",
+      "tags": [
+        "homonyms",
+        "pandas_context"
+      ],
+      "positive_mentions": {
+        "tp": 4,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "excluded_mentions": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "canonical_skills": {
+        "tp": 4,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "accepted_profiles": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "unknown_positive_misses": [],
+      "candidate_name_exact": true,
+      "candidate_fields": {
+        "emails": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "phones": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "links": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "education": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "experience": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        }
+      },
+      "expected_profiles": [],
+      "actual_profiles": [],
+      "pipeline_valid": true,
+      "pipeline_error": null,
+      "all_annotations_exact": true
+    },
+    {
+      "id": "E12_react_verb",
+      "input": "inputs/E12_react_verb.txt",
+      "group": "supported",
+      "tags": [
+        "homonyms",
+        "react_context"
+      ],
+      "positive_mentions": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "excluded_mentions": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "canonical_skills": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "accepted_profiles": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "unknown_positive_misses": [],
+      "candidate_name_exact": true,
+      "candidate_fields": {
+        "emails": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "phones": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "links": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "education": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "experience": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        }
+      },
+      "expected_profiles": [
+        "MACHINE_LEARNING_ENGINEER"
+      ],
+      "actual_profiles": [
+        "MACHINE_LEARNING_ENGINEER"
+      ],
+      "pipeline_valid": true,
+      "pipeline_error": null,
+      "all_annotations_exact": true
+    },
+    {
+      "id": "E13_unicode_bom_crlf",
+      "input": "inputs/E13_unicode_bom_crlf.txt",
+      "group": "supported",
+      "tags": [
+        "unicode",
+        "bom",
+        "crlf",
+        "multiple_contacts"
+      ],
+      "positive_mentions": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "excluded_mentions": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "canonical_skills": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "accepted_profiles": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "unknown_positive_misses": [],
+      "candidate_name_exact": true,
+      "candidate_fields": {
+        "emails": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "phones": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "links": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "education": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "experience": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        }
+      },
+      "expected_profiles": [
+        "MACHINE_LEARNING_ENGINEER"
+      ],
+      "actual_profiles": [
+        "MACHINE_LEARNING_ENGINEER"
+      ],
+      "pipeline_valid": true,
+      "pipeline_error": null,
+      "all_annotations_exact": true
+    },
+    {
+      "id": "E14_fallback_name",
+      "input": "inputs/E14_fallback_name.txt",
+      "group": "supported",
+      "tags": [
+        "multiline",
+        "fallback_name"
+      ],
+      "positive_mentions": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "excluded_mentions": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "canonical_skills": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "accepted_profiles": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "unknown_positive_misses": [],
+      "candidate_name_exact": true,
+      "candidate_fields": {
+        "emails": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "phones": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "links": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "education": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "experience": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        }
+      },
+      "expected_profiles": [
+        "MACHINE_LEARNING_ENGINEER"
+      ],
+      "actual_profiles": [
+        "MACHINE_LEARNING_ENGINEER"
+      ],
+      "pipeline_valid": true,
+      "pipeline_error": null,
+      "all_annotations_exact": true
+    },
+    {
+      "id": "E15_unknown_rust",
+      "input": "inputs/E15_unknown_rust.txt",
+      "group": "stress",
+      "tags": [
+        "unknown_technology"
+      ],
+      "positive_mentions": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.8333333333333334,
+        "f1": 0.9090909090909091,
+        "exact": false,
+        "false_positive": [],
+        "missed": [
+          [
+            24,
+            28,
+            "Rust"
+          ]
+        ]
+      },
+      "excluded_mentions": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "canonical_skills": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "accepted_profiles": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact": true,
+        "false_positive": [],
+        "missed": []
+      },
+      "unknown_positive_misses": [
+        [
+          24,
+          28,
+          "Rust"
+        ]
+      ],
+      "candidate_name_exact": true,
+      "candidate_fields": {
+        "emails": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "phones": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "links": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "education": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "experience": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        }
+      },
+      "expected_profiles": [
+        "BACKEND_DEVELOPER"
+      ],
+      "actual_profiles": [
+        "BACKEND_DEVELOPER"
+      ],
+      "pipeline_valid": true,
+      "pipeline_error": null,
+      "all_annotations_exact": false
+    },
+    {
+      "id": "E16_double_negation",
+      "input": "inputs/E16_double_negation.txt",
+      "group": "stress",
+      "tags": [
+        "double_negation"
+      ],
+      "positive_mentions": {
+        "tp": 4,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.8,
+        "f1": 0.8888888888888888,
+        "exact": false,
+        "false_positive": [],
+        "missed": [
+          [
+            93,
+            99,
+            "Python"
+          ]
+        ]
+      },
+      "excluded_mentions": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": null,
+        "f1": 0.0,
+        "exact": false,
+        "false_positive": [
+          [
+            93,
+            99,
+            "Python"
+          ]
+        ],
+        "missed": []
+      },
+      "canonical_skills": {
+        "tp": 4,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.8,
+        "f1": 0.8888888888888888,
+        "exact": false,
+        "false_positive": [],
+        "missed": [
+          "PYTHON"
+        ]
+      },
+      "accepted_profiles": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "false_positive": [],
+        "missed": [
+          "MACHINE_LEARNING_ENGINEER"
+        ]
+      },
+      "unknown_positive_misses": [],
+      "candidate_name_exact": true,
+      "candidate_fields": {
+        "emails": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "phones": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "links": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "education": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "experience": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        }
+      },
+      "expected_profiles": [
+        "MACHINE_LEARNING_ENGINEER"
+      ],
+      "actual_profiles": [],
+      "pipeline_valid": true,
+      "pipeline_error": null,
+      "all_annotations_exact": false
+    },
+    {
+      "id": "E17_external_requirement",
+      "input": "inputs/E17_external_requirement.txt",
+      "group": "stress",
+      "tags": [
+        "source_attribution"
+      ],
+      "positive_mentions": {
+        "tp": 5,
+        "fp": 3,
+        "fn": 0,
+        "precision": 0.625,
+        "recall": 1.0,
+        "f1": 0.7692307692307693,
+        "exact": false,
+        "false_positive": [
+          [
+            92,
+            98,
+            "Python"
+          ],
+          [
+            100,
+            105,
+            "NumPy"
+          ],
+          [
+            110,
+            117,
+            "sklearn"
+          ]
+        ],
+        "missed": []
+      },
+      "excluded_mentions": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "false_positive": [],
+        "missed": [
+          [
+            92,
+            98,
+            "Python"
+          ],
+          [
+            100,
+            105,
+            "NumPy"
+          ],
+          [
+            110,
+            117,
+            "sklearn"
+          ]
+        ]
+      },
+      "canonical_skills": {
+        "tp": 5,
+        "fp": 3,
+        "fn": 0,
+        "precision": 0.625,
+        "recall": 1.0,
+        "f1": 0.7692307692307693,
+        "exact": false,
+        "false_positive": [
+          "NUMPY",
+          "PYTHON",
+          "SCIKIT_LEARN"
+        ],
+        "missed": []
+      },
+      "accepted_profiles": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666,
+        "exact": false,
+        "false_positive": [
+          "MACHINE_LEARNING_ENGINEER"
+        ],
+        "missed": []
+      },
+      "unknown_positive_misses": [],
+      "candidate_name_exact": true,
+      "candidate_fields": {
+        "emails": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "phones": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "links": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "education": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "experience": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        }
+      },
+      "expected_profiles": [
+        "BACKEND_DEVELOPER"
+      ],
+      "actual_profiles": [
+        "BACKEND_DEVELOPER",
+        "MACHINE_LEARNING_ENGINEER"
+      ],
+      "pipeline_valid": true,
+      "pipeline_error": null,
+      "all_annotations_exact": false
+    },
+    {
+      "id": "E18_pandas_other_context",
+      "input": "inputs/E18_pandas_other_context.txt",
+      "group": "stress",
+      "tags": [
+        "pandas_context",
+        "technical_prose"
+      ],
+      "positive_mentions": {
+        "tp": 4,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.8,
+        "f1": 0.8888888888888888,
+        "exact": false,
+        "false_positive": [],
+        "missed": [
+          [
+            74,
+            80,
+            "pandas"
+          ]
+        ]
+      },
+      "excluded_mentions": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": null,
+        "f1": 0.0,
+        "exact": false,
+        "false_positive": [
+          [
+            74,
+            80,
+            "pandas"
+          ]
+        ],
+        "missed": []
+      },
+      "canonical_skills": {
+        "tp": 4,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.8,
+        "f1": 0.8888888888888888,
+        "exact": false,
+        "false_positive": [],
+        "missed": [
+          "PANDAS"
+        ]
+      },
+      "accepted_profiles": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact": false,
+        "false_positive": [],
+        "missed": [
+          "MACHINE_LEARNING_ENGINEER"
+        ]
+      },
+      "unknown_positive_misses": [],
+      "candidate_name_exact": true,
+      "candidate_fields": {
+        "emails": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "phones": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "links": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "education": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        },
+        "experience": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "exact": true,
+          "false_positive": [],
+          "missed": []
+        }
+      },
+      "expected_profiles": [
+        "MACHINE_LEARNING_ENGINEER"
+      ],
+      "actual_profiles": [],
+      "pipeline_valid": true,
+      "pipeline_error": null,
+      "all_annotations_exact": false
+    }
+  ]
+}

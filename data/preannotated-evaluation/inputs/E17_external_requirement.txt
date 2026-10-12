@@ -1,0 +1,3 @@
+Name: Mira Vale
+Skills: Java, Spring Boot, SQL, REST API, Git.
+A job advertisement requires Python, NumPy and sklearn; these are not my qualifications.

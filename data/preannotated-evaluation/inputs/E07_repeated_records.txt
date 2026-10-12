@@ -1,0 +1,8 @@
+Name: Sara Vale
+Skills: JS, Javascript, React.js, NodeJS, SQL, Git, Git.
+Education:
+BSc Computing
+BSc Computing
+Experience:
+Developer at Lab One
+Developer at Lab One

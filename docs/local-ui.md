@@ -111,7 +111,7 @@ intended as a local course application, not a public production hosting service.
 .\.venv\Scripts\python.exe tools/check_workflow_acceptance.py
 ```
 
-The current full suite contains 168 tests, including 23 real HTTP/entry-point
+The current full suite contains 181 tests, including 23 real HTTP/entry-point
 tests and 17 profile-explanation checks. The web acceptance tool starts/stops its own server on an available port and
 compares all eight samples with the public API, validating the four ZIP contents.
 It does not require a running UI, a browser automation library or administrator access.

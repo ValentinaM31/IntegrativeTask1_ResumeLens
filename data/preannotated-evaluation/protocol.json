@@ -1,0 +1,396 @@
+{
+  "protocol_version": "1.0",
+  "frozen_at_utc": "2026-10-11T23:21:19.193408+00:00",
+  "baseline_commit": "6d6ea17a37385d872f49925569db847777b01948",
+  "status_at_freeze": "Annotations fixed before the first execution of these 18 cases",
+  "annotations_sha256": "16bc5bbe5ec874806d1e6ceac77e9d6b30da0350312d584034501aa52344928e",
+  "input_sha256": {
+    "inputs/E01_alias_full_stack.txt": "a80b39054a2a63d1df3e2cb8170632994216d04feaac797866340167ecacb010",
+    "inputs/E02_scikit_learning.txt": "bd019c6bec23789e653ef57528402e305959403f93196bed5e3f6b0884f38b3b",
+    "inputs/E03_incompatible_backend.txt": "4e0a0b64d6ee9d442f145d19e1bcb1fb8d722558a75f1aca6dde93e13e208078",
+    "inputs/E04_compatible_backend.txt": "c7100f8558bcc21689f670cb86ed2ee810ba87ac3a625005f363a196af13ca17",
+    "inputs/E05_data_pipeline.txt": "102f9ddf69f6add2fd7465d6d9b631d5a5d1fe01e1804d62b7d3085f195be357",
+    "inputs/E06_four_profiles.txt": "7b354431f907ac470b3ec3f5ad8ac317a0bbf10ad2190ebd03c008b620c8cc16",
+    "inputs/E07_repeated_records.txt": "ee4776687b64d3dbf1f729a60b9941ed504535213f3c8b1167d00ab8a8ccbc6b",
+    "inputs/E08_negative_contrast.txt": "5b1f212a7bf461a9f413b0cde29b44e2545320eae6a0b7c27c9b92e32a676ed9",
+    "inputs/E09_spanish_negation.txt": "862034c6d6c5f0773676bdef6e7cb054e8be7afe34f2613bb2e674389012e6a2",
+    "inputs/E10_two_profiles.txt": "98eef65d988742fa24b1aaf0077c7be3058fb72e1fe30602ef16666e0c8451ab",
+    "inputs/E11_animal_pandas.txt": "2d8e885396e129123951b0bf4ef6d223557e2a99a126dfd0dee94292648faeaf",
+    "inputs/E12_react_verb.txt": "46666df8c19690a7f3e23d6b2e3bcb5b3134b5a069ccbc1441b04332888f0cc3",
+    "inputs/E13_unicode_bom_crlf.txt": "020d4622e6068ac196cf28a1073a2145ab9194beed59593376f4419e7926cbe6",
+    "inputs/E14_fallback_name.txt": "ad61df2d7351f7fc43e6d011aba40493c27e6cba921b034b00dad84a49fc0db1",
+    "inputs/E15_unknown_rust.txt": "4f3ae785ab32d650a1af2be9b7c8428021f1c6e510af87c294bf868e9647fbd8",
+    "inputs/E16_double_negation.txt": "c78a469caeac192ca8ba97ee598b00ee2f3f06341d0d2c73f80c5878ce98c002",
+    "inputs/E17_external_requirement.txt": "e5bcb2bbc0ac4f983766521406a5bfd0c5f0f157bbb75b1e07a7fe932d5893a9",
+    "inputs/E18_pandas_other_context.txt": "f6c3da0c6c4aa156d034991f9c0a98a46891c7b3720b07a347406499f99c9a99"
+  },
+  "runtime_source_sha256": {
+    "src/resumelens/__init__.py": "b61eeed267221c271f02531a2cd888c9c14cc6448e68ca23e59c0396e0e43ee9",
+    "src/resumelens/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/resumelens/candidate.tx": "bbd2f7743e0fad91331b8c7045918361cea1e04694031fa7b56dc2932d6bc098",
+    "src/resumelens/catalog.py": "5087f7bc035dc431b4eedb61e5b43e723cae4130b8bee36deed60a8ff974be32",
+    "src/resumelens/classification.py": "55955c8d93b4d89277be7cf1474bfb25007da03895ea99f501447c5c84f3c336",
+    "src/resumelens/cli.py": "d8b80536751d7d609fdec29144b019a2522f4df3c6804e367099ac03bed5a634",
+    "src/resumelens/dsl.py": "7354bdb3a06304fba207ca4c751da0c7d1223e20c8583474525392c336e7bb5b",
+    "src/resumelens/extraction.py": "44f3b261e235f4f11bf34823518ec7fc4a3a05d12add592d4b1223e96a8ae4c8",
+    "src/resumelens/first_stage.py": "e7bc57e852978fbb20f26e9d34536e858c6c3f313f005843cdec4d2846a29018",
+    "src/resumelens/first_stage.schema.json": "4610ce1fc4fc12c1e5445965565aebed5d96ce3dca9ae3febe1fc3fc452098c9",
+    "src/resumelens/normalization.py": "b281c34bd3d0f45b7001a72dcea57530ec1454ccbd1fb5337bb46c50f431072b",
+    "src/resumelens/profiles_design.json": "323b0636ae66152b4a23e4d2688aef020766fdb82fb00410730c313b1d6815a3",
+    "src/resumelens/rendering.py": "2e651ce1f6662547c58e6be2b5015aa5d722db54e44aab7d79c33df45fc89eb7",
+    "src/resumelens/skills_catalog.json": "41495ddd7f7ebe961bee7c7192d673028cdc0d3162523b6072716de99d2f81b5",
+    "src/resumelens/ui/app.css": "3aefb322302dac231775d1d834d94ff4d1cb0a9370953351a1205edf0b726679",
+    "src/resumelens/ui/app.js": "305ab2a4081db5338306ed42f4b668ca468d38c59517d526f809ad639c6cecf4",
+    "src/resumelens/ui/example.txt": "92d56e00be616aff733542886a5780eb06721a42101bdeddac35cfc12f19daa9",
+    "src/resumelens/ui/index.html": "7b8840097cec851e1dabb92402b8400e1c560e5a16fe8900dcc37d673d474d42",
+    "src/resumelens/web.py": "3b9c7a83f09d1ec7bba2eb1e39d7aadbcdc35e2202df6872fcdc3efb07397c2a",
+    "src/resumelens/workflow.py": "8af07cfde55aaa76435496ad6a14c3fea9edf2faec0bfe972686fd2fe2bb6395",
+    "src/resumelens/workflow_cli.py": "afe3e319aba0a2bd3d537a9ec7dfdc1a073417582085d15e14a2c542e2d70d53"
+  },
+  "normalization": "Annotations hashed as canonical JSON; runtime source CRLF normalized to LF; input hashes preserve all original bytes, including BOM/CRLF.",
+  "independence_limit": "Expectations not derived from ResumeLens outputs; synthetic AI-assisted author is familiar with prior rules/limits. Not a blind, external-human or population evaluation. Later reuse is regression.",
+  "annotation_reference_profiles": [
+    {
+      "id": "FULL_STACK_DEVELOPER",
+      "origin": "required_profile_team_defined_pattern",
+      "required_groups": [
+        [
+          "JAVASCRIPT",
+          "TYPESCRIPT"
+        ],
+        [
+          "REACT",
+          "ANGULAR",
+          "VUE"
+        ],
+        [
+          "NODE_JS",
+          "DJANGO",
+          "SPRING_BOOT"
+        ],
+        [
+          "SQL",
+          "POSTGRESQL",
+          "MYSQL",
+          "MONGODB"
+        ],
+        [
+          "GIT"
+        ]
+      ],
+      "optional": [
+        "REST_API",
+        "DOCKER"
+      ]
+    },
+    {
+      "id": "MACHINE_LEARNING_ENGINEER",
+      "origin": "required_profile_team_defined_pattern",
+      "required_groups": [
+        [
+          "PYTHON"
+        ],
+        [
+          "PANDAS",
+          "NUMPY"
+        ],
+        [
+          "SCIKIT_LEARN",
+          "TENSORFLOW",
+          "PYTORCH"
+        ],
+        [
+          "SQL",
+          "POSTGRESQL",
+          "MYSQL"
+        ],
+        [
+          "GIT"
+        ]
+      ],
+      "optional": [
+        "ML_MODEL",
+        "DOCKER"
+      ]
+    },
+    {
+      "id": "BACKEND_DEVELOPER",
+      "origin": "team_selected_pending_additional_teacher_requirements",
+      "required_groups": [
+        [
+          "SQL",
+          "POSTGRESQL",
+          "MYSQL",
+          "MONGODB"
+        ],
+        [
+          "REST_API"
+        ],
+        [
+          "GIT"
+        ]
+      ],
+      "required_pair_alternatives": [
+        [
+          "JAVA",
+          "SPRING_BOOT"
+        ],
+        [
+          "PYTHON",
+          "DJANGO"
+        ],
+        [
+          "JAVASCRIPT",
+          "NODE_JS"
+        ],
+        [
+          "TYPESCRIPT",
+          "NODE_JS"
+        ]
+      ],
+      "optional": [
+        "DOCKER"
+      ]
+    },
+    {
+      "id": "DATA_ENGINEER",
+      "origin": "team_selected_pending_additional_teacher_requirements",
+      "required_groups": [
+        [
+          "PYTHON"
+        ],
+        [
+          "SQL",
+          "POSTGRESQL",
+          "MYSQL"
+        ],
+        [
+          "ETL",
+          "AIRFLOW",
+          "APACHE_SPARK"
+        ],
+        [
+          "GIT"
+        ]
+      ],
+      "optional": [
+        "DOCKER",
+        "PANDAS"
+      ]
+    }
+  ],
+  "annotation_reference_catalog": [
+    {
+      "canonical": "JAVASCRIPT",
+      "category": "languages",
+      "aliases": [
+        "JavaScript",
+        "JS",
+        "ECMAScript"
+      ]
+    },
+    {
+      "canonical": "TYPESCRIPT",
+      "category": "languages",
+      "aliases": [
+        "TypeScript",
+        "Type Script",
+        "TS"
+      ]
+    },
+    {
+      "canonical": "PYTHON",
+      "category": "languages",
+      "aliases": [
+        "Python",
+        "Python3",
+        "Python 3"
+      ]
+    },
+    {
+      "canonical": "JAVA",
+      "category": "languages",
+      "aliases": [
+        "Java",
+        "Java SE"
+      ]
+    },
+    {
+      "canonical": "REACT",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "React",
+        "React.js",
+        "ReactJS"
+      ]
+    },
+    {
+      "canonical": "ANGULAR",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "Angular"
+      ]
+    },
+    {
+      "canonical": "VUE",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "Vue",
+        "Vue.js",
+        "VueJS"
+      ]
+    },
+    {
+      "canonical": "NODE_JS",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "Node.js",
+        "NodeJS"
+      ]
+    },
+    {
+      "canonical": "DJANGO",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "Django"
+      ]
+    },
+    {
+      "canonical": "SPRING_BOOT",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "Spring Boot",
+        "SpringBoot"
+      ]
+    },
+    {
+      "canonical": "SQL",
+      "category": "databases",
+      "aliases": [
+        "SQL",
+        "Structured Query Language"
+      ]
+    },
+    {
+      "canonical": "POSTGRESQL",
+      "category": "databases",
+      "aliases": [
+        "PostgreSQL",
+        "Postgres"
+      ]
+    },
+    {
+      "canonical": "MYSQL",
+      "category": "databases",
+      "aliases": [
+        "MySQL"
+      ]
+    },
+    {
+      "canonical": "MONGODB",
+      "category": "databases",
+      "aliases": [
+        "MongoDB",
+        "Mongo DB"
+      ]
+    },
+    {
+      "canonical": "PANDAS",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "Pandas"
+      ]
+    },
+    {
+      "canonical": "NUMPY",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "NumPy",
+        "Num Py"
+      ]
+    },
+    {
+      "canonical": "SCIKIT_LEARN",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "Scikit-learn",
+        "sklearn",
+        "scikit learn"
+      ]
+    },
+    {
+      "canonical": "TENSORFLOW",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "TensorFlow",
+        "Tensor Flow"
+      ]
+    },
+    {
+      "canonical": "PYTORCH",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "PyTorch",
+        "Py Torch"
+      ]
+    },
+    {
+      "canonical": "REST_API",
+      "category": "tools_qualifications",
+      "aliases": [
+        "REST API",
+        "REST APIs",
+        "RESTful API"
+      ]
+    },
+    {
+      "canonical": "GIT",
+      "category": "tools_qualifications",
+      "aliases": [
+        "Git",
+        "Git SCM"
+      ]
+    },
+    {
+      "canonical": "DOCKER",
+      "category": "tools_qualifications",
+      "aliases": [
+        "Docker",
+        "Docker Desktop"
+      ]
+    },
+    {
+      "canonical": "ML_MODEL",
+      "category": "tools_qualifications",
+      "aliases": [
+        "machine learning models",
+        "predictive models",
+        "modelos predictivos"
+      ]
+    },
+    {
+      "canonical": "APACHE_SPARK",
+      "category": "tools_qualifications",
+      "aliases": [
+        "Apache Spark"
+      ]
+    },
+    {
+      "canonical": "AIRFLOW",
+      "category": "tools_qualifications",
+      "aliases": [
+        "Apache Airflow",
+        "Airflow"
+      ]
+    },
+    {
+      "canonical": "ETL",
+      "category": "tools_qualifications",
+      "aliases": [
+        "ETL",
+        "extract transform load",
+        "extracción transformación carga"
+      ]
+    }
+  ]
+}

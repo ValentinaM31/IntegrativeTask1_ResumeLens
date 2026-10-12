@@ -1,0 +1,2 @@
+Name: Nico Vale
+Skills: Rust, Python, Django, SQL, REST API, Git.

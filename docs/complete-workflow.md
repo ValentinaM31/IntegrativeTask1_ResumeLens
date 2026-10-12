@@ -166,9 +166,12 @@ increment's 20 local HTTP/entry tests, that suite contained 109 tests. Subsequen
 evidence-validation checks added two workflow tests; fourteen focused negation
 regressions brought that total to 125. Seventeen profile-explanation tests and
 three rejected-POST transport regressions brought that total to 145. Fifteen
-bundle-recovery tests brought that total to 160. Eight profile-alignment tests bring
-the current total to 168, including LF/CRLF CLI and real HTTP/ZIP checks for the
-Scikit-learn alternative. See [current results](test-results.md)
+bundle-recovery tests brought that total to 160. Eight profile-alignment tests brought
+that total to 168, including LF/CRLF CLI and real HTTP/ZIP checks for the
+Scikit-learn alternative. Thirteen evaluation-protocol/scoring tests bring the
+current total to 181. The separate [preannotated dataset](preannotated-evaluation.md)
+compares all stages against fixed labels while retaining observed interpretation
+errors. See [current results](test-results.md)
 and [negation behavior](negation-handling.md).
 Coverage includes HTML escaping, repeated records, three simultaneous profiles,
 invalid DSL, mutated outputs, overwrite preflight, force behavior, input aliases,

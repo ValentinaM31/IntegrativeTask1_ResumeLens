@@ -1,0 +1,3 @@
+Name: Emil Vale
+Skills: NumPy, sklearn, SQL, Git.
+It is false that I have no experience with Python.

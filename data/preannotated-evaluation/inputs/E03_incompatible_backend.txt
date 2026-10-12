@@ -1,0 +1,2 @@
+Name: Lina Vale
+Skills: Java, Django, MySQL, REST API, Git.

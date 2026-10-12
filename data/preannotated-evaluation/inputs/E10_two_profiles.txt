@@ -1,0 +1,2 @@
+Name: Teo Vale
+Skills: Python, Django, SQL, REST API, Git, ETL.
