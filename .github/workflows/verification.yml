@@ -41,3 +41,5 @@ jobs:
         run: python tools/check_workflow_acceptance.py
       - name: Verify HTTP processing and downloads
         run: python tools/check_web_acceptance.py
+      - name: Verify original annotated workflow regression
+        run: python tools/evaluate_workflow.py --check

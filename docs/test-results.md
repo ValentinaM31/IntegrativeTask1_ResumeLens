@@ -1,5 +1,25 @@
 # Verification results
 
+## Original fourteen-case workflow regression integration
+
+Executed on Windows after the published baseline `477dee9`. The original fourteen
+inputs and profile expectations are preserved. Expanded labels compare candidate
+fields, positive/excluded spans, canonical symbols, ordered translation links and
+accepted profiles, alongside temporary four-file export round trips.
+
+- Fourteen valid pipelines; all fourteen match expanded annotations and exports.
+- Seven new evaluator tests pass, including wrong contact positions, exclusions,
+  profile claims, translation indices, edited annotations, caught pipeline failures
+  and stale-report detection without rewriting.
+- Thirteen existing preannotated-evaluator tests pass. Its separate eighteen-case
+  stored reports reproduce without changes, retaining four known disagreements.
+- Both evaluators' `--check` commands pass. The discovered full suite now contains
+  188 tests; this focused run does not claim a new full-suite execution.
+
+These are AI-assisted synthetic regressions, not a new blind or real-applicant
+benchmark. Method, provenance and limits are in `workflow-evaluation.md`.
+
+
 ## Preannotated complete-pipeline evaluation — 2026-10-11
 
 Based on published `6d6ea17` (profile requirements aligned with the assignment).

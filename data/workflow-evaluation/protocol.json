@@ -1,0 +1,392 @@
+{
+  "protocol_version": "1.0",
+  "frozen_at_utc": "2026-10-12T03:47:15.101143+00:00",
+  "baseline_commit": "477dee97c21897189c8b6dda851ec976f0bad2a4",
+  "status_at_freeze": "Expanded annotations fixed for this integration; the original 14 cases were previously executed with profile/export checks.",
+  "annotations_sha256": "2b36307edd11e942ed0a75a255b67426730392e7fc44ece146538614b0458a57",
+  "input_sha256": {
+    "inputs/01_full_stack.txt": "92d56e00be616aff733542886a5780eb06721a42101bdeddac35cfc12f19daa9",
+    "inputs/02_machine_learning.txt": "42a375eff4e96f8d2663c0ffce95fa20b1bb6348ab493be5c8a7ecba0438cab0",
+    "inputs/03_backend.txt": "18fac22c0005d0c7e756b42e1a5025e241b28dbe0e3510ce47a45e46fbb5716e",
+    "inputs/04_data_engineer.txt": "e06c5c0ae36bb1e5ac7833774322899ff9b1d53d515097beae6fcf8d3248b47a",
+    "inputs/05_aliases_duplicates.txt": "8b826dd74e4548ae3fbf5e643297cc751734144b489cc2106b137011778d03c5",
+    "inputs/06_incomplete.txt": "58075e66105015dd41c4fe8d584c1b06cc2b51780c656079b4c1dca7d8fd566d",
+    "inputs/07_boundaries_negation.txt": "7761938dbbd01006996e02cfb73af133d3a9189848a5829b7b1f368543d86993",
+    "inputs/08_multiple_records.txt": "5862a318ad6a1f6a58dbba5e55ae011be448a96b2c42c9837e0bf494a3e9039d",
+    "inputs/missing_data_pipeline.txt": "dde85fb79656f75b25ed16e5e6411166aa4dfc2733d90d6eb2459eab4c40b596",
+    "inputs/incompatible_backend_pair.txt": "e917de4b0834cb293ccd4d1699f4735960f0abc3ba63050d1c7513ca2343ae47",
+    "inputs/negated_framework.txt": "bbd58a3f9c78935216ab2eb1d79b5ccb93ec0f17e9058d82cf7486f2aac1f637",
+    "inputs/multiple_profiles.txt": "d25a62106e27b3b1ab4565a28cfcd476879d8f2eb89acb02b32c15443e645cc1",
+    "inputs/irrelevant_prose.txt": "510ce8f03ebf02fa5ae841d20bfe07e1890c13f0cc84992f2b1b4057cac4eabe",
+    "inputs/records_and_escaping.txt": "35ef24803b5619e60c93bd62c17463dedc6c99f83cb4241741818ef86103d764"
+  },
+  "runtime_source_sha256": {
+    "src/resumelens/__init__.py": "b61eeed267221c271f02531a2cd888c9c14cc6448e68ca23e59c0396e0e43ee9",
+    "src/resumelens/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/resumelens/candidate.tx": "bbd2f7743e0fad91331b8c7045918361cea1e04694031fa7b56dc2932d6bc098",
+    "src/resumelens/catalog.py": "5087f7bc035dc431b4eedb61e5b43e723cae4130b8bee36deed60a8ff974be32",
+    "src/resumelens/classification.py": "55955c8d93b4d89277be7cf1474bfb25007da03895ea99f501447c5c84f3c336",
+    "src/resumelens/cli.py": "d8b80536751d7d609fdec29144b019a2522f4df3c6804e367099ac03bed5a634",
+    "src/resumelens/dsl.py": "7354bdb3a06304fba207ca4c751da0c7d1223e20c8583474525392c336e7bb5b",
+    "src/resumelens/extraction.py": "44f3b261e235f4f11bf34823518ec7fc4a3a05d12add592d4b1223e96a8ae4c8",
+    "src/resumelens/first_stage.py": "e7bc57e852978fbb20f26e9d34536e858c6c3f313f005843cdec4d2846a29018",
+    "src/resumelens/first_stage.schema.json": "4610ce1fc4fc12c1e5445965565aebed5d96ce3dca9ae3febe1fc3fc452098c9",
+    "src/resumelens/normalization.py": "b281c34bd3d0f45b7001a72dcea57530ec1454ccbd1fb5337bb46c50f431072b",
+    "src/resumelens/profiles_design.json": "323b0636ae66152b4a23e4d2688aef020766fdb82fb00410730c313b1d6815a3",
+    "src/resumelens/rendering.py": "2e651ce1f6662547c58e6be2b5015aa5d722db54e44aab7d79c33df45fc89eb7",
+    "src/resumelens/skills_catalog.json": "41495ddd7f7ebe961bee7c7192d673028cdc0d3162523b6072716de99d2f81b5",
+    "src/resumelens/ui/app.css": "3aefb322302dac231775d1d834d94ff4d1cb0a9370953351a1205edf0b726679",
+    "src/resumelens/ui/app.js": "305ab2a4081db5338306ed42f4b668ca468d38c59517d526f809ad639c6cecf4",
+    "src/resumelens/ui/example.txt": "92d56e00be616aff733542886a5780eb06721a42101bdeddac35cfc12f19daa9",
+    "src/resumelens/ui/index.html": "7b8840097cec851e1dabb92402b8400e1c560e5a16fe8900dcc37d673d474d42",
+    "src/resumelens/web.py": "3b9c7a83f09d1ec7bba2eb1e39d7aadbcdc35e2202df6872fcdc3efb07397c2a",
+    "src/resumelens/workflow.py": "8af07cfde55aaa76435496ad6a14c3fea9edf2faec0bfe972686fd2fe2bb6395",
+    "src/resumelens/workflow_cli.py": "afe3e319aba0a2bd3d537a9ec7dfdc1a073417582085d15e14a2c542e2d70d53"
+  },
+  "annotation_reference_catalog": [
+    {
+      "canonical": "JAVASCRIPT",
+      "category": "languages",
+      "aliases": [
+        "JavaScript",
+        "JS",
+        "ECMAScript"
+      ]
+    },
+    {
+      "canonical": "TYPESCRIPT",
+      "category": "languages",
+      "aliases": [
+        "TypeScript",
+        "Type Script",
+        "TS"
+      ]
+    },
+    {
+      "canonical": "PYTHON",
+      "category": "languages",
+      "aliases": [
+        "Python",
+        "Python3",
+        "Python 3"
+      ]
+    },
+    {
+      "canonical": "JAVA",
+      "category": "languages",
+      "aliases": [
+        "Java",
+        "Java SE"
+      ]
+    },
+    {
+      "canonical": "REACT",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "React",
+        "React.js",
+        "ReactJS"
+      ]
+    },
+    {
+      "canonical": "ANGULAR",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "Angular"
+      ]
+    },
+    {
+      "canonical": "VUE",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "Vue",
+        "Vue.js",
+        "VueJS"
+      ]
+    },
+    {
+      "canonical": "NODE_JS",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "Node.js",
+        "NodeJS"
+      ]
+    },
+    {
+      "canonical": "DJANGO",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "Django"
+      ]
+    },
+    {
+      "canonical": "SPRING_BOOT",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "Spring Boot",
+        "SpringBoot"
+      ]
+    },
+    {
+      "canonical": "SQL",
+      "category": "databases",
+      "aliases": [
+        "SQL",
+        "Structured Query Language"
+      ]
+    },
+    {
+      "canonical": "POSTGRESQL",
+      "category": "databases",
+      "aliases": [
+        "PostgreSQL",
+        "Postgres"
+      ]
+    },
+    {
+      "canonical": "MYSQL",
+      "category": "databases",
+      "aliases": [
+        "MySQL"
+      ]
+    },
+    {
+      "canonical": "MONGODB",
+      "category": "databases",
+      "aliases": [
+        "MongoDB",
+        "Mongo DB"
+      ]
+    },
+    {
+      "canonical": "PANDAS",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "Pandas"
+      ]
+    },
+    {
+      "canonical": "NUMPY",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "NumPy",
+        "Num Py"
+      ]
+    },
+    {
+      "canonical": "SCIKIT_LEARN",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "Scikit-learn",
+        "sklearn",
+        "scikit learn"
+      ]
+    },
+    {
+      "canonical": "TENSORFLOW",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "TensorFlow",
+        "Tensor Flow"
+      ]
+    },
+    {
+      "canonical": "PYTORCH",
+      "category": "frameworks_libraries",
+      "aliases": [
+        "PyTorch",
+        "Py Torch"
+      ]
+    },
+    {
+      "canonical": "REST_API",
+      "category": "tools_qualifications",
+      "aliases": [
+        "REST API",
+        "REST APIs",
+        "RESTful API"
+      ]
+    },
+    {
+      "canonical": "GIT",
+      "category": "tools_qualifications",
+      "aliases": [
+        "Git",
+        "Git SCM"
+      ]
+    },
+    {
+      "canonical": "DOCKER",
+      "category": "tools_qualifications",
+      "aliases": [
+        "Docker",
+        "Docker Desktop"
+      ]
+    },
+    {
+      "canonical": "ML_MODEL",
+      "category": "tools_qualifications",
+      "aliases": [
+        "machine learning models",
+        "predictive models",
+        "modelos predictivos"
+      ]
+    },
+    {
+      "canonical": "APACHE_SPARK",
+      "category": "tools_qualifications",
+      "aliases": [
+        "Apache Spark"
+      ]
+    },
+    {
+      "canonical": "AIRFLOW",
+      "category": "tools_qualifications",
+      "aliases": [
+        "Apache Airflow",
+        "Airflow"
+      ]
+    },
+    {
+      "canonical": "ETL",
+      "category": "tools_qualifications",
+      "aliases": [
+        "ETL",
+        "extract transform load",
+        "extracción transformación carga"
+      ]
+    }
+  ],
+  "annotation_reference_profiles": [
+    {
+      "id": "FULL_STACK_DEVELOPER",
+      "origin": "required_profile_team_defined_pattern",
+      "required_groups": [
+        [
+          "JAVASCRIPT",
+          "TYPESCRIPT"
+        ],
+        [
+          "REACT",
+          "ANGULAR",
+          "VUE"
+        ],
+        [
+          "NODE_JS",
+          "DJANGO",
+          "SPRING_BOOT"
+        ],
+        [
+          "SQL",
+          "POSTGRESQL",
+          "MYSQL",
+          "MONGODB"
+        ],
+        [
+          "GIT"
+        ]
+      ],
+      "optional": [
+        "REST_API",
+        "DOCKER"
+      ]
+    },
+    {
+      "id": "MACHINE_LEARNING_ENGINEER",
+      "origin": "required_profile_team_defined_pattern",
+      "required_groups": [
+        [
+          "PYTHON"
+        ],
+        [
+          "PANDAS",
+          "NUMPY"
+        ],
+        [
+          "SCIKIT_LEARN",
+          "TENSORFLOW",
+          "PYTORCH"
+        ],
+        [
+          "SQL",
+          "POSTGRESQL",
+          "MYSQL"
+        ],
+        [
+          "GIT"
+        ]
+      ],
+      "optional": [
+        "ML_MODEL",
+        "DOCKER"
+      ]
+    },
+    {
+      "id": "BACKEND_DEVELOPER",
+      "origin": "team_selected_pending_additional_teacher_requirements",
+      "required_groups": [
+        [
+          "SQL",
+          "POSTGRESQL",
+          "MYSQL",
+          "MONGODB"
+        ],
+        [
+          "REST_API"
+        ],
+        [
+          "GIT"
+        ]
+      ],
+      "required_pair_alternatives": [
+        [
+          "JAVA",
+          "SPRING_BOOT"
+        ],
+        [
+          "PYTHON",
+          "DJANGO"
+        ],
+        [
+          "JAVASCRIPT",
+          "NODE_JS"
+        ],
+        [
+          "TYPESCRIPT",
+          "NODE_JS"
+        ]
+      ],
+      "optional": [
+        "DOCKER"
+      ]
+    },
+    {
+      "id": "DATA_ENGINEER",
+      "origin": "team_selected_pending_additional_teacher_requirements",
+      "required_groups": [
+        [
+          "PYTHON"
+        ],
+        [
+          "SQL",
+          "POSTGRESQL",
+          "MYSQL"
+        ],
+        [
+          "ETL",
+          "AIRFLOW",
+          "APACHE_SPARK"
+        ],
+        [
+          "GIT"
+        ]
+      ],
+      "optional": [
+        "DOCKER",
+        "PANDAS"
+      ]
+    }
+  ],
+  "independence_limit": "Eight existing sample expectations/reference outputs plus six original prepared additional cases, recovered unchanged. Expanded candidate/exclusion/link labels were added after the earlier profile-only execution; AI-assisted regression, not new preannotated or blind evaluation.",
+  "original_additional_cases_sha256": "660af7d3cbd1f5da968293f3a5316123632898d76e5710b9a29707ee141e02f4"
+}

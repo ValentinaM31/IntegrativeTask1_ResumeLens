@@ -1,0 +1,8 @@
+Name: Daniela Example
+Email: daniela@example.com
+Email: daniela.work@example.com
+Education: Bachelor in Computer Science
+Education: Master in Data Science
+Experience: 2 years of experience developing web services.
+Experience: 1 year of experience processing data.
+Skills: Python, Django, PostgreSQL, REST API, Git, ETL, Pandas, Py Torch.

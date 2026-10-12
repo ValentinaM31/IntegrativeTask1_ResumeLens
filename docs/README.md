@@ -40,6 +40,7 @@ Exported FST and automaton graphs are versioned model evidence, not disposable o
 | [Test plan](test-plan.md) | Scenarios and behavior to verify |
 | [Verification results](test-results.md) | Dated executions; current and historical entries retain their own revision/platform scope |
 | [Skill-mention evaluation](evaluation.md) | Original 23 synthetic cases, exact spans, metrics and limitations |
+| [Original fourteen-case workflow regression](workflow-evaluation.md) | Previously executed inputs, expanded annotation units, original draft provenance and export round trips |
 | [Preannotated evaluation](preannotated-evaluation.md) | Separate 18-case pipeline dataset, frozen labels, scoring and disagreements |
 | [Dataset protocol](../data/preannotated-evaluation/README.md) | Input preservation, annotation provenance and stored-report verification |
 | [Profile-alignment examples](../data/profile-alignment/README.md) | Targeted regression inputs and reference bundles |

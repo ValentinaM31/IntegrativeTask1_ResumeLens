@@ -1,0 +1,5 @@
+Name: Mateo Example
+Email: mateo@example.com
+Education: Bachelor in Computer Science
+Experience: 3 years of experience processing data.
+Skills: Python3, Structured Query Language, Apache Airflow, extract transform load, Git.

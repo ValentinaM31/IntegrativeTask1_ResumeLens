@@ -1,0 +1,1333 @@
+{
+  "annotation_version": "1.0",
+  "dataset_id": "resumelens_original_14_workflow_regression",
+  "provenance": "Eight existing sample expectations/reference outputs plus six original prepared additional cases, recovered unchanged. Expanded candidate/exclusion/link labels were added after the earlier profile-only execution; AI-assisted regression, not new preannotated or blind evaluation.",
+  "cases": [
+    {
+      "id": "01_full_stack",
+      "source": "data/samples/01_full_stack.txt",
+      "group": "supported",
+      "tags": [
+        "existing_reference_regression"
+      ],
+      "name_override": null,
+      "expected": {
+        "candidate": {
+          "name": "Alex Sample",
+          "emails": [
+            {
+              "raw": "alex@example.com",
+              "start": 25,
+              "end": 41
+            }
+          ],
+          "phones": [
+            {
+              "raw": "+57 300 000 0001",
+              "start": 49,
+              "end": 65
+            }
+          ],
+          "links": [
+            {
+              "raw": "https://www.linkedin.com/in/alex-example",
+              "start": 76,
+              "end": 116
+            }
+          ],
+          "education": [
+            {
+              "raw": "Bachelor in Computer Science",
+              "start": 128,
+              "end": 156
+            }
+          ],
+          "experience": [
+            {
+              "raw": "3 years of experience developing web applications.",
+              "start": 169,
+              "end": 219
+            }
+          ]
+        },
+        "positive_mentions": [
+          {
+            "raw": "JS",
+            "start": 238,
+            "end": 240,
+            "canonical": "JAVASCRIPT"
+          },
+          {
+            "raw": "React.js",
+            "start": 242,
+            "end": 250,
+            "canonical": "REACT"
+          },
+          {
+            "raw": "NodeJS",
+            "start": 252,
+            "end": 258,
+            "canonical": "NODE_JS"
+          },
+          {
+            "raw": "Postgres",
+            "start": 260,
+            "end": 268,
+            "canonical": "POSTGRESQL"
+          },
+          {
+            "raw": "Git",
+            "start": 270,
+            "end": 273,
+            "canonical": "GIT"
+          }
+        ],
+        "excluded_mentions": [],
+        "normalized_skills": [
+          "GIT",
+          "JAVASCRIPT",
+          "NODE_JS",
+          "POSTGRESQL",
+          "REACT"
+        ],
+        "accepted_profiles": [
+          "FULL_STACK_DEVELOPER"
+        ],
+        "normalization_evidence": [
+          {
+            "extracted_index": 0,
+            "canonical": "JAVASCRIPT"
+          },
+          {
+            "extracted_index": 1,
+            "canonical": "REACT"
+          },
+          {
+            "extracted_index": 2,
+            "canonical": "NODE_JS"
+          },
+          {
+            "extracted_index": 3,
+            "canonical": "POSTGRESQL"
+          },
+          {
+            "extracted_index": 4,
+            "canonical": "GIT"
+          }
+        ]
+      },
+      "input": "inputs/01_full_stack.txt"
+    },
+    {
+      "id": "02_machine_learning",
+      "source": "data/samples/02_machine_learning.txt",
+      "group": "supported",
+      "tags": [
+        "existing_reference_regression"
+      ],
+      "name_override": null,
+      "expected": {
+        "candidate": {
+          "name": "Morgan Sample",
+          "emails": [
+            {
+              "raw": "morgan@example.com",
+              "start": 27,
+              "end": 45
+            }
+          ],
+          "phones": [],
+          "links": [],
+          "education": [
+            {
+              "raw": "Master in Data Science",
+              "start": 57,
+              "end": 79
+            }
+          ],
+          "experience": [
+            {
+              "raw": "2 years of experience developing predictive models.",
+              "start": 92,
+              "end": 143
+            }
+          ]
+        },
+        "positive_mentions": [
+          {
+            "raw": "predictive models",
+            "start": 125,
+            "end": 142,
+            "canonical": "ML_MODEL"
+          },
+          {
+            "raw": "Python",
+            "start": 162,
+            "end": 168,
+            "canonical": "PYTHON"
+          },
+          {
+            "raw": "Pandas",
+            "start": 170,
+            "end": 176,
+            "canonical": "PANDAS"
+          },
+          {
+            "raw": "TensorFlow",
+            "start": 178,
+            "end": 188,
+            "canonical": "TENSORFLOW"
+          },
+          {
+            "raw": "SQL",
+            "start": 190,
+            "end": 193,
+            "canonical": "SQL"
+          },
+          {
+            "raw": "Git",
+            "start": 195,
+            "end": 198,
+            "canonical": "GIT"
+          }
+        ],
+        "excluded_mentions": [],
+        "normalized_skills": [
+          "GIT",
+          "ML_MODEL",
+          "PANDAS",
+          "PYTHON",
+          "SQL",
+          "TENSORFLOW"
+        ],
+        "accepted_profiles": [
+          "MACHINE_LEARNING_ENGINEER"
+        ],
+        "normalization_evidence": [
+          {
+            "extracted_index": 0,
+            "canonical": "ML_MODEL"
+          },
+          {
+            "extracted_index": 1,
+            "canonical": "PYTHON"
+          },
+          {
+            "extracted_index": 2,
+            "canonical": "PANDAS"
+          },
+          {
+            "extracted_index": 3,
+            "canonical": "TENSORFLOW"
+          },
+          {
+            "extracted_index": 4,
+            "canonical": "SQL"
+          },
+          {
+            "extracted_index": 5,
+            "canonical": "GIT"
+          }
+        ]
+      },
+      "input": "inputs/02_machine_learning.txt"
+    },
+    {
+      "id": "03_backend",
+      "source": "data/samples/03_backend.txt",
+      "group": "supported",
+      "tags": [
+        "existing_reference_regression"
+      ],
+      "name_override": null,
+      "expected": {
+        "candidate": {
+          "name": "Laura Example",
+          "emails": [
+            {
+              "raw": "laura@example.com",
+              "start": 27,
+              "end": 44
+            }
+          ],
+          "phones": [
+            {
+              "raw": "+57 300 000 0003",
+              "start": 52,
+              "end": 68
+            }
+          ],
+          "links": [],
+          "education": [
+            {
+              "raw": "Bachelor in Computer Science",
+              "start": 80,
+              "end": 108
+            }
+          ],
+          "experience": [
+            {
+              "raw": "2 years of experience developing services.",
+              "start": 121,
+              "end": 163
+            }
+          ]
+        },
+        "positive_mentions": [
+          {
+            "raw": "Java SE",
+            "start": 172,
+            "end": 179,
+            "canonical": "JAVA"
+          },
+          {
+            "raw": "SpringBoot",
+            "start": 181,
+            "end": 191,
+            "canonical": "SPRING_BOOT"
+          },
+          {
+            "raw": "MySQL",
+            "start": 193,
+            "end": 198,
+            "canonical": "MYSQL"
+          },
+          {
+            "raw": "RESTful API",
+            "start": 200,
+            "end": 211,
+            "canonical": "REST_API"
+          },
+          {
+            "raw": "Git SCM",
+            "start": 213,
+            "end": 220,
+            "canonical": "GIT"
+          },
+          {
+            "raw": "Docker Desktop",
+            "start": 222,
+            "end": 236,
+            "canonical": "DOCKER"
+          }
+        ],
+        "excluded_mentions": [],
+        "normalized_skills": [
+          "DOCKER",
+          "GIT",
+          "JAVA",
+          "MYSQL",
+          "REST_API",
+          "SPRING_BOOT"
+        ],
+        "accepted_profiles": [
+          "BACKEND_DEVELOPER"
+        ],
+        "normalization_evidence": [
+          {
+            "extracted_index": 0,
+            "canonical": "JAVA"
+          },
+          {
+            "extracted_index": 1,
+            "canonical": "SPRING_BOOT"
+          },
+          {
+            "extracted_index": 2,
+            "canonical": "MYSQL"
+          },
+          {
+            "extracted_index": 3,
+            "canonical": "REST_API"
+          },
+          {
+            "extracted_index": 4,
+            "canonical": "GIT"
+          },
+          {
+            "extracted_index": 5,
+            "canonical": "DOCKER"
+          }
+        ]
+      },
+      "input": "inputs/03_backend.txt"
+    },
+    {
+      "id": "04_data_engineer",
+      "source": "data/samples/04_data_engineer.txt",
+      "group": "supported",
+      "tags": [
+        "existing_reference_regression"
+      ],
+      "name_override": null,
+      "expected": {
+        "candidate": {
+          "name": "Mateo Example",
+          "emails": [
+            {
+              "raw": "mateo@example.com",
+              "start": 27,
+              "end": 44
+            }
+          ],
+          "phones": [],
+          "links": [],
+          "education": [
+            {
+              "raw": "Bachelor in Computer Science",
+              "start": 56,
+              "end": 84
+            }
+          ],
+          "experience": [
+            {
+              "raw": "3 years of experience processing data.",
+              "start": 97,
+              "end": 135
+            }
+          ]
+        },
+        "positive_mentions": [
+          {
+            "raw": "Python3",
+            "start": 144,
+            "end": 151,
+            "canonical": "PYTHON"
+          },
+          {
+            "raw": "Structured Query Language",
+            "start": 153,
+            "end": 178,
+            "canonical": "SQL"
+          },
+          {
+            "raw": "Apache Airflow",
+            "start": 180,
+            "end": 194,
+            "canonical": "AIRFLOW"
+          },
+          {
+            "raw": "extract transform load",
+            "start": 196,
+            "end": 218,
+            "canonical": "ETL"
+          },
+          {
+            "raw": "Git",
+            "start": 220,
+            "end": 223,
+            "canonical": "GIT"
+          }
+        ],
+        "excluded_mentions": [],
+        "normalized_skills": [
+          "AIRFLOW",
+          "ETL",
+          "GIT",
+          "PYTHON",
+          "SQL"
+        ],
+        "accepted_profiles": [
+          "DATA_ENGINEER"
+        ],
+        "normalization_evidence": [
+          {
+            "extracted_index": 0,
+            "canonical": "PYTHON"
+          },
+          {
+            "extracted_index": 1,
+            "canonical": "SQL"
+          },
+          {
+            "extracted_index": 2,
+            "canonical": "AIRFLOW"
+          },
+          {
+            "extracted_index": 3,
+            "canonical": "ETL"
+          },
+          {
+            "extracted_index": 4,
+            "canonical": "GIT"
+          }
+        ]
+      },
+      "input": "inputs/04_data_engineer.txt"
+    },
+    {
+      "id": "05_aliases_duplicates",
+      "source": "data/samples/05_aliases_duplicates.txt",
+      "group": "supported",
+      "tags": [
+        "existing_reference_regression"
+      ],
+      "name_override": null,
+      "expected": {
+        "candidate": {
+          "name": "Taylor Example",
+          "emails": [],
+          "phones": [],
+          "links": [],
+          "education": [],
+          "experience": []
+        },
+        "positive_mentions": [
+          {
+            "raw": "Git",
+            "start": 29,
+            "end": 32,
+            "canonical": "GIT"
+          },
+          {
+            "raw": "Postgres",
+            "start": 34,
+            "end": 42,
+            "canonical": "POSTGRESQL"
+          },
+          {
+            "raw": "Node.js",
+            "start": 44,
+            "end": 51,
+            "canonical": "NODE_JS"
+          },
+          {
+            "raw": "ReactJS",
+            "start": 53,
+            "end": 60,
+            "canonical": "REACT"
+          },
+          {
+            "raw": "JavaScript",
+            "start": 62,
+            "end": 72,
+            "canonical": "JAVASCRIPT"
+          },
+          {
+            "raw": "JS",
+            "start": 74,
+            "end": 76,
+            "canonical": "JAVASCRIPT"
+          },
+          {
+            "raw": "React.js",
+            "start": 78,
+            "end": 86,
+            "canonical": "REACT"
+          },
+          {
+            "raw": "Git SCM",
+            "start": 88,
+            "end": 95,
+            "canonical": "GIT"
+          }
+        ],
+        "excluded_mentions": [],
+        "normalized_skills": [
+          "GIT",
+          "JAVASCRIPT",
+          "NODE_JS",
+          "POSTGRESQL",
+          "REACT"
+        ],
+        "accepted_profiles": [
+          "FULL_STACK_DEVELOPER"
+        ],
+        "normalization_evidence": [
+          {
+            "extracted_index": 0,
+            "canonical": "GIT"
+          },
+          {
+            "extracted_index": 1,
+            "canonical": "POSTGRESQL"
+          },
+          {
+            "extracted_index": 2,
+            "canonical": "NODE_JS"
+          },
+          {
+            "extracted_index": 3,
+            "canonical": "REACT"
+          },
+          {
+            "extracted_index": 4,
+            "canonical": "JAVASCRIPT"
+          },
+          {
+            "extracted_index": 5,
+            "canonical": "JAVASCRIPT"
+          },
+          {
+            "extracted_index": 6,
+            "canonical": "REACT"
+          },
+          {
+            "extracted_index": 7,
+            "canonical": "GIT"
+          }
+        ]
+      },
+      "input": "inputs/05_aliases_duplicates.txt"
+    },
+    {
+      "id": "06_incomplete",
+      "source": "data/samples/06_incomplete.txt",
+      "group": "supported",
+      "tags": [
+        "existing_reference_regression"
+      ],
+      "name_override": null,
+      "expected": {
+        "candidate": {
+          "name": "Ana Example",
+          "emails": [
+            {
+              "raw": "ana@example.com",
+              "start": 25,
+              "end": 40
+            }
+          ],
+          "phones": [],
+          "links": [],
+          "education": [],
+          "experience": []
+        },
+        "positive_mentions": [
+          {
+            "raw": "Python",
+            "start": 49,
+            "end": 55,
+            "canonical": "PYTHON"
+          },
+          {
+            "raw": "Git",
+            "start": 57,
+            "end": 60,
+            "canonical": "GIT"
+          }
+        ],
+        "excluded_mentions": [],
+        "normalized_skills": [
+          "GIT",
+          "PYTHON"
+        ],
+        "accepted_profiles": [],
+        "normalization_evidence": [
+          {
+            "extracted_index": 0,
+            "canonical": "PYTHON"
+          },
+          {
+            "extracted_index": 1,
+            "canonical": "GIT"
+          }
+        ]
+      },
+      "input": "inputs/06_incomplete.txt"
+    },
+    {
+      "id": "07_boundaries_negation",
+      "source": "data/samples/07_boundaries_negation.txt",
+      "group": "supported",
+      "tags": [
+        "existing_reference_regression"
+      ],
+      "name_override": null,
+      "expected": {
+        "candidate": {
+          "name": "Sam Example",
+          "emails": [],
+          "phones": [],
+          "links": [
+            {
+              "raw": "https://github.com/example-user",
+              "start": 26,
+              "end": 57
+            }
+          ],
+          "education": [],
+          "experience": [
+            {
+              "raw": "no experience with Python",
+              "start": 70,
+              "end": 95
+            },
+            {
+              "raw": "no experience with TensorFlow",
+              "start": 108,
+              "end": 137
+            }
+          ]
+        },
+        "positive_mentions": [
+          {
+            "raw": "JavaScript",
+            "start": 146,
+            "end": 156,
+            "canonical": "JAVASCRIPT"
+          },
+          {
+            "raw": "Git",
+            "start": 158,
+            "end": 161,
+            "canonical": "GIT"
+          },
+          {
+            "raw": "React.js",
+            "start": 163,
+            "end": 171,
+            "canonical": "REACT"
+          }
+        ],
+        "excluded_mentions": [
+          {
+            "raw": "Python",
+            "start": 89,
+            "end": 95
+          },
+          {
+            "raw": "TensorFlow",
+            "start": 127,
+            "end": 137
+          },
+          {
+            "raw": "TS",
+            "start": 190,
+            "end": 192
+          },
+          {
+            "raw": "JS",
+            "start": 201,
+            "end": 203
+          }
+        ],
+        "normalized_skills": [
+          "GIT",
+          "JAVASCRIPT",
+          "REACT"
+        ],
+        "accepted_profiles": [],
+        "normalization_evidence": [
+          {
+            "extracted_index": 0,
+            "canonical": "JAVASCRIPT"
+          },
+          {
+            "extracted_index": 1,
+            "canonical": "GIT"
+          },
+          {
+            "extracted_index": 2,
+            "canonical": "REACT"
+          }
+        ]
+      },
+      "input": "inputs/07_boundaries_negation.txt"
+    },
+    {
+      "id": "08_multiple_records",
+      "source": "data/samples/08_multiple_records.txt",
+      "group": "supported",
+      "tags": [
+        "existing_reference_regression"
+      ],
+      "name_override": null,
+      "expected": {
+        "candidate": {
+          "name": "Daniela Example",
+          "emails": [
+            {
+              "raw": "daniela@example.com",
+              "start": 29,
+              "end": 48
+            },
+            {
+              "raw": "daniela.work@example.com",
+              "start": 56,
+              "end": 80
+            }
+          ],
+          "phones": [],
+          "links": [],
+          "education": [
+            {
+              "raw": "Bachelor in Computer Science",
+              "start": 92,
+              "end": 120
+            },
+            {
+              "raw": "Master in Data Science",
+              "start": 132,
+              "end": 154
+            }
+          ],
+          "experience": [
+            {
+              "raw": "2 years of experience developing web services.",
+              "start": 167,
+              "end": 213
+            },
+            {
+              "raw": "1 year of experience processing data.",
+              "start": 226,
+              "end": 263
+            }
+          ]
+        },
+        "positive_mentions": [
+          {
+            "raw": "Python",
+            "start": 272,
+            "end": 278,
+            "canonical": "PYTHON"
+          },
+          {
+            "raw": "Django",
+            "start": 280,
+            "end": 286,
+            "canonical": "DJANGO"
+          },
+          {
+            "raw": "PostgreSQL",
+            "start": 288,
+            "end": 298,
+            "canonical": "POSTGRESQL"
+          },
+          {
+            "raw": "REST API",
+            "start": 300,
+            "end": 308,
+            "canonical": "REST_API"
+          },
+          {
+            "raw": "Git",
+            "start": 310,
+            "end": 313,
+            "canonical": "GIT"
+          },
+          {
+            "raw": "ETL",
+            "start": 315,
+            "end": 318,
+            "canonical": "ETL"
+          },
+          {
+            "raw": "Pandas",
+            "start": 320,
+            "end": 326,
+            "canonical": "PANDAS"
+          },
+          {
+            "raw": "Py Torch",
+            "start": 328,
+            "end": 336,
+            "canonical": "PYTORCH"
+          }
+        ],
+        "excluded_mentions": [],
+        "normalized_skills": [
+          "DJANGO",
+          "ETL",
+          "GIT",
+          "PANDAS",
+          "POSTGRESQL",
+          "PYTHON",
+          "PYTORCH",
+          "REST_API"
+        ],
+        "accepted_profiles": [
+          "BACKEND_DEVELOPER",
+          "DATA_ENGINEER",
+          "MACHINE_LEARNING_ENGINEER"
+        ],
+        "normalization_evidence": [
+          {
+            "extracted_index": 0,
+            "canonical": "PYTHON"
+          },
+          {
+            "extracted_index": 1,
+            "canonical": "DJANGO"
+          },
+          {
+            "extracted_index": 2,
+            "canonical": "POSTGRESQL"
+          },
+          {
+            "extracted_index": 3,
+            "canonical": "REST_API"
+          },
+          {
+            "extracted_index": 4,
+            "canonical": "GIT"
+          },
+          {
+            "extracted_index": 5,
+            "canonical": "ETL"
+          },
+          {
+            "extracted_index": 6,
+            "canonical": "PANDAS"
+          },
+          {
+            "extracted_index": 7,
+            "canonical": "PYTORCH"
+          }
+        ]
+      },
+      "input": "inputs/08_multiple_records.txt"
+    },
+    {
+      "id": "missing_data_pipeline",
+      "source": "history/original_additional_cases.json",
+      "group": "supported",
+      "tags": [
+        "original_additional_regression"
+      ],
+      "name_override": null,
+      "expected": {
+        "candidate": {
+          "name": null,
+          "emails": [],
+          "phones": [],
+          "links": [],
+          "education": [],
+          "experience": []
+        },
+        "positive_mentions": [
+          {
+            "raw": "Python",
+            "start": 8,
+            "end": 14,
+            "canonical": "PYTHON"
+          },
+          {
+            "raw": "SQL",
+            "start": 16,
+            "end": 19,
+            "canonical": "SQL"
+          },
+          {
+            "raw": "Git",
+            "start": 21,
+            "end": 24,
+            "canonical": "GIT"
+          }
+        ],
+        "excluded_mentions": [],
+        "normalized_skills": [
+          "GIT",
+          "PYTHON",
+          "SQL"
+        ],
+        "accepted_profiles": [],
+        "normalization_evidence": [
+          {
+            "extracted_index": 0,
+            "canonical": "PYTHON"
+          },
+          {
+            "extracted_index": 1,
+            "canonical": "SQL"
+          },
+          {
+            "extracted_index": 2,
+            "canonical": "GIT"
+          }
+        ]
+      },
+      "input": "inputs/missing_data_pipeline.txt"
+    },
+    {
+      "id": "incompatible_backend_pair",
+      "source": "history/original_additional_cases.json",
+      "group": "supported",
+      "tags": [
+        "original_additional_regression"
+      ],
+      "name_override": null,
+      "expected": {
+        "candidate": {
+          "name": null,
+          "emails": [],
+          "phones": [],
+          "links": [],
+          "education": [],
+          "experience": []
+        },
+        "positive_mentions": [
+          {
+            "raw": "Java",
+            "start": 8,
+            "end": 12,
+            "canonical": "JAVA"
+          },
+          {
+            "raw": "Django",
+            "start": 14,
+            "end": 20,
+            "canonical": "DJANGO"
+          },
+          {
+            "raw": "SQL",
+            "start": 22,
+            "end": 25,
+            "canonical": "SQL"
+          },
+          {
+            "raw": "REST API",
+            "start": 27,
+            "end": 35,
+            "canonical": "REST_API"
+          },
+          {
+            "raw": "Git",
+            "start": 37,
+            "end": 40,
+            "canonical": "GIT"
+          }
+        ],
+        "excluded_mentions": [],
+        "normalized_skills": [
+          "DJANGO",
+          "GIT",
+          "JAVA",
+          "REST_API",
+          "SQL"
+        ],
+        "accepted_profiles": [],
+        "normalization_evidence": [
+          {
+            "extracted_index": 0,
+            "canonical": "JAVA"
+          },
+          {
+            "extracted_index": 1,
+            "canonical": "DJANGO"
+          },
+          {
+            "extracted_index": 2,
+            "canonical": "SQL"
+          },
+          {
+            "extracted_index": 3,
+            "canonical": "REST_API"
+          },
+          {
+            "extracted_index": 4,
+            "canonical": "GIT"
+          }
+        ]
+      },
+      "input": "inputs/incompatible_backend_pair.txt"
+    },
+    {
+      "id": "negated_framework",
+      "source": "history/original_additional_cases.json",
+      "group": "supported",
+      "tags": [
+        "original_additional_regression"
+      ],
+      "name_override": null,
+      "expected": {
+        "candidate": {
+          "name": null,
+          "emails": [],
+          "phones": [],
+          "links": [],
+          "education": [],
+          "experience": []
+        },
+        "positive_mentions": [
+          {
+            "raw": "JavaScript",
+            "start": 8,
+            "end": 18,
+            "canonical": "JAVASCRIPT"
+          },
+          {
+            "raw": "Node.js",
+            "start": 20,
+            "end": 27,
+            "canonical": "NODE_JS"
+          },
+          {
+            "raw": "PostgreSQL",
+            "start": 29,
+            "end": 39,
+            "canonical": "POSTGRESQL"
+          },
+          {
+            "raw": "Git",
+            "start": 41,
+            "end": 44,
+            "canonical": "GIT"
+          }
+        ],
+        "excluded_mentions": [
+          {
+            "raw": "React",
+            "start": 59,
+            "end": 64
+          }
+        ],
+        "normalized_skills": [
+          "GIT",
+          "JAVASCRIPT",
+          "NODE_JS",
+          "POSTGRESQL"
+        ],
+        "accepted_profiles": [],
+        "normalization_evidence": [
+          {
+            "extracted_index": 0,
+            "canonical": "JAVASCRIPT"
+          },
+          {
+            "extracted_index": 1,
+            "canonical": "NODE_JS"
+          },
+          {
+            "extracted_index": 2,
+            "canonical": "POSTGRESQL"
+          },
+          {
+            "extracted_index": 3,
+            "canonical": "GIT"
+          }
+        ]
+      },
+      "input": "inputs/negated_framework.txt"
+    },
+    {
+      "id": "multiple_profiles",
+      "source": "history/original_additional_cases.json",
+      "group": "supported",
+      "tags": [
+        "original_additional_regression"
+      ],
+      "name_override": null,
+      "expected": {
+        "candidate": {
+          "name": null,
+          "emails": [],
+          "phones": [],
+          "links": [],
+          "education": [],
+          "experience": []
+        },
+        "positive_mentions": [
+          {
+            "raw": "Python",
+            "start": 8,
+            "end": 14,
+            "canonical": "PYTHON"
+          },
+          {
+            "raw": "Pandas",
+            "start": 16,
+            "end": 22,
+            "canonical": "PANDAS"
+          },
+          {
+            "raw": "TensorFlow",
+            "start": 24,
+            "end": 34,
+            "canonical": "TENSORFLOW"
+          },
+          {
+            "raw": "SQL",
+            "start": 36,
+            "end": 39,
+            "canonical": "SQL"
+          },
+          {
+            "raw": "ETL",
+            "start": 41,
+            "end": 44,
+            "canonical": "ETL"
+          },
+          {
+            "raw": "Git",
+            "start": 46,
+            "end": 49,
+            "canonical": "GIT"
+          }
+        ],
+        "excluded_mentions": [],
+        "normalized_skills": [
+          "ETL",
+          "GIT",
+          "PANDAS",
+          "PYTHON",
+          "SQL",
+          "TENSORFLOW"
+        ],
+        "accepted_profiles": [
+          "DATA_ENGINEER",
+          "MACHINE_LEARNING_ENGINEER"
+        ],
+        "normalization_evidence": [
+          {
+            "extracted_index": 0,
+            "canonical": "PYTHON"
+          },
+          {
+            "extracted_index": 1,
+            "canonical": "PANDAS"
+          },
+          {
+            "extracted_index": 2,
+            "canonical": "TENSORFLOW"
+          },
+          {
+            "extracted_index": 3,
+            "canonical": "SQL"
+          },
+          {
+            "extracted_index": 4,
+            "canonical": "ETL"
+          },
+          {
+            "extracted_index": 5,
+            "canonical": "GIT"
+          }
+        ]
+      },
+      "input": "inputs/multiple_profiles.txt"
+    },
+    {
+      "id": "irrelevant_prose",
+      "source": "history/original_additional_cases.json",
+      "group": "supported",
+      "tags": [
+        "original_additional_regression"
+      ],
+      "name_override": null,
+      "expected": {
+        "candidate": {
+          "name": "Robin",
+          "emails": [],
+          "phones": [],
+          "links": [],
+          "education": [],
+          "experience": []
+        },
+        "positive_mentions": [],
+        "excluded_mentions": [
+          {
+            "raw": "pandas",
+            "start": 22,
+            "end": 28
+          },
+          {
+            "raw": "react",
+            "start": 44,
+            "end": 49
+          }
+        ],
+        "normalized_skills": [],
+        "accepted_profiles": [],
+        "normalization_evidence": []
+      },
+      "input": "inputs/irrelevant_prose.txt"
+    },
+    {
+      "id": "records_and_escaping",
+      "source": "history/original_additional_cases.json",
+      "group": "supported",
+      "tags": [
+        "original_additional_regression"
+      ],
+      "name_override": null,
+      "expected": {
+        "candidate": {
+          "name": "Robin <script>alert(1)</script>",
+          "emails": [],
+          "phones": [],
+          "links": [],
+          "education": [
+            {
+              "raw": "BSc Computing",
+              "start": 80,
+              "end": 93
+            },
+            {
+              "raw": "MSc Data",
+              "start": 94,
+              "end": 102
+            }
+          ],
+          "experience": [
+            {
+              "raw": "First job",
+              "start": 115,
+              "end": 124
+            },
+            {
+              "raw": "Second job",
+              "start": 125,
+              "end": 135
+            }
+          ]
+        },
+        "positive_mentions": [
+          {
+            "raw": "Python",
+            "start": 46,
+            "end": 52,
+            "canonical": "PYTHON"
+          },
+          {
+            "raw": "SQL",
+            "start": 54,
+            "end": 57,
+            "canonical": "SQL"
+          },
+          {
+            "raw": "ETL",
+            "start": 59,
+            "end": 62,
+            "canonical": "ETL"
+          },
+          {
+            "raw": "Git",
+            "start": 64,
+            "end": 67,
+            "canonical": "GIT"
+          }
+        ],
+        "excluded_mentions": [],
+        "normalized_skills": [
+          "ETL",
+          "GIT",
+          "PYTHON",
+          "SQL"
+        ],
+        "accepted_profiles": [
+          "DATA_ENGINEER"
+        ],
+        "normalization_evidence": [
+          {
+            "extracted_index": 0,
+            "canonical": "PYTHON"
+          },
+          {
+            "extracted_index": 1,
+            "canonical": "SQL"
+          },
+          {
+            "extracted_index": 2,
+            "canonical": "ETL"
+          },
+          {
+            "extracted_index": 3,
+            "canonical": "GIT"
+          }
+        ]
+      },
+      "input": "inputs/records_and_escaping.txt"
+    }
+  ]
+}

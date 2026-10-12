@@ -1,0 +1,11 @@
+{
+  "method": "Manually specified integration cases for the documented profile patterns; synthetic regression data.",
+  "cases": [
+    {"id": "missing_data_pipeline", "text": "Skills: Python, SQL, Git.", "profiles": []},
+    {"id": "incompatible_backend_pair", "text": "Skills: Java, Django, SQL, REST API, Git.", "profiles": []},
+    {"id": "negated_framework", "text": "Skills: JavaScript, Node.js, PostgreSQL, Git. I do not use React.", "profiles": []},
+    {"id": "multiple_profiles", "text": "Skills: Python, Pandas, TensorFlow, SQL, ETL, Git.", "profiles": ["DATA_ENGINEER", "MACHINE_LEARNING_ENGINEER"]},
+    {"id": "irrelevant_prose", "text": "Name: Robin\nI watched pandas at the zoo and react calmly to changes.", "profiles": []},
+    {"id": "records_and_escaping", "text": "Name: Robin <script>alert(1)</script>\nSkills: Python, SQL, ETL, Git.\nEducation:\nBSc Computing\nMSc Data\nExperience:\nFirst job\nSecond job", "profiles": ["DATA_ENGINEER"]}
+  ]
+}

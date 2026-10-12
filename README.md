@@ -85,11 +85,12 @@ The directory contains `first_stage.json`, `classification.json`, `candidate.rl`
 .\.venv\Scripts\python.exe tools/check_workflow_acceptance.py
 .\.venv\Scripts\python.exe tools/check_web_acceptance.py
 .\.venv\Scripts\python.exe tools/evaluate_preannotated.py --check
+.\.venv\Scripts\python.exe tools/evaluate_workflow.py --check
 ```
 
 These commands check the current installation. Model, example and evaluation generators can rewrite reference artifacts; run them intentionally after implementation changes and review their diffs. Generator instructions are in the relevant [technical guides](docs/README.md). Recorded test counts below describe specific earlier runs, rather than a new execution on this checkout. The GitHub Actions matrix covers Windows/Linux with Python 3.10/3.12; check actual run outcomes in GitHub Actions.
 
-There are 181 automated tests (39 first-stage, 12 recognition, 16 candidate-language, 24 workflow/rendering/CLI, 23 local-HTTP/UI-entry, 14 focused negation regressions, 17 profile-explanation tests, 15 bundle-recovery tests, 8 profile-alignment tests and 13 evaluation-protocol/scoring tests), eight main English samples and 23 historical annotated synthetic extraction cases: fifteen original, six historically reserved and two additional limit cases. The focused regressions include real CLI and HTTP/ZIP checks; they are not an independently collected evaluation dataset. All eight samples have executed profile classifications in `data/classification/` and validated candidate specifications in `data/dsl/`. Complete JSON/DSL/HTML bundles are in `data/workflow/`. Browser interactions include eighteen reproducible keyboard scenario groups checked with Chrome for Testing on Linux; see [keyboard verification](docs/keyboard-navigation.md). Spanish input fixtures and regex alternatives retain documented bilingual support. See [test results](docs/test-results.md), [profile models](docs/profile-recognition.md), [candidate grammar](docs/candidate-language.md) and [evaluation](docs/evaluation.md).
+There are 188 automated tests (39 first-stage, 12 recognition, 16 candidate-language, 24 workflow/rendering/CLI, 23 local-HTTP/UI-entry, 14 focused negation regressions, 17 profile-explanation tests, 15 bundle-recovery tests, 8 profile-alignment tests 13 preannotated evaluation-protocol/scoring tests and 7 original-workflow evaluation tests), eight main English samples and 23 historical annotated synthetic extraction cases: fifteen original, six historically reserved and two additional limit cases. The focused regressions include real CLI and HTTP/ZIP checks; they are not an independently collected evaluation dataset. All eight samples have executed profile classifications in `data/classification/` and validated candidate specifications in `data/dsl/`. Complete JSON/DSL/HTML bundles are in `data/workflow/`. Browser interactions include eighteen reproducible keyboard scenario groups checked with Chrome for Testing on Linux; see [keyboard verification](docs/keyboard-navigation.md). Spanish input fixtures and regex alternatives retain documented bilingual support. See [test results](docs/test-results.md), [profile models](docs/profile-recognition.md), [candidate grammar](docs/candidate-language.md) and [evaluation](docs/evaluation.md).
 
 A separate [preannotated evaluation](docs/preannotated-evaluation.md) adds 18 new
 synthetic cases with labels fixed before execution: 14 supported-format cases and
@@ -101,6 +102,8 @@ claim. Verify the stored JSON/Markdown reports without rewriting them:
 ```powershell
 .\.venv\Scripts\python.exe tools/evaluate_preannotated.py --check
 ```
+
+The [original fourteen-case workflow regression](docs/workflow-evaluation.md) adds explicit candidate, positive/excluded-span, canonical-skill, normalization-link and profile comparisons to the previously prepared cases. Its current report has 14 matching cases and 14 exact export round trips. Expanded labels were added during integration of previously executed inputs; this is not a new blind evaluation. The focused Windows checks passed all 7 new evaluator tests and all 13 existing preannotated-evaluator tests. No new full-suite execution is claimed.
 
 Machine Learning accepts Scikit-learn, TensorFlow or PyTorch as alternatives for
 its required learning-library group, following the assignment's page 5 diagram.
@@ -123,10 +126,11 @@ behavior, manual recovery and limits after abrupt termination.
 | `data/results/`, `data/classification/`, `data/dsl/`, `data/workflow/` | Versioned reference outputs and valid/invalid specifications used by tests |
 | `data/evaluation/` | Original 23-case skill-mention evaluation and its protocol |
 | `data/preannotated-evaluation/` | Separate 18-case complete-pipeline dataset, fixed annotations and retained disagreements |
+| `data/workflow-evaluation/` | Original 14-case integration regression, expanded annotations, original draft history and export comparisons |
 | `data/profile-alignment/` | Targeted requirement regressions and report bundles |
 | `data/evaluation/history/` | Earlier annotations and metrics retained for traceability |
 
-The two evaluations remain separate. Historical results and dated sections in [test results](docs/test-results.md) retain their original scope; they do not redefine current expectations or certify a new checkout. Reused reserved cases are not a fresh blind benchmark.
+The three evaluations remain separate. Historical results and dated sections in [test results](docs/test-results.md) retain their original scope; they do not redefine current expectations or certify a new checkout. Reused reserved cases are not a fresh blind benchmark.
 
 ## Project structure
 

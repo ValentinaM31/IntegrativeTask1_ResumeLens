@@ -1,0 +1,2 @@
+inputs/*.txt -text whitespace=cr-at-eol
+history/*.json -text

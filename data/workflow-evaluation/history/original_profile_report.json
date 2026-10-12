@@ -1,0 +1,171 @@
+{
+  "method": "Synthetic integration regression; expected profiles specified independently of runtime outputs. Not a population accuracy estimate.",
+  "cases": 14,
+  "passed": 14,
+  "results": [
+    {
+      "id": "01_full_stack",
+      "expected_profiles": [
+        "FULL_STACK_DEVELOPER"
+      ],
+      "actual_profiles": [
+        "FULL_STACK_DEVELOPER"
+      ],
+      "profiles_match": true,
+      "symbols_match": true,
+      "evidence_valid": true,
+      "export_round_trip": true
+    },
+    {
+      "id": "02_machine_learning",
+      "expected_profiles": [
+        "MACHINE_LEARNING_ENGINEER"
+      ],
+      "actual_profiles": [
+        "MACHINE_LEARNING_ENGINEER"
+      ],
+      "profiles_match": true,
+      "symbols_match": true,
+      "evidence_valid": true,
+      "export_round_trip": true
+    },
+    {
+      "id": "03_backend",
+      "expected_profiles": [
+        "BACKEND_DEVELOPER"
+      ],
+      "actual_profiles": [
+        "BACKEND_DEVELOPER"
+      ],
+      "profiles_match": true,
+      "symbols_match": true,
+      "evidence_valid": true,
+      "export_round_trip": true
+    },
+    {
+      "id": "04_data_engineer",
+      "expected_profiles": [
+        "DATA_ENGINEER"
+      ],
+      "actual_profiles": [
+        "DATA_ENGINEER"
+      ],
+      "profiles_match": true,
+      "symbols_match": true,
+      "evidence_valid": true,
+      "export_round_trip": true
+    },
+    {
+      "id": "05_aliases_duplicates",
+      "expected_profiles": [
+        "FULL_STACK_DEVELOPER"
+      ],
+      "actual_profiles": [
+        "FULL_STACK_DEVELOPER"
+      ],
+      "profiles_match": true,
+      "symbols_match": true,
+      "evidence_valid": true,
+      "export_round_trip": true
+    },
+    {
+      "id": "06_incomplete",
+      "expected_profiles": [],
+      "actual_profiles": [],
+      "profiles_match": true,
+      "symbols_match": true,
+      "evidence_valid": true,
+      "export_round_trip": true
+    },
+    {
+      "id": "07_boundaries_negation",
+      "expected_profiles": [],
+      "actual_profiles": [],
+      "profiles_match": true,
+      "symbols_match": true,
+      "evidence_valid": true,
+      "export_round_trip": true
+    },
+    {
+      "id": "08_multiple_records",
+      "expected_profiles": [
+        "BACKEND_DEVELOPER",
+        "DATA_ENGINEER",
+        "MACHINE_LEARNING_ENGINEER"
+      ],
+      "actual_profiles": [
+        "BACKEND_DEVELOPER",
+        "DATA_ENGINEER",
+        "MACHINE_LEARNING_ENGINEER"
+      ],
+      "profiles_match": true,
+      "symbols_match": true,
+      "evidence_valid": true,
+      "export_round_trip": true
+    },
+    {
+      "id": "missing_data_pipeline",
+      "expected_profiles": [],
+      "actual_profiles": [],
+      "profiles_match": true,
+      "symbols_match": true,
+      "evidence_valid": true,
+      "export_round_trip": true
+    },
+    {
+      "id": "incompatible_backend_pair",
+      "expected_profiles": [],
+      "actual_profiles": [],
+      "profiles_match": true,
+      "symbols_match": true,
+      "evidence_valid": true,
+      "export_round_trip": true
+    },
+    {
+      "id": "negated_framework",
+      "expected_profiles": [],
+      "actual_profiles": [],
+      "profiles_match": true,
+      "symbols_match": true,
+      "evidence_valid": true,
+      "export_round_trip": true
+    },
+    {
+      "id": "multiple_profiles",
+      "expected_profiles": [
+        "DATA_ENGINEER",
+        "MACHINE_LEARNING_ENGINEER"
+      ],
+      "actual_profiles": [
+        "DATA_ENGINEER",
+        "MACHINE_LEARNING_ENGINEER"
+      ],
+      "profiles_match": true,
+      "symbols_match": true,
+      "evidence_valid": true,
+      "export_round_trip": true
+    },
+    {
+      "id": "irrelevant_prose",
+      "expected_profiles": [],
+      "actual_profiles": [],
+      "profiles_match": true,
+      "symbols_match": true,
+      "evidence_valid": true,
+      "export_round_trip": true
+    },
+    {
+      "id": "records_and_escaping",
+      "expected_profiles": [
+        "DATA_ENGINEER"
+      ],
+      "actual_profiles": [
+        "DATA_ENGINEER"
+      ],
+      "profiles_match": true,
+      "symbols_match": true,
+      "evidence_valid": true,
+      "export_round_trip": true
+    }
+  ]
+}
