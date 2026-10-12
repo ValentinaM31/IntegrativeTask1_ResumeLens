@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="594mm" height="420mm" viewBox="0 0 1920 1358" role="img" aria-labelledby="poster-title poster-desc"><title id="poster-title">ResumeLens: from a resume to traceable qualification patterns</title><desc id="poster-desc">Complete research poster with a worked example, regex evidence, FST path, four epsilon-NFA patterns, textX candidate language, separate synthetic evaluation results and verification limits.</desc><rect x="0" y="0" width="1920" height="1358" rx="0" fill="#f4f5fa" stroke="none"/>
+<rect x="0" y="0" width="1920" height="175" rx="0" fill="#fff" stroke="none"/>
+<text x="48" y="49" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#6052bc" text-anchor="start">COMPUTING &amp; DISCRETE STRUCTURES III  /  INTEGRATIVE TASK 1</text>
+<text x="48" y="112" font-family="Arial,sans-serif" font-size="66" font-weight="700" fill="#202b40" text-anchor="start">ResumeLens</text>
+<text x="48" y="152" font-family="Arial,sans-serif" font-size="27" font-weight="400" fill="#5f6d82" text-anchor="start">From a resume to traceable qualification patterns.</text>
+<text x="1872" y="60" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#202b40" text-anchor="end">Valentina Martinez Franco</text>
+<text x="1872" y="88" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#202b40" text-anchor="end">Juan Pino</text>
+<text x="1872" y="120" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#6052bc" text-anchor="end">4 FSTs  |  4 profile automata</text>
+<text x="1872" y="147" font-family="Arial,sans-serif" font-size="17" font-weight="400" fill="#5f6d82" text-anchor="end">26 canonical symbols  /  56 aliases</text>
+<rect x="48" y="199" width="354" height="86" rx="12" fill="#e9edf4" stroke="none"/>
+<text x="66" y="222" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#202b40" text-anchor="start">TEXT</text>
+<text x="66" y="251" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#202b40" text-anchor="start">UTF-8 resume</text>
+<text x="66" y="273" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#5f6d82" text-anchor="start">Original wording</text>
+<line x1="405" y1="243" x2="404" y2="243" stroke="#a3aabb" stroke-width="2"/>
+<polygon points="413,243 403,238 403,248" fill="#a3aabb"/>
+<rect x="415" y="199" width="354" height="86" rx="12" fill="#eaf1fb" stroke="none"/>
+<text x="433" y="222" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#3e6ca2" text-anchor="start">REGEX</text>
+<text x="433" y="251" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#3e6ca2" text-anchor="start">Extract</text>
+<text x="433" y="273" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#5f6d82" text-anchor="start">Exact evidence</text>
+<line x1="772" y1="243" x2="771" y2="243" stroke="#a3aabb" stroke-width="2"/>
+<polygon points="780,243 770,238 770,248" fill="#a3aabb"/>
+<rect x="782" y="199" width="354" height="86" rx="12" fill="#f0edfb" stroke="none"/>
+<text x="800" y="222" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#6052bc" text-anchor="start">FST</text>
+<text x="800" y="251" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#6052bc" text-anchor="start">Normalize</text>
+<text x="800" y="273" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#5f6d82" text-anchor="start">Canonical skills</text>
+<line x1="1139" y1="243" x2="1138" y2="243" stroke="#a3aabb" stroke-width="2"/>
+<polygon points="1147,243 1137,238 1137,248" fill="#a3aabb"/>
+<rect x="1149" y="199" width="354" height="86" rx="12" fill="#eaf5ee" stroke="none"/>
+<text x="1167" y="222" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#287963" text-anchor="start">AUTOMATA</text>
+<text x="1167" y="251" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#287963" text-anchor="start">Recognize</text>
+<text x="1167" y="273" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#5f6d82" text-anchor="start">Four profile patterns</text>
+<line x1="1506" y1="243" x2="1505" y2="243" stroke="#a3aabb" stroke-width="2"/>
+<polygon points="1514,243 1504,238 1504,248" fill="#a3aabb"/>
+<rect x="1516" y="199" width="354" height="86" rx="12" fill="#fbf2e6" stroke="none"/>
+<text x="1534" y="222" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#956724" text-anchor="start">TEXTX</text>
+<text x="1534" y="251" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#956724" text-anchor="start">Validate + render</text>
+<text x="1534" y="273" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#5f6d82" text-anchor="start">DSL to candidate report</text>
+<g id="stage-extract" class="stage-panel">
+<rect x="48" y="311" width="592" height="348" rx="16" fill="#fff" stroke="#e1e5ee"/>
+<rect x="68" y="334" width="4" height="44" rx="2" fill="#3e6ca2" stroke="none"/>
+<text x="85" y="348" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#3e6ca2" text-anchor="start">01  /  TEXT TO EVIDENCE</text>
+<text x="85" y="379" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#202b40" text-anchor="start">What does the text actually say?</text>
+<text x="74" y="405" font-family="Arial,sans-serif" font-size="20" font-weight="400" fill="#5f6d82" text-anchor="start">Question: can explicit formal models handle</text>
+<text x="74" y="431.8" font-family="Arial,sans-serif" font-size="20" font-weight="400" fill="#5f6d82" text-anchor="start">varied wording while preserving the evidence</text>
+<text x="74" y="458.6" font-family="Arial,sans-serif" font-size="20" font-weight="400" fill="#5f6d82" text-anchor="start">behind every result?</text>
+<rect x="74" y="459" width="540" height="89" rx="9" fill="#f3f6fc" stroke="none"/>
+<text x="92" y="486" font-family="Consolas,monospace" font-size="18" font-weight="700" fill="#3e6ca2" text-anchor="start">Technical Skills:</text>
+<text x="92" y="517" font-family="Consolas,monospace" font-size="19" font-weight="400" fill="#202b40" text-anchor="start">JS, React.js, NodeJS, Postgres, Git.</text>
+<rect x="89" y="497" width="27" height="29" rx="3" fill="#dbe2fb" stroke="none"/>
+<text x="92" y="517" font-family="Consolas,monospace" font-size="19" font-weight="700" fill="#3e6ca2" text-anchor="start">JS</text>
+<text x="74" y="579" font-family="Consolas,monospace" font-size="19" font-weight="700" fill="#3e6ca2" text-anchor="start">raw: &quot;JS&quot;   start: 238   end: 240</text>
+<text x="74" y="611" font-family="Arial,sans-serif" font-size="19" font-weight="400" fill="#5f6d82" text-anchor="start">Positions use the LF Alex Sample reference.</text>
+<text x="74" y="636.46" font-family="Arial,sans-serif" font-size="19" font-weight="400" fill="#5f6d82" text-anchor="start">Positive mentions and exclusions stay separate.</text>
+</g>
+<g id="stage-normalize" class="stage-panel">
+<rect x="48" y="681" width="592" height="495" rx="16" fill="#fff" stroke="#e1e5ee"/>
+<rect x="68" y="704" width="4" height="44" rx="2" fill="#6052bc" stroke="none"/>
+<text x="85" y="718" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#6052bc" text-anchor="start">02  /  EQUIVALENT WORDING</text>
+<text x="85" y="749" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#202b40" text-anchor="start">One alias, one canonical symbol</text>
+<text x="74" y="780" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#6052bc" text-anchor="start">M = (Q, Σ, Γ, δ, ω, q0, F)</text>
+<circle cx="112" cy="850" r="25" fill="#f1edfb" stroke="#6052bc" stroke-width="2"/>
+<text x="112" y="857" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#6052bc" text-anchor="middle">q0</text>
+<circle cx="307" cy="850" r="25" fill="#f1edfb" stroke="#6052bc" stroke-width="2"/>
+<text x="307" y="857" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#6052bc" text-anchor="middle">q1</text>
+<circle cx="520" cy="850" r="25" fill="#f1edfb" stroke="#6052bc" stroke-width="2"/>
+<circle cx="520" cy="850" r="20" fill="#f1edfb" stroke="#6052bc" stroke-width="2"/>
+<text x="520" y="857" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#6052bc" text-anchor="middle">q2</text>
+<line x1="74" y1="850" x2="76" y2="850" stroke="#6052bc" stroke-width="2"/>
+<polygon points="85,850 75,845 75,855" fill="#6052bc"/>
+<line x1="139" y1="850" x2="271" y2="850" stroke="#6052bc" stroke-width="2"/>
+<polygon points="280,850 270,845 270,855" fill="#6052bc"/>
+<line x1="334" y1="850" x2="484" y2="850" stroke="#6052bc" stroke-width="2"/>
+<polygon points="493,850 483,845 483,855" fill="#6052bc"/>
+<text x="206" y="829" font-family="Consolas,monospace" font-size="17" font-weight="400" fill="#6052bc" text-anchor="middle">j / ε</text>
+<text x="414" y="829" font-family="Consolas,monospace" font-size="15" font-weight="400" fill="#6052bc" text-anchor="middle">s / JAVASCRIPT</text>
+<text x="74" y="905" font-family="Consolas,monospace" font-size="21" font-weight="700" fill="#6052bc" text-anchor="start">JS -&gt; js -&gt; JAVASCRIPT</text>
+<text x="74" y="939" font-family="Arial,sans-serif" font-size="19" font-weight="400" fill="#5f6d82" text-anchor="start">Schematic path: consume the entire alias; only the</text>
+<text x="74" y="964.46" font-family="Arial,sans-serif" font-size="19" font-weight="400" fill="#5f6d82" text-anchor="start">last edge emits a canonical token. Empty output</text>
+<text x="74" y="989.9200000000001" font-family="Arial,sans-serif" font-size="19" font-weight="400" fill="#5f6d82" text-anchor="start">still consumes an input character.</text>
+<text x="74" y="1041" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#202b40" text-anchor="start">Q: alias-path states   Σ: casefolded characters</text>
+<text x="74" y="1067" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#202b40" text-anchor="start">Γ: canonical symbols   δ: character transitions</text>
+<text x="74" y="1093" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#202b40" text-anchor="start">ω: edge outputs   q0: start   F: full-alias ends</text>
+<text x="74" y="1133" font-family="Arial,sans-serif" font-size="17" font-weight="400" fill="#5f6d82" text-anchor="start">Own: Type Script -&gt; TYPESCRIPT | Git SCM -&gt; GIT</text>
+<text x="74" y="1157" font-family="Arial,sans-serif" font-size="17" font-weight="400" fill="#5f6d82" text-anchor="start">Structured Query Language -&gt; SQL. Full models: docs/models/</text>
+</g>
+<g id="stage-recognize" class="stage-panel">
+<rect x="664" y="311" width="592" height="506" rx="16" fill="#fff" stroke="#e1e5ee"/>
+<rect x="684" y="334" width="4" height="44" rx="2" fill="#287963" stroke="none"/>
+<text x="701" y="348" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#287963" text-anchor="start">03  /  CANONICAL SYMBOLS</text>
+<text x="701" y="379" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#202b40" text-anchor="start">When does a profile accept?</text>
+<text x="690" y="405" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#287963" text-anchor="start">A = (Q, Σ, δ, q0, F)    Type: ε-NFA</text>
+<text x="690" y="441" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#202b40" text-anchor="start">Full Stack</text>
+<text x="690" y="466" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#5f6d82" text-anchor="start">JS/TS + frontend + backend + database + Git</text>
+<text x="690" y="501" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#202b40" text-anchor="start">Machine Learning</text>
+<text x="690" y="526" font-family="Arial,sans-serif" font-size="17" font-weight="400" fill="#5f6d82" text-anchor="start">Python + Pandas/NumPy + library + relational DB + Git</text>
+<text x="690" y="554" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#287963" text-anchor="start">Library: Scikit-learn OR TensorFlow OR PyTorch</text>
+<text x="690" y="589" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#202b40" text-anchor="start">Backend</text>
+<text x="690" y="614" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#5f6d82" text-anchor="start">Compatible pair + database + REST API + Git</text>
+<text x="690" y="649" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#202b40" text-anchor="start">Data Engineer</text>
+<text x="690" y="674" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#5f6d82" text-anchor="start">Python + database + ETL/Airflow/Spark + Git</text>
+<line x1="690" y1="696" x2="1230" y2="696" stroke="#dfe8e4" stroke-width="2"/>
+<text x="690" y="725" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#202b40" text-anchor="start">Q: states  Σ: canonical skills  δ: includes ε edges</text>
+<text x="690" y="752" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#202b40" text-anchor="start">q0: initial state  F: accepting states</text>
+<text x="690" y="779" font-family="Arial,sans-serif" font-size="17" font-weight="400" fill="#5f6d82" text-anchor="start">Bucket order stabilizes input. Compatible Backend</text>
+<text x="690" y="801.78" font-family="Arial,sans-serif" font-size="17" font-weight="400" fill="#5f6d82" text-anchor="start">branches constrain pairs. Several profiles may accept.</text>
+</g>
+<g id="stage-validate" class="stage-panel">
+<rect x="664" y="839" width="592" height="337" rx="16" fill="#fff" stroke="#e1e5ee"/>
+<rect x="684" y="862" width="4" height="44" rx="2" fill="#956724" stroke="none"/>
+<text x="701" y="876" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#956724" text-anchor="start">04  /  EBNF AND COMPACT DSL EXAMPLE</text>
+<text x="701" y="907" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#202b40" text-anchor="start">Valid syntax before visualization</text>
+<rect x="690" y="928" width="540" height="137" rx="9" fill="#f8f3eb" stroke="none"/>
+<text x="705" y="948" font-family="Consolas,monospace" font-size="15.5" font-weight="400" fill="#795729" text-anchor="start">candidate {</text>
+<text x="705" y="966" font-family="Consolas,monospace" font-size="15.5" font-weight="400" fill="#795729" text-anchor="start">  name &quot;Alex Sample&quot;;</text>
+<text x="705" y="984" font-family="Consolas,monospace" font-size="15.5" font-weight="400" fill="#795729" text-anchor="start">  contacts {} education {} experience {}</text>
+<text x="705" y="1002" font-family="Consolas,monospace" font-size="15.5" font-weight="400" fill="#795729" text-anchor="start">  skills { skill JAVASCRIPT; skill REACT;</text>
+<text x="705" y="1020" font-family="Consolas,monospace" font-size="15.5" font-weight="400" fill="#795729" text-anchor="start">    skill NODE_JS; skill POSTGRESQL; skill GIT; }</text>
+<text x="705" y="1038" font-family="Consolas,monospace" font-size="15.5" font-weight="400" fill="#795729" text-anchor="start">  accepted_profiles { profile FULL_STACK_DEVELOPER; }</text>
+<text x="705" y="1056" font-family="Consolas,monospace" font-size="15.5" font-weight="400" fill="#795729" text-anchor="start">}</text>
+<text x="690" y="1091" font-family="Consolas,monospace" font-size="15" font-weight="400" fill="#956724" text-anchor="start">Record = &quot;record&quot;, JSONString, &quot;;&quot; ;</text>
+<text x="690" y="1116" font-family="Consolas,monospace" font-size="14.5" font-weight="400" fill="#956724" text-anchor="start">Education = &quot;education&quot;, &quot;{&quot;, {Record}, &quot;}&quot; ;</text>
+<text x="690" y="1141" font-family="Arial,sans-serif" font-size="15" font-weight="400" fill="#202b40" text-anchor="start">Keywords/tokens: terminals. Record/Education: nonterminals.</text>
+<text x="690" y="1164" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#202b40" text-anchor="start">textX + semantic checks -&gt; validated DSL -&gt; escaped HTML.</text>
+</g>
+<rect x="1280" y="311" width="592" height="326" rx="16" fill="#fff" stroke="#e1e5ee"/>
+<rect x="1300" y="334" width="4" height="44" rx="2" fill="#6052bc" stroke="none"/>
+<text x="1317" y="348" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#6052bc" text-anchor="start">05  /  SEPARATE EVALUATIONS</text>
+<text x="1317" y="379" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#202b40" text-anchor="start">Measured, with visible limits</text>
+<text x="1306" y="405" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#202b40" text-anchor="start">14-case workflow regression</text>
+<text x="1846" y="405" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#287963" text-anchor="end">14/14</text>
+<text x="1306" y="435" font-family="Arial,sans-serif" font-size="17" font-weight="400" fill="#5f6d82" text-anchor="start">Candidate data, spans, links, profiles and exports.</text>
+<text x="1306" y="475" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#202b40" text-anchor="start">18-case preannotated evaluation</text>
+<text x="1846" y="475" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#287963" text-anchor="end">14/18</text>
+<rect x="1306" y="492" width="540" height="12" rx="5" fill="#efeaf2" stroke="none"/>
+<rect x="1306" y="492" width="420.0" height="12" rx="5" fill="#5ca080" stroke="none"/>
+<text x="1306" y="529" font-family="Arial,sans-serif" font-size="17" font-weight="400" fill="#5f6d82" text-anchor="start">14 exact cases; 4 observed disagreements retained.</text>
+<text x="1306" y="558" font-family="Arial,sans-serif" font-size="17" font-weight="400" fill="#202b40" text-anchor="start">Mentions: TP 94 / FP 3 / FN 3</text>
+<text x="1306" y="585" font-family="Arial,sans-serif" font-size="17" font-weight="400" fill="#202b40" text-anchor="start">Profiles: TP 17 / FP 1 / FN 2</text>
+<text x="1306" y="616" font-family="Arial,sans-serif" font-size="17" font-weight="400" fill="#5f6d82" text-anchor="start">23 historical extraction cases: 15 + 6 + 2.</text>
+<rect x="1280" y="659" width="592" height="200" rx="16" fill="#fff" stroke="#e1e5ee"/>
+<rect x="1300" y="682" width="4" height="44" rx="2" fill="#287963" stroke="none"/>
+<text x="1317" y="696" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#287963" text-anchor="start">VERIFICATION SNAPSHOT</text>
+<text x="1317" y="727" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#202b40" text-anchor="start">Executable evidence</text>
+<text x="1306" y="758" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#287963" text-anchor="start">191 tests  /  190 pass  /  1 skip</text>
+<text x="1306" y="789" font-family="Arial,sans-serif" font-size="17" font-weight="400" fill="#5f6d82" text-anchor="start">Windows regression; source spans and files checked.</text>
+<text x="1306" y="821" font-family="Arial,sans-serif" font-size="17" font-weight="400" fill="#5f6d82" text-anchor="start">Bounded retries handle transient Windows file locks.</text>
+<rect x="1280" y="881" width="592" height="295" rx="16" fill="#fff" stroke="#e1e5ee"/>
+<rect x="1300" y="904" width="4" height="44" rx="2" fill="#956724" stroke="none"/>
+<text x="1317" y="918" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#956724" text-anchor="start">INTERPRETATION  /  NEXT STEPS</text>
+<text x="1317" y="949" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#202b40" text-anchor="start">What the models cannot prove</text>
+<circle cx="1314" cy="973" r="4" fill="#956724" stroke="none" stroke-width="2"/>
+<text x="1329" y="979" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#202b40" text-anchor="start">Rust:</text>
+<text x="1329" y="1000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#5f6d82" text-anchor="start">Unknown technology outside the catalog.</text>
+<circle cx="1314" cy="1012" r="4" fill="#956724" stroke="none" stroke-width="2"/>
+<text x="1329" y="1018" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#202b40" text-anchor="start">Double negation:</text>
+<text x="1329" y="1039" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#5f6d82" text-anchor="start">A positive Python claim can be missed.</text>
+<circle cx="1314" cy="1051" r="4" fill="#956724" stroke="none" stroke-width="2"/>
+<text x="1329" y="1057" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#202b40" text-anchor="start">Source attribution:</text>
+<text x="1329" y="1078" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#5f6d82" text-anchor="start">Job requirements can be mistaken for skills.</text>
+<circle cx="1314" cy="1090" r="4" fill="#956724" stroke="none" stroke-width="2"/>
+<text x="1329" y="1096" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#202b40" text-anchor="start">Pandas wording:</text>
+<text x="1329" y="1117" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#5f6d82" text-anchor="start">Bounded context misses some technical prose.</text>
+<text x="1306" y="1158" font-family="Arial,sans-serif" font-size="16" font-weight="700" fill="#956724" text-anchor="start">Next: independent real data and profile-domain validation.</text>
+<rect x="48" y="1198" width="1824" height="90" rx="12" fill="#29273f" stroke="none"/>
+<text x="70" y="1231" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#b8b0e4" text-anchor="start">ACCEPTING PATH</text>
+<text x="70" y="1257" font-family="Arial,sans-serif" font-size="12" font-weight="400" fill="#b8b0e4" text-anchor="start">Schematic profile pattern</text>
+<line x1="248" y1="1252" x2="257" y2="1252" stroke="#b8b0e4" stroke-width="2"/>
+<polygon points="266,1252 256,1247 256,1257" fill="#b8b0e4"/>
+<circle cx="285" cy="1252" r="17" fill="#393551" stroke="#b8b0e4" stroke-width="2"/>
+<text x="285" y="1258" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">q0</text>
+<line x1="304" y1="1252" x2="487" y2="1252" stroke="#b8b0e4" stroke-width="2"/>
+<polygon points="496,1252 486,1247 486,1257" fill="#b8b0e4"/>
+<text x="400.0" y="1237" font-family="Consolas,monospace" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">JAVASCRIPT</text>
+<circle cx="515" cy="1252" r="17" fill="#393551" stroke="#b8b0e4" stroke-width="2"/>
+<text x="515" y="1258" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">q1</text>
+<line x1="534" y1="1252" x2="717" y2="1252" stroke="#b8b0e4" stroke-width="2"/>
+<polygon points="726,1252 716,1247 716,1257" fill="#b8b0e4"/>
+<text x="630.0" y="1237" font-family="Consolas,monospace" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">REACT</text>
+<circle cx="745" cy="1252" r="17" fill="#393551" stroke="#b8b0e4" stroke-width="2"/>
+<text x="745" y="1258" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">q2</text>
+<line x1="764" y1="1252" x2="947" y2="1252" stroke="#b8b0e4" stroke-width="2"/>
+<polygon points="956,1252 946,1247 946,1257" fill="#b8b0e4"/>
+<text x="860.0" y="1237" font-family="Consolas,monospace" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">NODE_JS</text>
+<circle cx="975" cy="1252" r="17" fill="#393551" stroke="#b8b0e4" stroke-width="2"/>
+<text x="975" y="1258" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">q3</text>
+<line x1="994" y1="1252" x2="1177" y2="1252" stroke="#b8b0e4" stroke-width="2"/>
+<polygon points="1186,1252 1176,1247 1176,1257" fill="#b8b0e4"/>
+<text x="1090.0" y="1237" font-family="Consolas,monospace" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">POSTGRESQL</text>
+<circle cx="1205" cy="1252" r="17" fill="#393551" stroke="#b8b0e4" stroke-width="2"/>
+<text x="1205" y="1258" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">q4</text>
+<line x1="1224" y1="1252" x2="1407" y2="1252" stroke="#b8b0e4" stroke-width="2"/>
+<polygon points="1416,1252 1406,1247 1406,1257" fill="#b8b0e4"/>
+<text x="1320.0" y="1237" font-family="Consolas,monospace" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">GIT</text>
+<circle cx="1435" cy="1252" r="17" fill="#393551" stroke="#b8b0e4" stroke-width="2"/>
+<circle cx="1435" cy="1252" r="13" fill="#393551" stroke="#b8b0e4" stroke-width="2"/>
+<text x="1435" y="1258" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">q5</text>
+<text x="1846" y="1243" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#aee6c6" text-anchor="end">FULL STACK</text>
+<text x="1846" y="1270" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#aee6c6" text-anchor="end">ACCEPTED</text>
+<text x="48" y="1309" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#6052bc" text-anchor="start">REPRODUCIBILITY</text>
+<text x="237" y="1309" font-family="Arial,sans-serif" font-size="15" font-weight="400" fill="#5f6d82" text-anchor="start">Complete machines: docs/models/ and docs/automata/ | EBNF: docs/candidate-language.md | Evaluation: data/</text>
+<text x="48" y="1332" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#6052bc" text-anchor="start">REFERENCES</text>
+<text x="237" y="1332" font-family="Arial,sans-serif" font-size="14" font-weight="400" fill="#5f6d82" text-anchor="start">Mohri (1997), Computational Linguistics 23(2), 269-311. Yu, Guan &amp; Zhou (2005), ACL, 499-506. doi:10.3115/1219840.1219902</text>
+<text x="48" y="1353" font-family="Arial,sans-serif" font-size="14" font-weight="400" fill="#5f6d82" text-anchor="start">Synthetic regression, not population accuracy. Structure does not verify claims. No ranking or hiring decision is inferred.</text></svg>

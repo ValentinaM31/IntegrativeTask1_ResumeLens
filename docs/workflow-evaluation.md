@@ -77,3 +77,11 @@ supported negation, overlapping profiles, irrelevant prose, repeated records and
 markup escaping. They overlap existing examples and supported behavior. More
 challenging observed errors remain in the separate eighteen-case report; a clean
 fourteen-case regression result does not negate those errors.
+
+## Visual-revision regression
+
+The original annotation and runtime freeze is preserved. Run with
+`--allow-changed-rules --output-dir data/workflow-evaluation/visual-update --check`
+to reproduce the stored later comparison for the visual revision. All fourteen
+cases match annotation units and exported report files. Changed runtime sources
+are listed in the report; original labels and baseline reports are not reset.

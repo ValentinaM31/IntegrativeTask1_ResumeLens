@@ -53,6 +53,6 @@ Reference files under `data/`, packaged resources under `src/resumelens/`, and c
 
 `data/evaluation/history/` preserves earlier annotations and metrics. The original reserved-case protocol preserves its earlier source fingerprint. These files explain changes and limitations; they are historical evidence, not current installation instructions or a new independent evaluation.
 
-[The published poster](poster/README.md) currently covers extraction and normalization only and retains older metrics. Treat it as a partial draft until the complete poster is integrated and reviewed. Its older test counts do not describe complete-project verification.
+[The complete poster](poster/README.md) provides editable SVG, printable PDF and animated HTML with a guided worked example. Its test figures come from an executed verification snapshot; its three evaluation datasets remain separate.
 
 Older sections in `test-results.md` and component guides describe earlier revisions. Retain them for traceability while following the current operating instructions above. Documentation and messages are in English; quoted bilingual fixtures remain within the tested input scope. The assignment's academic AI-use record must describe actual interactions and student work.

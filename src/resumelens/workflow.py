@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 import shutil
 import stat
+import time
 import warnings
 from jsonschema import ValidationError
 from .first_stage import process_resume, validate_result
@@ -13,6 +14,18 @@ from .rendering import render_candidate_html
 
 BUNDLE_FILES = ("first_stage.json", "classification.json", "candidate.rl", "candidate.html")
 BUNDLE_WORKSPACE = ".resumelens-export.lock"
+
+
+def _replace_file(source, target):
+    """Briefly retry Windows file locks; persistent denial still triggers recovery."""
+    delays = (0.01, 0.03, 0.08, 0.16, 0.30)
+    for attempt in range(len(delays) + 1):
+        try:
+            return os.replace(source, target)
+        except PermissionError as error:
+            if getattr(error, "winerror", None) not in (5, 32, 33) or attempt == len(delays):
+                raise
+            time.sleep(delays[attempt])
 
 
 class BundleRecoveryError(OSError):
@@ -87,7 +100,7 @@ def _write_recovery_state(workspace, originals, phase):
              "originals": originals}
     pending = workspace / "recovery.next.json"
     _write_payload(pending, json.dumps(state, indent=2) + "\n")
-    os.replace(pending, workspace / "recovery.json")
+    _replace_file(pending, workspace / "recovery.json")
 
 
 def _restore_targets(destination, workspace, originals, touched):
@@ -99,7 +112,7 @@ def _restore_targets(destination, workspace, originals, touched):
                 # Keep every original backup until the entire recovery succeeds.
                 restored = workspace / "prepared" / (filename + ".restore")
                 shutil.copy2(workspace / "previous" / filename, restored)
-                os.replace(restored, target)
+                _replace_file(restored, target)
             else:
                 target.unlink(missing_ok=True)
         except OSError as error:
@@ -161,7 +174,7 @@ def save_bundle(result, destination, force=False):
             for filename in BUNDLE_FILES:
                 if filename not in touched:
                     touched.append(filename)
-                os.replace(workspace / "prepared" / filename, destination / filename)
+                _replace_file(workspace / "prepared" / filename, destination / filename)
             _write_recovery_state(workspace, originals, "committed")
         except BaseException as error:
             retain_workspace = True

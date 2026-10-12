@@ -16,7 +16,7 @@ from tools.evaluate_workflow import (DATASET, evaluate_workflow, load_cases, mai
 class WorkflowEvaluationTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.dataset = load_cases()
+        cls.dataset = load_cases(allow_changed_rules=True)
         cls.case = cls.dataset['cases'][0]
         cls.result = process_complete_resume(cls.case['text'])
 
@@ -87,7 +87,7 @@ class WorkflowEvaluationTests(unittest.TestCase):
             (target / 'results.md').write_text('KEEP', encoding='utf-8')
             before = {p.name: p.read_bytes() for p in target.iterdir()}
             with redirect_stderr(StringIO()), redirect_stdout(StringIO()):
-                code = main(['--check', '--output-dir', str(target)])
+                code = main(['--check', '--allow-changed-rules', '--output-dir', str(target)])
             self.assertEqual(code, 2)
             self.assertEqual({p.name: p.read_bytes() for p in target.iterdir()}, before)
 

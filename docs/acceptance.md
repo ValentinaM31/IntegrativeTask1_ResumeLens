@@ -23,12 +23,12 @@ Complete means the documented extraction, normalization, recognition, candidate-
 | Sources | literature-review.md | Full-paper/abstract distinction | Available foundation, not systematic review |
 | Integration guide | handoff.md | API/CLI acceptance | Complete |
 | Academic AI-use record | Separate evidence outside code | Submit separately | Available; independent submission required |
-| Technical poster | poster/ | Existing rendered SVG | Partial for overall project; earlier metrics |
+| Technical poster | poster/ | Editable SVG, same-scene PDF render, animated walkthrough, model diagrams and separate evaluation figures | Complete poster artifact; presentation rehearsal remains |
 | Candidate DSL and EBNF | candidate.tx, dsl.py, candidate-language.md | Fixed sections, terminals/nonterminals, canonical vocabulary and repeated records | Complete |
 | textX syntax and semantic validation | tests/test_dsl.py, data/dsl/ | 16 tests; eight valid and eight invalid examples | Complete |
 | Complete four-stage workflow | workflow.py, workflow_cli.py | Eight executed bundles; original JSON/CLI compatibility | Complete |
 | HTML after validated DSL | rendering.py, data/workflow/ | Syntax/semantic rejection, escaping, records and multiple profiles | Complete |
-| Interactive input UI | web.py, ui/, local-ui.md, keyboard-navigation.md | Paste/load TXT, fallback name, four decisions, reports/downloads, keyboard flow and error recovery | Complete for the documented scope; 18 Linux browser keyboard scenarios verified, native Windows UI repeat run required |
+| Interactive input UI | web.py, ui/, local-ui.md, keyboard-navigation.md | Paste/load TXT, fallback name, four decisions, reports/downloads, keyboard flow and error recovery | Complete for the documented scope; 18 Linux browser keyboard scenarios verified, desktop and narrow Windows visual checks recorded |
 | Web downloads | web.py, tests/test_web.py | Eight HTTP/API results, ZIP and individually downloaded files | Complete |
 
 ## Verified corrections

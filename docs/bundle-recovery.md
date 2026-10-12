@@ -134,3 +134,12 @@ See [verification results](test-results.md) for the current executed checks.
 - Python [os.replace and fsync](https://docs.python.org/3/library/os.html#os.replace).
 - Python [exclusive file opening](https://docs.python.org/3/library/functions.html#open).
 - Python [shutil.copy2 and rmtree](https://docs.python.org/3/library/shutil.html#shutil.copy2).
+
+## Transient Windows file locks
+
+Metadata publication, report replacement and restoration retry Windows permission/
+sharing errors 5, 32 and 33 with a bounded backoff (six attempts, 0.58 seconds total
+requested delay). Other errors are raised immediately. Persistent denial still
+triggers the existing recovery path and retains backups if restoration fails.
+This addresses observed intermittent replacement failures without weakening
+filesystem permissions or claiming a transaction across all four files.

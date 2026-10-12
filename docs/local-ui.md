@@ -153,3 +153,21 @@ checks and their exact environment are recorded in [test results](test-results.m
   exclusive binding for Windows port conflicts.
 - Existing [complete workflow](complete-workflow.md),
   [candidate language](candidate-language.md) and [module design](module-design.md).
+
+## Visual revision and evidence navigation
+
+The current interface uses a responsive pipeline overview, result counters,
+profile cards and a consistent standalone report style. The file picker has
+English labels independent of the browser's localized native control. Focus
+placement and the original keyboard workflow are retained.
+
+The evidence explorer follows canonical identifiers through their normalization
+links to raw mentions. Each selection displays exact positions and highlights the
+source substring. Excluded mentions retain their reasons. JavaScript slices the
+source as Unicode code points, matching Python offsets even when emoji precede a
+mention. Dynamic content uses text nodes; it is not inserted as candidate HTML.
+
+The interface and report have been visually reviewed on desktop and at a 390px
+browser width. Narrow layout stays within the viewport. Subtle motion is disabled
+by `prefers-reduced-motion`; keyboard focus remains visible. These checks do not
+claim a complete screen-reader or accessibility conformance audit.

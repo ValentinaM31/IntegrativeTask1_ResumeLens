@@ -4,7 +4,7 @@ Process UTF-8 TXT resumes using Python `re`, real finite-state transducers, four
 
 ## Installation for the current checkout
 
-Python 3.10 or later. The current preannotated-evaluation extension is verified on Linux with Python 3.12.14. Run the verification commands below after applying it on Windows; historical platform checks are recorded in [test results](docs/test-results.md).
+Python 3.10 or later. The current preannotated-evaluation extension is verified on Linux with Python 3.12.14. The latest visual revision has also been checked on Windows with Python 3.12.14: 190 passes and one symlink-permission skip. Historical platform checks remain in [test results](docs/test-results.md).
 
 ```powershell
 py -m venv .venv
@@ -32,7 +32,8 @@ Activation is unnecessary with the explicit executable. On Linux/macOS create th
 Keep the terminal open while using the browser. Load a UTF-8 TXT file or paste a
 resume, optionally supply a fallback name, then select **Process resume**. The UI
 shows all four profile decisions, rejection reasons and the validated candidate
-report. Download the two JSON files, DSL and HTML individually or together as a ZIP.
+report. A source-evidence explorer links qualifications and exclusions to their
+exact original mentions. Subtle animations respect reduced-motion preferences. Download the two JSON files, DSL and HTML individually or together as a ZIP.
 No candidate files are automatically written by the server.
 
 The printed URL is `http://127.0.0.1:8765`. If browser opening fails, open it manually.
@@ -84,13 +85,13 @@ The directory contains `first_stage.json`, `classification.json`, `candidate.rl`
 .\.venv\Scripts\python.exe tools/check_acceptance.py
 .\.venv\Scripts\python.exe tools/check_workflow_acceptance.py
 .\.venv\Scripts\python.exe tools/check_web_acceptance.py
-.\.venv\Scripts\python.exe tools/evaluate_preannotated.py --check
-.\.venv\Scripts\python.exe tools/evaluate_workflow.py --check
+.\.venv\Scripts\python.exe tools/evaluate_preannotated.py --allow-changed-rules --output-dir data/preannotated-evaluation/visual-update --check
+.\.venv\Scripts\python.exe tools/evaluate_workflow.py --allow-changed-rules --output-dir data/workflow-evaluation/visual-update --check
 ```
 
 These commands check the current installation. Model, example and evaluation generators can rewrite reference artifacts; run them intentionally after implementation changes and review their diffs. Generator instructions are in the relevant [technical guides](docs/README.md). Recorded test counts below describe specific earlier runs, rather than a new execution on this checkout. The GitHub Actions matrix covers Windows/Linux with Python 3.10/3.12; check actual run outcomes in GitHub Actions.
 
-There are 188 automated tests (39 first-stage, 12 recognition, 16 candidate-language, 24 workflow/rendering/CLI, 23 local-HTTP/UI-entry, 14 focused negation regressions, 17 profile-explanation tests, 15 bundle-recovery tests, 8 profile-alignment tests 13 preannotated evaluation-protocol/scoring tests and 7 original-workflow evaluation tests), eight main English samples and 23 historical annotated synthetic extraction cases: fifteen original, six historically reserved and two additional limit cases. The focused regressions include real CLI and HTTP/ZIP checks; they are not an independently collected evaluation dataset. All eight samples have executed profile classifications in `data/classification/` and validated candidate specifications in `data/dsl/`. Complete JSON/DSL/HTML bundles are in `data/workflow/`. Browser interactions include eighteen reproducible keyboard scenario groups checked with Chrome for Testing on Linux; see [keyboard verification](docs/keyboard-navigation.md). Spanish input fixtures and regex alternatives retain documented bilingual support. See [test results](docs/test-results.md), [profile models](docs/profile-recognition.md), [candidate grammar](docs/candidate-language.md) and [evaluation](docs/evaluation.md).
+There are 191 automated tests (39 first-stage, 12 recognition, 16 candidate-language, 24 workflow/rendering/CLI, 23 local-HTTP/UI-entry, 14 focused negation regressions, 17 profile-explanation tests, 15 bundle-recovery tests, 8 profile-alignment tests, 13 preannotated evaluation-protocol/scoring tests, 7 original-workflow evaluation tests and 3 Windows-lock retry tests), eight main English samples and 23 historical annotated synthetic extraction cases: fifteen original, six historically reserved and two additional limit cases. The focused regressions include real CLI and HTTP/ZIP checks; they are not an independently collected evaluation dataset. All eight samples have executed profile classifications in `data/classification/` and validated candidate specifications in `data/dsl/`. Complete JSON/DSL/HTML bundles are in `data/workflow/`. Earlier browser interactions include eighteen reproducible keyboard scenario groups checked with Chrome for Testing on Linux; see [keyboard verification](docs/keyboard-navigation.md). Spanish input fixtures and regex alternatives retain documented bilingual support. See [test results](docs/test-results.md), [profile models](docs/profile-recognition.md), [candidate grammar](docs/candidate-language.md) and [evaluation](docs/evaluation.md).
 
 A separate [preannotated evaluation](docs/preannotated-evaluation.md) adds 18 new
 synthetic cases with labels fixed before execution: 14 supported-format cases and
@@ -100,10 +101,10 @@ independent of predicted outputs, with no external-human or real-resume accuracy
 claim. Verify the stored JSON/Markdown reports without rewriting them:
 
 ```powershell
-.\.venv\Scripts\python.exe tools/evaluate_preannotated.py --check
+.\.venv\Scripts\python.exe tools/evaluate_preannotated.py --allow-changed-rules --output-dir data/preannotated-evaluation/visual-update --check
 ```
 
-The [original fourteen-case workflow regression](docs/workflow-evaluation.md) adds explicit candidate, positive/excluded-span, canonical-skill, normalization-link and profile comparisons to the previously prepared cases. Its current report has 14 matching cases and 14 exact export round trips. Expanded labels were added during integration of previously executed inputs; this is not a new blind evaluation. The focused Windows checks passed all 7 new evaluator tests and all 13 existing preannotated-evaluator tests. No new full-suite execution is claimed.
+The [original fourteen-case workflow regression](docs/workflow-evaluation.md) adds explicit candidate, positive/excluded-span, canonical-skill, normalization-link and profile comparisons to the previously prepared cases. Its current report has 14 matching cases and 14 exact export round trips. Expanded labels were added during integration of previously executed inputs; this is not a new blind evaluation. The latest Windows visual-revision suite executed 191 tests: 190 passed and one symlink-permission skip. Later-regression reports retain original labels and explicitly record the changed runtime sources.
 
 Machine Learning accepts Scikit-learn, TensorFlow or PyTorch as alternatives for
 its required learning-library group, following the assignment's page 5 diagram.
@@ -157,6 +158,6 @@ Profile recognition uses four epsilon-NFAs and the documented canonical bucket o
 
 The candidate DSL now has a complete EBNF specification and executable textX grammar. Generate it with `generate_candidate_dsl(first, classification)` and validate it with `parse_candidate_dsl(source)`; see [API and examples](docs/candidate-language.md). Syntax and semantic errors prevent acceptance.
 
-The complete processing API, workflow CLI, HTML reports and interactive local UI are implemented. The currently published [poster](docs/poster/README.md) is an extraction/normalization draft with older metrics; it does not represent complete-project results. Final presentation materials and academic submission evidence still require completion. JSON Schema does not replace textX validation. Alphabetical skill order is not an automaton input sequence.
+The complete processing API, workflow CLI, HTML reports and interactive local UI are implemented. The [complete research poster](docs/poster/README.md) includes a printable vector PDF and an animated HTML walkthrough. Final presentation rehearsal and academic submission evidence still require completion. JSON Schema does not replace textX validation. Alphabetical skill order is not an automaton input sequence.
 
-When changing the catalog or schema, synchronize packaged resources, regenerate models and run tests. `tools/export_models.py` exports complete models; `tools/build_poster.py` is the existing poster generator.
+When changing the catalog or schema, synchronize packaged resources, regenerate models and run tests. `tools/export_models.py` exports complete models; `tools/build_poster.py` generates the complete SVG/HTML poster and optional vector PDF.

@@ -5,27 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ResumeLens — Ana Reference</title>
 <style>
-:root{color-scheme:light;--ink:#19313e;--muted:#546a75;--line:#dae5e8}
-*{box-sizing:border-box}body{margin:0;background:#edf3f4;color:var(--ink);font:16px/1.65 system-ui,sans-serif}
-main{max-width:980px;margin:40px auto;background:white;border:1px solid var(--line);border-radius:18px;overflow:hidden}
-header{padding:34px 40px;background:#123e4d;color:white}header p{margin:0;color:#b9dfe2}
-h1{margin:12px 0 6px;font-size:clamp(28px,5vw,42px);line-height:1.25;overflow-wrap:anywhere}
-.label{font-size:13px;letter-spacing:.12em;text-transform:uppercase}
-.content{padding:12px 40px 28px}section{padding:20px 0;border-bottom:1px solid var(--line)}
-h2{font-size:19px;margin:0 0 10px}ul{margin:0;padding-left:22px}li{overflow-wrap:anywhere}
-.empty{color:var(--muted);margin:0}.badges{display:flex;flex-wrap:wrap;gap:8px;padding:0;list-style:none}
-.badges li{border-radius:7px;background:#edf5f6;border:1px solid #d4e7e9;padding:5px 11px;font-size:13px;font-weight:600}
-.profiles .badges li{background:#dff2e9;border-color:#c3e1d2;color:#20513c}
-.profile-check{padding:14px 0;border-top:1px solid var(--line)}.profile-check h3{font-size:15px;margin:0 0 6px}
-.profile-check p{margin:6px 0}.profile-check .decision{font-weight:700}
-.columns{display:grid;grid-template-columns:1fr 1fr;gap:28px}footer{padding:20px 40px;background:#f6f9fa;color:var(--muted);font-size:13px}
+:root{color-scheme:light;--ink:#202a3d;--muted:#606c80;--line:#e2e5ee;--accent:#5145b4}
+*{box-sizing:border-box}body{margin:0;background:#f4f3fa;color:var(--ink);font:15px/1.7 system-ui,sans-serif}
+main{max-width:980px;margin:30px auto;background:white;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 16px 40px #29214508}
+header{padding:32px 36px;background:#eeebfa;border-top:5px solid var(--accent);position:relative}header p{margin:0;color:#68628b}
+h1{margin:14px 0 8px;font-size:clamp(28px,5vw,42px);line-height:1.2;letter-spacing:-1px;overflow-wrap:anywhere}
+.label{font-size:10px;font-weight:750;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)!important}
+.seal{display:inline-block;background:#fff;border:1px solid #d7d0ed;color:#514583;border-radius:6px;padding:3px 8px;font-size:10px;font-weight:650;margin-top:15px}
+.content{padding:8px 36px 26px}section{padding:23px 0;border-bottom:1px solid var(--line)}
+h2{font-size:17px;letter-spacing:-.25px;margin:0 0 12px}ul{margin:0;padding-left:20px}li{overflow-wrap:anywhere;font-size:13px}
+.empty{color:var(--muted);margin:0;font-size:13px}.badges{display:flex;flex-wrap:wrap;gap:8px;padding:0;list-style:none}
+.badges li{border-radius:6px;background:#f1eefb;border:1px solid #e0daf1;padding:5px 10px;font:600 11px/1.6 ui-monospace,monospace;color:#51458b}
+.profiles .badges li{background:#edf6ef;border-color:#d3e6d9;color:#216448;font-family:system-ui,sans-serif}
+.profile-check{padding:15px 16px;border:1px solid var(--line);background:#fcfcfe;border-radius:10px;margin:10px 0}.profile-check h3{font-size:12px;letter-spacing:.04em;margin:0 0 8px}
+.profile-check p{margin:6px 0;font-size:12px;color:var(--muted)}.profile-check .decision{display:inline-block;background:#eeebf8;color:var(--accent);border-radius:5px;padding:3px 8px;font-size:10px;font-weight:750}
+.columns{display:grid;grid-template-columns:1fr 1fr;gap:28px}footer{padding:20px 36px;background:#f8f8fc;color:var(--muted);font-size:11px}
 footer p{margin:0}@media(max-width:640px){main{margin:12px;border-radius:12px}header,.content,footer{padding-left:20px;padding-right:20px}.columns{grid-template-columns:1fr;gap:0}}
-@media print{body{background:white}main{margin:0;border:0}header{background:white;color:var(--ink)}header p{color:var(--muted)}}
+@media print{body{background:white}main{margin:0;border:0;box-shadow:none}header{background:white;color:var(--ink)}header p{color:var(--muted)}.profile-check{break-inside:avoid}}
 </style>
 </head>
 <body>
 <main>
-<header><p class="label">ResumeLens · Candidate report</p><h1>Ana Reference</h1><p>Qualifications and profile matches</p></header>
+<header><p class="label">ResumeLens · Candidate report</p><h1>Ana Reference</h1><p>Qualifications and profile matches</p><span class="seal">Validated candidate specification</span></header>
 <div class="content">
 <section class="profiles"><h2>Accepted professional profiles</h2><ul class="badges"><li>MACHINE LEARNING ENGINEER</li></ul></section>
 <section><h2>Qualification checks</h2><article class="profile-check"><h3>FULL STACK DEVELOPER</h3><p class="decision">Not accepted</p><ul><li>Missing one of: JavaScript or TypeScript.</li><li>Missing one of: React or Angular or Vue.</li><li>Missing one of: Node.js or Django or Spring Boot.</li></ul></article><article class="profile-check"><h3>MACHINE LEARNING ENGINEER</h3><p class="decision">Accepted</p><ul><li>All required qualification groups are present.</li></ul></article><article class="profile-check"><h3>BACKEND DEVELOPER</h3><p class="decision">Not accepted</p><ul><li>No supported backend framework is present. Languages found: Python.</li><li>Missing required qualification: REST API.</li></ul><p>Supported pairs — one complete pair is sufficient:</p><ul><li>Java + Spring Boot: missing Java and Spring Boot.</li><li>Python + Django: missing Django.</li><li>JavaScript + Node.js: missing JavaScript and Node.js.</li><li>TypeScript + Node.js: missing TypeScript and Node.js.</li></ul></article><article class="profile-check"><h3>DATA ENGINEER</h3><p class="decision">Not accepted</p><ul><li>Missing one of: ETL or Apache Airflow or Apache Spark.</li></ul></article></section>

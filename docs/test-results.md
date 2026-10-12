@@ -1,5 +1,27 @@
 # Verification results
 
+## Visual revision and Windows export reliability
+
+The complete suite was executed on Windows with Python 3.12.14: **191 tests,
+190 passed and one symlink-permission skip**. The reproducible verifier records
+actual counts and runtime/test fingerprints in `docs/poster/verification.json`.
+Earlier intermittent replacement errors were reproduced before adding bounded
+Windows file-lock retries. Tests cover transient locks, persistent denial and
+immediate propagation of unrelated permission errors, alongside existing backup
+and rollback tests. Persistent filesystem problems still follow documented recovery.
+
+Eight complete CLI/API bundles and eight HTTP/API/ZIP samples agree after report
+styling regeneration. Both later-regression evaluation reports reproduce: original
+fourteen cases match all labels/exports; separate eighteen-case evaluation retains
+four disagreements. Inputs, annotations, freezes and original reports are preserved.
+
+The UI was manually inspected in the in-app browser on desktop and at 390px width.
+Example processing, Unicode-aware evidence highlights and profile explanations
+were checked. The printable poster was rendered and visually inspected, and the
+HTML walkthrough's stage selection/play controls were checked. The earlier
+18-group Linux keyboard suite remains historical evidence, not a new Windows run.
+
+
 ## Original fourteen-case workflow regression integration
 
 Executed on Windows after the published baseline `477dee9`. The original fourteen

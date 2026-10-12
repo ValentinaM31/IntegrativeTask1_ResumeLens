@@ -43,6 +43,7 @@ function inputError(text, input, helpId) {
 
 function startOperation(text) {
   busy = true;
+  document.body.classList.add("is-processing");
   clearInvalidInputs();
   message(text);
   const previousFocus = document.activeElement;
@@ -55,6 +56,7 @@ function startOperation(text) {
 
 function finishOperation(target) {
   busy = false;
+  document.body.classList.remove("is-processing");
   fields.disabled = false;
   form.setAttribute("aria-busy", "false");
   // Respect a user who has already tabbed away while the request was pending.
@@ -67,6 +69,8 @@ function clearResults() {
   for (const details of byId("results").querySelectorAll("details")) details.open = false;
   byId("report-preview").removeAttribute("srcdoc");
   byId("profile-checks").replaceChildren();
+  byId("evidence-options").replaceChildren();
+  byId("evidence-content").replaceChildren();
   for (const id of ["first-json", "classification-json", "candidate-dsl"]) byId(id).textContent = "";
   for (const url of downloadUrls) URL.revokeObjectURL(url);
   downloadUrls = [];
@@ -90,6 +94,7 @@ textInput.addEventListener("input", () => {
   clearInvalidInputs();
   sourceText = textInput.value;
   fileInput.value = "";
+  byId("file-name").textContent = "No file selected";
   clearResults();
   updateCount();
   message("Resume edited. Process it to update the results.");
@@ -118,9 +123,11 @@ fileInput.addEventListener("change", async () => {
     if (!text.trim()) throw new Error("The selected file is empty.");
     if (encoder.encode(text).length > limit) throw new Error("Resume text exceeds the 64 KiB limit.");
     setInput(text);
+    byId("file-name").textContent = file.name;
     message(`Loaded ${file.name}. Ready to process.`);
   } catch (error) {
     fileInput.value = "";
+    byId("file-name").textContent = "No file selected";
     message(error.message, "error");
     fileInput.setAttribute("aria-invalid", "true");
     fileInput.setAttribute("aria-describedby", "file-help error-message");
@@ -140,6 +147,7 @@ byId("example-button").addEventListener("click", async () => {
     if (!response.ok) throw new Error("The example could not be loaded.");
     setInput(await response.text());
     fileInput.value = "";
+    byId("file-name").textContent = "No file selected";
     nameInput.value = "";
     message("Synthetic Full Stack example loaded. Select Process resume.");
   } catch (error) {
@@ -153,6 +161,7 @@ byId("example-button").addEventListener("click", async () => {
 byId("clear-button").addEventListener("click", () => {
   if (busy) return;
   form.reset();
+  byId("file-name").textContent = "No file selected";
   clearInvalidInputs();
   setInput("");
   message("Ready when you are.");
@@ -182,11 +191,16 @@ function renderResults(data) {
   const result = data.result;
   const profiles = result.classification.profiles;
   const accepted = result.classification.accepted_profiles.length;
+  byId("metric-skills").textContent = result.first_stage.normalized_skills.length;
+  byId("metric-profiles").textContent = accepted;
+  byId("metric-mentions").textContent = result.first_stage.extracted_skills.length;
+  byId("metric-exclusions").textContent = result.first_stage.excluded_mentions.length;
   byId("results-heading").textContent = result.validated_candidate.name || "Unnamed candidate";
   byId("summary").textContent = `${result.first_stage.normalized_skills.length} normalized qualifications · ${accepted} of 4 profiles accepted · Candidate specification validated`;
-  for (const profile of profiles) {
+  for (const [index, profile] of profiles.entries()) {
     const card = document.createElement("article");
     card.className = "profile-card" + (profile.accepted ? " accepted" : "");
+    card.style.setProperty("--delay", `${index * 60}ms`);
     const title = document.createElement("h4");
     title.textContent = profileNames[profile.profile] || profile.profile;
     card.append(title);
@@ -225,6 +239,47 @@ function renderResults(data) {
   downloadLink("zip-download", zip, "application/zip");
   byId("results").hidden = false;
   byId("results-link").hidden = false;
+  renderEvidence(result);
+}
+
+function renderEvidence(result) {
+  const first = result.first_stage;
+  const characters = Array.from(result.source_text);
+  const options = byId("evidence-options");
+  const content = byId("evidence-content");
+  function select(button, mentions, excluded) {
+    for (const item of options.children) item.setAttribute("aria-pressed", String(item === button));
+    content.replaceChildren();
+    for (const mention of mentions) {
+      const row = document.createElement("div");
+      row.className = "evidence-row";
+      const label = document.createElement("p");
+      label.textContent = `${mention.raw} · characters ${mention.start}–${mention.end}${excluded ? ` · ${mention.reason}` : " · positive mention"}`;
+      const context = document.createElement("code");
+      const mark = document.createElement("mark");
+      mark.textContent = characters.slice(mention.start, mention.end).join("");
+      context.append(document.createTextNode(characters.slice(Math.max(0, mention.start - 36), mention.start).join("")), mark,
+        document.createTextNode(characters.slice(mention.end, mention.end + 36).join("")));
+      row.append(label, context);
+      content.append(row);
+    }
+  }
+  function option(label, mentions, excluded = false) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = label;
+    button.setAttribute("aria-pressed", "false");
+    button.addEventListener("click", () => select(button, mentions, excluded));
+    options.append(button);
+    if (options.children.length === 1) select(button, mentions, excluded);
+  }
+  for (const canonical of first.normalized_skills) {
+    const mentions = first.normalization_evidence.filter((link) => link.canonical === canonical)
+      .map((link) => first.extracted_skills[link.extracted_index]);
+    option(canonical.replaceAll("_", " "), mentions);
+  }
+  if (first.excluded_mentions.length) option(`Excluded mentions (${first.excluded_mentions.length})`, first.excluded_mentions, true);
+  if (!options.children.length) content.textContent = "No cataloged qualification mentions were found in this text.";
 }
 
 form.addEventListener("submit", async (event) => {

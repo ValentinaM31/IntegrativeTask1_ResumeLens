@@ -42,4 +42,6 @@ jobs:
       - name: Verify HTTP processing and downloads
         run: python tools/check_web_acceptance.py
       - name: Verify original annotated workflow regression
-        run: python tools/evaluate_workflow.py --check
+        run: python tools/evaluate_workflow.py --allow-changed-rules --output-dir data/workflow-evaluation/visual-update --check
+      - name: Verify preannotated later regression
+        run: python tools/evaluate_preannotated.py --allow-changed-rules --output-dir data/preannotated-evaluation/visual-update --check

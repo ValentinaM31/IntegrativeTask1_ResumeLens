@@ -179,3 +179,12 @@ stored-report reproduction and the real evaluation CLI. The complete suite has
 181 Python tests; the eighteen previously verified browser groups are separate.
 Native Windows execution of this extension remains necessary. Presentation/poster
 materials and contribution scheduling are separate from this evaluator.
+
+## Visual-revision regression
+
+The visual revision changes rendering/UI sources and adds bounded Windows file-
+lock retries. The original eighteen-case annotations, input bytes, protocol and
+baseline reports remain unchanged. Explicit `--allow-changed-rules` execution
+creates a later comparison in `data/preannotated-evaluation/visual-update/`.
+All eighteen pipelines remain valid; fourteen cases fully match labels and the
+same four disagreements remain. This is later regression, not a new freeze.

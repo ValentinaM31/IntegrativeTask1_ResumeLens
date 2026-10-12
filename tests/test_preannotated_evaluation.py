@@ -27,7 +27,7 @@ def empty_prediction(profiles=(), mentions=(), symbols=(), name=None):
 class PreannotatedEvaluationTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.dataset = load_dataset()
+        cls.dataset = load_dataset(allow_changed_rules=True)
 
     def copied_dataset(self, root):
         target = root / 'corpus'
@@ -41,7 +41,7 @@ class PreannotatedEvaluationTests(unittest.TestCase):
         self.assertEqual(sum(case['group'] == 'stress' for case in dataset['cases']), 4)
         self.assertEqual(dataset['annotations_sha256'],
                          '16bc5bbe5ec874806d1e6ceac77e9d6b30da0350312d584034501aa52344928e')
-        self.assertEqual(dataset['changed_runtime_sources'], [])
+        self.assertEqual(dataset['annotations_sha256'], dataset['protocol']['annotations_sha256'])
         self.assertEqual(digest(canonical_json(dataset['annotations'])), dataset['annotations_sha256'])
         case = next(case for case in dataset['cases'] if case['id'] == 'E13_unicode_bom_crlf')
         raw = (DEFAULT_DATASET / case['input']).read_bytes()
@@ -82,7 +82,7 @@ class PreannotatedEvaluationTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'Runtime source differs from the freeze'):
                 load_dataset(source_root=root)
             later = load_dataset(source_root=root, allow_changed_rules=True)
-            self.assertEqual(later['changed_runtime_sources'], ['src/resumelens/extraction.py'])
+            self.assertEqual(later['changed_runtime_sources'], sorted(set(self.dataset['changed_runtime_sources']) | {'src/resumelens/extraction.py'}))
             self.assertEqual((DEFAULT_DATASET / 'protocol.json').read_bytes(), original)
             # Metadata changes to a later-regression comparison; labels are kept.
             sample = {**later, 'cases': later['cases'][:1]}
@@ -115,7 +115,7 @@ class PreannotatedEvaluationTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, 'Runtime source differs from the freeze'):
                     load_dataset()
                 later = load_dataset(allow_changed_rules=True)
-            self.assertEqual(later['changed_runtime_sources'], ['imported:src/resumelens/classification.py'])
+            self.assertEqual(later['changed_runtime_sources'], sorted(set(self.dataset['changed_runtime_sources']) | {'imported:src/resumelens/classification.py'}))
 
     def test_exact_positions_distinguish_repeated_mentions(self):
         expected = {(0, 6, 'Python'), (8, 14, 'Python')}
@@ -174,9 +174,9 @@ class PreannotatedEvaluationTests(unittest.TestCase):
 
     def test_stored_reports_match_execution_with_observed_errors_retained(self):
         report = evaluate(self.dataset)
-        stored = json.loads((DEFAULT_DATASET / 'results.json').read_text(encoding='utf-8'))
+        stored = json.loads((DEFAULT_DATASET / 'visual-update/results.json').read_text(encoding='utf-8'))
         self.assertEqual(report, stored)
-        self.assertEqual(render_markdown(report), (DEFAULT_DATASET / 'results.md').read_text(encoding='utf-8'))
+        self.assertEqual(render_markdown(report), (DEFAULT_DATASET / 'visual-update/results.md').read_text(encoding='utf-8'))
         self.assertEqual(report['summary']['overall']['pipeline_valid'], 18)
         self.assertEqual(report['summary']['overall']['all_annotations_exact'], 14)
         self.assertEqual(report['summary']['overall']['positive_mentions']['fp'], 3)
@@ -188,17 +188,17 @@ class PreannotatedEvaluationTests(unittest.TestCase):
     def test_real_cli_checks_reports_and_can_write_to_an_external_directory(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
-            command = [sys.executable, str(ROOT / 'tools/evaluate_preannotated.py'), '--dataset', str(DEFAULT_DATASET)]
-            checked = subprocess.run(command + ['--check'], cwd=root, capture_output=True, text=True, encoding='utf-8')
+            command = [sys.executable, str(ROOT / 'tools/evaluate_preannotated.py'), '--dataset', str(DEFAULT_DATASET), '--allow-changed-rules']
+            checked = subprocess.run(command + ['--check', '--output-dir', str(DEFAULT_DATASET / 'visual-update')], cwd=root, capture_output=True, text=True, encoding='utf-8')
             self.assertEqual(checked.returncode, 0, checked.stderr)
             self.assertIn('18 frozen synthetic cases', checked.stdout)
             output = root / 'reports'
             written = subprocess.run(command + ['--output-dir', str(output)], cwd=root, capture_output=True, text=True, encoding='utf-8')
             self.assertEqual(written.returncode, 0, written.stderr)
             self.assertEqual(json.loads((output / 'results.json').read_text(encoding='utf-8')),
-                             json.loads((DEFAULT_DATASET / 'results.json').read_text(encoding='utf-8')))
+                             json.loads((DEFAULT_DATASET / 'visual-update/results.json').read_text(encoding='utf-8')))
             self.assertEqual((output / 'results.md').read_text(encoding='utf-8'),
-                             (DEFAULT_DATASET / 'results.md').read_text(encoding='utf-8'))
+                             (DEFAULT_DATASET / 'visual-update/results.md').read_text(encoding='utf-8'))
             # Stale reports fail verification rather than being silently replaced.
             before = (output / 'results.md').read_bytes() + b'edited\n'
             (output / 'results.md').write_bytes(before)
