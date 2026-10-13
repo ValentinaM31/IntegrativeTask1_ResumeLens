@@ -1,5 +1,4 @@
 """Export septuples, complete relations and graphs from executable FSTs."""
-import csv
 from html import escape
 import json
 from pathlib import Path
@@ -66,11 +65,6 @@ def main():
                  "delta": [[s, c, t] for s, c, t, _ in transitions],
                  "omega": [{"transition": [s, c, t], "output": out} for s, c, t, out in transitions]}
         (DEST / f"{category}.json").write_text(json.dumps(model, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        with (DEST / f"{category}.csv").open("w", encoding="utf-8", newline="") as stream:
-            writer = csv.writer(stream)
-            writer.writerow(["source", "input", "target", "output"])
-            writer.writerows((s, c, t, " ".join(out) if out else "ε") for s, c, t, out in transitions)
-        machine.write_as_dot(str(DEST / f"{category}.dot"))
         export_svg(category, machine, transitions)
         summary.append({"category": category, "states": len(machine.states),
                         "transitions": len(transitions), "final_states": len(machine.final_states)})

@@ -214,7 +214,14 @@ The return object has `accepted_profiles` (unique, alphabetical) and `profiles`
 `ignored_for_pattern`, plus `explanations` and `pair_diagnostics`. The latter fields
 describe missing groups and configured compatible-pair alternatives after the
 automaton decision. They neither infer new skills nor change the accepted language.
-See [diagnostic fields and examples](profile-explanations.md).
+Each profile includes `explanations` and `pair_diagnostics`. The latter is null
+without a pair rule; otherwise it records `status`, present languages/frameworks
+and all configured pair alternatives with their missing symbols. Status is
+`matched`, `incompatible`, `missing_language`, `missing_framework` or `missing_both`.
+One complete pair is enough, but the other required groups remain mandatory.
+For example, Java + Django + SQL + REST API + Git is rejected by Backend; adding
+Spring Boot or Python completes an admitted pair. Diagnostics follow actual DFA
+acceptance and configuration; they do not create another recognition rule.
 Groups preserve their configured alternative order. Empty
 skills are valid and reject all four profiles. Invalid symbols/collections raise ValueError.
 
@@ -232,16 +239,14 @@ invalid configurations and the equivalence of exported transition relations.
 The deterministic checks additionally cover total transitions, the rejecting sink,
 compatible-pair memory and equivalence with the earlier qualification language.
 
-## Limits and next stages
+## Limits and complete workflow
 
 Recognition assesses these finite team-defined patterns using the extracted evidence.
 It cannot recover an omitted/negated skill, prove expertise or detect arbitrary new
 technologies. Education and experience are retained by stage 1 but are not numerical
-requirements in these profile patterns. The separate textX grammar and candidate DSL are provided by the following
-[candidate-language increment](candidate-language.md). The following
-[complete-workflow increment](complete-workflow.md) generates HTML; the
-[fourth increment](local-ui.md) adds the interactive UI. Both consume the executed
-profile recognition results.
+requirements in these profile patterns. The [candidate language](candidate-language.md)
+validates the recognized results before HTML generation. The CLI and local browser
+interface use this same workflow; see [usage](../README.md#run-the-application).
 
 The official [pyformlang finite-automaton API](https://pyformlang.readthedocs.io/en/latest/modules/finite_automaton.html)
 documents deterministic automata and acceptance execution. The project pins

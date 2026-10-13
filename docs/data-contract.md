@@ -19,7 +19,9 @@ Version 1.0 is defined by `contracts/first_stage.schema.json`; the same folder c
 
 ## Output scope
 
-The 1.0 object does not contain `accepted_profiles`. Those results require automata over profile-specific sequences and a later model. Sample profile expectations are design scenarios, not executed classifications.
+The 1.0 object does not contain `accepted_profiles`. `classify_skills()` returns
+recognition results separately after executing the profile DFAs. Sample expectations
+are in `data/expected_samples.json`; executed outputs are in `data/classification/`.
 
 ## Reference example
 

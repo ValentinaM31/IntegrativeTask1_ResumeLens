@@ -9,7 +9,7 @@ let chromium;
 try {
   ({chromium} = require(process.env.RESUMELENS_PLAYWRIGHT_MODULE || localModule));
 } catch (error) {
-  console.error("Install the optional browser tools as described in docs/keyboard-navigation.md.");
+  console.error("Install the optional browser tools as described in README.md.");
   process.exit(2);
 }
 const url = process.env.RESUMELENS_UI_URL;

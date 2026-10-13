@@ -1,34 +1,22 @@
-# ResumeLens research poster
+# Research poster
 
-The research poster follows one skill claim through regular-expression extraction,
-finite-state transducer normalization, deterministic finite automaton
-recognition and textX validation. Three columns follow one sample from original
-evidence to profile recognition, validated DSL and a candidate report. Separate
-evaluation figures expose the difference between validity and exact annotations.
+The three-column A1 landscape poster follows one candidate through source
+evidence, FST normalization, accepted/rejected DFA traces, textX validation and
+HTML. It presents formal tuples, design decisions and separate evaluation results.
 
-## Files and presentation modes
+## Files
 
-- [Vector SVG](resumelens-poster.svg): editable, scalable A1 landscape artwork.
-- [Printable PDF](resumelens-poster.pdf): the same vector scene, with embedded fonts.
-- [Animated walkthrough](resumelens-poster.html): a local HTML presentation with
-  selectable stages, explanations, play/pause and complete-overview controls.
-- `verification.json`: actual full-suite outcome, platform, date and runtime/test
-  source fingerprints. It is evidence from an executed run, not an accuracy score.
-- [Design notes](design-notes.md): layout, physical typography, design references
-  and the limits of the readability checks.
-- `layout-check.json`: generated paper dimensions, font sizes, column count,
-  accents and the word count across all SVG labels.
+- [Printable vector PDF](resumelens-poster.pdf).
+- [Editable SVG](resumelens-poster.svg).
+- [Animated HTML walkthrough](resumelens-poster.html), with stage selection,
+  play/pause, overview and enlargement. It starts in overview; animation begins
+  after Play and respects reduced motion. Printing uses the complete static scene.
+- `verification.json`: executed suite outcome and source/report fingerprints.
+- `layout-check.json`: generated dimensions, typography and label word count.
 
-The HTML starts in the complete overview. Automatic progression occurs only after
-selecting Play walkthrough, pauses when the tab is hidden and respects reduced
-motion. Stage selection scrolls to its formal-model explanation. An enlargement
-control makes detailed diagrams easier to inspect on small screens. Native
-buttons support keyboard use. Printing always restores the
-complete static poster. The PDF itself is static.
+## Rebuild
 
-## Rebuild from measured results
-
-Run from an installed checkout:
+From an installed checkout:
 
 ```powershell
 .\.venv\Scripts\python.exe tools/evaluate_workflow.py --allow-changed-rules --output-dir data/workflow-evaluation/visual-update --check
@@ -37,69 +25,50 @@ Run from an installed checkout:
 .\.venv\Scripts\python.exe tools/build_poster.py
 ```
 
-The verifier records an actual complete test run. A stale/missing source fingerprint
-or a failed run prevents the builder from presenting successful test counts.
-The SVG and HTML generation uses the standard library. PDF generation additionally
-requires ReportLab and Arial or DejaVu TrueType fonts:
+The verifier runs the complete Python suite. Missing, stale or unsuccessful
+verification prevents successful figures from being displayed. SVG/HTML generation
+uses the standard library. PDF generation additionally requires ReportLab and
+Arial or DejaVu TrueType fonts:
 
 ```powershell
 .\.venv\Scripts\python.exe -m pip install reportlab
 .\.venv\Scripts\python.exe tools/build_poster.py --pdf
 ```
 
-ReportLab is a poster-build dependency, not an application runtime dependency. It
-is installed only when rebuilding the PDF. The default print size is **A1 landscape,
-841 by 594 mm**. A1 was selected to support readable figures and the suggested
-display font sizes; it is not a mandatory size stated by the assignment.
+ReportLab is needed only to rebuild the PDF. The default size is **841 × 594 mm**;
+A1 is a legibility choice, not an assignment requirement. `--paper a2` produces a
+smaller handout at the same filenames; rebuild with the default to restore A1.
 
-An A2 desk-reading handout can be generated with:
+## Visual design
 
-```powershell
-.\.venv\Scripts\python.exe tools/build_poster.py --pdf --paper a2
-```
+Three columns, navy/teal accents, dark text on light backgrounds and short labeled
+graphics follow the [CWU poster guide](https://libguides.lib.cwu.edu/creatingposters).
+Checks/crosses and numbers distinguish results independently of color. Approximate
+A1 physical font sizes are 101.7 pt for the title, 60.8 pt for authors, 44.6 pt for
+headings and 32.2 pt for main text; diagram labels and references are smaller.
+No exact text/graphic/empty-space percentages or viewing-distance readability are
+claimed. Digital inspection checks clipping and glyphs; a physical print check remains useful.
 
-This option regenerates the same filenames at a smaller physical size. Its text
-is smaller than the A1 display version. Run the default build again to restore
-the A1 deliverables. Screen enlargement does not change the PDF's print size.
-See the design notes for the intended display font roles. A physical reading test
-at four to six feet has not been performed.
+## Evidence and interpretation
 
-## Method and evidence limits
+The accepting JS FST path abbreviates state names; empty output consumes an input
+character. The two Full Stack traces use actual DFA states `q0`–`q5` and `q_dead`.
+`NODE_JS` from `q1` enters the sink when frontend evidence is missing. The builder
+checks these transitions against the exported DFA. Full models remain in
+[transducers](../transducers.md) and [profile automata](../automata/README.md).
+The printed resume fragment is an excerpt; its highlighted span addresses the
+complete LF sample. The EBNF/DSL example comes from the actual
+[candidate language](../candidate-language.md), and HTML follows its validation.
 
-The FST illustrates the accepting JS path with abbreviated state names. Its
-empty output consumes the input character; it is not an empty-input transition.
-The Full Stack traces use the actual DFA state names `q0` through `q5` and
-`q_dead`: the complete sample accepts, while `NODE_JS` from `q1` rejects because
-the frontend group is missing. The repeated `q1` in the second trace denotes the
-same state. The sink self-loop labelled Σ covers the whole alphabet. Other
-transitions and group loops remain in the complete
-[transducer models](../transducers.md) and [profile automata](../automata/README.md).
-The builder checks the worked transitions against the exported DFA before drawing.
+The grid follows the 18-case report order and displays all four disagreements:
+**14/18 exact annotation matches**, with **18/18 structurally valid pipelines**.
+The separate workflow regression shows **14/14 exact matches**. These results are
+not combined. Methods and detailed figures are in the
+[18-case evaluation](../preannotated-evaluation.md),
+[14-case regression](../workflow-evaluation.md) and
+[verification results](../test-results.md), which also retain the original
+23-case extraction method. Input/annotation freezes remain unchanged. Selected
+synthetic results do not measure population accuracy, proficiency or hiring outcomes.
 
-The highlighted JS positions refer to the complete LF Alex Sample input; the
-fragment printed on the poster is a visual excerpt. The EBNF `SkillEntry` rule and
-DSL accepted-profile excerpt come from the actual
-[candidate-language specification](../candidate-language.md). HTML is generated
-only after syntax and semantic validation. The displayed candidate outcome matches
-the stored sample classification. All four profiles run through the same workflow.
-
-The eighteen-cell grid follows the actual report's case order, left to right and
-then top to bottom. Filled checks indicate exact annotation matches; outlined
-crosses indicate differences. Counts, reports, evaluator sources and the runtime
-are tied to hashes recorded in `verification.json`. Missing or stale verification
-shows pending figures instead of successful counts.
-
-The original [23-case extraction evaluation](../evaluation.md),
-[14-case workflow regression](../workflow-evaluation.md) and separate
-[18-case preannotated evaluation](../preannotated-evaluation.md) retain distinct
-labels, protocols and figures. Later comparisons of the current runtime are stored
-in each dataset's `visual-update/` directory. The main poster separates 14/14 exact
-workflow cases from 14/18 exact preannotated cases; all 18 preannotated pipelines
-are structurally valid. These measures have different meanings. The four known
-interpretation errors remain visible. Detailed mention and profile metrics and
-the historical extraction results stay in the linked reports.
-Original freezes are preserved. No population accuracy, proficiency or hiring
-outcome is inferred. Additional instructor profile specifications remain unverified.
-
-The former partial poster is superseded; its earlier version remains recoverable
-from Git history.
+All diagrams are generated for this project. The poster cites formal-language
+sources discussed in the [literature review](../literature-review.md).

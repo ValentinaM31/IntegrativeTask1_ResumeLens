@@ -12,7 +12,7 @@ from resumelens.web import create_server
 def main():
     node = shutil.which('node')
     if node is None:
-        print('Browser checks require Node.js. See docs/keyboard-navigation.md.', file=sys.stderr)
+        print('Browser checks require Node.js. See README.md for setup.', file=sys.stderr)
         return 2
     script = Path(__file__).with_name('ui_keyboard_checks.cjs')
     with create_server(0) as server:

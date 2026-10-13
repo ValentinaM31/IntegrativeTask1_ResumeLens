@@ -1,10 +1,9 @@
 # Candidate profile language
 
-The candidate-language increment defined the DSL, generated it from stages 1–3
-and validated it with textX 4.4.0. HTML is implemented in the following
-[complete-workflow increment](complete-workflow.md); the interactive input UI is
-provided by the [fourth increment](local-ui.md). The original first-stage JSON 1.0
-remains unchanged.
+The candidate domain-specific language (DSL) represents results from stages 1–3
+and is validated with textX 4.4.0 before HTML generation. The
+[README](../README.md) explains the complete CLI and browser interface.
+The first-stage JSON 1.0 remains the extraction/normalization contract.
 
 ## Representation
 
@@ -140,9 +139,8 @@ candidate = parse_candidate_dsl(source)
 assert candidate["accepted_profiles"] == ["FULL_STACK_DEVELOPER"]
 ```
 
-The following [complete-workflow increment](complete-workflow.md) implements HTML
-from successfully validated specifications and adds a separate end-to-end CLI.
-Those components were not introduced in the candidate-language increment itself.
+The complete workflow renders HTML from this validated specification. See
+[usage](../README.md#run-the-application) for the end-to-end command and interface.
 
 ## Examples and checks
 
@@ -156,10 +154,11 @@ JSON. `data/dsl/invalid/` has five syntax/lexical errors and three semantic erro
 `data/dsl/validation.json` records expected outcomes and reasons after executing the
 checks. These are synthetic/regression examples, not a blind accuracy benchmark.
 
-Sixteen new tests verify records and contacts, empty sections, null/string names,
+Tests verify records and contacts, empty sections, null/string names,
 Unicode and escaping, all 26 skill symbols, errors, duplicates, inconsistent
 classification, three simultaneous profiles, resource packaging, input immutability
-and every preserved valid/invalid example. That increment brought the suite to 67 tests; the complete workflow adds 22, for 89 total.
+and every preserved valid/invalid example. Current executed outcomes are in
+[verification results](test-results.md).
 
 ## Sources consulted
 
@@ -167,6 +166,5 @@ and every preserved valid/invalid example. That increment brought the suite to 6
 - textX [metamodel](https://textx.github.io/textX/metamodel.html), for parser construction.
 - textX [parser configuration](https://textx.github.io/textX/parser_config.html), for keyword boundaries.
 
-Official API documentation was consulted before finalizing this increment. The
-project pins and checks textX 4.4.0 rather than assuming the latest documentation
-identifies the installed version.
+The project pins and checks textX 4.4.0; the documentation's displayed version
+does not identify the installed package.

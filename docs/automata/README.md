@@ -1,7 +1,7 @@
 # Executable profile automata
 
-Each profile has a complete JSON five-tuple, CSV transition function, DOT graph
-and standalone SVG transition diagram. The files are exported from the actual
+Each profile has a complete JSON five-tuple and standalone SVG transition
+diagram. The files are exported from the actual
 `pyformlang.finite_automaton.DeterministicFiniteAutomaton` objects.
 
 The tuple fields are `Q`, `Sigma`, `delta`, `q0` and `F`. Metadata identifies
@@ -12,8 +12,7 @@ There are no epsilon transitions. Symbols outside the finite alphabet reject.
 The SVG presents one complete outgoing-transition panel per source state. Commas
 on an edge separate alternative input symbols. Identical names in different
 panels denote the same state, including self-loops drawn to another occurrence
-of that name. All sink transitions are explicit; nothing is omitted. The DOT
-file supplies the conventional single-graph view of the same transition function.
+of that name. All sink transitions are explicit; nothing is omitted.
 The panel format keeps Backend's memory states and long labels readable.
 
 | Profile | States | Alphabet size | Transition triples | Diagram |

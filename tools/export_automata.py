@@ -1,5 +1,4 @@
 """Export complete DFA five-tuples, total tables and faithful transition panels."""
-import csv
 from html import escape
 import json
 from pathlib import Path
@@ -127,11 +126,6 @@ def main():
                  "delta": [list(row) for row in transitions], "q0": "q0",
                  "F": sorted(str(state.value) for state in machine.final_states)}
         (DEST / (profile["id"] + ".json")).write_text(json.dumps(model, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        with (DEST / (profile["id"] + ".csv")).open("w", encoding="utf-8", newline="") as stream:
-            writer = csv.writer(stream)
-            writer.writerow(["source", "input", "target"])
-            writer.writerows(transitions)
-        machine.write_as_dot(str(DEST / (profile["id"] + ".dot")))
         export_svg(profile, machine, transitions)
         summary.append({"profile": profile["id"], "states": len(machine.states),
                         "symbols": len(machine.symbols), "transitions": len(transitions)})

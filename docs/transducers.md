@@ -29,14 +29,14 @@ The machine accepts an input only after consuming every character and reaching a
 | databases | 67 | 66 | 7 | MONGODB, MYSQL, POSTGRESQL, SQL |
 | tools_qualifications | 207 | 206 | 16 | AIRFLOW, APACHE_SPARK, DOCKER, ETL, GIT, ML_MODEL, REST_API |
 
-Each JSON lists Q, Sigma, Gamma, delta, omega, q0 and F. CSV rows combine δ and ω. SVGs show every state/path; open in a browser and zoom. `␠` means space; double circles mark final states; output symbols appear below the last edge.
+Each JSON lists Q, Sigma, Gamma, delta, omega, q0 and F. SVGs show every state/path; open in a browser and zoom. `␠` means space; double circles mark final states; output symbols appear below the last edge.
 
-| Machine | Septuple | δ and ω | Graph | DOT |
-|---|---|---|---|---|
-| Languages | [JSON](models/languages.json) | [CSV](models/languages.csv) | [SVG](models/languages.svg) | [DOT](models/languages.dot) |
-| Frameworks/libraries | [JSON](models/frameworks_libraries.json) | [CSV](models/frameworks_libraries.csv) | [SVG](models/frameworks_libraries.svg) | [DOT](models/frameworks_libraries.dot) |
-| Databases | [JSON](models/databases.json) | [CSV](models/databases.csv) | [SVG](models/databases.svg) | [DOT](models/databases.dot) |
-| Tools/qualifications | [JSON](models/tools_qualifications.json) | [CSV](models/tools_qualifications.csv) | [SVG](models/tools_qualifications.svg) | [DOT](models/tools_qualifications.dot) |
+| Machine | Complete septuple and relations | Diagram |
+|---|---|---|
+| Languages | [JSON](models/languages.json) | [SVG](models/languages.svg) |
+| Frameworks/libraries | [JSON](models/frameworks_libraries.json) | [SVG](models/frameworks_libraries.svg) |
+| Databases | [JSON](models/databases.json) | [SVG](models/databases.svg) |
+| Tools/qualifications | [JSON](models/tools_qualifications.json) | [SVG](models/tools_qualifications.svg) |
 
 ## Explained paths
 
