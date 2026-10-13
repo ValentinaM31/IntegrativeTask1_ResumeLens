@@ -1,9 +1,11 @@
 # Explaining profile requirements
 
-Recognition still calls the real epsilon-NFA's `accepts(sequence)` method to
+Recognition calls the real complete DFA's `accepts(sequence)` method to
 decide each profile. The diagnostic layer describes the configured requirements
 after that decision; it does not infer skills, score proficiency or replace the
-automaton. The four profile patterns and their exported machines are unchanged.
+automaton. The four qualification patterns are unchanged; current exported
+machines use the deterministic representation described in
+[profile recognition](profile-recognition.md).
 
 ## Additional classification fields
 

@@ -24,10 +24,15 @@ Alphabetical `normalized_skills` order is not automaton reading order. Recogniti
 
 `from resumelens import classify_skills` exposes stage 3. Pass `result["normalized_skills"]`;
 the returned dictionary has `accepted_profiles` and four `profiles` results, including
-the actual input sequence and rejection explanations. It uses real epsilon-NFA
+the actual input sequence and rejection explanations. It uses real complete-DFA
 acceptance and leaves `result` unchanged. Several profiles may be accepted. An empty
 collection rejects all profiles; unknown/non-string symbols or invalid collections
 raise ValueError. See [recognition definitions and examples](profile-recognition.md).
+
+The current machines use `pyformlang.finite_automaton.DeterministicFiniteAutomaton`: one next state
+for each state/alphabet-symbol pair, with an explicit rejecting sink and no empty
+transitions. Changing from the earlier epsilon-NFA representation preserves the
+configured qualification conditions, public result fields and canonical ordering.
 
 Each profile result additionally exposes `explanations` (English messages for the
 actual decision) and `pair_diagnostics` (null for profiles without a pair rule;

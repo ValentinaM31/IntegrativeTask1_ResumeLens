@@ -1,10 +1,141 @@
 # Verification results
 
+## Complete DFA recognition and poster revision - 2026-10-12
+
+The current recognizers are directly constructed `DeterministicFiniteAutomaton`
+objects with one next state for every state/alphabet-symbol pair, no epsilon
+transitions and an explicit `q_dead` sink. Earlier records below retain their
+original epsilon-NFA scope. Profile criteria, canonical ordering, evidence and
+output contracts are unchanged.
+
+| Check | Executed outcome |
+|---|---|
+| Installed wheel on Windows, Python 3.12.14 | 194 tests: 193 passed, one permission-dependent symlink test skipped; zero errors/failures |
+| Independent required-alphabet subset test | All 17,664 combinations agree with configured required-group/pair conditions |
+| Language equivalence with previous exported models | Product-state exploration agrees on acceptance for all words over each profile alphabet; 7/7/121/6 reachable product states for Full Stack/ML/Backend/Data |
+| Complete formal exports | Full Stack 7 states/13 symbols/91 transitions; ML 7/10/70; Backend 19/13/247; Data 6/8/48; actual and reconstructed transitions agree |
+| Original CLI/API | Six scenarios agree, including four stored references and two explicit-context cases |
+| Complete CLI/API | Eight samples agree in all four files |
+| Local HTTP/API/ZIP | Eight samples agree; all four ZIP members verified |
+| Later workflow regression | 14/14 annotation/export matches; original inputs and labels preserved |
+| Later preannotated regression | 14/18 exact annotation cases; 18/18 valid pipelines; all four known disagreements retained |
+| Design/dependencies | Vocabulary, profiles, fixtures and contract checks pass; pip check reports no broken requirements |
+| Windows/Linux checkout policies | With `core.autocrlf=true` and `false`, all eight reference samples retain LF and all 32 frozen inputs match their exact byte hashes; dataset-local attributes preserve intentional BOM/CRLF |
+| Repository/document review | 197 local Markdown links resolve; no merge markers, tracked local environments, delivery archives or patch files found |
+| Installed-package browser review | All eighteen keyboard scenario groups pass on Windows Chrome 154.0.8037.59, including source fidelity, downloads, recovery, narrow layout, reduced motion and high contrast |
+| Poster PDF/HTML review | One A1 landscape vector page, readable glyphs, three live links, current figures and no observed overlap; four-stage selection, play/pause, timed progression, overview, enlargement, eighteen case tooltips and reduced-motion behavior pass without JavaScript errors |
+
+The product search uses the previous exported epsilon-NFA transition relations
+and their epsilon closures against the new DFA. Starting from both initial
+configurations, it checks final-state agreement at every reachable pair and
+explores each alphabet symbol. Its finite reachable product has no disagreeing
+pair, establishing language equivalence beyond only the projected test inputs.
+The independent subset check is a separate test of the configured profile
+conditions; it is not an additional resume-accuracy dataset or 17,664 unit tests.
+
+The poster was rebuilt from the current evaluation reports and verified-source
+snapshot. Runtime/test hashes and evaluator/report hashes suppress successful
+figures if the inputs become stale. The case grid follows actual per-case results.
+The new A1 landscape layout follows one candidate through source spans, alias
+normalization, accepted/rejected DFA traces, DSL validation and HTML.
+
+At the time of this local verification, the GitHub repository was public and its
+latest published revision was `61d65e6`. That revision failed the original-command
+check on Windows while both Ubuntu jobs passed. This revision adds an explicit LF
+fixture policy, verified under both checkout modes. Remote confirmation must come
+from the GitHub Actions run for the newly published commit; local checks alone
+do not establish a passing remote run.
+
+## Horizontal poster and worked model paths - 2026-10-12
+
+The poster reviewed in this earlier run was one A1 landscape page (841 by 594 mm), with three central
+columns, two accents and 278 words across all SVG labels. Physical font sizes
+were read from the PDF: title 101.7 pt, authors 60.8 pt, headings 44.6 pt and main
+text 32.2 pt. Layout metadata is in `docs/poster/layout-check.json`; design
+references and the unmeasured viewing-distance/area limits are in
+`docs/poster/design-notes.md`.
+
+The PDF was rendered and visually inspected after spacing repairs. Both synthetic
+evaluation results reproduce without changing their inputs or annotations.
+Their denominators remain separate; the four observed interpretation gaps remain.
+The PDF includes live links to the formal-model literature and project methods.
+The A2 handout option was also generated and checked in a temporary directory.
+
+The horizontal HTML was checked in the Windows in-app browser: stage selection,
+automatic progression, pause, enlargement, fitting and complete-overview reset
+worked. No browser console warnings or errors were recorded. JavaScript syntax
+and local documentation links were checked after the redesign.
+
+`tools/export_model_examples.py --check` verifies four compact accepting paths
+for JS, React.js, Postgres and Git SCM. All displayed edges come from executable
+FST transitions; original state names, consumed input, empty outputs and final
+states are preserved. Markdown provides Mermaid diagrams and trace tables in
+`docs/models/examples/`. The views are subsets of the full category models,
+rather than separate production machines. Existing full exports are unchanged.
+
+Runtime and test-source fingerprints still match the executed installed-package
+review below. This presentation revision does not claim a new full-suite run or
+physical poster-reading test.
+
+## Portrait poster review - 2026-10-12
+
+The poster was reorganized as one A2 portrait page (420 by 594 mm). Its vector
+PDF was rendered and visually inspected after spacing and symbol repairs.
+The SVG and PDF retain separate fourteen-case, eighteen-case and historical
+extraction figures. The actual JavaScript-family regex subset and the full-source
+JS span are displayed; schematic state paths and the minimal DSL example are
+explicitly identified. Runtime/test fingerprints remain those of the executed
+192-test installed-package review below.
+
+The HTML walkthrough was checked in the Windows in-app browser: selecting a
+stage updates the explanation/highlight and scrolls to it; play progresses between
+stages; pause, enlargement, fitting and complete-overview restoration work.
+No browser console warnings or errors were recorded during these checks.
+JavaScript syntax and local documentation links were also checked.
+
+## Final installed-package review - 2026-10-12
+
+A new Python 3.12.14 environment was created on Windows, installed from the locked
+dependencies, and used to build and install the project's wheel. Verification
+then used that installed package rather than the editable source checkout.
+
+- Complete Python suite: **192 tests, 191 passed, one symlink-permission skip**.
+- Original command: six acceptance cases reproduce API and reference results.
+- Complete command: eight samples agree with the API in all four output files.
+- Local HTTP: eight samples agree with the API; all four ZIP members match downloads.
+- Design validation and dependency consistency pass.
+- Both later-regression evaluation reports reproduce. The original fourteen-case
+  regression matches all labels; the eighteen-case evaluation retains its four
+  known disagreements. Only the CLI source fingerprints changed in these reports.
+- Chrome 154.0.8037.59 on Windows: all **18 keyboard scenario groups pass**,
+  including file loading, BOM/CRLF fidelity, five downloads, focus, error recovery,
+  narrow layout, reduced motion and high contrast. These are browser checks,
+  separate from the 192 Python tests.
+
+The original TXT-to-JSON command now rejects an output that is a hard link to its
+input, including with `--force`. Its regression checks that both paths retain the
+original BOM/CRLF bytes after rejection. Existing unrelated output files can
+still be replaced with `--force`.
+
+The published `61d65e6` GitHub Actions run passed both Linux jobs but failed both
+Windows jobs at the original acceptance check: Git's CRLF sample conversion
+changed offsets relative to the LF reference JSON. The reference samples now
+have an explicit LF checkout policy. A checkout with `core.autocrlf=true`
+reproduces all eight reference results with this policy. This is a local
+reproduction and correction; a new remote Actions result requires publication
+of these changes. See the [recorded run](https://github.com/ValentinaM31/IntegrativeTask1_ResumeLens/actions/runs/38295596748).
+
+Current test counts and runtime/test fingerprints are recorded in
+`docs/poster/verification.json`. Frozen inputs, annotations, protocols and original
+evaluation reports remain unchanged. Passing verification does not remove the
+documented interpretation limits or establish real-applicant accuracy.
+
 ## Visual revision and Windows export reliability
 
 The complete suite was executed on Windows with Python 3.12.14: **191 tests,
 190 passed and one symlink-permission skip**. The reproducible verifier records
-actual counts and runtime/test fingerprints in `docs/poster/verification.json`.
+actual counts and runtime/test fingerprints in `docs/poster/verification.json`
+at revision `61d65e6`; the current snapshot records the latest run above.
 Earlier intermittent replacement errors were reproduced before adding bounded
 Windows file-lock retries. Tests cover transient locks, persistent denial and
 immediate propagation of unrelated permission errors, alongside existing backup
@@ -45,7 +176,7 @@ benchmark. Method, provenance and limits are in `workflow-evaluation.md`.
 ## Preannotated complete-pipeline evaluation — 2026-10-11
 
 Based on published `6d6ea17` (profile requirements aligned with the assignment).
-The user confirmed the preceding extension was published. This change adds a
+This extension adds a
 separate eighteen-case synthetic corpus, frozen manual labels/reference snapshots,
 an evaluator and thirteen protocol/scoring tests. Application code, catalog, formal
 models, schemas, public APIs and runtime dependencies are unchanged.
@@ -89,7 +220,7 @@ Earlier results follow unchanged.
 ## Assignment-profile alignment — 2026-10-11
 
 Based on published `5b4a6a2` (disk export recovery, including the LF/CRLF test
-correction). The user confirmed the preceding corrected suite passed on Windows.
+correction). A reported Windows run of the preceding corrected suite passed.
 Both uploaded assignment copies were read and the page 5 diagram visually checked:
 Scikit-learn, TensorFlow and PyTorch label alternative transitions in one group.
 Scikit-learn now fills that required group instead of remaining optional.
@@ -128,7 +259,7 @@ Earlier results follow unchanged.
 
 ## Bundle recovery CLI fixture correction — 2026-10-11
 
-The user ran the initial bundle-recovery extension on Windows: 160 tests, one
+The reported initial Windows bundle-recovery run executed 160 tests, with one
 failure in `test_cli_reports_failure_preserves_reports_and_can_retry` and the
 expected symlink-permission skip. The mismatch was a skill start position of 25
 instead of the test's LF expectation of 24.
@@ -146,8 +277,8 @@ The saver, CLI and evidence-position behavior are unchanged.
 
 Verification on Linux with Python 3.12.14: all 15 recovery tests and the full
 160-test suite pass with both newline subcases. Native Windows verification of
-this correction remains pending. This correction belongs to the same disk export
-commit and does not require a separate progression commit.
+this correction remained pending at the time of this run. Later Windows results
+are recorded above.
 
 ## Disk export protection and recovery — 2026-10-11
 
@@ -191,7 +322,7 @@ Earlier results follow unchanged.
 ## Keyboard navigation and accessible feedback — 2026-10-11
 
 Based on published `a9efc1e` (the profile explanations and rejected-POST correction
-included). The user confirmed the preceding checks passed on their Windows setup.
+included). The preceding Windows checks were reported successful.
 This change updates the three packaged UI assets, adds optional browser QA scripts
 and documents the focus/feedback behavior. Processing code, runtime dependencies,
 JSON contracts, profile patterns, stored outputs and package version 1.4.0 are
@@ -228,7 +359,7 @@ Earlier results follow unchanged.
 
 ## Rejected POST connection correction — 2026-10-11
 
-The user ran the initial profile-explanation extension on Windows with Python
+The reported initial profile-explanation run used Windows with Python
 3.14: 142 tests, one connection error in
 `test_external_origin_and_host_are_rejected`, and one expected symlink-permission
 skip. The error was `ConnectionAbortedError: [WinError 10053]` while receiving the
@@ -266,7 +397,7 @@ The initial 142-test checks below describe the extension before this correction.
 ## Profile-requirement explanations — 2026-10-10
 
 Based on published commit `11c1d8c`, whose unchanged baseline passed 125 tests on
-Linux. The user also reported that baseline passing on Windows with one skipped
+Linux. That baseline was also reported successful on Windows with one skipped
 test, and both existing CLI and HTTP acceptance checks succeeding. This extension
 adds explanations for all four profiles and structured Backend pair diagnostics;
 the NFA patterns, original classification fields, first-stage JSON and DSL are
@@ -343,8 +474,8 @@ HTTP/ZIP behavior was tested and a manual UI replay is documented in
 
 Verified package 1.4.0 on Linux with Python 3.12.14 and the unchanged pinned
 dependencies. The preceding corrected 89-test suite was also reported successful
-by the user on Windows, with the symlink-permission test skipped. This new UI
-increment has not yet been run on the user's Windows installation.
+on Windows, with the symlink-permission test skipped. Windows verification of
+the new UI increment was pending at the time of this run.
 
 | Check | Result |
 |---|---|
@@ -417,7 +548,7 @@ remain outside this increment. Earlier verification is retained below.
 
 ### Windows newline correction before publishing this increment
 
-The user ran all 89 tests on Windows. One fixture-comparison test failed in its
+The reported Windows run executed all 89 tests. One fixture-comparison test failed in its
 eight sample subcases; the symlink-permission test was skipped. The first-stage
 JSON fixtures contain offsets for LF input, while the checkout samples contained
 CRLF. Every preceding newline therefore shifted subsequent evidence positions.
@@ -431,7 +562,7 @@ expected offset shifts and compares classification, DSL and HTML with LF results
 The production API/CLI and raw-input acceptance check keep their original behavior.
 The corrected 89-test suite and eight-sample acceptance check pass on Linux with
 both LF and CRLF sample checkouts; regeneration produces the same stored bundles.
-The user must rerun the corrected suite to verify their Windows installation.
+A corrected Windows rerun remained pending at this point in the history.
 
 ## Candidate-language increment — 2026-10-09 UTC
 
@@ -465,7 +596,7 @@ ordinary-symbol transitions in place of epsilon transitions. UTF-8 decoding
 restored equality. Recognition tests now explicitly read all JSON fixtures as
 UTF-8 and verify the epsilon label; the full transition-dictionary comparison
 remains in place. This documents the reported failure and reproduced cause;
-the corrected suite still requires execution on the user's Windows installation.
+Windows execution of the corrected suite remained pending at this point in the history.
 
 ## Recognition increment — 2026-10-08
 

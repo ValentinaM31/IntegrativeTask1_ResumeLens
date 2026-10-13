@@ -1,312 +1,680 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1650" height="1330" viewBox="0 0 1650 1330">
-<rect width="100%" height="100%" fill="white"/>
-<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#345566"/></marker></defs>
-<style>text{font-family:Arial,sans-serif;fill:#16384d}.edge{fill:none;stroke:#345566;stroke-width:1.5;marker-end:url(#arrow)}</style>
-<text x="25" y="38" font-size="25" font-weight="bold">BACKEND_DEVELOPER</text>
-<text x="25" y="69" font-size="16">ε-NFA · arrow = transition · double circle = final · A / R labels are defined below.</text>
-<text x="25" y="95" font-size="15">before / seen = required member not yet seen / seen in this bucket. No ε edge bypasses a requirement.</text>
-<path class="edge" d="M183,186 C145,110 255,110 217,186"/>
-<text x="200" y="127" text-anchor="middle" font-size="13">A0</text>
-<path class="edge" d="M234,210 L296,210"/>
-<text x="265.0" y="196.0" text-anchor="middle" font-size="13">R0,0</text>
-<path class="edge" d="M313,186 C275,110 385,110 347,186"/>
-<text x="330" y="127" text-anchor="middle" font-size="13">A0</text>
-<path class="edge" d="M364,210 L436,210"/>
-<text x="400.0" y="196.0" text-anchor="middle" font-size="13">ε</text>
-<path class="edge" d="M453,186 C415,110 525,110 487,186"/>
-<text x="470" y="127" text-anchor="middle" font-size="13">A1</text>
-<path class="edge" d="M504,210 L566,210"/>
-<text x="535.0" y="196.0" text-anchor="middle" font-size="13">R0,1</text>
-<path class="edge" d="M583,186 C545,110 655,110 617,186"/>
-<text x="600" y="127" text-anchor="middle" font-size="13">A1</text>
-<path class="edge" d="M634,210 L706,210"/>
-<text x="670.0" y="196.0" text-anchor="middle" font-size="13">ε</text>
-<path class="edge" d="M723,186 C685,110 795,110 757,186"/>
-<text x="740" y="127" text-anchor="middle" font-size="13">A2</text>
-<path class="edge" d="M774,210 L836,210"/>
-<text x="805.0" y="196.0" text-anchor="middle" font-size="13">A2</text>
-<path class="edge" d="M853,186 C815,110 925,110 887,186"/>
-<text x="870" y="127" text-anchor="middle" font-size="13">A2</text>
-<path class="edge" d="M904,210 L976,210"/>
-<text x="940.0" y="196.0" text-anchor="middle" font-size="13">ε</text>
-<path class="edge" d="M993,186 C955,110 1065,110 1027,186"/>
-<text x="1010" y="127" text-anchor="middle" font-size="13">A3</text>
-<path class="edge" d="M1044,210 L1106,210"/>
-<text x="1075.0" y="196.0" text-anchor="middle" font-size="13">A3</text>
-<path class="edge" d="M1123,186 C1085,110 1195,110 1157,186"/>
-<text x="1140" y="127" text-anchor="middle" font-size="13">A3</text>
-<path class="edge" d="M1174,210 L1246,210"/>
-<text x="1210.0" y="196.0" text-anchor="middle" font-size="13">ε</text>
-<path class="edge" d="M1263,186 C1225,110 1335,110 1297,186"/>
-<text x="1280" y="127" text-anchor="middle" font-size="13">A4</text>
-<path class="edge" d="M1314,210 L1376,210"/>
-<text x="1345.0" y="196.0" text-anchor="middle" font-size="13">A4</text>
-<path class="edge" d="M1393,186 C1355,110 1465,110 1427,186"/>
-<text x="1410" y="127" text-anchor="middle" font-size="13">A4</text>
-<path class="edge" d="M1444,210 L1551,575.0"/>
-<text x="1497.5" y="378.5" text-anchor="middle" font-size="13">ε</text>
-<path class="edge" d="M183,406 C145,330 255,330 217,406"/>
-<text x="200" y="347" text-anchor="middle" font-size="13">A0</text>
-<path class="edge" d="M234,430 L296,430"/>
-<text x="265.0" y="416.0" text-anchor="middle" font-size="13">R1,0</text>
-<path class="edge" d="M313,406 C275,330 385,330 347,406"/>
-<text x="330" y="347" text-anchor="middle" font-size="13">A0</text>
-<path class="edge" d="M364,430 L436,430"/>
-<text x="400.0" y="416.0" text-anchor="middle" font-size="13">ε</text>
-<path class="edge" d="M453,406 C415,330 525,330 487,406"/>
-<text x="470" y="347" text-anchor="middle" font-size="13">A1</text>
-<path class="edge" d="M504,430 L566,430"/>
-<text x="535.0" y="416.0" text-anchor="middle" font-size="13">R1,1</text>
-<path class="edge" d="M583,406 C545,330 655,330 617,406"/>
-<text x="600" y="347" text-anchor="middle" font-size="13">A1</text>
-<path class="edge" d="M634,430 L706,430"/>
-<text x="670.0" y="416.0" text-anchor="middle" font-size="13">ε</text>
-<path class="edge" d="M723,406 C685,330 795,330 757,406"/>
-<text x="740" y="347" text-anchor="middle" font-size="13">A2</text>
-<path class="edge" d="M774,430 L836,430"/>
-<text x="805.0" y="416.0" text-anchor="middle" font-size="13">A2</text>
-<path class="edge" d="M853,406 C815,330 925,330 887,406"/>
-<text x="870" y="347" text-anchor="middle" font-size="13">A2</text>
-<path class="edge" d="M904,430 L976,430"/>
-<text x="940.0" y="416.0" text-anchor="middle" font-size="13">ε</text>
-<path class="edge" d="M993,406 C955,330 1065,330 1027,406"/>
-<text x="1010" y="347" text-anchor="middle" font-size="13">A3</text>
-<path class="edge" d="M1044,430 L1106,430"/>
-<text x="1075.0" y="416.0" text-anchor="middle" font-size="13">A3</text>
-<path class="edge" d="M1123,406 C1085,330 1195,330 1157,406"/>
-<text x="1140" y="347" text-anchor="middle" font-size="13">A3</text>
-<path class="edge" d="M1174,430 L1246,430"/>
-<text x="1210.0" y="416.0" text-anchor="middle" font-size="13">ε</text>
-<path class="edge" d="M1263,406 C1225,330 1335,330 1297,406"/>
-<text x="1280" y="347" text-anchor="middle" font-size="13">A4</text>
-<path class="edge" d="M1314,430 L1376,430"/>
-<text x="1345.0" y="416.0" text-anchor="middle" font-size="13">A4</text>
-<path class="edge" d="M1393,406 C1355,330 1465,330 1427,406"/>
-<text x="1410" y="347" text-anchor="middle" font-size="13">A4</text>
-<path class="edge" d="M1444,430 L1551,575.0"/>
-<text x="1497.5" y="488.5" text-anchor="middle" font-size="13">ε</text>
-<path class="edge" d="M183,626 C145,550 255,550 217,626"/>
-<text x="200" y="567" text-anchor="middle" font-size="13">A0</text>
-<path class="edge" d="M234,650 L296,650"/>
-<text x="265.0" y="636.0" text-anchor="middle" font-size="13">R2,0</text>
-<path class="edge" d="M313,626 C275,550 385,550 347,626"/>
-<text x="330" y="567" text-anchor="middle" font-size="13">A0</text>
-<path class="edge" d="M364,650 L436,650"/>
-<text x="400.0" y="636.0" text-anchor="middle" font-size="13">ε</text>
-<path class="edge" d="M453,626 C415,550 525,550 487,626"/>
-<text x="470" y="567" text-anchor="middle" font-size="13">A1</text>
-<path class="edge" d="M504,650 L566,650"/>
-<text x="535.0" y="636.0" text-anchor="middle" font-size="13">R2,1</text>
-<path class="edge" d="M583,626 C545,550 655,550 617,626"/>
-<text x="600" y="567" text-anchor="middle" font-size="13">A1</text>
-<path class="edge" d="M634,650 L706,650"/>
-<text x="670.0" y="636.0" text-anchor="middle" font-size="13">ε</text>
-<path class="edge" d="M723,626 C685,550 795,550 757,626"/>
-<text x="740" y="567" text-anchor="middle" font-size="13">A2</text>
-<path class="edge" d="M774,650 L836,650"/>
-<text x="805.0" y="636.0" text-anchor="middle" font-size="13">A2</text>
-<path class="edge" d="M853,626 C815,550 925,550 887,626"/>
-<text x="870" y="567" text-anchor="middle" font-size="13">A2</text>
-<path class="edge" d="M904,650 L976,650"/>
-<text x="940.0" y="636.0" text-anchor="middle" font-size="13">ε</text>
-<path class="edge" d="M993,626 C955,550 1065,550 1027,626"/>
-<text x="1010" y="567" text-anchor="middle" font-size="13">A3</text>
-<path class="edge" d="M1044,650 L1106,650"/>
-<text x="1075.0" y="636.0" text-anchor="middle" font-size="13">A3</text>
-<path class="edge" d="M1123,626 C1085,550 1195,550 1157,626"/>
-<text x="1140" y="567" text-anchor="middle" font-size="13">A3</text>
-<path class="edge" d="M1174,650 L1246,650"/>
-<text x="1210.0" y="636.0" text-anchor="middle" font-size="13">ε</text>
-<path class="edge" d="M1263,626 C1225,550 1335,550 1297,626"/>
-<text x="1280" y="567" text-anchor="middle" font-size="13">A4</text>
-<path class="edge" d="M1314,650 L1376,650"/>
-<text x="1345.0" y="636.0" text-anchor="middle" font-size="13">A4</text>
-<path class="edge" d="M1393,626 C1355,550 1465,550 1427,626"/>
-<text x="1410" y="567" text-anchor="middle" font-size="13">A4</text>
-<path class="edge" d="M1444,650 L1551,575.0"/>
-<text x="1497.5" y="598.5" text-anchor="middle" font-size="13">ε</text>
-<path class="edge" d="M183,846 C145,770 255,770 217,846"/>
-<text x="200" y="787" text-anchor="middle" font-size="13">A0</text>
-<path class="edge" d="M234,870 L296,870"/>
-<text x="265.0" y="856.0" text-anchor="middle" font-size="13">R3,0</text>
-<path class="edge" d="M313,846 C275,770 385,770 347,846"/>
-<text x="330" y="787" text-anchor="middle" font-size="13">A0</text>
-<path class="edge" d="M364,870 L436,870"/>
-<text x="400.0" y="856.0" text-anchor="middle" font-size="13">ε</text>
-<path class="edge" d="M453,846 C415,770 525,770 487,846"/>
-<text x="470" y="787" text-anchor="middle" font-size="13">A1</text>
-<path class="edge" d="M504,870 L566,870"/>
-<text x="535.0" y="856.0" text-anchor="middle" font-size="13">R3,1</text>
-<path class="edge" d="M583,846 C545,770 655,770 617,846"/>
-<text x="600" y="787" text-anchor="middle" font-size="13">A1</text>
-<path class="edge" d="M634,870 L706,870"/>
-<text x="670.0" y="856.0" text-anchor="middle" font-size="13">ε</text>
-<path class="edge" d="M723,846 C685,770 795,770 757,846"/>
-<text x="740" y="787" text-anchor="middle" font-size="13">A2</text>
-<path class="edge" d="M774,870 L836,870"/>
-<text x="805.0" y="856.0" text-anchor="middle" font-size="13">A2</text>
-<path class="edge" d="M853,846 C815,770 925,770 887,846"/>
-<text x="870" y="787" text-anchor="middle" font-size="13">A2</text>
-<path class="edge" d="M904,870 L976,870"/>
-<text x="940.0" y="856.0" text-anchor="middle" font-size="13">ε</text>
-<path class="edge" d="M993,846 C955,770 1065,770 1027,846"/>
-<text x="1010" y="787" text-anchor="middle" font-size="13">A3</text>
-<path class="edge" d="M1044,870 L1106,870"/>
-<text x="1075.0" y="856.0" text-anchor="middle" font-size="13">A3</text>
-<path class="edge" d="M1123,846 C1085,770 1195,770 1157,846"/>
-<text x="1140" y="787" text-anchor="middle" font-size="13">A3</text>
-<path class="edge" d="M1174,870 L1246,870"/>
-<text x="1210.0" y="856.0" text-anchor="middle" font-size="13">ε</text>
-<path class="edge" d="M1263,846 C1225,770 1335,770 1297,846"/>
-<text x="1280" y="787" text-anchor="middle" font-size="13">A4</text>
-<path class="edge" d="M1314,870 L1376,870"/>
-<text x="1345.0" y="856.0" text-anchor="middle" font-size="13">A4</text>
-<path class="edge" d="M1393,846 C1355,770 1465,770 1427,846"/>
-<text x="1410" y="787" text-anchor="middle" font-size="13">A4</text>
-<path class="edge" d="M1444,870 L1551,575.0"/>
-<text x="1497.5" y="708.5" text-anchor="middle" font-size="13">ε</text>
-<path class="edge" d="M99,575.0 L166,210"/>
-<text x="132.5" y="378.5" text-anchor="middle" font-size="13">ε</text>
-<path class="edge" d="M99,575.0 L166,430"/>
-<text x="132.5" y="488.5" text-anchor="middle" font-size="13">ε</text>
-<path class="edge" d="M99,575.0 L166,650"/>
-<text x="132.5" y="598.5" text-anchor="middle" font-size="13">ε</text>
-<path class="edge" d="M99,575.0 L166,870"/>
-<text x="132.5" y="708.5" text-anchor="middle" font-size="13">ε</text>
-<circle cx="200" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="200" y="215" text-anchor="middle" font-size="13">before</text>
-<text x="200" y="265" text-anchor="middle" font-size="12">b0_g0_before</text>
-<circle cx="330" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="330" y="215" text-anchor="middle" font-size="13">seen</text>
-<text x="330" y="265" text-anchor="middle" font-size="12">b0_g0_seen</text>
-<circle cx="470" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="470" y="215" text-anchor="middle" font-size="13">before</text>
-<text x="470" y="265" text-anchor="middle" font-size="12">b0_g1_before</text>
-<circle cx="600" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="600" y="215" text-anchor="middle" font-size="13">seen</text>
-<text x="600" y="265" text-anchor="middle" font-size="12">b0_g1_seen</text>
-<circle cx="740" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="740" y="215" text-anchor="middle" font-size="13">before</text>
-<text x="740" y="265" text-anchor="middle" font-size="12">b0_g2_before</text>
-<circle cx="870" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="870" y="215" text-anchor="middle" font-size="13">seen</text>
-<text x="870" y="265" text-anchor="middle" font-size="12">b0_g2_seen</text>
-<circle cx="1010" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="1010" y="215" text-anchor="middle" font-size="13">before</text>
-<text x="1010" y="265" text-anchor="middle" font-size="12">b0_g3_before</text>
-<circle cx="1140" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="1140" y="215" text-anchor="middle" font-size="13">seen</text>
-<text x="1140" y="265" text-anchor="middle" font-size="12">b0_g3_seen</text>
-<circle cx="1280" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="1280" y="215" text-anchor="middle" font-size="13">before</text>
-<text x="1280" y="265" text-anchor="middle" font-size="12">b0_g4_before</text>
-<circle cx="1410" cy="210" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="1410" y="215" text-anchor="middle" font-size="13">seen</text>
-<text x="1410" y="265" text-anchor="middle" font-size="12">b0_g4_seen</text>
-<circle cx="200" cy="430" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="200" y="435" text-anchor="middle" font-size="13">before</text>
-<text x="200" y="485" text-anchor="middle" font-size="12">b1_g0_before</text>
-<circle cx="330" cy="430" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="330" y="435" text-anchor="middle" font-size="13">seen</text>
-<text x="330" y="485" text-anchor="middle" font-size="12">b1_g0_seen</text>
-<circle cx="470" cy="430" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="470" y="435" text-anchor="middle" font-size="13">before</text>
-<text x="470" y="485" text-anchor="middle" font-size="12">b1_g1_before</text>
-<circle cx="600" cy="430" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="600" y="435" text-anchor="middle" font-size="13">seen</text>
-<text x="600" y="485" text-anchor="middle" font-size="12">b1_g1_seen</text>
-<circle cx="740" cy="430" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="740" y="435" text-anchor="middle" font-size="13">before</text>
-<text x="740" y="485" text-anchor="middle" font-size="12">b1_g2_before</text>
-<circle cx="870" cy="430" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="870" y="435" text-anchor="middle" font-size="13">seen</text>
-<text x="870" y="485" text-anchor="middle" font-size="12">b1_g2_seen</text>
-<circle cx="1010" cy="430" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="1010" y="435" text-anchor="middle" font-size="13">before</text>
-<text x="1010" y="485" text-anchor="middle" font-size="12">b1_g3_before</text>
-<circle cx="1140" cy="430" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="1140" y="435" text-anchor="middle" font-size="13">seen</text>
-<text x="1140" y="485" text-anchor="middle" font-size="12">b1_g3_seen</text>
-<circle cx="1280" cy="430" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="1280" y="435" text-anchor="middle" font-size="13">before</text>
-<text x="1280" y="485" text-anchor="middle" font-size="12">b1_g4_before</text>
-<circle cx="1410" cy="430" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="1410" y="435" text-anchor="middle" font-size="13">seen</text>
-<text x="1410" y="485" text-anchor="middle" font-size="12">b1_g4_seen</text>
-<circle cx="200" cy="650" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="200" y="655" text-anchor="middle" font-size="13">before</text>
-<text x="200" y="705" text-anchor="middle" font-size="12">b2_g0_before</text>
-<circle cx="330" cy="650" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="330" y="655" text-anchor="middle" font-size="13">seen</text>
-<text x="330" y="705" text-anchor="middle" font-size="12">b2_g0_seen</text>
-<circle cx="470" cy="650" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="470" y="655" text-anchor="middle" font-size="13">before</text>
-<text x="470" y="705" text-anchor="middle" font-size="12">b2_g1_before</text>
-<circle cx="600" cy="650" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="600" y="655" text-anchor="middle" font-size="13">seen</text>
-<text x="600" y="705" text-anchor="middle" font-size="12">b2_g1_seen</text>
-<circle cx="740" cy="650" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="740" y="655" text-anchor="middle" font-size="13">before</text>
-<text x="740" y="705" text-anchor="middle" font-size="12">b2_g2_before</text>
-<circle cx="870" cy="650" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="870" y="655" text-anchor="middle" font-size="13">seen</text>
-<text x="870" y="705" text-anchor="middle" font-size="12">b2_g2_seen</text>
-<circle cx="1010" cy="650" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="1010" y="655" text-anchor="middle" font-size="13">before</text>
-<text x="1010" y="705" text-anchor="middle" font-size="12">b2_g3_before</text>
-<circle cx="1140" cy="650" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="1140" y="655" text-anchor="middle" font-size="13">seen</text>
-<text x="1140" y="705" text-anchor="middle" font-size="12">b2_g3_seen</text>
-<circle cx="1280" cy="650" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="1280" y="655" text-anchor="middle" font-size="13">before</text>
-<text x="1280" y="705" text-anchor="middle" font-size="12">b2_g4_before</text>
-<circle cx="1410" cy="650" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="1410" y="655" text-anchor="middle" font-size="13">seen</text>
-<text x="1410" y="705" text-anchor="middle" font-size="12">b2_g4_seen</text>
-<circle cx="200" cy="870" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="200" y="875" text-anchor="middle" font-size="13">before</text>
-<text x="200" y="925" text-anchor="middle" font-size="12">b3_g0_before</text>
-<circle cx="330" cy="870" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="330" y="875" text-anchor="middle" font-size="13">seen</text>
-<text x="330" y="925" text-anchor="middle" font-size="12">b3_g0_seen</text>
-<circle cx="470" cy="870" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="470" y="875" text-anchor="middle" font-size="13">before</text>
-<text x="470" y="925" text-anchor="middle" font-size="12">b3_g1_before</text>
-<circle cx="600" cy="870" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="600" y="875" text-anchor="middle" font-size="13">seen</text>
-<text x="600" y="925" text-anchor="middle" font-size="12">b3_g1_seen</text>
-<circle cx="740" cy="870" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="740" y="875" text-anchor="middle" font-size="13">before</text>
-<text x="740" y="925" text-anchor="middle" font-size="12">b3_g2_before</text>
-<circle cx="870" cy="870" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="870" y="875" text-anchor="middle" font-size="13">seen</text>
-<text x="870" y="925" text-anchor="middle" font-size="12">b3_g2_seen</text>
-<circle cx="1010" cy="870" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="1010" y="875" text-anchor="middle" font-size="13">before</text>
-<text x="1010" y="925" text-anchor="middle" font-size="12">b3_g3_before</text>
-<circle cx="1140" cy="870" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="1140" y="875" text-anchor="middle" font-size="13">seen</text>
-<text x="1140" y="925" text-anchor="middle" font-size="12">b3_g3_seen</text>
-<circle cx="1280" cy="870" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="1280" y="875" text-anchor="middle" font-size="13">before</text>
-<text x="1280" y="925" text-anchor="middle" font-size="12">b3_g4_before</text>
-<circle cx="1410" cy="870" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="1410" y="875" text-anchor="middle" font-size="13">seen</text>
-<text x="1410" y="925" text-anchor="middle" font-size="12">b3_g4_seen</text>
-<circle cx="65" cy="575.0" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<text x="65" y="580.0" text-anchor="middle" font-size="13">q0</text>
-<circle cx="1585" cy="575.0" r="33" fill="#eef5f8" stroke="#16384d" stroke-width="1.5"/>
-<circle cx="1585" cy="575.0" r="28" fill="none" stroke="#16384d"/>
-<text x="1585" y="580.0" text-anchor="middle" font-size="13">qf</text>
-<path class="edge" d="M5,575.0 L30,575.0"/>
-<text x="165" y="300" font-size="15">Branch 0: R0,0 = {JAVA}; R0,1 = {SPRING_BOOT} (compatible pair)</text>
-<text x="165" y="520" font-size="15">Branch 1: R1,0 = {PYTHON}; R1,1 = {DJANGO} (compatible pair)</text>
-<text x="165" y="740" font-size="15">Branch 2: R2,0 = {JAVASCRIPT}; R2,1 = {NODE_JS} (compatible pair)</text>
-<text x="165" y="960" font-size="15">Branch 3: R3,0 = {TYPESCRIPT}; R3,1 = {NODE_JS} (compatible pair)</text>
-<text x="25" y="1075" font-size="18" font-weight="bold">Complete bucket alphabets (all loop transitions)</text>
-<text x="25" y="1112" font-size="16">A0 = {JAVA, JAVASCRIPT, PYTHON, TYPESCRIPT}</text>
-<text x="25" y="1150" font-size="16">A1 = {DJANGO, NODE_JS, SPRING_BOOT}</text>
-<text x="25" y="1188" font-size="16">A2 = {MONGODB, MYSQL, POSTGRESQL, SQL}</text>
-<text x="25" y="1226" font-size="16">A3 = {REST_API}</text>
-<text x="25" y="1264" font-size="16">A4 = {GIT}</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1860" height="4768" viewBox="0 0 1860 4768" role="img" aria-labelledby="title desc">
+<title id="title">BACKEND_DEVELOPER: complete deterministic automaton</title>
+<desc id="desc">One complete outgoing-transition panel per source state. Identical names denote the same state. All input symbols have one destination. The rejecting sink is explicit.</desc>
+<rect width="100%" height="100%" fill="#fff"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#65538e"/></marker></defs>
+<style>text{font-family:Arial,sans-serif;fill:#282338}.edge{fill:none;stroke:#65538e;stroke-width:2;marker-end:url(#arrow)}</style>
+<text x="30" y="42" font-size="29" font-weight="bold">BACKEND_DEVELOPER</text>
+<text x="30" y="78" font-size="20">Complete DFA: 19 states · 13 symbols · 247 transition triples · no epsilon transitions.</text>
+<text x="30" y="112" font-size="18">Every panel lists all outgoing transitions. Commas separate alternative input symbols on one edge.</text>
+<text x="30" y="143" font-size="18">Identical names denote the same state. Arrow into q0 = start. Double circle = accepting.</text>
+<text x="30" y="174" font-size="18">q_dead is the rejecting sink: all its symbols return to q_dead. Missing or out-of-order groups enter q_dead.</text>
+<text x="30" y="211" font-size="18">Backend memory: Lm reads languages; Wm has read frameworks but no compatible pair yet.</text>
+<text x="30" y="242" font-size="18">m records compatible frameworks: bit 1 = DJANGO; bit 2 = NODE_JS; bit 4 = SPRING_BOOT.</text>
+<text x="30" y="273" font-size="18">Examples: L3/W3 admit DJANGO or NODE_JS; L7 admits all three. W7 is unreachable.</text>
+<text x="30" y="304" font-size="18">pair_seen = compatible pair; q3 = database; q4 = REST_API; qf = GIT.</text>
+<g data-source="q0">
+<rect x="30" y="400" width="885" height="416" rx="12" fill="#fff" stroke="#ddd8e8"/>
+<text x="50" y="430" font-size="20" font-weight="bold">From q0</text>
+<circle cx="122" cy="632.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="122" y="636.0" text-anchor="middle" font-size="11">q0</text>
+<path class="edge" d="M45,632.0 L83,632.0"/>
+<g data-target="L1" data-symbols="[&quot;PYTHON&quot;]">
+<path class="edge" d="M162,632.0 L774,498.0"/>
+<rect x="289" y="471.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="488.0" font-size="16">PYTHON</text>
+<circle cx="814" cy="498.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="502.0" text-anchor="middle" font-size="11">L1</text>
+</g>
+<g data-target="L2" data-symbols="[&quot;JAVASCRIPT&quot;, &quot;TYPESCRIPT&quot;]">
+<path class="edge" d="M162,632.0 L774,580.0"/>
+<rect x="289" y="553.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="570.0" font-size="16">JAVASCRIPT, TYPESCRIPT</text>
+<circle cx="814" cy="580.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="584.0" text-anchor="middle" font-size="11">L2</text>
+</g>
+<g data-target="L4" data-symbols="[&quot;JAVA&quot;]">
+<path class="edge" d="M162,632.0 L774,662.0"/>
+<rect x="289" y="635.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="652.0" font-size="16">JAVA</text>
+<circle cx="814" cy="662.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="666.0" text-anchor="middle" font-size="11">L4</text>
+</g>
+<g data-target="q_dead" data-symbols="[&quot;DJANGO&quot;, &quot;GIT&quot;, &quot;MONGODB&quot;, &quot;MYSQL&quot;, &quot;NODE_JS&quot;, &quot;POSTGRESQL&quot;, &quot;REST_API&quot;, &quot;SPRING_BOOT&quot;, &quot;SQL&quot;]">
+<path class="edge" d="M162,632.0 L774,744.0"/>
+<rect x="289" y="706.5" width="465" height="21" fill="#fff"/>
+<text x="305" y="723.5" font-size="16">DJANGO, GIT, MONGODB, MYSQL, NODE_JS,</text>
+<rect x="289" y="727.5" width="465" height="21" fill="#fff"/>
+<text x="305" y="744.5" font-size="16">POSTGRESQL, REST_API, SPRING_BOOT, SQL</text>
+<circle cx="814" cy="744.0" r="34" fill="#fbeeed" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="748.0" text-anchor="middle" font-size="11">q_dead</text>
+</g>
+</g>
+<g data-source="L1">
+<rect x="945" y="400" width="885" height="580" rx="12" fill="#fff" stroke="#ddd8e8"/>
+<text x="965" y="430" font-size="20" font-weight="bold">From L1</text>
+<circle cx="1037" cy="714.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1037" y="718.0" text-anchor="middle" font-size="11">L1</text>
+<g data-target="L1" data-symbols="[&quot;PYTHON&quot;]">
+<path class="edge" d="M1077,714.0 L1689,498.0"/>
+<rect x="1204" y="471.0" width="465" height="21" fill="#fff"/>
+<text x="1220" y="488.0" font-size="16">PYTHON</text>
+<circle cx="1729" cy="498.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="502.0" text-anchor="middle" font-size="11">L1</text>
+</g>
+<g data-target="L3" data-symbols="[&quot;JAVASCRIPT&quot;, &quot;TYPESCRIPT&quot;]">
+<path class="edge" d="M1077,714.0 L1689,580.0"/>
+<rect x="1204" y="553.0" width="465" height="21" fill="#fff"/>
+<text x="1220" y="570.0" font-size="16">JAVASCRIPT, TYPESCRIPT</text>
+<circle cx="1729" cy="580.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="584.0" text-anchor="middle" font-size="11">L3</text>
+</g>
+<g data-target="L5" data-symbols="[&quot;JAVA&quot;]">
+<path class="edge" d="M1077,714.0 L1689,662.0"/>
+<rect x="1204" y="635.0" width="465" height="21" fill="#fff"/>
+<text x="1220" y="652.0" font-size="16">JAVA</text>
+<circle cx="1729" cy="662.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="666.0" text-anchor="middle" font-size="11">L5</text>
+</g>
+<g data-target="W1" data-symbols="[&quot;NODE_JS&quot;, &quot;SPRING_BOOT&quot;]">
+<path class="edge" d="M1077,714.0 L1689,744.0"/>
+<rect x="1204" y="717.0" width="465" height="21" fill="#fff"/>
+<text x="1220" y="734.0" font-size="16">NODE_JS, SPRING_BOOT</text>
+<circle cx="1729" cy="744.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="748.0" text-anchor="middle" font-size="11">W1</text>
+</g>
+<g data-target="pair_seen" data-symbols="[&quot;DJANGO&quot;]">
+<path class="edge" d="M1077,714.0 L1689,826.0"/>
+<rect x="1204" y="799.0" width="465" height="21" fill="#fff"/>
+<text x="1220" y="816.0" font-size="16">DJANGO</text>
+<circle cx="1729" cy="826.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="830.0" text-anchor="middle" font-size="11">pair_seen</text>
+</g>
+<g data-target="q_dead" data-symbols="[&quot;GIT&quot;, &quot;MONGODB&quot;, &quot;MYSQL&quot;, &quot;POSTGRESQL&quot;, &quot;REST_API&quot;, &quot;SQL&quot;]">
+<path class="edge" d="M1077,714.0 L1689,908.0"/>
+<rect x="1204" y="870.5" width="465" height="21" fill="#fff"/>
+<text x="1220" y="887.5" font-size="16">GIT, MONGODB, MYSQL, POSTGRESQL, REST_API,</text>
+<rect x="1204" y="891.5" width="465" height="21" fill="#fff"/>
+<text x="1220" y="908.5" font-size="16">SQL</text>
+<circle cx="1729" cy="908.0" r="34" fill="#fbeeed" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="912.0" text-anchor="middle" font-size="11">q_dead</text>
+</g>
+</g>
+<g data-source="L2">
+<rect x="30" y="1000" width="885" height="580" rx="12" fill="#fff" stroke="#ddd8e8"/>
+<text x="50" y="1030" font-size="20" font-weight="bold">From L2</text>
+<circle cx="122" cy="1314.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="122" y="1318.0" text-anchor="middle" font-size="11">L2</text>
+<g data-target="L2" data-symbols="[&quot;JAVASCRIPT&quot;, &quot;TYPESCRIPT&quot;]">
+<path class="edge" d="M162,1314.0 L774,1098.0"/>
+<rect x="289" y="1071.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="1088.0" font-size="16">JAVASCRIPT, TYPESCRIPT</text>
+<circle cx="814" cy="1098.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="1102.0" text-anchor="middle" font-size="11">L2</text>
+</g>
+<g data-target="L3" data-symbols="[&quot;PYTHON&quot;]">
+<path class="edge" d="M162,1314.0 L774,1180.0"/>
+<rect x="289" y="1153.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="1170.0" font-size="16">PYTHON</text>
+<circle cx="814" cy="1180.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="1184.0" text-anchor="middle" font-size="11">L3</text>
+</g>
+<g data-target="L6" data-symbols="[&quot;JAVA&quot;]">
+<path class="edge" d="M162,1314.0 L774,1262.0"/>
+<rect x="289" y="1235.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="1252.0" font-size="16">JAVA</text>
+<circle cx="814" cy="1262.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="1266.0" text-anchor="middle" font-size="11">L6</text>
+</g>
+<g data-target="W2" data-symbols="[&quot;DJANGO&quot;, &quot;SPRING_BOOT&quot;]">
+<path class="edge" d="M162,1314.0 L774,1344.0"/>
+<rect x="289" y="1317.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="1334.0" font-size="16">DJANGO, SPRING_BOOT</text>
+<circle cx="814" cy="1344.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="1348.0" text-anchor="middle" font-size="11">W2</text>
+</g>
+<g data-target="pair_seen" data-symbols="[&quot;NODE_JS&quot;]">
+<path class="edge" d="M162,1314.0 L774,1426.0"/>
+<rect x="289" y="1399.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="1416.0" font-size="16">NODE_JS</text>
+<circle cx="814" cy="1426.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="1430.0" text-anchor="middle" font-size="11">pair_seen</text>
+</g>
+<g data-target="q_dead" data-symbols="[&quot;GIT&quot;, &quot;MONGODB&quot;, &quot;MYSQL&quot;, &quot;POSTGRESQL&quot;, &quot;REST_API&quot;, &quot;SQL&quot;]">
+<path class="edge" d="M162,1314.0 L774,1508.0"/>
+<rect x="289" y="1470.5" width="465" height="21" fill="#fff"/>
+<text x="305" y="1487.5" font-size="16">GIT, MONGODB, MYSQL, POSTGRESQL, REST_API,</text>
+<rect x="289" y="1491.5" width="465" height="21" fill="#fff"/>
+<text x="305" y="1508.5" font-size="16">SQL</text>
+<circle cx="814" cy="1508.0" r="34" fill="#fbeeed" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="1512.0" text-anchor="middle" font-size="11">q_dead</text>
+</g>
+</g>
+<g data-source="L3">
+<rect x="945" y="1000" width="885" height="498" rx="12" fill="#fff" stroke="#ddd8e8"/>
+<text x="965" y="1030" font-size="20" font-weight="bold">From L3</text>
+<circle cx="1037" cy="1273.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1037" y="1277.0" text-anchor="middle" font-size="11">L3</text>
+<g data-target="L3" data-symbols="[&quot;JAVASCRIPT&quot;, &quot;PYTHON&quot;, &quot;TYPESCRIPT&quot;]">
+<path class="edge" d="M1077,1273.0 L1689,1098.0"/>
+<rect x="1204" y="1071.0" width="465" height="21" fill="#fff"/>
+<text x="1220" y="1088.0" font-size="16">JAVASCRIPT, PYTHON, TYPESCRIPT</text>
+<circle cx="1729" cy="1098.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="1102.0" text-anchor="middle" font-size="11">L3</text>
+</g>
+<g data-target="L7" data-symbols="[&quot;JAVA&quot;]">
+<path class="edge" d="M1077,1273.0 L1689,1180.0"/>
+<rect x="1204" y="1153.0" width="465" height="21" fill="#fff"/>
+<text x="1220" y="1170.0" font-size="16">JAVA</text>
+<circle cx="1729" cy="1180.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="1184.0" text-anchor="middle" font-size="11">L7</text>
+</g>
+<g data-target="W3" data-symbols="[&quot;SPRING_BOOT&quot;]">
+<path class="edge" d="M1077,1273.0 L1689,1262.0"/>
+<rect x="1204" y="1235.0" width="465" height="21" fill="#fff"/>
+<text x="1220" y="1252.0" font-size="16">SPRING_BOOT</text>
+<circle cx="1729" cy="1262.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="1266.0" text-anchor="middle" font-size="11">W3</text>
+</g>
+<g data-target="pair_seen" data-symbols="[&quot;DJANGO&quot;, &quot;NODE_JS&quot;]">
+<path class="edge" d="M1077,1273.0 L1689,1344.0"/>
+<rect x="1204" y="1317.0" width="465" height="21" fill="#fff"/>
+<text x="1220" y="1334.0" font-size="16">DJANGO, NODE_JS</text>
+<circle cx="1729" cy="1344.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="1348.0" text-anchor="middle" font-size="11">pair_seen</text>
+</g>
+<g data-target="q_dead" data-symbols="[&quot;GIT&quot;, &quot;MONGODB&quot;, &quot;MYSQL&quot;, &quot;POSTGRESQL&quot;, &quot;REST_API&quot;, &quot;SQL&quot;]">
+<path class="edge" d="M1077,1273.0 L1689,1426.0"/>
+<rect x="1204" y="1388.5" width="465" height="21" fill="#fff"/>
+<text x="1220" y="1405.5" font-size="16">GIT, MONGODB, MYSQL, POSTGRESQL, REST_API,</text>
+<rect x="1204" y="1409.5" width="465" height="21" fill="#fff"/>
+<text x="1220" y="1426.5" font-size="16">SQL</text>
+<circle cx="1729" cy="1426.0" r="34" fill="#fbeeed" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="1430.0" text-anchor="middle" font-size="11">q_dead</text>
+</g>
+</g>
+<g data-source="L4">
+<rect x="30" y="1600" width="885" height="580" rx="12" fill="#fff" stroke="#ddd8e8"/>
+<text x="50" y="1630" font-size="20" font-weight="bold">From L4</text>
+<circle cx="122" cy="1914.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="122" y="1918.0" text-anchor="middle" font-size="11">L4</text>
+<g data-target="L4" data-symbols="[&quot;JAVA&quot;]">
+<path class="edge" d="M162,1914.0 L774,1698.0"/>
+<rect x="289" y="1671.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="1688.0" font-size="16">JAVA</text>
+<circle cx="814" cy="1698.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="1702.0" text-anchor="middle" font-size="11">L4</text>
+</g>
+<g data-target="L5" data-symbols="[&quot;PYTHON&quot;]">
+<path class="edge" d="M162,1914.0 L774,1780.0"/>
+<rect x="289" y="1753.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="1770.0" font-size="16">PYTHON</text>
+<circle cx="814" cy="1780.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="1784.0" text-anchor="middle" font-size="11">L5</text>
+</g>
+<g data-target="L6" data-symbols="[&quot;JAVASCRIPT&quot;, &quot;TYPESCRIPT&quot;]">
+<path class="edge" d="M162,1914.0 L774,1862.0"/>
+<rect x="289" y="1835.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="1852.0" font-size="16">JAVASCRIPT, TYPESCRIPT</text>
+<circle cx="814" cy="1862.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="1866.0" text-anchor="middle" font-size="11">L6</text>
+</g>
+<g data-target="W4" data-symbols="[&quot;DJANGO&quot;, &quot;NODE_JS&quot;]">
+<path class="edge" d="M162,1914.0 L774,1944.0"/>
+<rect x="289" y="1917.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="1934.0" font-size="16">DJANGO, NODE_JS</text>
+<circle cx="814" cy="1944.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="1948.0" text-anchor="middle" font-size="11">W4</text>
+</g>
+<g data-target="pair_seen" data-symbols="[&quot;SPRING_BOOT&quot;]">
+<path class="edge" d="M162,1914.0 L774,2026.0"/>
+<rect x="289" y="1999.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="2016.0" font-size="16">SPRING_BOOT</text>
+<circle cx="814" cy="2026.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="2030.0" text-anchor="middle" font-size="11">pair_seen</text>
+</g>
+<g data-target="q_dead" data-symbols="[&quot;GIT&quot;, &quot;MONGODB&quot;, &quot;MYSQL&quot;, &quot;POSTGRESQL&quot;, &quot;REST_API&quot;, &quot;SQL&quot;]">
+<path class="edge" d="M162,1914.0 L774,2108.0"/>
+<rect x="289" y="2070.5" width="465" height="21" fill="#fff"/>
+<text x="305" y="2087.5" font-size="16">GIT, MONGODB, MYSQL, POSTGRESQL, REST_API,</text>
+<rect x="289" y="2091.5" width="465" height="21" fill="#fff"/>
+<text x="305" y="2108.5" font-size="16">SQL</text>
+<circle cx="814" cy="2108.0" r="34" fill="#fbeeed" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="2112.0" text-anchor="middle" font-size="11">q_dead</text>
+</g>
+</g>
+<g data-source="L5">
+<rect x="945" y="1600" width="885" height="498" rx="12" fill="#fff" stroke="#ddd8e8"/>
+<text x="965" y="1630" font-size="20" font-weight="bold">From L5</text>
+<circle cx="1037" cy="1873.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1037" y="1877.0" text-anchor="middle" font-size="11">L5</text>
+<g data-target="L5" data-symbols="[&quot;JAVA&quot;, &quot;PYTHON&quot;]">
+<path class="edge" d="M1077,1873.0 L1689,1698.0"/>
+<rect x="1204" y="1671.0" width="465" height="21" fill="#fff"/>
+<text x="1220" y="1688.0" font-size="16">JAVA, PYTHON</text>
+<circle cx="1729" cy="1698.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="1702.0" text-anchor="middle" font-size="11">L5</text>
+</g>
+<g data-target="L7" data-symbols="[&quot;JAVASCRIPT&quot;, &quot;TYPESCRIPT&quot;]">
+<path class="edge" d="M1077,1873.0 L1689,1780.0"/>
+<rect x="1204" y="1753.0" width="465" height="21" fill="#fff"/>
+<text x="1220" y="1770.0" font-size="16">JAVASCRIPT, TYPESCRIPT</text>
+<circle cx="1729" cy="1780.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="1784.0" text-anchor="middle" font-size="11">L7</text>
+</g>
+<g data-target="W5" data-symbols="[&quot;NODE_JS&quot;]">
+<path class="edge" d="M1077,1873.0 L1689,1862.0"/>
+<rect x="1204" y="1835.0" width="465" height="21" fill="#fff"/>
+<text x="1220" y="1852.0" font-size="16">NODE_JS</text>
+<circle cx="1729" cy="1862.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="1866.0" text-anchor="middle" font-size="11">W5</text>
+</g>
+<g data-target="pair_seen" data-symbols="[&quot;DJANGO&quot;, &quot;SPRING_BOOT&quot;]">
+<path class="edge" d="M1077,1873.0 L1689,1944.0"/>
+<rect x="1204" y="1917.0" width="465" height="21" fill="#fff"/>
+<text x="1220" y="1934.0" font-size="16">DJANGO, SPRING_BOOT</text>
+<circle cx="1729" cy="1944.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="1948.0" text-anchor="middle" font-size="11">pair_seen</text>
+</g>
+<g data-target="q_dead" data-symbols="[&quot;GIT&quot;, &quot;MONGODB&quot;, &quot;MYSQL&quot;, &quot;POSTGRESQL&quot;, &quot;REST_API&quot;, &quot;SQL&quot;]">
+<path class="edge" d="M1077,1873.0 L1689,2026.0"/>
+<rect x="1204" y="1988.5" width="465" height="21" fill="#fff"/>
+<text x="1220" y="2005.5" font-size="16">GIT, MONGODB, MYSQL, POSTGRESQL, REST_API,</text>
+<rect x="1204" y="2009.5" width="465" height="21" fill="#fff"/>
+<text x="1220" y="2026.5" font-size="16">SQL</text>
+<circle cx="1729" cy="2026.0" r="34" fill="#fbeeed" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="2030.0" text-anchor="middle" font-size="11">q_dead</text>
+</g>
+</g>
+<g data-source="L6">
+<rect x="30" y="2200" width="885" height="498" rx="12" fill="#fff" stroke="#ddd8e8"/>
+<text x="50" y="2230" font-size="20" font-weight="bold">From L6</text>
+<circle cx="122" cy="2473.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="122" y="2477.0" text-anchor="middle" font-size="11">L6</text>
+<g data-target="L6" data-symbols="[&quot;JAVA&quot;, &quot;JAVASCRIPT&quot;, &quot;TYPESCRIPT&quot;]">
+<path class="edge" d="M162,2473.0 L774,2298.0"/>
+<rect x="289" y="2271.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="2288.0" font-size="16">JAVA, JAVASCRIPT, TYPESCRIPT</text>
+<circle cx="814" cy="2298.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="2302.0" text-anchor="middle" font-size="11">L6</text>
+</g>
+<g data-target="L7" data-symbols="[&quot;PYTHON&quot;]">
+<path class="edge" d="M162,2473.0 L774,2380.0"/>
+<rect x="289" y="2353.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="2370.0" font-size="16">PYTHON</text>
+<circle cx="814" cy="2380.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="2384.0" text-anchor="middle" font-size="11">L7</text>
+</g>
+<g data-target="W6" data-symbols="[&quot;DJANGO&quot;]">
+<path class="edge" d="M162,2473.0 L774,2462.0"/>
+<rect x="289" y="2435.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="2452.0" font-size="16">DJANGO</text>
+<circle cx="814" cy="2462.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="2466.0" text-anchor="middle" font-size="11">W6</text>
+</g>
+<g data-target="pair_seen" data-symbols="[&quot;NODE_JS&quot;, &quot;SPRING_BOOT&quot;]">
+<path class="edge" d="M162,2473.0 L774,2544.0"/>
+<rect x="289" y="2517.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="2534.0" font-size="16">NODE_JS, SPRING_BOOT</text>
+<circle cx="814" cy="2544.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="2548.0" text-anchor="middle" font-size="11">pair_seen</text>
+</g>
+<g data-target="q_dead" data-symbols="[&quot;GIT&quot;, &quot;MONGODB&quot;, &quot;MYSQL&quot;, &quot;POSTGRESQL&quot;, &quot;REST_API&quot;, &quot;SQL&quot;]">
+<path class="edge" d="M162,2473.0 L774,2626.0"/>
+<rect x="289" y="2588.5" width="465" height="21" fill="#fff"/>
+<text x="305" y="2605.5" font-size="16">GIT, MONGODB, MYSQL, POSTGRESQL, REST_API,</text>
+<rect x="289" y="2609.5" width="465" height="21" fill="#fff"/>
+<text x="305" y="2626.5" font-size="16">SQL</text>
+<circle cx="814" cy="2626.0" r="34" fill="#fbeeed" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="2630.0" text-anchor="middle" font-size="11">q_dead</text>
+</g>
+</g>
+<g data-source="L7">
+<rect x="945" y="2200" width="885" height="334" rx="12" fill="#fff" stroke="#ddd8e8"/>
+<text x="965" y="2230" font-size="20" font-weight="bold">From L7</text>
+<circle cx="1037" cy="2391.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1037" y="2395.0" text-anchor="middle" font-size="11">L7</text>
+<g data-target="L7" data-symbols="[&quot;JAVA&quot;, &quot;JAVASCRIPT&quot;, &quot;PYTHON&quot;, &quot;TYPESCRIPT&quot;]">
+<path class="edge" d="M1077,2391.0 L1689,2298.0"/>
+<rect x="1204" y="2271.0" width="465" height="21" fill="#fff"/>
+<text x="1220" y="2288.0" font-size="16">JAVA, JAVASCRIPT, PYTHON, TYPESCRIPT</text>
+<circle cx="1729" cy="2298.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="2302.0" text-anchor="middle" font-size="11">L7</text>
+</g>
+<g data-target="pair_seen" data-symbols="[&quot;DJANGO&quot;, &quot;NODE_JS&quot;, &quot;SPRING_BOOT&quot;]">
+<path class="edge" d="M1077,2391.0 L1689,2380.0"/>
+<rect x="1204" y="2353.0" width="465" height="21" fill="#fff"/>
+<text x="1220" y="2370.0" font-size="16">DJANGO, NODE_JS, SPRING_BOOT</text>
+<circle cx="1729" cy="2380.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="2384.0" text-anchor="middle" font-size="11">pair_seen</text>
+</g>
+<g data-target="q_dead" data-symbols="[&quot;GIT&quot;, &quot;MONGODB&quot;, &quot;MYSQL&quot;, &quot;POSTGRESQL&quot;, &quot;REST_API&quot;, &quot;SQL&quot;]">
+<path class="edge" d="M1077,2391.0 L1689,2462.0"/>
+<rect x="1204" y="2424.5" width="465" height="21" fill="#fff"/>
+<text x="1220" y="2441.5" font-size="16">GIT, MONGODB, MYSQL, POSTGRESQL, REST_API,</text>
+<rect x="1204" y="2445.5" width="465" height="21" fill="#fff"/>
+<text x="1220" y="2462.5" font-size="16">SQL</text>
+<circle cx="1729" cy="2462.0" r="34" fill="#fbeeed" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="2466.0" text-anchor="middle" font-size="11">q_dead</text>
+</g>
+</g>
+<g data-source="W1">
+<rect x="30" y="2718" width="885" height="345" rx="12" fill="#fff" stroke="#ddd8e8"/>
+<text x="50" y="2748" font-size="20" font-weight="bold">From W1</text>
+<circle cx="122" cy="2914.5" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="122" y="2918.5" text-anchor="middle" font-size="11">W1</text>
+<g data-target="W1" data-symbols="[&quot;NODE_JS&quot;, &quot;SPRING_BOOT&quot;]">
+<path class="edge" d="M162,2914.5 L774,2816.0"/>
+<rect x="289" y="2789.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="2806.0" font-size="16">NODE_JS, SPRING_BOOT</text>
+<circle cx="814" cy="2816.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="2820.0" text-anchor="middle" font-size="11">W1</text>
+</g>
+<g data-target="pair_seen" data-symbols="[&quot;DJANGO&quot;]">
+<path class="edge" d="M162,2914.5 L774,2898.0"/>
+<rect x="289" y="2871.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="2888.0" font-size="16">DJANGO</text>
+<circle cx="814" cy="2898.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="2902.0" text-anchor="middle" font-size="11">pair_seen</text>
+</g>
+<g data-target="q_dead" data-symbols="[&quot;GIT&quot;, &quot;JAVA&quot;, &quot;JAVASCRIPT&quot;, &quot;MONGODB&quot;, &quot;MYSQL&quot;, &quot;POSTGRESQL&quot;, &quot;PYTHON&quot;, &quot;REST_API&quot;, &quot;SQL&quot;, &quot;TYPESCRIPT&quot;]">
+<path class="edge" d="M162,2914.5 L774,2985.5"/>
+<rect x="289" y="2937.5" width="465" height="21" fill="#fff"/>
+<text x="305" y="2954.5" font-size="16">GIT, JAVA, JAVASCRIPT, MONGODB, MYSQL,</text>
+<rect x="289" y="2958.5" width="465" height="21" fill="#fff"/>
+<text x="305" y="2975.5" font-size="16">POSTGRESQL, PYTHON, REST_API, SQL,</text>
+<rect x="289" y="2979.5" width="465" height="21" fill="#fff"/>
+<text x="305" y="2996.5" font-size="16">TYPESCRIPT</text>
+<circle cx="814" cy="2985.5" r="34" fill="#fbeeed" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="2989.5" text-anchor="middle" font-size="11">q_dead</text>
+</g>
+</g>
+<g data-source="W2">
+<rect x="945" y="2718" width="885" height="345" rx="12" fill="#fff" stroke="#ddd8e8"/>
+<text x="965" y="2748" font-size="20" font-weight="bold">From W2</text>
+<circle cx="1037" cy="2914.5" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1037" y="2918.5" text-anchor="middle" font-size="11">W2</text>
+<g data-target="W2" data-symbols="[&quot;DJANGO&quot;, &quot;SPRING_BOOT&quot;]">
+<path class="edge" d="M1077,2914.5 L1689,2816.0"/>
+<rect x="1204" y="2789.0" width="465" height="21" fill="#fff"/>
+<text x="1220" y="2806.0" font-size="16">DJANGO, SPRING_BOOT</text>
+<circle cx="1729" cy="2816.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="2820.0" text-anchor="middle" font-size="11">W2</text>
+</g>
+<g data-target="pair_seen" data-symbols="[&quot;NODE_JS&quot;]">
+<path class="edge" d="M1077,2914.5 L1689,2898.0"/>
+<rect x="1204" y="2871.0" width="465" height="21" fill="#fff"/>
+<text x="1220" y="2888.0" font-size="16">NODE_JS</text>
+<circle cx="1729" cy="2898.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="2902.0" text-anchor="middle" font-size="11">pair_seen</text>
+</g>
+<g data-target="q_dead" data-symbols="[&quot;GIT&quot;, &quot;JAVA&quot;, &quot;JAVASCRIPT&quot;, &quot;MONGODB&quot;, &quot;MYSQL&quot;, &quot;POSTGRESQL&quot;, &quot;PYTHON&quot;, &quot;REST_API&quot;, &quot;SQL&quot;, &quot;TYPESCRIPT&quot;]">
+<path class="edge" d="M1077,2914.5 L1689,2985.5"/>
+<rect x="1204" y="2937.5" width="465" height="21" fill="#fff"/>
+<text x="1220" y="2954.5" font-size="16">GIT, JAVA, JAVASCRIPT, MONGODB, MYSQL,</text>
+<rect x="1204" y="2958.5" width="465" height="21" fill="#fff"/>
+<text x="1220" y="2975.5" font-size="16">POSTGRESQL, PYTHON, REST_API, SQL,</text>
+<rect x="1204" y="2979.5" width="465" height="21" fill="#fff"/>
+<text x="1220" y="2996.5" font-size="16">TYPESCRIPT</text>
+<circle cx="1729" cy="2985.5" r="34" fill="#fbeeed" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="2989.5" text-anchor="middle" font-size="11">q_dead</text>
+</g>
+</g>
+<g data-source="W3">
+<rect x="30" y="3083" width="885" height="345" rx="12" fill="#fff" stroke="#ddd8e8"/>
+<text x="50" y="3113" font-size="20" font-weight="bold">From W3</text>
+<circle cx="122" cy="3279.5" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="122" y="3283.5" text-anchor="middle" font-size="11">W3</text>
+<g data-target="W3" data-symbols="[&quot;SPRING_BOOT&quot;]">
+<path class="edge" d="M162,3279.5 L774,3181.0"/>
+<rect x="289" y="3154.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="3171.0" font-size="16">SPRING_BOOT</text>
+<circle cx="814" cy="3181.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="3185.0" text-anchor="middle" font-size="11">W3</text>
+</g>
+<g data-target="pair_seen" data-symbols="[&quot;DJANGO&quot;, &quot;NODE_JS&quot;]">
+<path class="edge" d="M162,3279.5 L774,3263.0"/>
+<rect x="289" y="3236.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="3253.0" font-size="16">DJANGO, NODE_JS</text>
+<circle cx="814" cy="3263.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="3267.0" text-anchor="middle" font-size="11">pair_seen</text>
+</g>
+<g data-target="q_dead" data-symbols="[&quot;GIT&quot;, &quot;JAVA&quot;, &quot;JAVASCRIPT&quot;, &quot;MONGODB&quot;, &quot;MYSQL&quot;, &quot;POSTGRESQL&quot;, &quot;PYTHON&quot;, &quot;REST_API&quot;, &quot;SQL&quot;, &quot;TYPESCRIPT&quot;]">
+<path class="edge" d="M162,3279.5 L774,3350.5"/>
+<rect x="289" y="3302.5" width="465" height="21" fill="#fff"/>
+<text x="305" y="3319.5" font-size="16">GIT, JAVA, JAVASCRIPT, MONGODB, MYSQL,</text>
+<rect x="289" y="3323.5" width="465" height="21" fill="#fff"/>
+<text x="305" y="3340.5" font-size="16">POSTGRESQL, PYTHON, REST_API, SQL,</text>
+<rect x="289" y="3344.5" width="465" height="21" fill="#fff"/>
+<text x="305" y="3361.5" font-size="16">TYPESCRIPT</text>
+<circle cx="814" cy="3350.5" r="34" fill="#fbeeed" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="3354.5" text-anchor="middle" font-size="11">q_dead</text>
+</g>
+</g>
+<g data-source="W4">
+<rect x="945" y="3083" width="885" height="345" rx="12" fill="#fff" stroke="#ddd8e8"/>
+<text x="965" y="3113" font-size="20" font-weight="bold">From W4</text>
+<circle cx="1037" cy="3279.5" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1037" y="3283.5" text-anchor="middle" font-size="11">W4</text>
+<g data-target="W4" data-symbols="[&quot;DJANGO&quot;, &quot;NODE_JS&quot;]">
+<path class="edge" d="M1077,3279.5 L1689,3181.0"/>
+<rect x="1204" y="3154.0" width="465" height="21" fill="#fff"/>
+<text x="1220" y="3171.0" font-size="16">DJANGO, NODE_JS</text>
+<circle cx="1729" cy="3181.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="3185.0" text-anchor="middle" font-size="11">W4</text>
+</g>
+<g data-target="pair_seen" data-symbols="[&quot;SPRING_BOOT&quot;]">
+<path class="edge" d="M1077,3279.5 L1689,3263.0"/>
+<rect x="1204" y="3236.0" width="465" height="21" fill="#fff"/>
+<text x="1220" y="3253.0" font-size="16">SPRING_BOOT</text>
+<circle cx="1729" cy="3263.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="3267.0" text-anchor="middle" font-size="11">pair_seen</text>
+</g>
+<g data-target="q_dead" data-symbols="[&quot;GIT&quot;, &quot;JAVA&quot;, &quot;JAVASCRIPT&quot;, &quot;MONGODB&quot;, &quot;MYSQL&quot;, &quot;POSTGRESQL&quot;, &quot;PYTHON&quot;, &quot;REST_API&quot;, &quot;SQL&quot;, &quot;TYPESCRIPT&quot;]">
+<path class="edge" d="M1077,3279.5 L1689,3350.5"/>
+<rect x="1204" y="3302.5" width="465" height="21" fill="#fff"/>
+<text x="1220" y="3319.5" font-size="16">GIT, JAVA, JAVASCRIPT, MONGODB, MYSQL,</text>
+<rect x="1204" y="3323.5" width="465" height="21" fill="#fff"/>
+<text x="1220" y="3340.5" font-size="16">POSTGRESQL, PYTHON, REST_API, SQL,</text>
+<rect x="1204" y="3344.5" width="465" height="21" fill="#fff"/>
+<text x="1220" y="3361.5" font-size="16">TYPESCRIPT</text>
+<circle cx="1729" cy="3350.5" r="34" fill="#fbeeed" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="3354.5" text-anchor="middle" font-size="11">q_dead</text>
+</g>
+</g>
+<g data-source="W5">
+<rect x="30" y="3448" width="885" height="345" rx="12" fill="#fff" stroke="#ddd8e8"/>
+<text x="50" y="3478" font-size="20" font-weight="bold">From W5</text>
+<circle cx="122" cy="3644.5" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="122" y="3648.5" text-anchor="middle" font-size="11">W5</text>
+<g data-target="W5" data-symbols="[&quot;NODE_JS&quot;]">
+<path class="edge" d="M162,3644.5 L774,3546.0"/>
+<rect x="289" y="3519.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="3536.0" font-size="16">NODE_JS</text>
+<circle cx="814" cy="3546.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="3550.0" text-anchor="middle" font-size="11">W5</text>
+</g>
+<g data-target="pair_seen" data-symbols="[&quot;DJANGO&quot;, &quot;SPRING_BOOT&quot;]">
+<path class="edge" d="M162,3644.5 L774,3628.0"/>
+<rect x="289" y="3601.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="3618.0" font-size="16">DJANGO, SPRING_BOOT</text>
+<circle cx="814" cy="3628.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="3632.0" text-anchor="middle" font-size="11">pair_seen</text>
+</g>
+<g data-target="q_dead" data-symbols="[&quot;GIT&quot;, &quot;JAVA&quot;, &quot;JAVASCRIPT&quot;, &quot;MONGODB&quot;, &quot;MYSQL&quot;, &quot;POSTGRESQL&quot;, &quot;PYTHON&quot;, &quot;REST_API&quot;, &quot;SQL&quot;, &quot;TYPESCRIPT&quot;]">
+<path class="edge" d="M162,3644.5 L774,3715.5"/>
+<rect x="289" y="3667.5" width="465" height="21" fill="#fff"/>
+<text x="305" y="3684.5" font-size="16">GIT, JAVA, JAVASCRIPT, MONGODB, MYSQL,</text>
+<rect x="289" y="3688.5" width="465" height="21" fill="#fff"/>
+<text x="305" y="3705.5" font-size="16">POSTGRESQL, PYTHON, REST_API, SQL,</text>
+<rect x="289" y="3709.5" width="465" height="21" fill="#fff"/>
+<text x="305" y="3726.5" font-size="16">TYPESCRIPT</text>
+<circle cx="814" cy="3715.5" r="34" fill="#fbeeed" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="3719.5" text-anchor="middle" font-size="11">q_dead</text>
+</g>
+</g>
+<g data-source="W6">
+<rect x="945" y="3448" width="885" height="345" rx="12" fill="#fff" stroke="#ddd8e8"/>
+<text x="965" y="3478" font-size="20" font-weight="bold">From W6</text>
+<circle cx="1037" cy="3644.5" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1037" y="3648.5" text-anchor="middle" font-size="11">W6</text>
+<g data-target="W6" data-symbols="[&quot;DJANGO&quot;]">
+<path class="edge" d="M1077,3644.5 L1689,3546.0"/>
+<rect x="1204" y="3519.0" width="465" height="21" fill="#fff"/>
+<text x="1220" y="3536.0" font-size="16">DJANGO</text>
+<circle cx="1729" cy="3546.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="3550.0" text-anchor="middle" font-size="11">W6</text>
+</g>
+<g data-target="pair_seen" data-symbols="[&quot;NODE_JS&quot;, &quot;SPRING_BOOT&quot;]">
+<path class="edge" d="M1077,3644.5 L1689,3628.0"/>
+<rect x="1204" y="3601.0" width="465" height="21" fill="#fff"/>
+<text x="1220" y="3618.0" font-size="16">NODE_JS, SPRING_BOOT</text>
+<circle cx="1729" cy="3628.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="3632.0" text-anchor="middle" font-size="11">pair_seen</text>
+</g>
+<g data-target="q_dead" data-symbols="[&quot;GIT&quot;, &quot;JAVA&quot;, &quot;JAVASCRIPT&quot;, &quot;MONGODB&quot;, &quot;MYSQL&quot;, &quot;POSTGRESQL&quot;, &quot;PYTHON&quot;, &quot;REST_API&quot;, &quot;SQL&quot;, &quot;TYPESCRIPT&quot;]">
+<path class="edge" d="M1077,3644.5 L1689,3715.5"/>
+<rect x="1204" y="3667.5" width="465" height="21" fill="#fff"/>
+<text x="1220" y="3684.5" font-size="16">GIT, JAVA, JAVASCRIPT, MONGODB, MYSQL,</text>
+<rect x="1204" y="3688.5" width="465" height="21" fill="#fff"/>
+<text x="1220" y="3705.5" font-size="16">POSTGRESQL, PYTHON, REST_API, SQL,</text>
+<rect x="1204" y="3709.5" width="465" height="21" fill="#fff"/>
+<text x="1220" y="3726.5" font-size="16">TYPESCRIPT</text>
+<circle cx="1729" cy="3715.5" r="34" fill="#fbeeed" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="3719.5" text-anchor="middle" font-size="11">q_dead</text>
+</g>
+</g>
+<g data-source="pair_seen">
+<rect x="30" y="3813" width="885" height="334" rx="12" fill="#fff" stroke="#ddd8e8"/>
+<text x="50" y="3843" font-size="20" font-weight="bold">From pair_seen</text>
+<circle cx="122" cy="4004.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="122" y="4008.0" text-anchor="middle" font-size="11">pair_seen</text>
+<g data-target="pair_seen" data-symbols="[&quot;DJANGO&quot;, &quot;NODE_JS&quot;, &quot;SPRING_BOOT&quot;]">
+<path class="edge" d="M162,4004.0 L774,3911.0"/>
+<rect x="289" y="3884.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="3901.0" font-size="16">DJANGO, NODE_JS, SPRING_BOOT</text>
+<circle cx="814" cy="3911.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="3915.0" text-anchor="middle" font-size="11">pair_seen</text>
+</g>
+<g data-target="q3" data-symbols="[&quot;MONGODB&quot;, &quot;MYSQL&quot;, &quot;POSTGRESQL&quot;, &quot;SQL&quot;]">
+<path class="edge" d="M162,4004.0 L774,3993.0"/>
+<rect x="289" y="3966.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="3983.0" font-size="16">MONGODB, MYSQL, POSTGRESQL, SQL</text>
+<circle cx="814" cy="3993.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="3997.0" text-anchor="middle" font-size="11">q3</text>
+</g>
+<g data-target="q_dead" data-symbols="[&quot;GIT&quot;, &quot;JAVA&quot;, &quot;JAVASCRIPT&quot;, &quot;PYTHON&quot;, &quot;REST_API&quot;, &quot;TYPESCRIPT&quot;]">
+<path class="edge" d="M162,4004.0 L774,4075.0"/>
+<rect x="289" y="4037.5" width="465" height="21" fill="#fff"/>
+<text x="305" y="4054.5" font-size="16">GIT, JAVA, JAVASCRIPT, PYTHON, REST_API,</text>
+<rect x="289" y="4058.5" width="465" height="21" fill="#fff"/>
+<text x="305" y="4075.5" font-size="16">TYPESCRIPT</text>
+<circle cx="814" cy="4075.0" r="34" fill="#fbeeed" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="4079.0" text-anchor="middle" font-size="11">q_dead</text>
+</g>
+</g>
+<g data-source="q3">
+<rect x="945" y="3813" width="885" height="334" rx="12" fill="#fff" stroke="#ddd8e8"/>
+<text x="965" y="3843" font-size="20" font-weight="bold">From q3</text>
+<circle cx="1037" cy="4004.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1037" y="4008.0" text-anchor="middle" font-size="11">q3</text>
+<g data-target="q3" data-symbols="[&quot;MONGODB&quot;, &quot;MYSQL&quot;, &quot;POSTGRESQL&quot;, &quot;SQL&quot;]">
+<path class="edge" d="M1077,4004.0 L1689,3911.0"/>
+<rect x="1204" y="3884.0" width="465" height="21" fill="#fff"/>
+<text x="1220" y="3901.0" font-size="16">MONGODB, MYSQL, POSTGRESQL, SQL</text>
+<circle cx="1729" cy="3911.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="3915.0" text-anchor="middle" font-size="11">q3</text>
+</g>
+<g data-target="q4" data-symbols="[&quot;REST_API&quot;]">
+<path class="edge" d="M1077,4004.0 L1689,3993.0"/>
+<rect x="1204" y="3966.0" width="465" height="21" fill="#fff"/>
+<text x="1220" y="3983.0" font-size="16">REST_API</text>
+<circle cx="1729" cy="3993.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="3997.0" text-anchor="middle" font-size="11">q4</text>
+</g>
+<g data-target="q_dead" data-symbols="[&quot;DJANGO&quot;, &quot;GIT&quot;, &quot;JAVA&quot;, &quot;JAVASCRIPT&quot;, &quot;NODE_JS&quot;, &quot;PYTHON&quot;, &quot;SPRING_BOOT&quot;, &quot;TYPESCRIPT&quot;]">
+<path class="edge" d="M1077,4004.0 L1689,4075.0"/>
+<rect x="1204" y="4037.5" width="465" height="21" fill="#fff"/>
+<text x="1220" y="4054.5" font-size="16">DJANGO, GIT, JAVA, JAVASCRIPT, NODE_JS,</text>
+<rect x="1204" y="4058.5" width="465" height="21" fill="#fff"/>
+<text x="1220" y="4075.5" font-size="16">PYTHON, SPRING_BOOT, TYPESCRIPT</text>
+<circle cx="1729" cy="4075.0" r="34" fill="#fbeeed" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="4079.0" text-anchor="middle" font-size="11">q_dead</text>
+</g>
+</g>
+<g data-source="q4">
+<rect x="30" y="4167" width="885" height="345" rx="12" fill="#fff" stroke="#ddd8e8"/>
+<text x="50" y="4197" font-size="20" font-weight="bold">From q4</text>
+<circle cx="122" cy="4363.5" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="122" y="4367.5" text-anchor="middle" font-size="11">q4</text>
+<g data-target="q4" data-symbols="[&quot;REST_API&quot;]">
+<path class="edge" d="M162,4363.5 L774,4265.0"/>
+<rect x="289" y="4238.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="4255.0" font-size="16">REST_API</text>
+<circle cx="814" cy="4265.0" r="34" fill="#f4f0fb" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="4269.0" text-anchor="middle" font-size="11">q4</text>
+</g>
+<g data-target="qf" data-symbols="[&quot;GIT&quot;]">
+<path class="edge" d="M162,4363.5 L774,4347.0"/>
+<rect x="289" y="4320.0" width="465" height="21" fill="#fff"/>
+<text x="305" y="4337.0" font-size="16">GIT</text>
+<circle cx="814" cy="4347.0" r="34" fill="#e9f4ee" stroke="#65538e" stroke-width="2"/>
+<circle cx="814" cy="4347.0" r="29" fill="none" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="4351.0" text-anchor="middle" font-size="11">qf</text>
+</g>
+<g data-target="q_dead" data-symbols="[&quot;DJANGO&quot;, &quot;JAVA&quot;, &quot;JAVASCRIPT&quot;, &quot;MONGODB&quot;, &quot;MYSQL&quot;, &quot;NODE_JS&quot;, &quot;POSTGRESQL&quot;, &quot;PYTHON&quot;, &quot;SPRING_BOOT&quot;, &quot;SQL&quot;, &quot;TYPESCRIPT&quot;]">
+<path class="edge" d="M162,4363.5 L774,4434.5"/>
+<rect x="289" y="4386.5" width="465" height="21" fill="#fff"/>
+<text x="305" y="4403.5" font-size="16">DJANGO, JAVA, JAVASCRIPT, MONGODB, MYSQL,</text>
+<rect x="289" y="4407.5" width="465" height="21" fill="#fff"/>
+<text x="305" y="4424.5" font-size="16">NODE_JS, POSTGRESQL, PYTHON, SPRING_BOOT,</text>
+<rect x="289" y="4428.5" width="465" height="21" fill="#fff"/>
+<text x="305" y="4445.5" font-size="16">SQL, TYPESCRIPT</text>
+<circle cx="814" cy="4434.5" r="34" fill="#fbeeed" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="4438.5" text-anchor="middle" font-size="11">q_dead</text>
+</g>
+</g>
+<g data-source="qf">
+<rect x="945" y="4167" width="885" height="263" rx="12" fill="#fff" stroke="#ddd8e8"/>
+<text x="965" y="4197" font-size="20" font-weight="bold">From qf</text>
+<circle cx="1037" cy="4322.5" r="34" fill="#e9f4ee" stroke="#65538e" stroke-width="2"/>
+<circle cx="1037" cy="4322.5" r="29" fill="none" stroke="#65538e" stroke-width="2"/>
+<text x="1037" y="4326.5" text-anchor="middle" font-size="11">qf</text>
+<g data-target="qf" data-symbols="[&quot;GIT&quot;]">
+<path class="edge" d="M1077,4322.5 L1689,4265.0"/>
+<rect x="1204" y="4238.0" width="465" height="21" fill="#fff"/>
+<text x="1220" y="4255.0" font-size="16">GIT</text>
+<circle cx="1729" cy="4265.0" r="34" fill="#e9f4ee" stroke="#65538e" stroke-width="2"/>
+<circle cx="1729" cy="4265.0" r="29" fill="none" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="4269.0" text-anchor="middle" font-size="11">qf</text>
+</g>
+<g data-target="q_dead" data-symbols="[&quot;DJANGO&quot;, &quot;JAVA&quot;, &quot;JAVASCRIPT&quot;, &quot;MONGODB&quot;, &quot;MYSQL&quot;, &quot;NODE_JS&quot;, &quot;POSTGRESQL&quot;, &quot;PYTHON&quot;, &quot;REST_API&quot;, &quot;SPRING_BOOT&quot;, &quot;SQL&quot;, &quot;TYPESCRIPT&quot;]">
+<path class="edge" d="M1077,4322.5 L1689,4352.5"/>
+<rect x="1204" y="4304.5" width="465" height="21" fill="#fff"/>
+<text x="1220" y="4321.5" font-size="16">DJANGO, JAVA, JAVASCRIPT, MONGODB, MYSQL,</text>
+<rect x="1204" y="4325.5" width="465" height="21" fill="#fff"/>
+<text x="1220" y="4342.5" font-size="16">NODE_JS, POSTGRESQL, PYTHON, REST_API,</text>
+<rect x="1204" y="4346.5" width="465" height="21" fill="#fff"/>
+<text x="1220" y="4363.5" font-size="16">SPRING_BOOT, SQL, TYPESCRIPT</text>
+<circle cx="1729" cy="4352.5" r="34" fill="#fbeeed" stroke="#65538e" stroke-width="2"/>
+<text x="1729" y="4356.5" text-anchor="middle" font-size="11">q_dead</text>
+</g>
+</g>
+<g data-source="q_dead">
+<rect x="30" y="4532" width="885" height="181" rx="12" fill="#fff" stroke="#ddd8e8"/>
+<text x="50" y="4562" font-size="20" font-weight="bold">From q_dead</text>
+<circle cx="122" cy="4646.5" r="34" fill="#fbeeed" stroke="#65538e" stroke-width="2"/>
+<text x="122" y="4650.5" text-anchor="middle" font-size="11">q_dead</text>
+<g data-target="q_dead" data-symbols="[&quot;DJANGO&quot;, &quot;GIT&quot;, &quot;JAVA&quot;, &quot;JAVASCRIPT&quot;, &quot;MONGODB&quot;, &quot;MYSQL&quot;, &quot;NODE_JS&quot;, &quot;POSTGRESQL&quot;, &quot;PYTHON&quot;, &quot;REST_API&quot;, &quot;SPRING_BOOT&quot;, &quot;SQL&quot;, &quot;TYPESCRIPT&quot;]">
+<path class="edge" d="M162,4646.5 L774,4635.5"/>
+<rect x="289" y="4587.5" width="465" height="21" fill="#fff"/>
+<text x="305" y="4604.5" font-size="16">DJANGO, GIT, JAVA, JAVASCRIPT, MONGODB,</text>
+<rect x="289" y="4608.5" width="465" height="21" fill="#fff"/>
+<text x="305" y="4625.5" font-size="16">MYSQL, NODE_JS, POSTGRESQL, PYTHON,</text>
+<rect x="289" y="4629.5" width="465" height="21" fill="#fff"/>
+<text x="305" y="4646.5" font-size="16">REST_API, SPRING_BOOT, SQL, TYPESCRIPT</text>
+<circle cx="814" cy="4635.5" r="34" fill="#fbeeed" stroke="#65538e" stroke-width="2"/>
+<text x="814" y="4639.5" text-anchor="middle" font-size="11">q_dead</text>
+</g>
+</g>
 </svg>

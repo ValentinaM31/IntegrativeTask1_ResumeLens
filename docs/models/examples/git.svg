@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="930" height="406" viewBox="0 0 930 406" role="img" aria-labelledby="title desc">
+<title id="title">Git SCM to GIT: actual FST alias path</title>
+<desc id="desc">One accepting path from the tools_qualifications machine. State names and all input/output labels are taken from its executable transitions. Other alias paths are omitted.</desc>
+<rect width="100%" height="100%" fill="#fff"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#65538e"/></marker></defs>
+<style>text{font-family:Arial,sans-serif;fill:#282338}.edge{fill:none;stroke:#65538e;stroke-width:2;marker-end:url(#arrow)}.state{stroke:#65538e;stroke-width:2;fill:#f4f0fb}.label{font-size:14px}.name{font-size:11px;text-anchor:middle}</style>
+<text x="24" y="31" font-size="22" font-weight="bold">Git SCM → GIT</text>
+<text x="24" y="57" font-size="13">Alias-path subset of tools_qualifications. Other branches are omitted.</text>
+<text x="24" y="79" font-size="13">Input after separate casefold: git scm</text>
+<path class="edge" d="M20,156 L59,156"/>
+<path class="edge" d="M135,156 L242,156"/>
+<text class="label" x="189.0" y="140" text-anchor="middle">g / ε</text>
+<path class="edge" d="M319,156 L426,156"/>
+<text class="label" x="373.0" y="140" text-anchor="middle">i / ε</text>
+<path class="edge" d="M503,156 L610,156"/>
+<text class="label" x="557.0" y="140" text-anchor="middle">t / ε</text>
+<path class="edge" d="M687,156 L794,156"/>
+<text class="label" x="741.0" y="140" text-anchor="middle">␠ / ε</text>
+<path class="edge" d="M833,194 L833,283"/>
+<text class="label" x="821" y="244.0" text-anchor="end">s / ε</text>
+<path class="edge" d="M795,322 L688,322"/>
+<text class="label" x="741.0" y="306" text-anchor="middle">c / ε</text>
+<path class="edge" d="M611,322 L504,322"/>
+<text class="label" x="557.0" y="306" text-anchor="middle">m / GIT</text>
+<circle class="state" cx="97" cy="156" r="37" style="fill:#f4f0fb"/>
+<text class="name" x="97" y="160">q0</text>
+<circle class="state" cx="281" cy="156" r="37" style="fill:#f4f0fb"/>
+<text class="name" x="281" y="160">s20_a1_1</text>
+<circle class="state" cx="465" cy="156" r="37" style="fill:#f4f0fb"/>
+<text class="name" x="465" y="160">s20_a1_2</text>
+<circle class="state" cx="649" cy="156" r="37" style="fill:#f4f0fb"/>
+<text class="name" x="649" y="160">s20_a1_3</text>
+<circle class="state" cx="833" cy="156" r="37" style="fill:#f4f0fb"/>
+<text class="name" x="833" y="160">s20_a1_4</text>
+<circle class="state" cx="833" cy="322" r="37" style="fill:#f4f0fb"/>
+<text class="name" x="833" y="326">s20_a1_5</text>
+<circle class="state" cx="649" cy="322" r="37" style="fill:#f4f0fb"/>
+<text class="name" x="649" y="326">s20_a1_6</text>
+<circle class="state" cx="465" cy="322" r="37" style="fill:#e9f4ee"/>
+<circle cx="465" cy="322" r="32" fill="none" stroke="#65538e" stroke-width="2"/>
+<text class="name" x="465" y="326">s20_a1_7</text>
+<text x="24" y="383" font-size="12">Labels: input / output. ε = empty output; ␠ = one space. Double circle = accepting.</text>
+</svg>

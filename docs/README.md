@@ -14,6 +14,7 @@ Follow the operating instructions for the current checkout. Verification records
 | [First-stage API](api.md) | Extraction-result contract and compatibility |
 | [First-stage integration](handoff.md) | TXT-to-JSON integration and acceptance for that component |
 | [Acceptance matrix](acceptance.md) | Implemented requirements and outstanding submission evidence |
+| [AI collaboration record](ai-usage.md) | Factual English summaries, assisted work, verification and original-transcript requirements |
 
 The first-stage guides document `process_resume()` and the original JSON command. Use the complete-workflow and interface guides for later stages; component scope is not the scope of the complete application.
 
@@ -24,7 +25,8 @@ The first-stage guides document `process_resume()` and the original JSON command
 | [Design](design.md) / [module design](module-design.md) | Components, functions, inputs, outputs and relationships |
 | [Regular expressions](regex.md) / [negation handling](negation-handling.md) | Exact patterns, bounded context and exclusions |
 | [Transducers](transducers.md) / `models/` | Four real FSTs, complete seven-tuples, tables and graphs |
-| [Profile recognition](profile-recognition.md) / `automata/` | Four epsilon-NFAs, complete five-tuples, diagrams and canonical order |
+| [Worked transducer paths](models/examples/README.md) | Compact SVGs, Mermaid diagrams and trace tables generated from actual accepting paths |
+| [Profile recognition](profile-recognition.md) / `automata/` | Four complete DFAs, five-tuples, exact diagrams and canonical order |
 | [Requirement alignment](profile-alignment.md) | Assignment criteria, ML alternatives and team-defined extensions |
 | [Profile explanations](profile-explanations.md) | Missing groups, incompatible backend pairs and repair alternatives |
 | [Candidate language](candidate-language.md) | EBNF, terminals/nonterminals, textX syntax and semantic checks |
@@ -47,7 +49,14 @@ Exported FST and automaton graphs are versioned model evidence, not disposable o
 | [DSL examples](../data/dsl/README.md) | Valid/invalid specifications and validation results |
 | [Workflow examples](../data/workflow/README.md) | Eight stored JSON/DSL/HTML bundles and reproduction rules |
 
-Reference files under `data/`, packaged resources under `src/resumelens/`, and contracts are required evidence or test inputs. Keep the evaluations separate and retain recorded errors. Generators may overwrite results; use `tools/evaluate_preannotated.py --check` to verify its stored reports without rewriting them.
+Reference files under `data/`, packaged resources under `src/resumelens/`, and contracts are required evidence or test inputs. Keep the evaluations separate and retain recorded errors. Generators may overwrite results. Verify the current later-regression reports without rewriting them:
+
+```powershell
+.\.venv\Scripts\python.exe tools/evaluate_preannotated.py --allow-changed-rules --output-dir data/preannotated-evaluation/visual-update --check
+.\.venv\Scripts\python.exe tools/evaluate_workflow.py --allow-changed-rules --output-dir data/workflow-evaluation/visual-update --check
+```
+
+The explicit later-regression mode records changed runtime sources while preserving the original inputs, annotation freezes and baseline reports. Strict checks without that flag apply to the original frozen runtime, rather than the current checkout.
 
 ## Historical material and presentation status
 

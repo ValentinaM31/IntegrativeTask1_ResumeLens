@@ -1,0 +1,21 @@
+{
+  "paper": "A1",
+  "orientation": "landscape",
+  "width_mm": 841,
+  "height_mm": 594,
+  "central_columns": 3,
+  "accent_colors": [
+    "#183d56",
+    "#087f7c"
+  ],
+  "font_roles_points": {
+    "title": 101.7,
+    "authors": 60.8,
+    "headings": 44.6,
+    "body": 32.2
+  },
+  "svg_text_word_count": 293,
+  "word_count_scope": "All SVG text labels, including diagrams, formulas and references; not only prose",
+  "composition_area_percentages": null,
+  "area_limit": "Text/graphic/whitespace ink areas and physical viewing distance are not measured."
+}

@@ -12,7 +12,7 @@ will be provided separately. No such separate specification is included in this
 review; the existing Backend Developer and Data Engineer choices are retained.
 This does not claim confirmation of unseen teacher requirements.
 
-## Confirmed mismatch and correction
+## Confirmed mismatch and correction — 2026-10-11
 
 The Machine Learning diagram on page 5 shows the same transition from q2 to q3
 with alternatives `SCIKIT_LEARN`, `TENSORFLOW` and `PYTORCH`. Previously, the
@@ -46,32 +46,57 @@ without an explicit REST API symbol. It still passes the documented minimum
 pattern. Backend's compatible pairs remain Java + Spring Boot, Python + Django,
 JavaScript + Node.js or TypeScript + Node.js. MySQL and these extra profile
 criteria are identified as team choices, not copied requirements from the page 5
-Machine Learning diagram. No change is made merely to add a commit.
+Machine Learning diagram.
 
-## Executed formal model
+## Historical model used for the alignment correction — 2026-10-11
 
-The production recognizer remains an actual `pyformlang` epsilon-NFA. Its five
-disjoint ordered buckets are Python; Pandas/NumPy; the three learning libraries;
-SQL/PostgreSQL/MySQL; and Git. Canonical preparation retains every present member
-in each bucket, sorts within the bucket and deduplicates qualifications.
+The alignment correction originally used an actual `pyformlang` epsilon-NFA. Its
+five disjoint ordered buckets were Python; Pandas/NumPy; the three learning
+libraries; SQL/PostgreSQL/MySQL; and Git. Canonical preparation retained every
+present member in each bucket, sorted within the bucket and deduplicated
+qualifications.
 
-The diagram illustrates minimal paths with one symbol per group. The production
-language permits one or more symbols per bucket, so listing two libraries or both
-Pandas and NumPy does not cause rejection. This explains the extra loops and
-before/seen states in the exported model. The decision still comes from
-`EpsilonNFA.accepts()`. Explanations are computed afterward from the configuration.
+The assignment diagram illustrates minimal paths with one symbol per group. That
+model also accepted multiple symbols within a bucket, so listing two libraries or
+both Pandas and NumPy did not cause rejection. Its loops and before/seen states
+implemented those choices. Decisions came from `EpsilonNFA.accepts()`;
+explanations were computed afterward from the configuration.
 
-Machine Learning retains 12 states; its alphabet increases from 9 to 10 symbols
-and its transition relation from 33 to 36 triples. The additional symbol has a
-loop before the group's requirement, a transition to its seen state, and a loop
-afterward. JSON, CSV, DOT and SVG formalizations and `summary.json` are synchronized
-with the actual machine. Other professional patterns are unchanged.
+The historical Machine Learning machine retained 12 states while its alphabet
+increased from 9 to 10 symbols and its transition relation from 33 to 36 triples.
+The added Scikit-learn symbol had a loop before its group's requirement, a
+transition to the seen state, and a loop afterward. The alignment revision updated
+the JSON, CSV, DOT, SVG and summary exports to that machine. These historical
+counts describe the former epsilon-NFA, rather than the current DFA exports.
 
 The extractor and FSTs already supported all three Scikit-learn aliases. Their
 26-symbol/56-alias catalog, first-stage JSON contract, offsets and transducers are
-unchanged. Classification diagnostics and standalone reports for the existing
-eight samples are regenerated where the missing-library alternatives changed.
-Their accepted-profile expectations remain unchanged.
+unchanged by that correction. Classification diagnostics and standalone reports
+for the existing eight samples were regenerated where missing-library alternatives
+changed. Their accepted-profile expectations remained unchanged.
+
+## Current deterministic representation
+
+The current recognizer is a complete `pyformlang.finite_automaton.DeterministicFiniteAutomaton`
+using the same five Machine Learning buckets and qualification criteria. Its
+states are {q0, q1, q2, q3, q4, q5, q_dead}, q0 is initial and q5 is the sole
+accepting state. Every state/alphabet-symbol pair has exactly one destination;
+invalid ordered sequences reach the nonaccepting sink q_dead. There are no empty
+transitions.
+
+The Machine Learning DFA has 7 states, the same 10-symbol alphabet and 70
+transitions, including sink transitions. The transition count is `|Q| × |Σ|`
+because the function is total. Multiple qualifications from the current bucket
+still loop before advancing to the next required bucket. Optional model/Docker
+mentions do not replace a required library.
+
+All four profile machines use the deterministic representation. Backend retains
+compatible language/framework pairs through finite mask memory; its canonical
+preparation does not choose a pair or change candidate evidence. The change in
+representation preserves public results, configured criteria and expected
+classification decisions. Complete current tuples and exact export links are in
+[profile recognition](profile-recognition.md); executed checks are recorded
+separately in [verification results](test-results.md).
 
 ## Regressions and compatibility
 
@@ -111,7 +136,7 @@ Use Ctrl+C in its terminal and launch `python -m resumelens.web` again.
 .\.venv\Scripts\python.exe tools/check_web_acceptance.py
 ```
 
-The current suite has 168 Python test methods; the previous eighteen browser
-interaction groups are separate. Native Windows execution of this extension
-remains required. See [verification results](test-results.md) and
-[complete formal definitions](profile-recognition.md).
+Current complete-suite counts and recorded Windows/Linux runs are in
+[verification results](test-results.md). The eighteen automated browser interaction
+groups have recorded Linux and Windows runs, separate from the Python suite and
+manual visual checks. See [complete formal definitions](profile-recognition.md).

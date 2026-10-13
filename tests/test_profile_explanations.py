@@ -138,7 +138,7 @@ class ProfileExplanationTests(unittest.TestCase):
                          [option["pair"] for option in row["pair_diagnostics"]["alternatives"]])
 
     def test_automaton_remains_the_acceptance_authority(self):
-        with patch("pyformlang.finite_automaton.EpsilonNFA.accepts", return_value=False) as accepts:
+        with patch("pyformlang.finite_automaton.DeterministicFiniteAutomaton.accepts", return_value=False) as accepts:
             row = profile_row(["JAVASCRIPT", "REACT", "NODE_JS", "SQL", "GIT"], "FULL_STACK_DEVELOPER")
         self.assertEqual(4, accepts.call_count)
         self.assertFalse(row["accepted"])

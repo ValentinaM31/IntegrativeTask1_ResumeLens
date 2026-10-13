@@ -10,7 +10,7 @@ py -m venv .venv
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-For the verified Python 3.12 environment, first install `requirements-lock.txt`, then `pip install --no-deps -e .`. Normal installation declares pyformlang 1.0.11, jsonschema 4.26.0 and textX 4.4.0. Activation is unnecessary. The original first stage was verified on Windows; the recognition/DSL increments were verified on Linux with Python 3.12.14.
+For the verified Python 3.12 environment, first install `requirements-lock.txt`, then `pip install --no-deps -e .`. Normal installation declares pyformlang 1.0.11, jsonschema 4.26.0 and textX 4.4.0. Activation is unnecessary. Recorded Windows and Linux checks, including the revision and Python version associated with each run, are in [verification results](test-results.md).
 
 ## CLI
 
@@ -60,7 +60,7 @@ Unknown inputs are recorded only if received by the normalizer. The extractor ma
 
 ## Later consumption
 
-`profiles_design.json` now supplies four executable epsilon-NFA patterns. Call `classify_skills(result["normalized_skills"])` from the public package to prepare profile-specific input and execute recognition. Alphabetical JSON order is not that sequence. The returned classification is separate from JSON 1.0. Call `generate_candidate_dsl(result, classification)` and then `parse_candidate_dsl(source)` to generate and validate the candidate DSL. The implemented `render_candidate_html(source)` parses the DSL before rendering. `process_complete_resume(text, name=None)` composes all stages, and `save_bundle(result, destination)` writes the four outputs. See [workflow integration](complete-workflow.md). See [stage 3](profile-recognition.md) and the [candidate language](candidate-language.md).
+`profiles_design.json` supplies the qualification criteria for four executable complete DFAs. Call `classify_skills(result["normalized_skills"])` from the public package to prepare profile-specific input and execute recognition. Alphabetical JSON order is not that sequence. The returned classification is separate from JSON 1.0. Call `generate_candidate_dsl(result, classification)` and then `parse_candidate_dsl(source)` to generate and validate the candidate DSL. The implemented `render_candidate_html(source)` parses the DSL before rendering. `process_complete_resume(text, name=None)` composes all stages, and `save_bundle(result, destination)` writes the four outputs. See [workflow integration](complete-workflow.md). See [stage 3](profile-recognition.md) and the [candidate language](candidate-language.md).
 
 Do not add properties to version 1.0, whose schema forbids them. Keep later results separate or agree on a new contract version. The package exports the existing first-stage, recognition and DSL functions plus `render_candidate_html`, `process_complete_resume` and `save_bundle`. The original CLI retains TXT-to-JSON behavior; `python -m resumelens.workflow_cli` is the complete bundle command.
 
@@ -68,17 +68,21 @@ Disk exports now prepare the four outputs and keep byte copies of existing repor
 before replacing them. Controlled failures trigger recovery; an incomplete
 recovery retains the originals in the reported workspace and blocks another export
 to that directory. Inspect [bundle recovery](bundle-recovery.md) before removing
-such a workspace. API signatures and exported formats are unchanged. Native
-Windows verification of this extension is still required using the current suite.
+such a workspace. API signatures and exported formats are unchanged. Recorded
+Windows recovery and complete-suite checks are in [verification results](test-results.md).
 
 ## Acceptance procedure
 
-Run `python tools/evaluate_preannotated.py --check` to reproduce the eighteen
-new fixed-label cases without rewriting the committed reports. Four stress cases
-retain known interpretation errors; a successful check means the recorded
-measurements are reproduced, not that every annotation was matched. Preserve the
-input/annotation fingerprints. Any later source change requires explicit
-`--allow-changed-rules` and is recorded as regression. See
+Run the current eighteen-case comparison without rewriting its reports:
+
+```powershell
+.\.venv\Scripts\python.exe tools/evaluate_preannotated.py --allow-changed-rules --output-dir data/preannotated-evaluation/visual-update --check
+```
+
+Four stress cases retain known interpretation errors; a successful check means
+the recorded measurements are reproduced, not that every annotation was matched.
+Preserve the input/annotation fingerprints. The explicit later-regression mode
+records changed runtime sources without resetting the original freeze. See
 [protocol, error interpretation and commands](preannotated-evaluation.md).
 
 The Machine Learning pattern admits Scikit-learn, TensorFlow or PyTorch as

@@ -1,0 +1,2 @@
+# Reference offsets are measured against the samples' LF text on every platform.
+data/samples/*.txt text eol=lf

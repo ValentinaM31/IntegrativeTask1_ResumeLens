@@ -146,27 +146,31 @@ field, profile confusion matrix and disagreement.
 ## Reproduce and verify
 
 ```powershell
-.\.venv\Scripts\python.exe tools/evaluate_preannotated.py --check
+.\.venv\Scripts\python.exe tools/evaluate_preannotated.py --allow-changed-rules --output-dir data/preannotated-evaluation/visual-update --check
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 .\.venv\Scripts\python.exe tools/check_workflow_acceptance.py
 .\.venv\Scripts\python.exe tools/check_web_acceptance.py
 ```
 
-`--check` recomputes the evaluation and compares it with stored JSON/Markdown
-without rewriting reports. Exit 0 means measurements are reproduced, including
-the known disagreements; it does not mean all cases were interpreted correctly.
-Malformed/tampered inputs, changed runtime or stale reports return exit 2.
+`--check` recomputes the evaluation and compares it with the stored current
+later-regression JSON/Markdown without rewriting reports. Exit 0 means
+measurements are reproduced, including the known disagreements; it does not mean
+all cases were interpreted correctly. Malformed/tampered inputs or stale reports
+return exit 2. The explicit later-regression flag records changed runtime sources.
+A strict check without that flag applies only to the original frozen runtime and
+deliberately rejects the current changed sources.
 
 To generate a separate review copy:
 
 ```powershell
-.\.venv\Scripts\python.exe tools/evaluate_preannotated.py --output-dir outputs/evaluation-review
+.\.venv\Scripts\python.exe tools/evaluate_preannotated.py --allow-changed-rules --output-dir outputs/evaluation-review
 ```
 
-The command without flags regenerates only `results.json` and `results.md` in the
-dataset directory, never annotations or the protocol. If application source later
-changes, use `--allow-changed-rules --output-dir outputs/later-regression` to keep
-the baseline intact. Such a report is marked `later_regression_comparison`, lists
+On the original frozen runtime, the command without flags regenerates only the
+baseline `results.json` and `results.md`, never annotations or the protocol. On
+the current changed runtime, keep the baseline intact by using
+`--allow-changed-rules --output-dir outputs/later-regression`. Such a report is
+marked `later_regression_comparison`, lists
 changed source files and retains the original freeze. Later reuse is regression;
 it is not a new prospective or blind evaluation. Changed annotation/input content
 requires a separately versioned dataset rather than resetting existing hashes.
@@ -175,10 +179,11 @@ Thirteen evaluator tests cover tampering, byte preservation, frozen references,
 stale imported packages,
 later-regression mode, exact repeat positions, unknown misses, false profile
 acceptance/rejection, micro aggregation, empty denominators, pipeline exceptions,
-stored-report reproduction and the real evaluation CLI. The complete suite has
-181 Python tests; the eighteen previously verified browser groups are separate.
-Native Windows execution of this extension remains necessary. Presentation/poster
-materials and contribution scheduling are separate from this evaluator.
+stored-report reproduction and the real evaluation CLI. Complete-suite counts
+and recorded Windows/Linux runs are in [verification results](test-results.md).
+The eighteen automated browser groups have recorded Linux and Windows runs,
+separate from the Python suite and manual visual checks. Presentation materials are
+separate from this evaluator.
 
 ## Visual-revision regression
 
@@ -187,4 +192,6 @@ lock retries. The original eighteen-case annotations, input bytes, protocol and
 baseline reports remain unchanged. Explicit `--allow-changed-rules` execution
 creates a later comparison in `data/preannotated-evaluation/visual-update/`.
 All eighteen pipelines remain valid; fourteen cases fully match labels and the
-same four disagreements remain. This is later regression, not a new freeze.
+same four disagreements remain. The final review additionally corrects the CLI's
+hard-link input protection and records its changed source fingerprint in this
+comparison. This is later regression, not a new freeze.

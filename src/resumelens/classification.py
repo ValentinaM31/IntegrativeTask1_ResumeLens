@@ -1,8 +1,9 @@
-"""Profile recognition with actual epsilon-NFAs and canonical bucket order."""
+"""Profile recognition with complete deterministic automata and bucket order."""
+from collections import deque
 from functools import lru_cache
 from importlib.resources import files
 import json
-from pyformlang.finite_automaton import Epsilon, EpsilonNFA
+from pyformlang.finite_automaton import DeterministicFiniteAutomaton
 from .catalog import load_catalog
 
 
@@ -35,42 +36,78 @@ def validate_profile(profile):
         raise ValueError("Optional symbols must not be required bucket members")
 
 
-def profile_branches(profile):
-    """Each branch is a list of (allowed bucket, mandatory alternatives)."""
+def profile_buckets(profile):
+    """Return the disjoint input groups in their canonical profile order."""
     groups = [set(group) for group in profile["required_groups"]]
     pairs = profile.get("required_pair_alternatives", [])
     if not pairs:
-        return [[(group, group) for group in groups]]
+        return groups
     languages = {pair[0] for pair in pairs}
     frameworks = {pair[1] for pair in pairs}
-    return [[(languages, {language}), (frameworks, {framework})]
-            + [(group, group) for group in groups]
-            for language, framework in pairs]
+    return [languages, frameworks] + groups
 
 
 def build_profile_automaton(profile):
-    """Never bypass a requirement: each bucket must enter its 'seen' state.
+    """Build a total DFA directly; its state remembers progress and pair choices.
 
-    Backend branches share bucket alphabets but require different compatible pairs.
-    Non-mandatory members in a bucket may precede/follow the required member.
+    L states retain frameworks compatible with languages already consumed. W
+    states retain that same memory while waiting for a compatible framework.
+    Ordering never selects a pair; only the DFA transition can satisfy it.
     """
     validate_profile(profile)
-    machine = EpsilonNFA()
+    pairs = profile.get("required_pair_alternatives", [])
+    buckets = profile_buckets(profile)
+    alphabet = sorted(set.union(*buckets))
+    framework_order = sorted(buckets[1]) if pairs else []
+    initial, reject = ("initial", None), ("reject", None)
+
+    def name(state):
+        phase, value = state
+        if phase == "initial":
+            return "q0"
+        if phase == "reject":
+            return "q_dead"
+        if phase in ("languages", "pending"):
+            mask = sum(1 << index for index, symbol in enumerate(framework_order)
+                       if symbol in value)
+            return ("L" if phase == "languages" else "W") + str(mask)
+        if pairs and value == len(buckets) - 1:
+            return "qf"
+        return "pair_seen" if pairs and value == 1 else f"q{value + 1}"
+
+    def advance(state, symbol):
+        phase, value = state
+        if phase == "reject":
+            return reject
+        if pairs and phase in ("initial", "languages", "pending"):
+            compatible = frozenset() if phase == "initial" else value
+            if phase != "pending" and symbol in buckets[0]:
+                targets = {framework for language, framework in pairs if language == symbol}
+                return ("languages", compatible | targets)
+            if phase != "initial" and symbol in buckets[1]:
+                return ("group", 1) if symbol in compatible else ("pending", compatible)
+            return reject
+        if phase == "initial":
+            return ("group", 0) if symbol in buckets[0] else reject
+        if symbol in buckets[value]:
+            return state
+        if value + 1 < len(buckets) and symbol in buckets[value + 1]:
+            return ("group", value + 1)
+        return reject
+
+    machine = DeterministicFiniteAutomaton()
     machine.add_start_state("q0")
-    machine.add_final_state("qf")
-    for branch_index, groups in enumerate(profile_branches(profile)):
-        previous = "q0"
-        for group_index, (allowed, mandatory) in enumerate(groups):
-            before = f"b{branch_index}_g{group_index}_before"
-            seen = f"b{branch_index}_g{group_index}_seen"
-            machine.add_transition(previous, Epsilon(), before)
-            for symbol in sorted(allowed):
-                machine.add_transition(before, symbol, before)
-                machine.add_transition(seen, symbol, seen)
-                if symbol in mandatory:
-                    machine.add_transition(before, symbol, seen)
-            previous = seen
-        machine.add_transition(previous, Epsilon(), "qf")
+    machine.add_final_state("qf" if pairs else f"q{len(buckets)}")
+    pending = deque([initial])
+    visited = {initial}
+    while pending:
+        state = pending.popleft()
+        for symbol in alphabet:
+            target = advance(state, symbol)
+            machine.add_transition(name(state), symbol, name(target))
+            if target not in visited:
+                visited.add(target)
+                pending.append(target)
     return machine
 
 
@@ -85,7 +122,7 @@ def canonical_sequence(skills, profile):
     This function orders data; it does not select a compatible pair or accept it.
     """
     values = set(skills)
-    buckets = [allowed for allowed, _ in profile_branches(profile)[0]]
+    buckets = profile_buckets(profile)
     return [symbol for bucket in buckets for symbol in sorted(values & bucket)]
 
 

@@ -9,12 +9,16 @@ For category C, M_C = (Q_C, Σ_C, Γ_C, δ_C, ω_C, q0, F_C). Let i be the catal
 - Q_C = {q0} ∪ {s{i}_a{j}_{k} : category(i)=C, 0≤j<len(aliases_i), 1≤k≤n_ij}. i,j are zero-based; k starts at one.
 - Σ_C = {a_ij[k−1] : category(i)=C, 1≤k≤n_ij}. Letters, punctuation, spaces and accents are individual symbols.
 - Γ_C = {c_i : category(i)=C}; JAVASCRIPT is one complete output symbol.
-- δ_C contains (q0, a_ij[0], s{i}_a{j}_1) and (s{i}_a{j}_{k−1}, a_ij[k−1], s{i}_a{j}_{k}) for 2≤k≤n_ij.
-- ω_C assigns ε when k<n_ij and the one-symbol word [c_i] when k=n_ij. It is defined on (source,input,target), because an input character may have multiple targets from q0.
+- δ_C ⊆ Q_C × Σ_C × Q_C is a transition relation. It contains (q0, a_ij[0], s{i}_a{j}_1) and (s{i}_a{j}_{k−1}, a_ij[k−1], s{i}_a{j}_{k}) for 2≤k≤n_ij.
+- ω_C: δ_C → Γ_C* is the output function. It assigns ε when k<n_ij and the one-symbol word [c_i] when k=n_ij. It is defined on (source,input,target), because an input character may have multiple targets from q0.
 - q0 is the sole initial state and is not final.
 - F_C = {s{i}_a{j}_{n_ij} : category(i)=C}. Acceptance consumes the complete input and ends in F_C.
 
 There are no other transitions. Alias paths are disjoint except q0. Shared first characters introduce nondeterminism; there are no epsilon-input transitions. Empty output still consumes an input character. The construction is not claimed to be minimal.
+
+The machine accepts an input only after consuming every character and reaching a final state. Concatenating the outputs of that accepting run produces one canonical symbol. Catalog validation prevents a complete casefolded alias from belonging to two skills, so nondeterministic branching does not introduce conflicting canonical translations.
+
+`casefold()` is a separate preprocessor applied to a copy of the raw alias. It is not a transition of the FST and does not collapse punctuation, separators or repeated internal spaces. The original resume text and its evidence offsets remain unchanged.
 
 ## Machines and complete exports
 
@@ -36,7 +40,16 @@ Each JSON lists Q, Sigma, Gamma, delta, omega, q0 and F. CSV rows combine δ and
 
 ## Explained paths
 
+[Worked paths with compact SVGs, Mermaid diagrams and transition tables](models/examples/README.md) show `JS`, `React.js`, `Postgres` and `Git SCM`. Each is an alias-path subset of its full category machine, using real state names and labels. Omitted branches remain in the production machine; these views do not claim that it is deterministic or minimized. Regenerate with `python tools/export_model_examples.py`, then use `--check` to verify the stored views.
+
 `JS` becomes `js`: q0 reads j, reaches s0_a1_1 and emits ε; s reaches s0_a1_2 and emits JAVASCRIPT. Input is exhausted and the state is final. JSx has no transition for x.
+
+| Step | Source | Input | Target | Output |
+|---:|---|---|---|---|
+| 1 | q0 | j | s0_a1_1 | ε |
+| 2 | s0_a1_1 | s | s0_a1_2 | JAVASCRIPT |
+
+The transition labels read `input / output`. The first edge consumes `j` despite writing nothing; the second writes the complete one-symbol output `JAVASCRIPT`. Its letters are not separate output symbols.
 
 `React.js` follows q0 → s4_a1_1 → … → s4_a1_8, reading r,e,a,c,t,.,j,s. The first seven edges emit ε and the last emits REACT. The dot is literal; ReactXjs has no such path.
 

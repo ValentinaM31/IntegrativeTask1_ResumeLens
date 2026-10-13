@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="562" height="240" viewBox="0 0 562 240" role="img" aria-labelledby="title desc">
+<title id="title">JS to JAVASCRIPT: actual FST alias path</title>
+<desc id="desc">One accepting path from the languages machine. State names and all input/output labels are taken from its executable transitions. Other alias paths are omitted.</desc>
+<rect width="100%" height="100%" fill="#fff"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#65538e"/></marker></defs>
+<style>text{font-family:Arial,sans-serif;fill:#282338}.edge{fill:none;stroke:#65538e;stroke-width:2;marker-end:url(#arrow)}.state{stroke:#65538e;stroke-width:2;fill:#f4f0fb}.label{font-size:14px}.name{font-size:11px;text-anchor:middle}</style>
+<text x="24" y="31" font-size="22" font-weight="bold">JS → JAVASCRIPT</text>
+<text x="24" y="57" font-size="13">Alias-path subset of languages. Other branches are omitted.</text>
+<text x="24" y="79" font-size="13">Input after separate casefold: js</text>
+<path class="edge" d="M20,156 L59,156"/>
+<path class="edge" d="M135,156 L242,156"/>
+<text class="label" x="189.0" y="140" text-anchor="middle">j / ε</text>
+<path class="edge" d="M319,156 L426,156"/>
+<text class="label" x="373.0" y="140" text-anchor="middle">s / JAVASCRIPT</text>
+<circle class="state" cx="97" cy="156" r="37" style="fill:#f4f0fb"/>
+<text class="name" x="97" y="160">q0</text>
+<circle class="state" cx="281" cy="156" r="37" style="fill:#f4f0fb"/>
+<text class="name" x="281" y="160">s0_a1_1</text>
+<circle class="state" cx="465" cy="156" r="37" style="fill:#e9f4ee"/>
+<circle cx="465" cy="156" r="32" fill="none" stroke="#65538e" stroke-width="2"/>
+<text class="name" x="465" y="160">s0_a1_2</text>
+<text x="24" y="217" font-size="12">Labels: input / output. ε = empty output; ␠ = one space. Double circle = accepting.</text>
+</svg>

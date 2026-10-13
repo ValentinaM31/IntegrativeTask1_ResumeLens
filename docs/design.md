@@ -6,7 +6,7 @@ ResumeLens turns resume text into candidate information and canonical symbols. R
 
 UTF-8 TXT → Python re extraction → pyformlang FST normalization → validation → JSON 1.0.
 
-The first-stage JSON supplies executable profile recognition through a separate `classify_skills()` API. Four epsilon-NFAs consume profile-specific canonical sequences. The separate candidate DSL is generated and validated with textX. The complete workflow renders standalone HTML from that validated language. A local browser UI now adapts user input to the same complete workflow and offers validated downloads.
+The first-stage JSON supplies executable profile recognition through a separate `classify_skills()` API. Four complete DFAs consume profile-specific canonical sequences. The separate candidate DSL is generated and validated with textX. The complete workflow renders standalone HTML from that validated language. A local browser UI adapts user input to the same complete workflow and offers validated downloads.
 
 ## Technical decisions
 
@@ -20,7 +20,7 @@ The first-stage JSON supplies executable profile recognition through a separate 
 | Preparation | casefold of a copy | Ignores capitalization without changing evidence |
 | Output | Schema-validated JSON 1.0 | Structured, reproducible exchange |
 | Ordering | Unique alphabetical symbols in JSON; separate canonical buckets per profile | Stable first-stage exchange and order-independent recognition |
-| Recognition | Common epsilon-NFA constructor | Explicit required groups and compatible-pair branches |
+| Recognition | Common complete-DFA constructor | One next state per symbol, required groups, compatible pairs and an explicit rejecting sink |
 | Representation | Packaged textX grammar and JSON-style strings | Explicit syntax, escaping and repeatable records |
 | DSL validation | Parse and recheck accepted profiles | Reject syntax errors, duplicates and inconsistent declarations |
 | HTML | Render parsed DSL with escaped values | Candidate reports without remote assets or scripts |

@@ -21,7 +21,7 @@ flowchart TD
     F --> P
     P --> V[Schema and semantic validation]
     V --> J[JSON 1.0 or dictionary]
-    J --> A[classification.py and four epsilon-NFAs]
+    J --> A[classification.py and four complete DFAs]
     A --> D[dsl.py and packaged textX grammar]
     D --> H[rendering.py: standalone HTML]
     H --> U
@@ -41,8 +41,8 @@ flowchart TD
 | first_stage.validate_result | 1.0 object and exact text | None or exception | Schema, spans, indices and actual translations |
 | cli.main | CLI arguments | Exit 0/2, JSON or diagnostic | Preserves CRLF; prevents overwrite by default |
 | classification.load_profiles / validate_profile | Packaged configuration / profile dictionary | Four profiles / None or ValueError | Known symbols, nonempty requirements and disjoint buckets |
-| classification.profile_branches | Profile dictionary | Allowed and required sets per branch/bucket | Common structure for all four patterns |
-| classification.build_profile_automaton | Profile dictionary | pyformlang EpsilonNFA | Loops, required transitions and epsilon composition |
+| classification.profile_buckets | Profile dictionary | Disjoint symbol sets in canonical order | Common input structure for all four patterns |
+| classification.build_profile_automaton | Profile dictionary | pyformlang DeterministicFiniteAutomaton | Complete symbol transitions, required groups, compatible pairs and a rejecting sink |
 | classification.canonical_sequence | Canonical skills and profile | Ordered relevant symbols | Retains all compatible-pair candidates |
 | classification.classify_skills | Canonical-symbol collection | accepted_profiles and four detailed results | Executes accepts(); separate from JSON 1.0 |
 | dsl.generate_candidate_dsl | JSON 1.0 and recognition result | Candidate DSL string | JSON escaping, canonical symbols and repeated records |
@@ -78,7 +78,7 @@ Explicit negative phrases include do not know/use, don't/don’t know/use and no
 ## Errors and shared state
 
 Profile recognition also derives `explanations` and `pair_diagnostics` after the
-actual NFA decision. Labels come from the catalog and alternatives from the
+actual DFA decision. Labels come from the catalog and alternatives from the
 validated profile configuration. The UI uses those messages as text; standalone
 HTML recomputes them from parsed DSL skills and escapes them. Missing alternatives
 do not introduce inferred skills or a second acceptance rule. See

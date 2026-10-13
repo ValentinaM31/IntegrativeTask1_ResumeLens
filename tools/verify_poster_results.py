@@ -27,6 +27,12 @@ def main():
               'failure_details': [str(test) + ': ' + trace for test, trace in result.failures + result.errors],
               'source_sha256': {path.relative_to(ROOT).as_posix(): hashlib.sha256(
                   path.read_bytes().replace(b'\r\n', b'\n')).hexdigest() for path in sorted(paths)}}
+    evidence_paths = ('data/preannotated-evaluation/visual-update/results.json',
+                      'data/workflow-evaluation/visual-update/results.json',
+                      'tools/evaluate_preannotated.py', 'tools/evaluate_workflow.py')
+    report['evaluation_sha256'] = {
+        path: hashlib.sha256((ROOT / path).read_bytes().replace(b'\r\n', b'\n')).hexdigest()
+        for path in evidence_paths if (ROOT / path).is_file()}
     destination = ROOT / 'docs/poster/verification.json'
     destination.parent.mkdir(exist_ok=True)
     destination.write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')

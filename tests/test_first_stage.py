@@ -1,6 +1,7 @@
 import copy
 import io
 import json
+import os
 from contextlib import contextmanager, redirect_stderr, redirect_stdout
 from pathlib import Path
 import subprocess
@@ -369,6 +370,23 @@ class CliTests(unittest.TestCase):
         result = subprocess.run([sys.executable, "-m", "resumelens", "--help"], capture_output=True, text=True)
         self.assertEqual(result.returncode, 0)
         self.assertIn("--output", result.stdout)
+
+    def test_cli_rejects_hard_link_to_input_even_with_force(self):
+        with test_directory() as directory:
+            source, output = directory / "resume.txt", directory / "output.json"
+            original = b"\xef\xbb\xbfName: Alex\r\nSkills: Python\r\n"
+            source.write_bytes(original)
+            try:
+                os.link(source, output)
+            except (OSError, NotImplementedError) as error:
+                self.skipTest(f"Hard links are unavailable: {error}")
+            for force in ([], ["--force"]):
+                with self.subTest(force=bool(force)):
+                    code, _, error = self.run_cli([str(source), "-o", str(output)] + force)
+                    self.assertEqual(code, 2)
+                    self.assertIn("Output must differ from input", error)
+                    self.assertEqual(source.read_bytes(), original)
+                    self.assertEqual(output.read_bytes(), original)
 
     def test_pandas_api_cli_equivalence_with_manual_name(self):
         with test_directory() as directory:

@@ -84,8 +84,9 @@ Loaded file text is retained separately from the text area's LF display. Until
 edited, original CRLF reaches the API unchanged; offsets therefore refer to the
 decoded file without its BOM. Editing/pasting instead processes the current text
 area's LF-normalized text. Evidence offsets are Python character positions, not
-JavaScript UTF-16 indices; the UI displays the original evidence/offsets without
-attempting JavaScript substring highlighting.
+JavaScript UTF-16 indices. The evidence explorer uses `Array.from(source_text)`
+to select Unicode code points and highlight the exact source substring, including
+when emoji precede a mention.
 
 Downloads use the workflow's existing bundle-consistency validation. ZIP entries
 use fixed names and timestamps for reproducibility; content equals CLI bundle
@@ -111,8 +112,9 @@ intended as a local course application, not a public production hosting service.
 .\.venv\Scripts\python.exe tools/check_workflow_acceptance.py
 ```
 
-The current full suite contains 181 tests, including 23 real HTTP/entry-point
-tests and 17 profile-explanation checks. The web acceptance tool starts/stops its own server on an available port and
+Current complete-suite counts and recorded platform checks are in
+[verification results](test-results.md). The suite includes real HTTP/entry-point
+and profile-explanation tests. The web acceptance tool starts/stops its own server on an available port and
 compares all eight samples with the public API, validating the four ZIP contents.
 It does not require a running UI, a browser automation library or administrator access.
 The earlier Windows symlink-permission skip remains acceptable.
@@ -135,12 +137,16 @@ Manually verify the actual browser after installation:
 | Clear, then reload | Empty input/name and no previous results |
 | Stop the server, then process existing page text | Connection error and controls restored |
 
-Chrome for Testing 153.0.8010.12 on Linux was used for automated interaction and
-desktop/mobile-width screenshots. Browser QA tooling is separate from runtime and
-the unittest suite. Real Windows browser behavior, macOS and other browser engines
-still require verification. Limits of extraction, catalog and team-defined profile
-patterns remain documented in [evaluation.md](evaluation.md). The later keyboard
-checks and their exact environment are recorded in [test results](test-results.md).
+Chrome for Testing 153.0.8010.12 on Linux was used for earlier automated interaction
+and desktop/mobile-width screenshots; later Linux keyboard checks have their own
+recorded environment. The visual revision was manually checked in the Windows
+in-app browser on desktop and at 390px width. The final installed-package review
+also passed all eighteen automated keyboard scenario groups in Chrome on Windows.
+These checks do not certify other browser engines, macOS or a complete
+accessibility audit. Browser QA tooling is separate from the
+runtime and unittest suite. Limits of extraction, catalog and team-defined profile
+patterns remain documented in [evaluation.md](evaluation.md). Exact verification
+scope and environments are recorded in [test results](test-results.md).
 
 ## References
 

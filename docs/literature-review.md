@@ -18,7 +18,7 @@ This review connects resume context, regular expressions and transduction models
 | Mohri 1997 | States, alphabets and transduction relations | Formal variants/output model |
 | pyformlang FST API | Initial/final states, transitions and translate | Real normalization execution |
 | JSON Schema 2020-12 | Structure, types and constraints | Exchange contract |
-| pyformlang finite-automaton API | Epsilon-NFA transitions and accepts() | Execute shared qualification-pattern recognizers |
+| pyformlang finite-automaton API | Deterministic transitions and accepts() | Execute four complete qualification-pattern DFAs |
 | textX grammar/metamodel/parser configuration | Match rules, lists, parsing and keyword boundaries | Candidate representation syntax and validation |
 
 Regex and FSTs provide explicit definitions and verifiable paths. Section context reduces errors in supported formats, while stress cases expose semantic limits. This is a ResumeLens design/evaluation conclusion, not evidence of superiority over learned models.
@@ -30,7 +30,7 @@ Regex and FSTs provide explicit definitions and verifiable paths. Section contex
 - Mohri, M. (1997). *Finite-State Transducers in Language and Speech Processing*. Computational Linguistics 23(2), 269–311. [ACL](https://aclanthology.org/J97-2003/).
 - [pyformlang FST](https://pyformlang.readthedocs.io/en/latest/modules/fst.html).
 - [JSON Schema 2020-12](https://json-schema.org/draft/2020-12/json-schema-core).
-- [pyformlang finite automata](https://pyformlang.readthedocs.io/en/latest/modules/finite_automaton.html). Consulted for the recognition increment before finalizing the implementation. Epsilon-NFA composition makes alternatives explicit; its language differs from the character-level alias transducers.
+- [pyformlang finite automata](https://pyformlang.readthedocs.io/en/latest/modules/finite_automaton.html). Consulted for the original recognition increment. The earlier implementation used epsilon-NFA composition; current recognizers are complete DFAs with an explicit rejecting sink. Their symbols are canonical qualifications rather than the characters consumed by alias transducers. The change in automaton representation preserves the qualification criteria.
 
 - textX [grammar](https://textx.github.io/textX/grammar.html), [metamodel](https://textx.github.io/textX/metamodel.html) and [parser configuration](https://textx.github.io/textX/parser_config.html). Consulted before finalizing the DSL increment. textX checks candidate-language syntax; separate semantic checks execute recognition to verify accepted-profile declarations. JSON Schema remains the original exchange-contract validator.
 

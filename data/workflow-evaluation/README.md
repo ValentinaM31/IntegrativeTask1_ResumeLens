@@ -11,7 +11,15 @@ integration; do not describe this dataset as a new blind or independently human
 annotated evaluation. The separate eighteen-case dataset retains its own protocol
 and results.
 
-Run `python tools/evaluate_workflow.py --check` from the installed checkout to
-verify stored reports without rewriting them. See
+Run from the installed checkout to verify current later-regression reports
+without rewriting them:
+
+```powershell
+.\.venv\Scripts\python.exe tools/evaluate_workflow.py --allow-changed-rules --output-dir data/workflow-evaluation/visual-update --check
+```
+
+The explicit later-regression flag records changed runtime sources while
+preserving the original inputs, annotation freeze and baseline reports. Strict
+checking without that flag applies only to the original frozen runtime. See
 [method and results](../../docs/workflow-evaluation.md) for scoring, reproduction
 options and limitations.

@@ -22,14 +22,17 @@ Four stress cases retain Rust, double-negation, job-source attribution and bound
 Pandas-context errors. They are included in the overall counts rather than hidden.
 
 ```powershell
-.\.venv\Scripts\python.exe tools/evaluate_preannotated.py --check
+.\.venv\Scripts\python.exe tools/evaluate_preannotated.py --allow-changed-rules --output-dir data/preannotated-evaluation/visual-update --check
 ```
 
-A successful check reproduces the stored measurements, including those errors.
-It does not claim perfect interpretation. To review a separate report, use
-`--output-dir outputs/evaluation-review`. After application changes, use explicit
-`--allow-changed-rules --output-dir outputs/later-regression`; do not overwrite
-the freeze to disguise reused cases as a new evaluation.
+A successful check reproduces the stored current later-regression measurements,
+including those errors. It does not claim perfect interpretation. To review a
+separate report, retain `--allow-changed-rules` and use
+`--output-dir outputs/evaluation-review`. Strict checking without the
+later-regression flag applies only to the original frozen runtime and deliberately
+rejects the current changed sources. Do not overwrite the freeze to disguise
+reused cases as a new evaluation; original inputs, labels and baseline reports
+remain intact.
 
 The older `data/evaluation/` evidence remains separate. Methods, exact metrics,
 limitations and commands are in [the protocol guide](../../docs/preannotated-evaluation.md).

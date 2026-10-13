@@ -49,14 +49,18 @@ profile decisions and sample symbol expectations must remain unchanged.
 From the installed checkout:
 
 ```powershell
-.\.venv\Scripts\python.exe tools/evaluate_workflow.py --check
+.\.venv\Scripts\python.exe tools/evaluate_workflow.py --allow-changed-rules --output-dir data/workflow-evaluation/visual-update --check
 ```
 
-This executes the pipeline and verifies stored JSON/Markdown reports without
-rewriting them. A stale report returns exit code 2. For an intentional reviewed
-regeneration, omit `--check`; `--output-dir outputs/workflow-evaluation` writes to
-a separate directory. Running the tool as `python -m tools.evaluate_workflow`
-is also supported from the checkout root.
+This executes the current pipeline and verifies the stored later-regression
+JSON/Markdown reports without rewriting them. A stale report returns exit code 2.
+For an intentional reviewed regeneration, omit `--check`; keep
+`--allow-changed-rules` and use `--output-dir outputs/workflow-evaluation` to write
+to a separate directory. Running the tool as `python -m tools.evaluate_workflow`
+with those arguments is also supported from the checkout root.
+
+A strict `--check` without later-regression mode applies only to the original
+frozen runtime. It deliberately rejects the current changed sources.
 
 Later source changes require `--allow-changed-rules`, which marks changed runtime
 fingerprints while retaining the original annotation freeze. Do not reset hashes
@@ -85,3 +89,5 @@ The original annotation and runtime freeze is preserved. Run with
 to reproduce the stored later comparison for the visual revision. All fourteen
 cases match annotation units and exported report files. Changed runtime sources
 are listed in the report; original labels and baseline reports are not reset.
+The final review adds the corrected CLI hard-link protection to the recorded
+source changes without altering the fourteen cases or their measurements.

@@ -16,7 +16,9 @@ def main(argv=None):
     try:
         if args.input.suffix.lower() != ".txt":
             raise ValueError("Input must be a UTF-8 .txt file")
-        if args.input.resolve() == args.output.resolve():
+        if (args.input.resolve() == args.output.resolve()
+                or (args.output.exists() and args.input.exists()
+                    and args.output.samefile(args.input))):
             raise ValueError("Output must differ from input")
         # newline='' preserves CRLF; the UTF-8 BOM is an encoding marker.
         with args.input.open(encoding="utf-8-sig", newline="") as stream:

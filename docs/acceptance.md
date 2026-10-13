@@ -11,7 +11,7 @@ Complete means the documented extraction, normalization, recognition, candidate-
 | Complete formal models | transducers.md, models/ | Matches actual machines and exports | Complete |
 | Contract 1.0/evidence | first_stage.py, schema | Version, types, offsets, indices, translations | Complete |
 | API/CLI | first_stage.py, cli.py | Fresh environment, six acceptance scenarios | Complete |
-| Four executable profiles | classification.py, profiles_design.json | Alternatives, missing groups, compatible pairs, overlap | Complete for team-defined patterns |
+| Four executable profiles | classification.py, profiles_design.json | Complete DFAs with one transition per state/symbol, rejecting sinks, alternatives, missing groups, compatible pairs and overlap | Implemented for the configured patterns; current verification is recorded in test-results.md |
 | Reference-profile alignment | profile-alignment.md, test_profile_alignment.py, automata/MACHINE_LEARNING_ENGINEER.* | Scikit-learn/TensorFlow/PyTorch alternative group from assignment page 5; full API/CLI/HTTP/DSL regression bundles | Reference diagram aligned; separate additional-profile teacher requirements remain unverified |
 | Complete automaton five-tuples and diagrams | profile-recognition.md, automata/ | Relations reconstructed and compared with execution | Complete |
 | Recognition results | data/classification/ | Eight sample outputs match existing expectations | Complete; synthetic examples |
@@ -22,13 +22,13 @@ Complete means the documented extraction, normalization, recognition, candidate-
 | English project text | README, docs, source/messages | Tests, regeneration, text review | Complete; quoted bilingual input remains |
 | Sources | literature-review.md | Full-paper/abstract distinction | Available foundation, not systematic review |
 | Integration guide | handoff.md | API/CLI acceptance | Complete |
-| Academic AI-use record | Separate evidence outside code | Submit separately | Available; independent submission required |
+| Academic AI-use record | docs/ai-usage.md and original interaction records | Check factual summaries and submit original transcripts | Summary available; original transcripts and independent student review remain submission requirements |
 | Technical poster | poster/ | Editable SVG, same-scene PDF render, animated walkthrough, model diagrams and separate evaluation figures | Complete poster artifact; presentation rehearsal remains |
 | Candidate DSL and EBNF | candidate.tx, dsl.py, candidate-language.md | Fixed sections, terminals/nonterminals, canonical vocabulary and repeated records | Complete |
 | textX syntax and semantic validation | tests/test_dsl.py, data/dsl/ | 16 tests; eight valid and eight invalid examples | Complete |
 | Complete four-stage workflow | workflow.py, workflow_cli.py | Eight executed bundles; original JSON/CLI compatibility | Complete |
 | HTML after validated DSL | rendering.py, data/workflow/ | Syntax/semantic rejection, escaping, records and multiple profiles | Complete |
-| Interactive input UI | web.py, ui/, local-ui.md, keyboard-navigation.md | Paste/load TXT, fallback name, four decisions, reports/downloads, keyboard flow and error recovery | Complete for the documented scope; 18 Linux browser keyboard scenarios verified, desktop and narrow Windows visual checks recorded |
+| Interactive input UI | web.py, ui/, local-ui.md, keyboard-navigation.md | Paste/load TXT, fallback name, four decisions, reports/downloads, keyboard flow and error recovery | Complete for the documented scope; 18 scenario groups have Linux and Windows Chrome runs; desktop and narrow Windows visual checks recorded |
 | Web downloads | web.py, tests/test_web.py | Eight HTTP/API results, ZIP and individually downloaded files | Complete |
 
 ## Verified corrections

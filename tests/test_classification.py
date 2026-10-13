@@ -6,7 +6,7 @@ from pathlib import Path
 import unittest
 from resumelens import process_resume
 from resumelens.classification import (build_profile_automaton, canonical_sequence,
-                                      classify_skills, load_profiles, profile_branches, validate_profile)
+                                      classify_skills, load_profiles, profile_buckets, validate_profile)
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -77,10 +77,45 @@ class RecognitionTests(unittest.TestCase):
         self.assertFalse(machine.accepts(sequence[:-1]))
         self.assertFalse(machine.accepts([]))
 
+    def test_complete_dfa_transitions_and_absorbing_reject_state(self):
+        from pyformlang.finite_automaton import DeterministicFiniteAutomaton, State
+        for profile in load_profiles():
+            with self.subTest(profile=profile["id"]):
+                machine = build_profile_automaton(profile)
+                self.assertIsInstance(machine, DeterministicFiniteAutomaton)
+                self.assertEqual(len(machine.start_states), 1)
+                self.assertFalse(machine.accepts([]))
+                self.assertNotIn(State("q_dead"), machine.final_states)
+                relation = machine.to_dict()
+                self.assertEqual(set(relation), machine.states)
+                for source, edges in relation.items():
+                    self.assertEqual(set(edges), machine.symbols)
+                    for symbol, target in edges.items():
+                        self.assertNotIn(symbol.value, ("epsilon", "ε"))
+                        self.assertIsInstance(target, State)
+                        self.assertIn(target, machine.states)
+                        if source == State("q_dead"):
+                            self.assertEqual(target, source)
+                self.assertFalse(machine.accepts(["UNSUPPORTED_SYMBOL"]))
+
+    def test_all_required_alphabet_subsets_against_profile_conditions(self):
+        # An independent set predicate checks decisions made by transition execution.
+        for profile in load_profiles():
+            machine = build_profile_automaton(profile)
+            alphabet = sorted(symbol.value for symbol in machine.symbols)
+            pairs = profile.get("required_pair_alternatives", [])
+            for mask in range(1 << len(alphabet)):
+                values = {symbol for index, symbol in enumerate(alphabet) if mask & (1 << index)}
+                expected = (all(values.intersection(group) for group in profile["required_groups"])
+                            and (not pairs or any(set(pair) <= values for pair in pairs)))
+                actual = machine.accepts(canonical_sequence(values, profile))
+                if actual != expected:
+                    self.fail(f"{profile['id']}: wrong recognition for {sorted(values)}")
+
     def test_packaged_profile_configuration(self):
         self.assertEqual(load_profiles(), json.loads((ROOT / "config/profiles_design.json").read_text(encoding="utf-8")))
         for profile in load_profiles():
-            buckets = [allowed for allowed, _ in profile_branches(profile)[0]]
+            buckets = profile_buckets(profile)
             self.assertEqual(sum(map(len, buckets)), len(set.union(*buckets)))
 
     def test_invalid_configuration_is_rejected(self):
@@ -112,20 +147,21 @@ class RecognitionTests(unittest.TestCase):
                 classify_skills(skills)
 
     def test_generated_models_and_classifications_match_execution(self):
-        from pyformlang.finite_automaton import Epsilon, EpsilonNFA
+        from pyformlang.finite_automaton import DeterministicFiniteAutomaton
         for profile in load_profiles():
             model = json.loads((ROOT / "docs/automata" / (profile["id"] + ".json")).read_text(encoding="utf-8"))
-            self.assertEqual(model["epsilon_label"], "ε")
+            self.assertEqual(model["type"], "DFA")
             actual = build_profile_automaton(profile)
             self.assertEqual(model["Q"], sorted(state.value for state in actual.states))
             self.assertEqual(model["Sigma"], sorted(symbol.value for symbol in actual.symbols))
             self.assertNotIn("ε", model["Sigma"])
-            restored = EpsilonNFA()
+            restored = DeterministicFiniteAutomaton()
             restored.add_start_state(model["q0"])
             for state in model["F"]:
                 restored.add_final_state(state)
             for source, symbol, target in model["delta"]:
-                restored.add_transition(source, Epsilon() if symbol == "ε" else symbol, target)
+                self.assertNotEqual(symbol, "ε")
+                restored.add_transition(source, symbol, target)
             self.assertEqual(actual.to_dict(), restored.to_dict())
         cases = json.loads((ROOT / "data/expected_samples.json").read_text(encoding="utf-8"))["cases"]
         for case in cases:

@@ -65,7 +65,9 @@ return a nonzero exit status; they are not reported as a successful skipped test
 
 Expected final output: `Keyboard browser acceptance: 18 scenario groups passed`,
 followed by the actual Chromium version. These checks are separate from the
-181 Python unittest cases. They include:
+Python unittest suite. Current suite counts, automated Linux/Windows browser runs
+and Windows manual visual checks are in [verification results](test-results.md).
+The automated scenarios include:
 
 - A complete keyboard-only example/process/ZIP/edit/clear journey and normal
   forward/reverse input navigation.
@@ -111,8 +113,10 @@ URL. Perform this sequence with the mouse left aside:
 ## Verification limits and references
 
 The automated browser checks verify behavior and DOM semantics, not spoken output
-from a screen reader. Native Windows interaction, NVDA/JAWS/VoiceOver, other browser
-engines and a complete WCAG audit remain outside the recorded Linux verification.
+from a screen reader. All eighteen automated scenario groups passed in Chrome
+154.0.8037.59 on Windows during the final installed-package review. NVDA/JAWS/
+VoiceOver output, other browser engines and a complete WCAG audit remain outside
+the recorded verification.
 These changes do not constitute a claim of full WCAG conformance.
 
 - W3C [Focus Order](https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html):

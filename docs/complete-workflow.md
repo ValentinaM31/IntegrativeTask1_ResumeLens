@@ -3,7 +3,7 @@
 This increment connects the existing components into one executable workflow:
 
 UTF-8 TXT → `re` extraction → real pyformlang FST translations → JSON 1.0 validation
-→ four epsilon-NFA recognizers → candidate DSL → textX syntax and semantic validation
+→ four complete DFA recognizers → candidate DSL → textX syntax and semantic validation
 → standalone HTML report.
 
 The original `process_resume()` API and `python -m resumelens` TXT-to-JSON command
@@ -168,8 +168,10 @@ regressions brought that total to 125. Seventeen profile-explanation tests and
 three rejected-POST transport regressions brought that total to 145. Fifteen
 bundle-recovery tests brought that total to 160. Eight profile-alignment tests brought
 that total to 168, including LF/CRLF CLI and real HTTP/ZIP checks for the
-Scikit-learn alternative. Thirteen evaluation-protocol/scoring tests bring the
-current total to 181. The separate [preannotated dataset](preannotated-evaluation.md)
+Scikit-learn alternative. Thirteen evaluation-protocol/scoring tests brought that
+historical total to 181. Later workflow-evaluator and Windows-lock regressions are
+recorded with current complete-suite results in [verification results](test-results.md).
+The separate [preannotated dataset](preannotated-evaluation.md)
 compares all stages against fixed labels while retaining observed interpretation
 errors. See [current results](test-results.md)
 and [negation behavior](negation-handling.md).
@@ -178,14 +180,13 @@ invalid DSL, mutated outputs, overwrite preflight, force behavior, input aliases
 BOM/CRLF, Unicode and execution outside the repository.
 
 Symlink/hard-link checks run where the filesystem and permissions permit creating
-those links; the corresponding tests otherwise report a skip. New workflow behavior
-has been executed on Linux with Python 3.12.14. A Windows run exposed a fixture
-LF/CRLF offset mismatch, reproduced and corrected using a CRLF checkout on Linux.
-The user subsequently reran the corrected 89-test suite on Windows successfully,
-with one symlink-permission skip. The fourth increment's new UI needs its own
-Windows verification. All new text fixture
-reads explicitly use UTF-8, including the recognition correction already published
-in the preceding increment.
+those links; the corresponding tests otherwise report a skip. Historical workflow
+verification used Linux with Python 3.12.14. A Windows run exposed a fixture LF/CRLF
+offset mismatch, reproduced and corrected using a CRLF checkout on Linux. A
+subsequent reported Windows run of the corrected 89-test suite passed with one
+symlink-permission skip. Later Windows complete-suite and automated/manual browser checks,
+with their precise scope, are in [verification results](test-results.md). Text
+fixture reads explicitly use UTF-8, including the earlier recognition correction.
 
 ## Sources consulted
 
